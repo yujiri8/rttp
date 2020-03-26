@@ -1,4 +1,4 @@
-***This README contains spoilers.***
+***This README contains spoilers. The main reason for uploading the repository right now is for better communication between me and my editors.***
 
 Description of the mod and installation instructions [here](https://yujiri.xyz/works/return_to_the_portrait/).
 
@@ -18,11 +18,11 @@ The file 'SCRAPS' contains a couple of less important thoughts (that I don't nee
 
 # Outline for the ending
 
-* they meet Adam, he cooperates, and comes out with Monika.
+* They meet Adam, he cooperates, and comes out with Monika.
 
 * They decide to do their thing: make Libitina admin to get out.
 
-	these could be the same.
+	These could be the same event.
 
 * Adam makes Libitina admin.
 
@@ -44,21 +44,19 @@ The file 'SCRAPS' contains a couple of less important thoughts (that I don't nee
 
 # Other, smaller things
 
-[ ]* I still haven't really nailed down in canon what makes the Third Eye grow if anything. I'm thinking that it grows from having one's mind essentially destroyed by traumatization like they all were at the facility. It might have a limit. I plan to have Adam exposit on this in chapter27 or so, or maybe Renier and Linda in chapter24.
-
-[ ]* A thing I've decided on that I haven't said anywhere is that probably, the Third Eye is a naturally occurring thing in the Portrait of Markov even before Ursula's escape, but it's dormant until some contact with medium-awareness. Contact with an admin character seems to count. (If I don't explain this, it doesn't make sense that it was never discovered before Ursula's awakening and escape.)
-
 * Should I edit chapter22 so Adam actually tries to wipe Natsuki's memories at the rift, but it doesn't work? I feel it's a bit iffy that he just offhandly reveals that memory wipe doesn't work on prepared characters without the player seeing it fail.
 
-# images needed
+* I still haven't really nailed down in canon what makes the Third Eye grow if anything. I'm thinking that it grows from having one's mind essentially destroyed by traumatization like they all were at the facility. It might have a limit. I plan to have Adam exposit on this in chapter27 or so, or maybe Renier and Linda in chapter24.
+
+* A thing I've decided on that I haven't said anywhere is that probably, the Third Eye is a naturally occurring thing in the Portrait of Markov even before Ursula's escape, but it's dormant until some contact with medium-awareness. Contact with an admin character seems to count. (If I don't explain this, it doesn't make sense that it was never discovered before Ursula's awakening and escape.)
+
+# Images needed
 
 * facility exterior (chapter22) - not a strict requirement, but would be great to have something for that
 
 * improve Amy/Michael sprites (Amy should be taller, Michael may need expression improvement) - I can do this myself
 
 * facility location, post-destruction (chapter24)
-
-	I imagine the area being ravaged by the distortion, maybe collapsed buildings, broken trees and optional fire. I want to start building up the idea that Libitina's Third Eye is insanely powerful and destructive if nothing cuts her short, so the ending doesn't feel as out-of-nowhere.
 
 * ideally a better warehouse interior than the Uncle Mugen temple-like drawing I'm currently using
 
