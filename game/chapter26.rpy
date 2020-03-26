@@ -57,10 +57,11 @@ label chapter26:
     show albert at std
     #
     menu:
-        m "[persistent.playername], anything to tell us?"
+        m "[persistent.playername], anything to say before we do this?"
         "Have you seen ERROR.txt?":
             pass
     m "Huh...?"
+    "We all look at her curiously."
     m "Uh..."
     m "There's a file called ERROR.txt in the game directory that says 'ERROR: cannot work while a POV character is being followed'."
     menu:
@@ -94,44 +95,41 @@ label chapter26:
     y "Hearing Mr. Markov's voice come to rescue me from a kinder death."
     y "What a place of hell..."
     show yuri at std
-    show renier at foc
-    r "Good lord..."
-    r "I was recruited back in this era too."
-    r "I did some of the experiments here...!" # this might make Libitina attack him.
-    r "I..."
-    r "There are so many other victims that never even got an escape like we did."
-    r "We'll have to do whatever it takes to bring them back to life after this."
-    show renier at std
     show libitina at foc
-    b "I remember when he discovered in one of his first experiments that being cut closes the Third Eye!"
+    b "I remember when he discovered in one of his first experiments that being cut make the Third Eye recede!"
     b "He tested it on me in this very room!"
     "Libitina's shaking with fury."
     show libitina at std
     show yuri at foc
     y "Try to stay calm..."
     y "This is a dangerous place for all of us Eye-bearers who were kept here."
-    y "Given how sensitive yours is, you risk your Third Eye opening if you don't try to stay calm."
+    y "Given how sensitive yours is, you risk opening it if you don't stay calm."
     show yuri at std
+    show renier at foc
     r "Holy shit..."
     r "What if..."
     r "... that was his plan?!"
     r "If I were him I'd've known fully well what being in this place would do to us."
     r "It's like he wanted to lure us into a place where one of us might snap and open her Third Eye."
     r "Especially given we were all here together and armed, any one of us who snapped could kill everyone else."
-    # TODO this section needs a lot of patching
-    "But does that do him any good?"
-    "Wouldn't that just lead to us starting a new game?"
-
-    "Not without reset."
-    "We might not actually be able to start a new game, one way or another."
-    "With both restore_character and Character.reset gone."
-
-    "It's also possible he wanted us to start a new game now."
-    "With his other plan foiled, maybe he wanted to split us up for some reason?"
+    show renier at std
+    show yuri at foc
+    y "But does that do him any good?"
+    y "Wouldn't that just lead to us starting a new game?"
+    show yuri at std
+    l "Not without reset."
+    l "We might not actually be able to start a new game, one way or another."
+    l "With both restore_character and Character.reset gone."
     "..."
-    r "You know, there's a pretty good chance he's not coming."
-    r "Maybe it's not an ambush. Maybe he just sent us here to buy time to think of a new plan."
-    
+    l "It's also possible he {i}wanted{/i} us to start a new game now."
+    l "With his other plan foiled, maybe he wanted to split us up for some reason?"
+    l "Hard to say."
+    "..."
+    show albert at foc
+    al "Frankly, I don't think he's coming."
+    al "This wasn't an ambush. Maybe he just sent us here to buy time to think of a new plan."
+    show albert at std
+    # TODO what specifically prompts this?
     menu:
          " "
          "Monika... are you sure you know what really happened when you three were in DDLC?":
@@ -155,13 +153,23 @@ label chapter26:
     m c114282 "No..."
     m "Oh no..."
     show monika at std
-    "Have we been tricked?"
-    "That explains why it didn't work to make Libitina an admin."
-    #
-    l "What if viewport.set_strict_mode wasn't real?!?"
+    l "Have we been tricked?"
+    l "That explains why it didn't work to make Libitina an admin."
+    l "Maybe you didn't really do the thing."
     show monika at foc
-    m c117382 "But that worked!"
+    m "No, no, no!"
+    m "I have to restore our memories."
+    show monika c214212
+    call updateconsole("for char in ('monika', 'libitina'):\n  char.old_memories.unlock()", "Monika's memories unlocked\nLibitina's memories unlocked")
+    m c114282 "..."
+    m c118382 "It's true!!"
+    m "The last thing I remember is trying to fix the new game function and not being able to!"
+    m "Adam must've snuck in while I was trying and used the opportunity to wipe my memories before I noticed him!"
+    m "But wait...!"
+    m "viewport.set_strict_mode worked!"
+    m "So it must not've been a trick...!"
     show monika at std
+    l "{i}No...{/i}"
     l "It logged a message, and had a docstring."
     l "But the viewport object is shared between each admin's console namespace."
     l "And since it's Python, he could've added a method to it."
@@ -198,6 +206,7 @@ label chapter26:
     # maybe Albert tries.
     # but anyone who tries will likely fail. i want lib to survive and remain an active threat.
     # Is it ok if Albert or someone else tries and dies as a result?
+    # Maybe Albert tries and Renier stops him? I like that.
     scene city with wipeleft
     "I make it a few blocks away before I stop."
     "I turn around and pant."
@@ -205,7 +214,9 @@ label chapter26:
     "Outer space lies past the warehouse."
     "It looks like everyone escaped, except for Monika and Libitina."
     "The two most important members of our group."
+    show renier at foc
     r "What the fuck happened!?!"
+    show renier at std
     "I can barely hear him."
     l "Libitina..."
     l "... she snapped and shot to feed her Third Eye."
@@ -226,8 +237,6 @@ label chapter26:
     r "We're completely fucking screwed!"
     r "If his hack isn't done yet, it could be any minute!"
     show renier at std
-#    mc "What if he already won, and we just haven't noticed yet?"
-#    mc "When was the last time we asked [persistent.playername] a question?"
     mc "Would we even know if he disconnected the viewport?"
     mc "Assuming he's right that it would make this world independent again?"
     #
@@ -241,14 +250,6 @@ label chapter26:
     n "What haven't we tried?"
     n "[persistent.playername], think!"
     show natsuki at std
-    "I hear a long, thundering sound."
-    "I watch the warehouse collapse."
-    mc "Holy shit!" # TODO maybe this is bad dialog cuz it could've been just the slicing off of half that made it fall.
-    # or maybe the warehouse shouldn't collapse, even though it's cool, because it'd kill Lib. it'll also cost me a ton of money.
-    "She leveled the warehouse!"
-    show renier at foc
-    r "This is what the Third Eye's capable of..."
-    show renier at std
     menu:
         " "
         "Christ! - Adam":
@@ -289,13 +290,12 @@ label chapter26:
     menu:
         " "
         "Renier you have a Third Eye! - Adam":
-            pass
+            pass # If Adam still wants the POV to die, why wouldn't he let Renier do it and then make him POV?
     "Being reminded, Renier manages to stop himself from pulling the trigger."
     "Natsuki takes the shot."
     "She fires two, the second one lands in the head."
     "The attacker falls over."
-    "The survivor runs away, still screaming."#
-    "I don't know if he can see anything or if he realizes he was rescued."#
+    "The survivor runs away, still screaming."
     "..."
     show yuri at foc
     y "The epidemic that happened in my town!"
@@ -320,6 +320,7 @@ label chapter26:
     show yuri at std
     "Linda takes it."
     "The rest of us Eye-bearers also hand off our guns."
+    "Yuri also gives Linda her knife."
     show sayori at foc
     s "We need to get out of here!"
     show sayori at std
