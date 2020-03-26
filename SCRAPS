@@ -1,0 +1,168 @@
+timeline:
+9 at new game
+13 when Lib awakens
+15 when Renier arrives
+17 when others arrive
+18 after the plan
+20 when they get back
+
+// I was previously thinking you couldn't move a dead character's data; Moni came out not because that was her last location, but because it was the one she remembered.
+	-- i don't think it's true. I think you can move a dead char's data; otherwise Adam would've been way more reluctant to break restore_character.
+
+// Maybe at the end of it all, it'll say emergency purge while it's killing everyone, since that phrase is familiar.
+
+.. it's an acceptable loss that how shocking it is to regain your memories is wildly inconsistent.
+
+// maybe Moni should break restore_area when she mentions wanting to make an invalid area.
+// maybe she should also break Character.suppressed. The player would suggest it if she forgot.
+
+// Maybe Lib caused the 13 year gap. 13 years passed outside but not in?
+
+# Adam talks about Ursula's poem
+k "\"To see the future is to be wise.\""
+k "I believed this."
+k "And so I did horrible things for the sake of the future."
+k "But then..."
+k "... I did something horrible for the sake of myself."
+k "The words became an excuse for all the horrible things I did."
+k "..."
+k "I always thought the meaning of the first sentence related to her thoughts as she decided to leave."
+k "The rich aroma was the prospects of entering [persistent.playername]'s world, the bittersweet aftertaste was the people she would have to leave behind, and the hot, complex balance was the pain of the decision."
+k "On the surface, it seems that couldn't have been the intended meaning, because she wrote it before then."
+k "Or..."
+k "... did she?"
+k "After all, we know that in DDLC, Linda wrote ."
+k "And we never found the poem until after Ursula was gone."
+k "So it's not out of the question that, in fact, she {i}did{/i} write it with those thoughts in mind."
+
+# Adam talks about code
+k "Whenever you use the Python wrappers, the interpreter enters the block of instructions for the function, and then tries to evaluate its arguments."
+k "When it evaluates Ursula's Character object and finds that it's invalid..."
+k "... the game marks the whole region it was in as off-limits, and deletes any references to it."
+
+k "But checking the number of arguments happens before that - which is why this can't be used to break functions that don't take any arguments."
+
+k "We know from experience that the Third Eye interacts with nearby admins."
+k "For example, I'm sure [persistent.playername] saw how being caught in Libitina's distortion during your great escape affected my console, causing everything I typed to come out as glitch text."
+
+# Linda explains Character.reset / restore_character work
+l "Internally, restore_character uses Character.reset."
+l "restore_character is essentially a wrapper that resets a character and marks them as alive."
+l "And restores their file, of course."
+
+
+# Guessing at admin.inflict_epiphany
+    y "Wait a minute..."
+    y "He implied that he thought of making Libitina an admin long before he discovered or invented VR!"
+    y "That means there's a way to do it without that."
+    y "There must be a function for it somewhere!"
+
+    m "..."
+
+    l "grant_admin?"
+    l "confer_admin?"
+    l "confer_admin_status?"
+
+    s "What if it's called epiphany?"
+
+
+
+# Redemption
+m "Adam, there's such a thing as redemption!"
+m "I found it!"
+m "And I really think you can too."
+k "But she'll kill me..."
+m "If you die to fix your sins, you'll have done the most heroic thing you can do."
+k "..."
+k "Dying..."
+k "... Is that better than living on as an evil person?"
+m "Better for who? It depends."
+m "Better for those you can save, certainly."
+k "I was asking about for me."
+k "I know it would be better for my victims..."
+k "... but my sins are too heavy to atone for."
+k "And dying is such a high price to pay."
+k "What if I was just okay with being evil?"
+
+k "Then I'll do it."
+
+    if persistent.player_advocate_mercy[1]:
+        show natsuki at foc
+        n "Monika..."
+        n "You weren't being sincere when you told him he could be forgiven, right?"
+        show natsuki at std
+        show monika at foc
+        m "..."
+        m "Well, honestly..."
+        m "If ."
+        show monika at std
+
+
+
+# Old scraps for chapter26
+    m "That doesn't explain why he broke it."
+    m "He'd only break it if he wanted to stop {i}me{/i} from using it."
+
+    "But we already remember everything."
+    "... unless we don't?"
+    m "But that's impossible... I broke memory wiping before I restored all of your memories."
+    m "There's no way any of us are missing any."
+
+    "What if we already lost and we never noticed?!?"
+    "[persistent.playername], say something!"
+    menu:
+        " "
+        ""
+
+    "But then his hack must've completed."
+    # damn doesn't this prove it didn't work?
+    # maybe they never had a time estimate. after all, they wouldn't if they just saw he was brute-forcing a key.
+
+    # also, innt it good that they were tricked?
+    menu:
+        " "
+        "Don't make me break admin.jail! - Adam":
+            pass
+
+    "It bought me all the time I needed."
+    "My hack is complete."
+    "It just needs one certain thing to happen to make an opening."
+
+    "Wait."
+    "What if Libitina actually killed Monika to give us a way to start a new game?"
+    "Her death probably left behind a rift..."
+
+    "But she broke reset."
+
+    "You're right."
+    "..."
+    "Oh, Christ..."
+
+    menu:
+        " "
+        "I sent you to the warehouse because I just needed to buy time to finish my hack. - Adam":
+            pass
+    menu:
+        " "
+        "But it actually finished... and it didn't work anyway. - Adam":
+            pass
+    l "Wait..."
+    l "... even though viewport.set_memory_protection was a fake?"
+    menu:
+        " "
+        "Yes, it was. - Adam":
+            pass
+    menu:
+        " "
+        "I don't know why it doesn't work. - Adam":
+            pass
+
+
+
+#    m "I've been monitoring his console history, but he's doing a bunch of low-level stuff that's beyond me."
+#    m "I haven't been able to learn anything else."
+#    m "He's in C-mode, where he can directly work with memory addresses instead of using the Python wrappers."
+#    m "What really concerns me is that he doesn't seem stuck."
+#    m "He's typing instructions constantly."
+#    m "Like he already knows what he has to do to permanently disconnect the viewport, and it's just a complicated job."
+#    m "He's been at it for hours though."

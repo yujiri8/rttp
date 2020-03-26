@@ -1,0 +1,2 @@
+offset 2 by (18, 22) for 1_xrossed_arms
+offset 2 by (-65, 180) for 1_buff

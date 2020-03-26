@@ -1,0 +1,7 @@
+python-packages
+saves
+cache
+firstrun
+mod_assets/character_images
+*.rpa
+*.rpyc

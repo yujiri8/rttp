@@ -1,0 +1,62 @@
+u/Yujiri, yujiri.xyz		- Chief story, writing, and programming, and tons of sprite edits, including:
+	* editing Renier and Linda into the Dynamic Pose Tool
+	* several edits to Renier, Linda, and Libitina sprite components
+	* Yuri's arm with only one cut (z.png)
+	* editing Sayori's small open smile (x.png) into a component for the Dynamic Pose Tool
+	* Renier arm cut
+	* Monika stabbed (I know that edit looks terrible)
+	* Sayori's closed cry (k.png)
+	* Yuri's primary pose open and closed cry (y.png and z.png)
+	* Also rescaling/cropping most backgrounds from external sources.
+
+u/15LarueA			- Linda, Libitina, Adam, and Albert sprites (they're Creative Commons Attribution licensed)
+u/SovietSpartan			- Dadsuki/Renier sprites, Monika casual outfit (Discord: SovietSpartan#5727)
+u/main_gi			- Massive help with planning the lore and resolving plotholes, the determination theme (description.mp3), Adam's lament (sinking_spirit.mp3), and lots of proofreading and testing
+231#1345			- Plot help with part 3 and finding a few bugs
+u/AgentGold			- Dynamic Pose Tool
+	u/LunaticRabbit		- Many of the expressions in the Dynamic Pose Tool
+	u/smearglexd		- Adding many expressions to the Dynamic Pose Tool
+	u/TheRadioactive4	- Monika crying open eyes
+Jan Hehr			- Music: Yuri and Natsuki's date tracks, Yuri's festival poem (the Third Eye theme), and the epic Our Reality from Monika Before Story
+OliverCNorton#4433		- yawa.ogg (in the folder of DeadAirspace#4433, not sure if these are the same person), and editing casual MC sprites
+u/yagamirai10			- Edits to several backgrounds: MC's living room, the school courtyard, street1.png
+Nuxill#7870			- Original MC's living room (edited by u/yagamirai10)
+Obsoletovsky (DDNP)		- Backgrounds: hospital hallway, hospital lobby, french_city.png
+Speißer#7316			- The portal image
+u/wingedterra147		- Testing, reporting issues, and providing writing feedback for part 1
+Dimas#4872			- Horror/glitch ambient 'yesnt.wav' (I had to transcode it to Vorbis to get it to work on Windows)
+ari1192				- The cult facility hallway (https://blog.goo.ne.jp/ari1192jp_001/e/300120919a4c90232577f5777173262f)
+deviantart.com/tomtc		- Forest image
+u/GanstaKingofSA		- editing causal MC outfit (Discord: GanstaKingofSA#0235)
+Childish-N			- original work on MC sprites, both MC and Michael (https://childish-n.deviantart.com/art/DDLC-Protagonist-Sprite-715239172)
+Akame#8940			- Room with computer
+u/SamCapener			- Comissioning the forest image for The Good Ending and letting me use it for free :)
+u/chronoshag			- Comissioning the original Dadsuki sprites from SovietSpartan and making them free :)
+(unknown)			- spoopy_song_1.wav
+Cyrke#8043, u/Cylent-Nite	- "Eric" (Michael's bro) sprite
+Meddy-sin			- Yuri's mom (Amy) sprites
+Pexels on Pixabay		- driving.jpg (https://pixabay.com/photos/car-driving-route-interior-1281640/)
+All Sounds			- car sounds (https://www.youtube.com/watch?v=bvTaUSDHn3I), distributing gunshot sounds (https://www.youtube.com/watch?v=TP-FR1NUKho)
+welcomia on Shutterstock	- city outskirts (https://www.shutterstock.com/image-photo/idyllwild-city-limits-road-sign-village-793481029)
+ShawnyBoy on Freesound		- first gunshot sound used (https://freesound.org/people/ShawnyBoy/sounds/166191/)
+morganpurkis on Freesound	- second gunshot sound used (https://freesound.org/people/morganpurkis/sounds/369818/)
+Pictorial English		- phone ring sound (https://www.youtube.com/watch?v=f-g0hkNsZcc)
+
+Uncle Mugen (https://lemmasoft.renai.us/forums/viewtopic.php?t=17302) - backgrounds:
+	* the facility room they come out in
+	* the village
+	* both road images
+	* the exterior of the hospital Yuri visits
+	* street3.jpg
+
+Kimagure After - backgrounds:
+	* the school courtyard edited by u/yagamirai10 (https://k-after.at.webry.info/upload/detail/012/472/52/N000/000/003/149173004142898733179_BG540a_800.jpg.html)
+	* street1.png, street2.jpg (https://k-after.at.webry.info/201009/article_1.html)
+	* the hospital room, day, dawn and night (https://k-after.at.webry.info/201012/article_2.html)
+	* Natsuki's house (https://k-after.at.webry.info/200812/article_2.html)
+	* the path outside the village (https://k-after.at.webry.info/201712/article_4.html)
+	* city2.jpg
+	* forest_path.jpg
+
+Haikei Frame (http://masato.ciao.jp/haikei/furemu.html) - backgrounds:
+	* steam_machinery.jpg (http://masato.ciao.jp/ph/kyuusyoku001.jpg)

@@ -1,0 +1,4 @@
+exclude 3 from 1_uniform
+exclude 3 from 1_casual
+exclude 2 from 1_lean
+exclude 4 from 1_lean

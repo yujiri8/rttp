@@ -1,0 +1,58 @@
+image console_bg:
+    "#333"
+    topleft
+    alpha 0.75 size (570,180)
+
+style console_text:
+    font "gui/font/F25_Bank_Printer.ttf"
+    color "#fff"
+    size 18
+    outlines []
+
+style console_text_console is console_text:
+    slow_cps 30
+
+default consolehistory = []
+image console_text = ParameterizedText(style="console_text_console", anchor=(0,0), xpos=30, ypos=10)
+image console_history = ParameterizedText(style="console_text", anchor=(0,0), xpos=30, ypos=50)
+image console_caret = Text(">", style="console_text", anchor=(0,0), xpos=5, ypos=10)
+
+label updateconsole(text="", history=""):
+    show console_bg zorder 100
+    show console_caret zorder 100
+    show console_text "_" as ctext zorder 100
+    show console_text "[text]" as ctext zorder 100
+    $ pause(len(text) / 30.0 + 0.5)
+    hide ctext
+    show console_text "_" as ctext zorder 100
+    call updateconsolehistory (history)
+    $ pause(0.5)
+    return
+
+# Leaves the console open after entering text.
+label console_hangopen(text):
+    show console_bg zorder 100
+    show console_caret zorder 100
+    show console_text "_" as ctext zorder 100
+    $ text += '_'
+    show console_text "[text]" as ctext zorder 100
+    $ pause(len(text) / 30.0 + 0.5)
+    return
+
+label updateconsolehistory(text=""):
+    if text:
+        python:
+            consolehistory.insert(0, text)
+            if len(consolehistory) > 5:
+                del consolehistory[5:]
+            consolehistorydisplay = '\n'.join(map(str, consolehistory))
+        show console_history "[consolehistorydisplay]" as chistory zorder 100
+    return
+
+label hideconsole:
+    hide console_bg
+    hide console_caret
+
+    hide ctext
+    hide chistory
+# Decompiled by unrpyc: https://github.com/CensoredUsername/unrpyc

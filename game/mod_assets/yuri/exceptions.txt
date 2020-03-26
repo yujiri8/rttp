@@ -1,0 +1,5 @@
+exclude 3 from 1_uniform
+exclude 3 from 1_casual
+exclude 3 from 1_hoodie
+exclude 2 from 1_shy
+exclude 4 from 1_shy
