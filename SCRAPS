@@ -68,24 +68,6 @@ l "And restores their file, of course."
 
 
 # Redemption
-m "Adam, there's such a thing as redemption!"
-m "I found it!"
-m "And I really think you can too."
-k "But she'll kill me..."
-m "If you die to fix your sins, you'll have done the most heroic thing you can do."
-k "..."
-k "Dying..."
-k "... Is that better than living on as an evil person?"
-m "Better for who? It depends."
-m "Better for those you can save, certainly."
-k "I was asking about for me."
-k "I know it would be better for my victims..."
-k "... but my sins are too heavy to atone for."
-k "And dying is such a high price to pay."
-k "What if I was just okay with being evil?"
-
-k "Then I'll do it."
-
     if persistent.player_advocate_mercy[1]:
         show natsuki at foc
         n "Monika..."
@@ -156,13 +138,3 @@ k "Then I'll do it."
         " "
         "I don't know why it doesn't work. - Adam":
             pass
-
-
-
-#    m "I've been monitoring his console history, but he's doing a bunch of low-level stuff that's beyond me."
-#    m "I haven't been able to learn anything else."
-#    m "He's in C-mode, where he can directly work with memory addresses instead of using the Python wrappers."
-#    m "What really concerns me is that he doesn't seem stuck."
-#    m "He's typing instructions constantly."
-#    m "Like he already knows what he has to do to permanently disconnect the viewport, and it's just a complicated job."
-#    m "He's been at it for hours though."

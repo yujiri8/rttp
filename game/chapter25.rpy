@@ -405,16 +405,17 @@ label chapter25:
         " "
         "... there's no going back. - Adam":
             pass
-    #TODO should Monika offer redemption here or not?
-    menu:
-        " "
-        "I just wanted to get rid of [persistent.playername] to protect myself. - Adam":
-            pass
-    menu:
-        " "
-        "I wasn't going to go back to doing the horrible things I did! I swear! - Adam":
-            pass
-    # TODO Posing is not done from here on.
+    if persistent.player_advocate_mercy[1]:
+        call monika_offer_redemption
+    else:
+        menu:
+            " "
+            "I just wanted to get rid of [persistent.playername] to protect myself. - Adam":
+                pass
+        menu:
+            " "
+            "I wasn't going to go back to doing the horrible things I did! I swear! - Adam":
+                pass
     show yuri at foc
     y c126116 "Your actions speak louder than your words!"
     y c12b116 "You claim to be sorry, but you continue to thwart us and force us to do things like Monika just had to do!"
@@ -428,7 +429,14 @@ label chapter25:
         "I will meet you at the warehouse. - Adam":
             pass
     "..."
-    #TODO more dialog, but it depends on whether the redemption dialog happened earlier.
+    n "Did you actually convince him?"
+    m "..."
+    mc "There's no way he isn't just laying a trap."
+    mc "Someone who could do things like what he did is not just gonna turn around and decide to sacrifice himself."
+    mc "He's evil."
+    # TODO finish
+    # Maybe here Linda asks Monika to switch POV?
+    # That seems to only works if the redemption dialog happened.
     show sayori at foc
     s c115111 "At least we'll be able to get food once we're back in town."
     show sayori at std
@@ -498,4 +506,64 @@ label chapter25:
     n xc4111 "Me too..."
     n "... but she seems stable with it for now."
     show natsuki at std
+    return
+
+
+label monika_offer_redemption:
+    show monika at foc
+    m c227113 "Adam, there's such a thing as redemption!"
+    m "I found it!"
+    m c114111 "And I truly think you can too."
+    show monika at std
+    "..."
+    "Wait..."
+    "... Oh. She's just trying to trick him into cooperating. I see."
+    menu:
+        " "
+        "But Libitina will kill me... - Adam":
+            pass
+    show monika at foc
+    m "If you die to fix your sins, you'll have done the most heroic thing you can do."
+    show monika at std
+    "..."
+    menu:
+        " "
+        "Redemption is a lot more appealing when I can survive. - Adam":
+            pass
+    menu:
+        " "
+        "Throwing away everything for my conscience? - Adam":
+            pass
+    menu:
+        " "
+        "That's something only a hero does. - Adam":
+            pass
+    menu:
+        " "
+        "I'm a villain. - Adam":
+            pass
+    m "Dammit, you bastard!"
+    m "I didn't act like that when I had the chance to restore my victims and !"
+    #m "Maybe we don't have so much in common after all!"
+    menu:
+        " "
+        "You weren't facing a certainty of torture and death. - Adam":
+            pass
+    menu:
+        " "
+        "And you didn't even really have a choice. - Adam":
+            pass
+    menu:
+        " "
+        "If you had had the option to wipe [persistent.playername]'s memories and go back to being with [persistent.player_obj_pronoun] in the space room, would it have been so easy to resist? - Adam":
+            pass
+    m "..."
+    menu:
+        " "
+        "I wasn't going to go back to doing all the horrible things I did. - Adam":
+            pass
+    menu:
+        " "
+        "I just wanted to get rid of [persistent.playername] to protect myself. - Adam":
+            pass
     return
