@@ -733,12 +733,10 @@ label assault_facility:
     n "Meanwhile, he keeps hacking away at the viewport."
     show natsuki at std
     show monika at foc
-    m c114222 "I don't see him entering any console commands..."
-    m "Of course, it's possible he found a way to stop them from being logged."
+    m "..."
     show monika at std
     show natsuki at foc
-    n "Well, even if he does go in he's not gonna use the chance to make her admin."
-    n "If he wasn't willing before, he's just going to bring her out and then bring himself out."
+    n "Or maybe he is gonna go in, and then just bring him and her both out without making her admin."
     show natsuki at std
     show monika at foc
     m c117114 "Ugh, you're right..."

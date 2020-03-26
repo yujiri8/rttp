@@ -180,7 +180,7 @@ label chapter26:
     "Monika's scream hurts my ears."
     "I remember Yuri's words of warning to Libitina..."
     "Monika's shaking with fury now."
-    "The next few seconds are a flash."#
+    "The next few seconds are a flash."
     "Sayori is trying to wrestle Monika's gun."
     "Monika continues to scream."
     "I run toward Monika to help Sayori..."
@@ -290,7 +290,7 @@ label chapter26:
     menu:
         " "
         "Renier you have a Third Eye! - Adam":
-            pass # If Adam still wants the POV to die, why wouldn't he let Renier do it and then make him POV?
+            pass # TODO If Adam still wants the POV to die, why wouldn't he let Renier do it and then make him POV?
     "Being reminded, Renier manages to stop himself from pulling the trigger."
     "Natsuki takes the shot."
     "She fires two, the second one lands in the head."
@@ -328,7 +328,7 @@ label chapter26:
     y "And we need to bring Libitina with us!"
     y "She's still the only way to really solve things."
     show yuri at std
-    # Should Libitina have got the Third Eye sickness?
+    # TODO Should Libitina have got the Third Eye sickness?
     # is it every time she hits an admin with it?
     show renier at foc
     r "No problem, our car's not too far."
