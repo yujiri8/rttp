@@ -9,7 +9,7 @@ label sayori_and_mc:
     "But I got here!"
     "Hopefully [mc_name]'s already there."
     "I remember where's the warehouse is at from before."
-    scene warehouse_outside with wipeleft_scene
+    scene warehouse_outside_day with wipeleft_scene
     "..."
     show mc c124161 at std(p11)
     s "[mc_name]!"
@@ -119,7 +119,7 @@ label sayori_and_mc:
     show mc at std
     s "Okay, let's go...!"
     "I run to get out."
-    scene warehouse_outside with wipeleft
+    scene warehouse_outside_day with wipeleft
     scene city2 with wipeleft
     play music t2
     s "Phew! We made it out of the spooky house of evil!"
