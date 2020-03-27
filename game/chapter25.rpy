@@ -259,7 +259,7 @@ label chapter25:
     show monika at std
     show libitina at xif(p53)
     b 2261111 "And then things were all weird and I thought I remembered starting the Literature Club..."
-    b "Wait..."
+    b "Wait... that reminds me..."
     b "What was that API I noticed while I was active...?"
     show libitina at std
     show sayori c115212
@@ -269,7 +269,7 @@ label chapter25:
     show monika at std
     show libitina at foc
     b "When I was at my peak, I looked around trying to find how to break out..." # it isn't done with admin.extract
-    b "... I was delirious, but I think I saw a method that the normal part of me decided to keep in mind for once we got out."
+    b "... I was delirious, but I think I saw a method that the normal part of me wanted to keep in mind for once we got out."
     b "Was it viewport.set_strict_mode?"
     show libitina at std
     l "I don't know of that one, but is it what it sounds like?"

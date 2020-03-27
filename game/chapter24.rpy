@@ -423,15 +423,14 @@ label assault_facility:
     k "I know because when you do it with a strong enough Third Eye but no admin status, it backfires and you lose your physical age."
     k "That's what happened to Libitina."
     k "I tried it on other test subjects."
+    # TODO Maybe Monika or one of the others should remember it.
     k "No one else got that backfire effect."
     k "That must be because it takes a strong enough Third Eye, and yours isn't that high up."
     k "I tried it on some people whose Third Eye was stronger than yours."
     show monika at foc
-    m c118113 "But hold on, that begs the question!"
-    m c114113 "{i}Libitina's Third Eye was strong enough.{/i}"
-    m "So why not make her admin?"
+    m c124113 "So you're telling us if Libitina was an admin, she could open the portal?"
     show monika at std
-    show mc c114115 # a little unsure about these poses
+    show mc c114115
     show natsuki c114114
     show yuri c224135
     k "..."
@@ -457,62 +456,54 @@ label assault_facility:
     m "... making her Club President, and then having her use her Third Eye to break out like I did?"
     show monika at std
     l "I think that would work."
-    l "I also think we have to do it now."
-    l "We can't risk her waking up first."
-    show yuri at foc zorder 3
-    y c125318 "Wait, you're going to do it to her while she's unconscious...?"
-    y "That's wrong..."
-    y "We shouldn't do this to her without her permission."
-    y "It could be dangerous."
-    show yuri at std
-    l "It only works on unconscious characters."
-    l "If she wakes up, we'd have to wait for her to fall asleep again."
-    show renier at foc zorder 4
-    r u1213 "Would you really take no for an answer, anyway?"
-    r "If this decision affects the fate of this whole world, we can't let one person stop it."
-    r "She has to."
-    show renier at std
-    show yuri at foc zorder 5
-    y c114343 "Well..."
-    y c114342 "I suppose you're right."
-    y "We have no choice."
-    show yuri at std
-    l "Your feeling is right, Yuri, but she really can't object."
-    l "She did murder me before, after all..."
-    if ch22_libitina_has_gun():
-        l "... and shot Natsuki in a similar situation, without giving her a choice..."
-    l "... So it would even be hypocritical for her to say no."
-    show yuri at foc
-    y c114112 "Okay. I understand."
-    show yuri at std
-    show albert at thide
-    hide albert
-    show sayori at rightinfoc(p66) zorder 1
-    s c123111 "Just one more question..."
-    s c123112 "What if DDLC is corrupted now?"
-    s "It was pretty broken when we left..."
-    s "We couldn't even start a new game, and the whole world was gone except for the space room!"
-    s "And you said you weren't even sure we'd be able to return..."
-    show sayori at std
-    l "Well, only one way to find out..."
-    l "We don't exactly have other options."
-    l "We can't create a new virtual world."
-    show renier zorder 0
+    "Suddenly, I realize that by discussing this plan, we've disclosed it to Adam."
+    "If he happens to read the viewport history, he'll break admin.jail and our plan will be foiled!"
+    l "Monika quick!"
+    l "Before he breaks admin.jail!"
     show monika at foc
-    m c113112 "Okay, I'm doing it."
-    show monika c213112
+    m "Huh...?"
+    show monika at std
+    l "Quick!"
+    l "The viewport history's giving away our plan!"
+    show monika at foc
+    m c117212 "Oh crap!"
+    show monika c217112
     call updateconsole("ddlc = admin.get_world(\n  'doki_doki_literature_club')")
     call updateconsole("admin.jail(ddlc, libitina)", "Libitina moved to jail\n doki_doki_literature_club")
     $ delete_character('libitina')
-    show monika c113112 at std
-    "I see Libitina's body disappear."
     call hideconsole
     $ consolehistory = []
+    show monika c114212 at std
+    "I see Libitina's body disappear."
+    l "Now break admin.unjail!"
+    show monika at foc
+    m "But how does that doesn't stop him from breaking admin.jail?"
+    show monika at std
+    l "He won't!"
+    l "If admin.unjail doesn't exist, then our plan should be the only way to get her back."
+    l "I don't think he'll break admin.jail then."
+    l "He valued her so much as a test subject that he wouldn't even risk deleting her when there was no evidence he wouldn't be able to restore her."
+    show monika at foc
+    m "Okay!"
+    call updateconsole("admin.unjail(ursula)", "ERROR: escaped character. Disabling admin.unjail.")
+    m "Done..."
+    show monika at std
+    l "Phew..."
+    l "Our plan ought to be safe now."
+    show yuri at foc zorder 3 # TODO
+    y "It feels wrong to do this to Libitina without her permission."
+    y "But I suppose we had no choice."
+    show yuri at std
+    l "Yeah..."
+    if ch22_libitina_has_gun():
+        show natsuki at foc
+        n xc4111 "Well, she can't really object after she shot me without waiting for permission."
+        show natsuki at std
     show monika at foc
     m "So now..."
     m "We have to talk about..."
     m "Who."
-    m "Probably, one of us will have to go in with her and let her kill us to open her Third Eye..."
+    m "Probably, one of us will have to go in with her and let her kill us to open her Third Eye."
     show natsuki c114114
     show yuri c114118
     show mc c114115
@@ -546,11 +537,10 @@ label assault_facility:
     m "But even with admin powers, it's not obvious I'll be able to get out."
     m "What if it's the end for me?"
     show monika at std
-    show monika at std
     call screen dialog("Monika, did you break the memory-wiping API?", ok_action=Return())
     show monika at foc
     m c117113 "You bet I did!"
-    m c124115 "What, you wanted to mind-wipe us?"
+    m c124115 "What, you wanted to mind-wipe us?"#TODO this needs updating
     show monika at std
     l "Huh?"
     call screen dialog("You cruel bastard.", ok_action=Return())
@@ -576,7 +566,11 @@ label assault_facility:
     call screen dialog("I'll use the viewport menus so everyone can hear me.", ok_action=Return())
     menu:
         " "
-        "I thought of making Libitina admin not long after the beginning of this. But I didn't want to do it because I thought she would use those powers to exact revenge on me while she was at it. - Adam":
+        "I thought of making Libitina an admin not long after the beginning of this. - Adam":
+            pass
+    menu:
+        " "
+        "But I didn't want to do it because I thought she would use those powers to exact revenge on me while she was at it. - Adam":
             pass
     menu:
         " "
@@ -662,7 +656,7 @@ label assault_facility:
         "You put her in {i}DDLC{/i}? - Adam":
             pass
     show monika at foc
-    m c127113 "We're gonna use the same technique I used to give her admin status out here!"
+    m c127113 "We're gonna give her admin status out here the same way I got it!"
     show monika at std
     menu:
         " "
@@ -680,7 +674,18 @@ label assault_facility:
     show natsuki c114111
     menu:
         " "
-        "Sure enough, admin.unjail doesn't work. - Adam":
+        "Wait, you broke admin.unjail too? - Adam":
+            pass
+    l "Well did you think we were stupid?"
+    l "We weren't just gonna let you break admin.jail!"
+    l "Now the only hope to save her is our plan."
+    menu:
+        " "
+        "I see. Well played. - Adam":
+            pass
+    menu:
+        " "
+        "I pray it isn't too broken for your plan to work. - Adam":
             pass
     l "There's no reason it should be any more broken than it was when we left it, right?"
     menu:
@@ -695,9 +700,7 @@ label assault_facility:
         " "
         "Because apparently it couldn't be. - Adam":
             pass
-    l "But admin.extract worked fine!"
-    l "I'm sure we can get her out safely if we send an admin in."
-    l "And that's exactly what we plan to do."
+    l "But we were able to get out of it!"
     show sayori at foc
     s c123112 "Actually, she might've gotten stuck like you and [mc_name] were for a while!"
     s "And then that might also happen to whoever goes in to do the plan..."

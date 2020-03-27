@@ -50,57 +50,7 @@ l "Internally, restore_character uses Character.reset."
 l "restore_character is essentially a wrapper that resets a character and marks them as alive."
 l "And restores their file, of course."
 
-
-# Guessing at admin.inflict_epiphany
-    y "Wait a minute..."
-    y "He implied that he thought of making Libitina an admin long before he discovered or invented VR!"
-    y "That means there's a way to do it without that."
-    y "There must be a function for it somewhere!"
-
-    m "..."
-
-    l "grant_admin?"
-    l "confer_admin?"
-    l "confer_admin_status?"
-
-    s "What if it's called epiphany?"
-
-
-
-# Redemption
-    if persistent.player_advocate_mercy[1]:
-        show natsuki at foc
-        n "Monika..."
-        n "You weren't being sincere when you told him he could be forgiven, right?"
-        show natsuki at std
-        show monika at foc
-        m "..."
-        m "Well, honestly..."
-        m "If ."
-        show monika at std
-
-
-
-# Old scraps for chapter26
-    m "That doesn't explain why he broke it."
-    m "He'd only break it if he wanted to stop {i}me{/i} from using it."
-
-    "But we already remember everything."
-    "... unless we don't?"
-    m "But that's impossible... I broke memory wiping before I restored all of your memories."
-    m "There's no way any of us are missing any."
-
-    "What if we already lost and we never noticed?!?"
-    "[persistent.playername], say something!"
-    menu:
-        " "
-        ""
-
-    "But then his hack must've completed."
-    # damn doesn't this prove it didn't work?
-    # maybe they never had a time estimate. after all, they wouldn't if they just saw he was brute-forcing a key.
-
-    # also, innt it good that they were tricked?
+#
     menu:
         " "
         "Don't make me break admin.jail! - Adam":
@@ -109,16 +59,6 @@ l "And restores their file, of course."
     "It bought me all the time I needed."
     "My hack is complete."
     "It just needs one certain thing to happen to make an opening."
-
-    "Wait."
-    "What if Libitina actually killed Monika to give us a way to start a new game?"
-    "Her death probably left behind a rift..."
-
-    "But she broke reset."
-
-    "You're right."
-    "..."
-    "Oh, Christ..."
 
     menu:
         " "
