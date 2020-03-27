@@ -429,11 +429,25 @@ label chapter25:
         "I will meet you at the warehouse. - Adam":
             pass
     "..."
-    n "Did you actually convince him?"
-    m "..."
-    mc "There's no way he isn't just laying a trap."
-    mc "Someone who could do things like what he did is not just gonna turn around and decide to sacrifice himself."
-    mc "He's evil."
+    if persistent.player_advocate_mercy[1]:
+        show natsuki at foc
+        n "Did you actually fool him?"
+        n "Does he really think we plan to forgive him?"
+        show natsuki at std
+        show monika at foc
+        m c114222 "..."
+        show monika at std
+        l "Not if he checks the history and sees that you said that."
+        show natsuki at foc
+        n "Uu..."
+        n "Well..."
+        n "He can read your thoughts anyway..."
+        show natsuki at std
+        l "Yeah..."
+        l "Oh well."
+        l "Maybe if we talk about something else?"
+    else:
+        mc "So I guess he thinks we think he thinks he's tricking us?"
     # TODO finish
     # Maybe here Linda asks Monika to switch POV?
     # That seems to only works if the redemption dialog happened.
@@ -515,7 +529,6 @@ label monika_offer_redemption:
     m "I found it!"
     m c114111 "And I truly think you can too."
     show monika at std
-    "..."
     "Wait..."
     "... Oh. She's just trying to trick him into cooperating. I see."
     menu:
@@ -543,7 +556,7 @@ label monika_offer_redemption:
         "I'm a villain. - Adam":
             pass
     m "Dammit, you bastard!"
-    m "I didn't act like that when I had the chance to restore my victims and !"
+    m "I didn't act like that when I had the chance to restore my victims and change my ways!"
     #m "Maybe we don't have so much in common after all!"
     menu:
         " "
