@@ -87,6 +87,9 @@ init python:
             not persistent.threaten_libitina_to_save_natsuki_albert and \
             not persistent.make_libitina_return_gun
 
+    def night(image): # By Koya-Sato
+        return im.MatrixColor(image, im.matrix.tint(0.4, 0.4, 0.6))
+
 # For making sure the player can't skip through a crash or do anything else that would kill the effect.
 # I would have made this a Python function, but apparently Renpy script variables like allow_skipping can only be set from script.
 label prevent_escape:
@@ -437,6 +440,7 @@ image forest_path = "mod_assets/bg/forest_path.jpg"
 image driving = "mod_assets/bg/driving.jpg"
 # FUCK Renpy for this. Pure black is replaced with grey, so I had to make a black image with a tiny splot of dark grey somewhere.
 image dark_overlay = "mod_assets/bg/black.png"
+image driving_night = night("mod_assets/bg/driving.jpg")
 
 
 define narrator = Character(ctc="ctc", ctc_position="fixed")

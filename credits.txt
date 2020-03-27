@@ -18,6 +18,7 @@ u/AgentGold			- Dynamic Pose Tool
 	u/LunaticRabbit		- Many of the expressions in the Dynamic Pose Tool
 	u/smearglexd		- Adding many expressions to the Dynamic Pose Tool
 	u/TheRadioactive4	- Monika crying open eyes
+Koya-Sato			- night filter used on the driving image
 Jan Hehr			- Music: Yuri and Natsuki's date tracks, Yuri's festival poem (the Third Eye theme), and the epic Our Reality from Monika Before Story
 OliverCNorton#4433		- yawa.ogg (in the folder of DeadAirspace#4433, not sure if these are the same person), and editing casual MC sprites
 u/yagamirai10			- Edits to several backgrounds: MC's living room, the school courtyard, street1.png
@@ -45,7 +46,7 @@ Pictorial English		- phone ring sound (https://www.youtube.com/watch?v=f-g0hkNsZ
 Uncle Mugen (https://lemmasoft.renai.us/forums/viewtopic.php?t=17302) - backgrounds:
 	* the facility room they come out in
 	* the village
-	* both road images
+	* road1.png, road1_night.jpg, road2.png
 	* the exterior of the hospital Yuri visits
 	* street3.jpg
 

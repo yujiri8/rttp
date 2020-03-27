@@ -73,7 +73,7 @@ label chapter26:
     m "Could be an error from something Adam tried that got automatically written to a file for some reason?"
     m "I guess there's nothing to do about it right now."
     #
-    scene warehouse_outside
+    scene warehouse_outside_night
     "..."
     al "Here we go..."
     "Albert opens the door and walks in, pointing his gun."
@@ -332,7 +332,7 @@ label chapter26:
     # is it every time she hits an admin with it?
     show renier at foc
     r "No problem, our car's not too far."
-    scene warehouse_outside with wipeleft
+    scene warehouse_outside_night with wipeleft
     "We head back to the warehouse."
     "Renier picks up Libitina again."
     scene driving dissolve_scene
@@ -395,15 +395,17 @@ label chapter26:
         s "I want to see you bleed and cry, just like you did to us..."
         "Sayori sniffles."
         s "But I'm not stupid."
+        $ temp = "There's no way you'd be that stupid"
     else:
         s "We've worked with people who did horrible things before!"
+        $ temp = "I should trust you"
     menu:
         " "
         "... - Adam":
             pass
     menu:
         " "
-        "You're right. There's no way you'd be that stupid. Dammit. I'll meet you. - Adam":
+        "You're right. [temp]. Dammit. I'll meet you. - Adam":
             pass
     menu:
         " "
@@ -415,7 +417,7 @@ label chapter26:
             pass
     r "We still don't have any goddamn reason to trust him."
     al "Well, again, he can't really ambush us."
-    al "If he does anything but cooperate, we can shoot him."
+    al "If he does anything but cooperate, we can kill him."
     "Alright..."
     "This time, we'll be careful."
     "We're not going to walk into a trap."
