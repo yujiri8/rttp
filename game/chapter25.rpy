@@ -520,6 +520,47 @@ label chapter25:
     n xc4111 "Me too..."
     n "... but she seems stable with it for now."
     show natsuki at std
+    l "Hey um, Monika?"
+    l "Could you switch someone else to be POV?"
+    l "Since Adam can see the POV character's thoughts, I think it's best if it's not me."
+    l "Since I know a lot about admin stuff, I'm more likely to get a useful idea, and be unable to not divulge the plan."
+    if mc_dislike_player() < 2:
+        show mc at foc
+        mc "I guess I wouldn't mind having [persistent.playername] back."
+        mc "I kind of miss feeling important, like I'm the eyes and ears of our guardian angel."
+        show mc at std
+        show monika at foc
+        m "Great!"
+        $ temp = mc_name.lower()
+        call updateconsole("vp.pov_character = [temp]", "POV changed to [mc_name]")
+    else:
+        show mc at foc
+        mc "Okay, how do I say this..."
+        mc "[persistent.playername], I don't want you back in my head."
+        mc "I don't consider you a friend."
+        show mc at std
+        l "Well, there's a real downside to [persistent.player_subj_pronoun] being in mine..."
+        show sayori at foc
+        s "I could be POV."
+        show sayori at std
+        l "But you also have admin experience."
+        l "That kinda defeats the point."
+        show albert at foc
+        al "What about me?"
+        al "I wouldn't mind."
+        show albert at std
+        show monika at foc
+        m "It can't be you..."
+        m "Your pov flag isn't set. Adam broke it before I could set it, so it won't let you be POV."
+        show monika at std
+        show renier at foc
+        r "How about me?"
+        r "I'll do it."
+        show renier at std
+        show monika at foc
+        m "Sounds good."
+        show monika at std
+        call updateconsole("vp.pov_character = renier", "POV changed to Renier")
     return
 
 

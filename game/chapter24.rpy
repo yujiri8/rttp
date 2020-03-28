@@ -80,7 +80,6 @@ label chapter24:
     r uf13 "Good point. Okay."
     r uf23 "But it's sure as hell not gonna be me again."
     show renier at std
-    # TODO Monika could ask if he's still mad.
     show libitina at foc
     b 1261111 "You know..."
     b "At worst, you'll suffer for a few seconds between reset commands."
