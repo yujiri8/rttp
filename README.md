@@ -52,13 +52,11 @@ The file 'SCRAPS' contains a couple of less important thoughts (that I don't nee
 
 # Images needed
 
-* facility exterior (chapter22) - not a strict requirement, but would be great to have something for that
-
 * improve Amy/Michael sprites (Amy should be taller, Michael may need expression improvement) - I can do this myself
 
-* facility location, post-destruction (chapter24)
-
 * ideally a better warehouse interior than the Uncle Mugen temple-like drawing I'm currently using
+
+* Logo? I'm still using the DDMC logo. It would be great if I had a logo of the Portrait of Markov book with the eye symbol on it. Maybe I could draw it.
 
 Also, if you notice any assets I'm currently using that aren't in credits, let me know.
 
