@@ -78,3 +78,61 @@ l "And restores their file, of course."
         " "
         "I don't know why it doesn't work. - Adam":
             pass
+
+    show albert at std
+    mc "I guess... that makes sense."
+    "We all nod in agreement."
+    mc "Alright..."
+    mc "I guess I'm sticking around here then."
+    "Part of me is really disappointed that I'm not ."
+    mc ""
+    #XXX
+    y "Um..."
+    y "Did anyone else notice that he implied he thought of making Libitina an admin long before he discovered VR?"
+    y "That means there must be a way to do it without, right?"
+    "Yeah... there must be."
+    "But it wouldn't help now."
+    ""
+    "Besides, he'll definitely have broken it."
+
+# Possible planning in ch27
+    "Is there a way we can get Libitina into DDLC?"
+    "Hey..."
+    "I thought of something."
+    "If Libitina could be in DDLC when Adam goes in, ."
+    # No, this wouldn't work because he wouldn't need to deal with her.
+
+
+# Albert's reaction to hearing about the plan to use Libitina's Third Eye in ch24
+    al 12111 "Let me get this straight..."
+    al "Your plan is actually to have Libitina stab one of you so that she can lose control and hopefully do something good?"
+    show albert at std
+    l "Yep."
+    show albert at foc
+    al c21513 "This is the worst plan I've ever heard!"
+    if ch22_libitina_has_gun():
+        al "Even worse than shooting Natsuki in the invalid area!"
+    else:
+        al "Even worse than Natsuki shooting herself in the invalid area!"
+    al "At least her death was instant..."
+    al "We can't just do this!"
+    show albert at std
+    show monika at foc
+    m "We can."
+    show monika at std
+    show albert at foc
+    al "There must be another way!"
+    show albert at std
+    show monika at foc
+    m "There isn't."
+    show monika at std
+    show renier at foc
+    r ""
+    show renier at std
+
+# Possible plothole with the escape
+    "Adam must've not been there."
+    "Wait a minute..."
+    "warp was broken, but there were other ways ."
+    "According to the book she compiled, Linda read his memories a long time after that point."
+    "Is it really possible he didn't know about memory reading?"
