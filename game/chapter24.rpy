@@ -163,7 +163,16 @@ label chapter24:
     b "Then..."
     b "I'm ready if you are, Linda."
     show libitina at std
+    show linda 115113
+    show natsuki xc6114
     "Linda nods."
+    show sayori at thide
+    hide sayori
+    show albert 22112 at leftinfoc(p61)
+    al 22112 "I can't believe this is our plan."
+    al "I'm so sorry, Linda."
+    al 22152 "Good luck."
+    show albert at xis(p61)
     scene black with dissolve_scene
     "Yuri bequeathes a knife to Libitina."
     "We retreat a safe distance."
@@ -422,11 +431,16 @@ label assault_facility:
     k "I know because when you do it with a strong enough Third Eye but no admin status, it backfires and you lose your physical age."
     k "That's what happened to Libitina."
     k "I tried it on other test subjects."
-    # TODO Maybe Monika or one of the others should remember it.
-    k "No one else got that backfire effect."
+    show mc at foc zorder 2
+    mc c114135 "..."
+    mc "Now that he says it... I might remember that..."
+    mc "He didn't explain it to me, but I think I do remember being taken outside the facility to some place and opening my Third Eye."
+    show mc at std
+    k "Yeah..."
+    k "No one but Libitina got that backfire effect."
     k "That must be because it takes a strong enough Third Eye, and yours isn't that high up."
     k "I tried it on some people whose Third Eye was stronger than yours."
-    show monika at foc
+    show monika at foc zorder 3
     m c124113 "So you're telling us if Libitina was an admin, she could open the portal?"
     show monika at std
     show mc c114115
@@ -451,22 +465,27 @@ label assault_facility:
     l "Of course, we'd have to understand a little more about it to make sure we know how to get everyone out, instead of just her..."
     l "But we've got to look into it."
     show monika at foc zorder 4
-    m "Do you think we could make Libitina admin by putting her in DDLC..."
+    m c124111 "Do you think we could make Libitina admin by putting her in DDLC..."
     m "... making her Club President, and then having her use her Third Eye to break out like I did?"
     show monika at std
     l "I think that would work."
-    "Suddenly, I realize that by discussing this plan, we've disclosed it to Adam."
+    "I realize that by discussing this plan, we've disclosed it to Adam."
     "If he happens to read the viewport history, he'll break admin.jail and our plan will be foiled!"
     l "Monika quick!"
     l "Before he breaks admin.jail!"
+    show natsuki c114114
+    show yuri c223118
+    show mc c114115
+    show albert 12142
+    show renier uf33
     show monika at foc
-    m "Huh...?"
+    m c124112 "Huh...?"
     show monika at std
     l "Quick!"
     l "The viewport history's giving away our plan!"
     show monika at foc
     m c117212 "Oh crap!"
-    show monika c217112
+    show monika c217212
     call updateconsole("ddlc = admin.get_world(\n  'doki_doki_literature_club')")
     call updateconsole("admin.jail(ddlc, libitina)", "Libitina moved to jail\n doki_doki_literature_club")
     $ delete_character('libitina')
@@ -476,38 +495,81 @@ label assault_facility:
     "I see Libitina's body disappear."
     l "Now break admin.unjail!"
     show monika at foc
-    m "But how does that doesn't stop him from breaking admin.jail?"
+    m "But how does that stop him from breaking admin.jail?"
     show monika at std
     l "He won't!"
     l "If admin.unjail doesn't exist, then our plan should be the only way to get her back."
     l "I don't think he'll break admin.jail then."
     l "He valued her so much as a test subject that he wouldn't even risk deleting her when there was no evidence he wouldn't be able to restore her."
+    l "Do it now!"
     show monika at foc
     m "Okay!"
-    call updateconsole("admin.unjail(ursula)", "ERROR: escaped character. Disabling admin.unjail.")
+    show monika c214212
+    call updateconsole("admin.unjail(ursula)", "ERROR: escaped character.\nDisabling admin.unjail.")
     m "Done..."
     show monika at std
+    call hideconsole
+    $ consolehistory = []
     l "Phew..."
+    show natsuki c114111
+    show yuri c223111
+    show renier uf12
+    show mc c114111
+    show albert 12111
+    show monika c114111
     l "Our plan ought to be safe now."
-    show yuri at foc zorder 3 # TODO
-    y "It feels wrong to do this to Libitina without her permission."
+    "..."
+    show yuri at foc zorder 3
+    y c125117 "It still feels wrong to do this to Libitina without her permission."
     y "But I suppose we had no choice."
     show yuri at std
     l "Yeah..."
     if ch22_libitina_has_gun():
-        show natsuki at foc
-        n xc4111 "Well, she can't really object after she shot me without waiting for permission."
-        show natsuki at std
+        show natsuki at foc zorder 4
+        n xc4111 "Well, she can't really object after she shot me to break the world without waiting for permission."
+        show natsuki at std zorder 2
+        show yuri c124112 at foc
+        y "That's true..."
+        show yuri at std
     show monika at foc
-    m "So now..."
+    m c124112 "So now..."
     m "We have to talk about..."
     m "Who."
-    m "Probably, one of us will have to go in with her and let her kill us to open her Third Eye."
     show natsuki c114114
     show yuri c114118
     show mc c114115
+    show renier uf33
+    show albert 12112
+    m "Probably, one of us will have to go in with her and let her kill us to open her Third Eye."
     show monika at std
-    l "Um... I'm really sorry Monika, but it clearly has to be you this time."
+    show mc zorder 0
+    show albert at foc
+    al "Good Lord, didn't we just do this?"
+    show albert at std
+    l "It wasn't the first time, and this probably won't be the last."
+    show albert at foc
+    al "I remember the story of how you escaped, but..."
+    al "..."
+    al "Does that feel almost normal to you now?"
+    show albert at std
+    l "..."
+    l "Yeah. It does."
+    show albert at foc
+    al "That's horrible."
+    show albert at std
+    show yuri at foc
+    y c114112 "To be honest..."
+    y "Being stabbed to death pales in comparison to what most of us went through as Adam's prisoners."
+    y "I tried to make them kill me, and counted myself incredibly lucky when I finally succeeded."
+    y "Even if it was agony for a minute... I immeasurably preferred it to the prolonged torture of that place."
+    show yuri at std
+    show albert at foc
+    al 11152 "..."
+    al 11162 "I can't imagine..."
+    show albert at std
+    "Well, welcome to the club..."
+    "That's pretty much what things have been like."
+    l "Um... Monika, I'm really sorry, but it clearly has to be you this time."
     l "Assuming the plan works and Libitina gets out, she probably won't be taking whoever she used with her."
     l "She'll be out of her mind, and will certainly have killed you."
     l "So you'll need admin powers to have any chance of getting out."
@@ -517,15 +579,17 @@ label assault_facility:
     m "Jeez."
     m c113214 "Guess I still haven't been through enough, huh?"
     show monika at std
-    show sayori at foc
-    s c125212 "..."
+    show albert at thide
+    hide albert
+    show sayori c125212 at rightinfoc(p66)
+    s "..."
     s c123212 "Monika, we're all really sorry about this."
     s "It's not fair."
     s "This reality's been cruel to everyone."
     s "But someday, we will be free."
     s "And it'll be thanks to what you did here."
     s "And Natsuki will bake cupcakes for you!"
-    show sayori at std
+    show sayori at xis(p66)
     show natsuki at foc zorder 5
     n c212114 "Ahaha..."
     n c214114 "I mean I totally will, if we all survive this."
@@ -539,7 +603,7 @@ label assault_facility:
     call screen dialog("Monika, did you break the memory-wiping API?", ok_action=Return())
     show monika at foc
     m c117113 "You bet I did!"
-    m c124115 "What, you wanted to mind-wipe us?"#TODO this needs updating
+    m c127115 "What, you wanted to mind-wipe us?"#TODO this needs updating
     show monika at std
     l "Huh?"
     call screen dialog("You cruel bastard.", ok_action=Return())
@@ -575,7 +639,7 @@ label assault_facility:
         " "
         "... So I took my own memory of the idea. - Adam":
             pass
-    show sayori c125111
+    show sayori c124111
     show mc c124112
     show yuri c114111
     show natsuki c113113
@@ -726,6 +790,7 @@ label assault_facility:
         " "
         "I'll start a throttled loop to keep trying to put me in every few seconds until it works. - Adam":
             pass
+    # Could this be a good point to insert the dialogue where someone notices that admin.inflict_epiphany exists?
     show monika at foc
     m c114211 "..."
     show monika at std
@@ -735,7 +800,7 @@ label assault_facility:
     n "Meanwhile, he keeps hacking away at the viewport."
     show natsuki at std
     show monika at foc
-    m "..."
+    m c114212 "..."
     show monika at std
     show natsuki at foc
     n "Or maybe he is gonna go in, and then just bring him and her both out without making her admin."
@@ -827,11 +892,15 @@ label assault_facility:
     play sound2 fall
     show monika at thide
     hide monika
+    show albert 12112
+    show sayori c115112
+    show natsuki c124114
+    show yuri c224118
     "Renier swings, and Monika falls over without a cry."
     "I think it worked."
     show albert at foc
     al "Phew..."
-    al "Good job."
+    al "Well done..."
     show albert at std
     "A few seconds later, Monika's reset command executes and her nascent bruise disappears."
     $ delete_character('monika')
