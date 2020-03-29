@@ -1,18 +1,19 @@
 label chapter25:
     "..."
     scene facility with wipeleft_scene
+    play music yawa
     "..."
     show yuri c115111 at foc(p11)
-    y "So what was this place?"
+    y "So what was this place?" # Maybe Albert could get these lines if Yuri gets the admin.inflict_epiphany dialogue.
     y "It couldn't have been his facility."
     show yuri at std
-    l "Maybe it was built for something unrelated, and he commandeered it later?"
-    l "Maybe it was some kind of research facility for something else."
+    l "Maybe it was being built for something unrelated, and he commandeered it later?"
+    l "Maybe it was going to be some kind of research facility for something else."
     l "Or maybe some other top-secret, horrifying thing..."
     l "Who knows."
     show yuri at std(p22)
-    show renier at foc(p21)
-    r u1113 "It must've been easy to take it over when he can basically control people's minds with scripts and memory wiping."
+    show renier u1113 at foc(p21)
+    r "It must've been easy to take it over when he can basically control people's minds with scripts and memory wiping."
     show renier at std
     scene facility with wipeleft_scene
     "Several minutes pass."
@@ -26,6 +27,8 @@ label chapter25:
     l "Even if she's prepared..."
     l "It must be really difficult to condemn yourself to that, when you have no one to exhort you."
     l "I'm not sure how long it would take me."
+    show mc at foc
+    mc "I guess so..."
     scene facility with wipeleft_scene
     "We wait a while longer."
     show mc c126215 at foc(p11)
@@ -66,10 +69,14 @@ label chapter25:
     show mc at std(p51)
     show albert at std(p52)
     show yuri at std(p53)
-    show renier ru1113 at foc(p55)
-    r "That makes two of us."
-    show renier at std
-    show sayori at xif(p54)
+    show natsuki c124111 at foc(p55)
+    n "That makes two of us."
+    n "I'm really looking forward to those cupcakes I promised..."
+    show natsuki at std
+    show sayori at xif(p54) zorder 1
+    s c123111 "Me too!"
+    s c111321 "Ehehe..."
+    "..."
     s c113111 "How long was he expecting his troops to stand here?"
     s "They must've been hungry too."
     show yuri at xif(p53)
@@ -79,42 +86,58 @@ label chapter25:
     y "I still can't believe that he could convince himself his actions were justified..."
     show yuri at std
     if persistent.player_support_experiment:
-        show renier at foc
-        r ru1113 "Well, like you taught me way back when..."
+        show mc at std(p61)
+        show albert at std(p62)
+        show yuri at std(p63)
+        show sayori at std(p64)
+        show natsuki at std(p65)
+        show renier ru1113 at rightinfoc(p66)
+        r "Well, like you taught me way back when..."
         r "People can convince themselves of whatever they want."
         show renier at std
     else:
         l "Well, like I learned in my time in the cult..."
         l "There's almost no limit to what we can convince ourselves of if we really want to think it."
-    show yuri at foc # TODO pose
-    y "Hmm..."
+    show yuri at foc
+    y c113112 "Hmm..."
     show yuri at std
     "..."
-    show albert at foc
-    al 12111 "So, Sayori and [mc_name]."
+    show albert at foc zorder 1
+    al 12111 "So, Sayori and [mc_name]..."
     al "How did you two and Monika escape?"
     show albert at std
     show sayori c115123
-    show mc
+    show mc c114115
     "Sayori and [mc_name]'s expressions darken."
+    show yuri c114118
+    show natsuki c114114
+    show renier ru1133
     show albert at foc
     al 21112 "If... you don't mind..."
     show albert at std
-    show mc at foc
+    show mc at foc zorder 2
     mc "Well..."
     mc "It started with me."
     mc "One day, they were doing a test on violence against animals."
     mc "They gave me a knife and made me kill a mouse."
-    mc "But the guard doing the test got careless, and I killed him."
+    mc "But the guard doing the test got careless, and I killed him too."
     mc "I was lucky, cause Sayori and Monika were nearby."
     mc "I used my Third Eye to open theirs."
     mc "And they helped me."
     show mc at std
-    show renier at foc
-    r u1113 "Wait..."
+    if not persistent.player_support_experiment:
+        show mc at std(p61)
+        show albert at std(p62)
+        show yuri at std(p63)
+        show sayori at std(p64)
+        show natsuki at std(p65)
+        show renier ru1113 at rightinfoc(p66)
+    else:
+        show renier ru1113 at foc
+    r "Wait..."
     r "You used your Third Eye to open theirs?"
     r "You could do that?"
-    show renier at std
+    show renier at xis(p66)
     show mc at foc
     mc "Apparently."
     mc "My recollection might not be the clearest, but that was what it looked like."
@@ -124,11 +147,10 @@ label chapter25:
     r "But I don't remember seeing anyone else with a power like that."
     show renier at std
     show sayori at foc
-    s "We combined our Third Eye powers to overcome the guards."
+    s c115113  "We combined our Third Eye powers to overcome the guards."
     s "They couldn't shoot us."
     s "Well, eventually one of them did..."
     s "But I think it actually turned out to be what saved us."
-#    s "[mc_name] had killed enough guards to start to peter out."
     s "One of them shot me."
     s "It didn't overcome my Third Eye completely..."
     s "... but it made me sort of lucid for a moment, kind of like how we saw it affect Monika when Yuri stabbed her."
@@ -144,12 +166,31 @@ label chapter25:
     r "Most subjects had pretty low positivity."
     r "They could shrug off almost anything when they were fully activated, but not actually heal."
     show renier at std
-    #TODO
-#    "Adam must've not been there."
-#    "Wait a minute..."
-#    "warp was broken, but there were other ways ."
-#    "According to the book she compiled, Linda read his memories a long time after that point."
-#    "Is it really possible he didn't know about memory reading?"
+    l "I'm surprised you three were able to see each other as allies at all while under that kind of influence."
+    l "I've never seen that before."
+    show renier at foc
+    r "I don't think he did any of the tests with two subjects at once after... I brought you into things."
+    r "I remember a few from before then."
+    r "The ones with a control rating of more than 5 or so were usually able to cooperate to some extent, if they had a common objective."
+    r "It was more dangerous than one subject at once, though, so he stopped doing it after it didn't yield any useful results."
+    r "But it might be [mc_name]'s Third Eye also has a sort of rallying effect on others he opens with it..."
+    show renier at std
+    l "That would be interesting..."
+    l "... and maybe useful at some point."
+    show renier at foc
+    r "What were Monika's unique powers?"
+    r "I don't think anyone ever found out mine... and I don't remember finding anything unusual with Yuri." # TODO it would be good to mention Yuri's unique power here.
+    show renier at std
+    show sayori at foc
+    s c213111 "I think Monika's was a sort of time bubble effect."
+    s "When she distorted things, time only seemed to pass in the area around her, and anything far away pretty much stopped moving."
+    s "I think that's why Adam couldn't do anything about our escape."
+    s "To him, it all happened in a second, and we were gone before he even heard about it."
+    show sayori at std
+    show albert at foc zorder 2
+    al "Wow..."
+    al "Well, thanks for sharing."
+    show albert at std
     scene facility with wipeleft_scene
     "A few more minutes pass."
     show natsuki c223111 at foc(p11)
@@ -306,7 +347,7 @@ label chapter25:
     l "Break it, quick!"
     l "Before he notices and flips it back off and breaks it!"
     show monika c214212 at foc zorder 1
-    call updateconsole("vp.set_strict_mode(ursula)", "ERROR: escaped character. Disabling\n viewport.Viewport.set_strict_mode.")
+    call updateconsole("vp.set_strict_mode(ursula)", "ERROR: escaped character.\nDisabling viewport.Viewport.set_strict_mode.")
     m c122111 "Done!"
     call hideconsole
     $ consolehistory = []

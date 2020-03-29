@@ -47,7 +47,7 @@ label chapter26:
     show monika at foc
     m c114111 "Good idea..."
     show monika c214113
-    call updateconsole("ursula.reset()", "ERROR: escaped character.\n Disabling Character.reset.")
+    call updateconsole("ursula.reset()", "ERROR: escaped character.\nDisabling Character.reset.")
     call hideconsole
     m c114113 "Well there we go."
     m "There's no reset and no restore."
