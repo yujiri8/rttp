@@ -4,28 +4,44 @@ label chapter26:
     scene city_night
     python:
         with open('ERROR.txt', 'w') as f:
-            f.write("ERROR: cannot work while a POV character is being followed.")
-    # Also, POV switch?
-        # maybe MC asks for you back if you've been nice to him, but not if you haven't.
-        # Who do you get otherwise? Still Linda?
-        # I think I'll write the version from MC's perspective.
-        # It makes sense to stay with Linda if they do want to hide their POV.
+            f.write("ERROR: not allowed while a POV character is being followed.")
     "We roll back into the town with the warehouse."
     "The first town he ever experimented in."
     "We make a short stop for food, and then head for the warehouse."
     play music determination
+    show linda at foc
     l "Let's be really careful here."
     l "I don't see anything unusual yet, but it's {i}gotta{/i} be a trap."
+    show linda at std
+    show natsuki at foc
+    n "You know, the longer I think about this, the dummer it seems."
+    n "We're basically walking into a situation where we're likely to be shot at any second?"
+    n "Honestly, it feels bleaker going into this than it did being on the clock and not having a lead."
+    n "With no restore_character..."
+    show natsuki at std
     show libitina at foc
     b "Worst case scenario, I'll open my Third Eye and ruin them all."
     b "Some of us might die, but we almost can't lose."
     show libitina at std
-    mc "Maybe, but still, dying isn't an attractive thought."
-    mc "..."
+    n "Maybe, but still, dying is hardly an attractive thought!"
+    n "Also, no you won't if you're the first one to get shot."
+    show yuri at foc
+    y "Actually..."
+    y "We probably won't be ambushed."
+    y "Adam doesn't want to kill us all."
+    y "He demonstrated that earlier."
+    y "He's afraid that [persistent.playername] will stop playing."
+    y "And he can't do that until he succeeds in disconnecting the viewport."
+    show yuri at std
+    show natsuki at foc
+    n "That's a good point..."
+    n "I actually feel a lot better now. Thanks."
+    n "Still though, we can't be sure."
+    show natsuki at std
     mc "I feel like we should move faster."
     mc "We must look really suspicious."
     show yuri at foc
-    y c125113 "Shouldn't we break Character.reset before we go into danger?"
+    y c125113 "Also... shouldn't we break Character.reset before we go into danger?"
     y "If our ability to win in case of an ambush depends on using our Third Eyes, we need to make sure he can't counter it."
     show yuri at std
     show monika at foc
@@ -42,20 +58,33 @@ label chapter26:
     al "We should move strung out, so if we do get ambushed by cultists, they can't take us all out quickly."
     show albert at std
     l "That's a good thought."
-    # TODO work this out
-    "Albert volunteeers to be the most exposed as we approach the warehouse."
-    "Natsuki and Linda agree to trail behind Albert, since they don't have Third Eyes."
-    "Libitina and Monika are at the back, since they're our most important people."
+    l "Our least essential people should be in the front."
     show albert at foc
-    al "Oh wait... that won't even work."
+    al "Who's that?"
+    al "Me and Natsuki, the only ones with no admin experience and no Third Eyes?"
+    show albert at std
+    l "I..."
+    l "I'm sorry, but yes."
+    show natsuki at foc
+    n "Hold on now..."
+    show natsuki at std
+    show albert at foc
+    al "Oh wait, maybe this doesn't even work."
     al "Assuming this is a trap, Adam's watching the viewport."
-    al "Which means he sees everything the POV character sees."
+    al "Which, again, means he sees everything the POV character sees."
     show albert at std
-    "Well, crap, I guess he already knows we're here and everything we've said."
+    l "Good point."
+    l "Well, crap, I guess he already knows we're here and everything we've said."
+    l "Whether this is an ambush or not, there's no way he isn't watching."
     show albert at foc
-    al "What if our viewpoint character stays separate so he won't know exactly where we are?"
+    $ vpchar = mc_name if mc_dislike_player() < 2 else 'Renier'
+    al "What if [vpchar] stays separate so he won't know exactly where we are?"
+    al "[vpchar] could hang back a distance, maybe serve as a rear guard."
+    al "That would mitigate Adam's information advantage."
     show albert at std
-    #
+    mc "I guess that's true..."
+    "I want to be with everyone else, but I also like the excuse to not be going into danger."
+    mc "I can do that, then."
     menu:
         m "[persistent.playername], anything to say before we do this?"
         "Have you seen ERROR.txt?":
@@ -63,7 +92,7 @@ label chapter26:
     m "Huh...?"
     "We all look at her curiously."
     m "Uh..."
-    m "There's a file called ERROR.txt in the game directory that says 'ERROR: cannot work while a POV character is being followed'."
+    m "There's a file called ERROR.txt in the game directory that says 'ERROR: not allowed while a POV character is being followed'."
     menu:
         m "When did that appear?"
         "Seemed to appear right when the city loaded in.":
@@ -71,18 +100,33 @@ label chapter26:
     m "..."
     m "I'm not sure what to make of that."
     m "Could be an error from something Adam tried that got automatically written to a file for some reason?"
+    m "Because of the way the viewport skips time, if it appeared for you when the city loaded in then it could've happened at any point during the drive."
     m "I guess there's nothing to do about it right now."
-    #
+    show linda at foc
+    l "If something he did failed because \"a POV character is being followed\", we shouldn't leave [mc_name] alone."
+    l "Maybe killing or knocking out [mc_name] would enable him to do some new plan we don't know about."
+    show linda at std
+    mc "So I am coming with you after all?"
+    show linda at foc
+    l "I think so. Maybe you should just close your eyes so you don't give away our exact position."
+    l "And we'll keep you in the middle of the group."
+    show linda at std
+    mc "Um... okay..."
+    "I end up closing my eyes and letting [persistent.mc_favorite] lead me by the hand."
+#    "Me, Monika, and Libitina are in the center, since we're the three most important." TODO this depends on a lot
+#    "Albert's taking point."
+#    "Yuri, Renier and Linda are in the back, ."
     scene warehouse_outside_night
     "..."
-    al "Here we go..."
-    "Albert opens the door and walks in, pointing his gun."
+    "I open my eyes in a flash when I hear a door opening."
+    "We're here."
+    "Albert walks in, pointing his gun."
     al "Doctor Markov?"
     al "You in here?"
     "We follow him into the building."
     scene warehouse_inside
-    "Back to this horrid place one last time...."
-    "There doesn't seem to be anyone here."
+    "Well, here we are in this horrid place one last time..."
+    "But there doesn't seem to be anyone here."
     show albert at foc
     al "It doesn't look like it was a trap."
     show albert at std
@@ -206,7 +250,7 @@ label chapter26:
     # maybe Albert tries.
     # but anyone who tries will likely fail. i want lib to survive and remain an active threat.
     # Is it ok if Albert or someone else tries and dies as a result?
-    # Maybe Albert tries and Renier stops him? I like that.
+    # Maybe Albert tries and Renier stops him? I like that. TODO
     scene city with wipeleft
     "I make it a few blocks away before I stop."
     "I turn around and pant."
@@ -239,13 +283,8 @@ label chapter26:
     show renier at std
     mc "Would we even know if he disconnected the viewport?"
     mc "Assuming he's right that it would make this world independent again?"
-    #
-    "Hold on!"
-    "That ERROR.txt file a few minutes back!"
-    "What if that was the result of his hack?"
-    #
     show natsuki at foc
-    n "There just has to be some way to bring Monika back!"
+    n c117224 "There just has to be some way to bring Monika back!"
     n "We've always found a loophole in situations like this!"
     n "What haven't we tried?"
     n "[persistent.playername], think!"
@@ -275,11 +314,12 @@ label chapter26:
         " "
         "Investigate! - Adam":
             pass
-    "We don't need you to tell us you murderous freak!"
+    r "We don't need you to tell us you murderous freak!"
     scene city with wipeleft
     "Around the corner, the screams are coming from a man being held against a wall and eye-gouged by another man."
-    "The aggressing man looks he has an open Third Eye alright."
+    "The aggressor looks he has an open Third Eye alright."
     "That unmistakable look..."
+    "(... Is this like the epidemic that happened in Yuri's town?!?)"
     "Renier points a gun at the attacker."
     "I cover my ears."
     r "Only one way to..."
@@ -292,8 +332,8 @@ label chapter26:
         "Renier you have a Third Eye! - Adam":
             pass # TODO If Adam still wants the POV to die, why wouldn't he let Renier do it and then make him POV?
     "Being reminded, Renier manages to stop himself from pulling the trigger."
-    "Natsuki takes the shot."
-    "She fires two, the second one lands in the head."
+    "Albert takes the shot."
+    "He fires two, the second one landing in the head."
     "The attacker falls over."
     "The survivor runs away, still screaming."
     "..."
@@ -335,7 +375,7 @@ label chapter26:
     scene warehouse_outside_night with wipeleft
     "We head back to the warehouse."
     "Renier picks up Libitina again."
-    scene driving dissolve_scene
+    scene driving_night dissolve_scene
     "We head back to where we parked, Albert takes the wheel, and we drive out of the city as fast as possible."
     menu:
         " "
@@ -415,10 +455,16 @@ label chapter26:
         " "
         "I will be there. - Adam":
             pass
-    r "We still don't have any goddamn reason to trust him."
-    al "Well, again, he can't really ambush us."
-    al "If he does anything but cooperate, we can kill him."
-    "Alright..."
-    "This time, we'll be careful."
-    "We're not going to walk into a trap."
+    r "He's just sending us on another goddamn goose chase!"
+    r "He's not gonna be there, and we'll lose even more time!"
+    mc "Hold on!"
+    mc "That ERROR.txt file a few minutes back!"
+    mc "What if that was the result of his hack?"
+    r "Eh...?"
+    l "It's plausible..."
+    l "The hack targeted the viewport."
+    l "Could it be that he already completed the brute-force attack, but his exploit only works while the POV character is dead or unconscious?"
+    l "It would seem skipping time doesn't count, or it would've worked while we were driving."
+    l "But I bet you're right."
+    l "I bet we're not on the clock anymore, but it's essential that we protect you."
     return

@@ -448,9 +448,6 @@ label chapter25:
         l "Maybe if we talk about something else?"
     else:
         mc "So I guess he thinks we think he thinks he's tricking us?"
-    # TODO finish
-    # Maybe here Linda asks Monika to switch POV?
-    # That seems to only works if the redemption dialog happened.
     show sayori at foc
     s c115111 "At least we'll be able to get food once we're back in town."
     show sayori at std
@@ -475,7 +472,7 @@ label chapter25:
     m c124111 "Good idea..."
     m c224112 "I feel a little nervous breaking this one, but I guess it's safe with memory wiping also broken..."
     show monika at std
-    show natsuki at foc # TODO pick who should say this and pose
+    show natsuki at foc
     n "Wait, maybe you shouldn't?"
     n "If he's planning to get more cultists and ambush us, it was probably his first thought and he already restored their memories."
     n "Maybe you should keep the function around for our own use."
