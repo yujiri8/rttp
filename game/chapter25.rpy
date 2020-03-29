@@ -253,24 +253,26 @@ label chapter25:
     m "Yes!"
     show monika at std
     l "Did you... wait for her to power off and then extract her?"
-    l "You had to have her use her Third Eye to break it while it was active...!"
+    l "You had to have her use her Third Eye to break out while it was active...!"
     show monika at foc
     m "No!"
     m "I'm not stupid!"
     m "I get how this piece of crap work-"
     m "Guh! Nevermind..."
     show monika at std
+    show libitina 2262332
     "Monika cries some more."
     "..."
     "I'm speechless."
     "I thought we had it, and..."
-    "... now we have nothing. Not even have any clue why."
+    "... now we have nothing. Not even any clue why."
     "This must feel even worse for her."
     "Lord, what the hell do we do now..."
     menu:
         " "
         "Hey, I noticed something weird while you were gone.":
             pass
+    show libitina 2262222
     menu:
         " "
         "Adam's file disappeared for a minute too.":
@@ -287,7 +289,7 @@ label chapter25:
     show libitina at std(p53)
     show natsuki at std(p55)
     show mc c114235 at foc(p54)
-    mc "So... what took so long?"
+    mc "So, if everything seemed to go as planned... what took so long?"
     show mc at std
     show monika at xif(p52)
     m c124114 "I spent most of it trying to figure out how to make her admin."
@@ -299,8 +301,8 @@ label chapter25:
     m "The game recognized me, so of course if I started a new game with me alive, it just made me President."
     show monika at std
     show libitina at xif(p53)
-    b 2261111 "And then things were all weird and I thought I remembered starting the Literature Club..."
-    b "Wait... that reminds me..."
+    b "And then things were all weird and I thought I remembered starting the Literature Club..."
+    b 2261111 "Wait... that reminds me..."
     b "What was that API I noticed while I was active...?"
     show libitina at std
     show sayori c115212
@@ -396,6 +398,7 @@ label chapter25:
     show sayori at std
     "Sayori starts to hum what she remembers the tune to be."
     "I'm pretty sure she has it wrong, but whatever."
+    stop music fadeout 5.0
     menu:
         " "
         "What?!? - Adam":
@@ -427,6 +430,10 @@ label chapter25:
             pass
     show sayori at thide
     hide sayori
+    show libitina 2261113
+    show mc c124113
+    show monika c124113
+    show natsuki c115112
     show renier u2223 at leftinfoc(p51) zorder 3
     r "Give it up, asshole!"
     r "We got you!"
@@ -457,7 +464,12 @@ label chapter25:
             " "
             "I wasn't going to go back to doing the horrible things I did! I swear! - Adam":
                 pass
-    show yuri at foc
+    show renier at std(p62)
+    show monika at std(p63)
+    show libitina at std(p64)
+    show mc at std(p65)
+    show natsuki at std(p66)
+    show yuri at leftinfoc(p61) zorder 4
     y c126116 "Your actions speak louder than your words!"
     y c12b116 "You claim to be sorry, but you continue to thwart us and force us to do things like Monika just had to do!"
     show yuri at std
@@ -469,6 +481,12 @@ label chapter25:
         " "
         "I will meet you at the warehouse. - Adam":
             pass
+    show yuri c114111
+    show renier u2113
+    show monika c114111
+    show libitina 2261111
+    show mc c124111
+    show natsuki c124111
     "..."
     if persistent.player_advocate_mercy[1]:
         show natsuki at foc
@@ -480,15 +498,16 @@ label chapter25:
         show monika at std
         l "Not if he checks the history and sees that you said that."
         show natsuki at foc
-        n "Uu..."
+        n c124231 "Uu..."
         n "Well..."
-        n "He can read your thoughts anyway..."
+        n c124211 "He can read your thoughts anyway..."
         show natsuki at std
         l "Yeah..."
         l "Oh well."
-        l "Maybe if we talk about something else?"
+        l "Maybe if we talk about something else to flush the history and take our minds off it?"
     else:
         mc "So I guess he thinks we think he thinks he's tricking us?"
+    # TODO posing not done after this.
     show sayori at foc
     s c115111 "At least we'll be able to get food once we're back in town."
     show sayori at std
@@ -603,7 +622,7 @@ label chapter25:
 
 
 label monika_offer_redemption:
-    show monika at foc
+    show monika at foc zorder 4
     m c227113 "Adam, there's such a thing as redemption!"
     m "I found it!"
     m c114111 "And I truly think you can too."
@@ -634,7 +653,7 @@ label monika_offer_redemption:
         " "
         "I'm a villain. - Adam":
             pass
-    m "Dammit, you bastard!"
+    m c217115 "Dammit, you bastard!"
     m "I didn't act like that when I had the chance to restore my victims and change my ways!"
     #m "Maybe we don't have so much in common after all!"
     menu:
@@ -649,10 +668,10 @@ label monika_offer_redemption:
         " "
         "If you had had the option to wipe [persistent.playername]'s memories and go back to being with [persistent.player_obj_pronoun] in the space room, would it have been so easy to resist? - Adam":
             pass
-    m "..."
+    m c114113 "..."
     menu:
         " "
-        "I wasn't going to go back to doing all the horrible things I did. - Adam":
+        "I wasn't even going to go back to doing all the horrible things I did. - Adam":
             pass
     menu:
         " "
