@@ -2,7 +2,7 @@ label setup:
         call screen name_input(message="Then now is the time to name MC.")
         $ mc_name = persistent.mc_name = _return
         "Now you need to answer a few questions about your playthrough of the original DDLC."
-        "(It will be assumed that [mc_name] took his favorite girl's side in the argument on Day 2, and that he confessed love to Sayori if and only if she was his favorite.)"
+        "(It'll be assumed that [mc_name] took his favorite girl's side in the argument on Day 2, and that he confessed love to Sayori if and only if she was his favorite.)"
         menu:
                 "Who is [mc_name]'s favorite girl?"
                 "Sayori":
