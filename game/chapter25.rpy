@@ -179,7 +179,7 @@ label chapter25:
     l "... and maybe useful at some point."
     show renier at foc
     r "What were Monika's unique powers?"
-    r "I don't think anyone ever found out mine... and I don't remember finding anything unusual with Yuri." # TODO it would be good to mention Yuri's unique power here.
+    r "I don't think anyone ever found out mine... and I don't remember finding anything unusual with Yuri." # TODO it would be good to mention Yuri's unique power here. She could do something memory-related or something.
     show renier at std
     show sayori at foc
     s c213111 "I think Monika's was a sort of time bubble effect."

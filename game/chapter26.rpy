@@ -262,8 +262,10 @@ label chapter26:
     r "What the fuck happened!?!"
     show renier at std
     "I can barely hear him."
+    show linda at foc
     l "Libitina..."
     l "... she snapped and shot to feed her Third Eye."
+    show linda at std
     show yuri at foc
     y "No..."
     y "I think she got scared that Monika would snap and shot her out of fear!"
@@ -271,10 +273,12 @@ label chapter26:
     y "I'm so sorry, she caught me off guard...!"
     y "I should've stopped her!"
     show yuri at std
+    show linda at foc
     l "Now we don't have Monika!"
     l "And she can't restore herself!"
     l "And without reset, we can't even use the rift to start a new game!"
     l "What the hell do we do?!?"
+    show linda at std
     show renier at foc
     r "Beats me!"
     r "We've also lost [persistent.playername] then!"
@@ -339,7 +343,8 @@ label chapter26:
     "..."
     show yuri at foc
     y "The epidemic that happened in my town!"
-    y "It's happening here too?!?"
+    y "It's happening here too...!"
+    y "What have we done?"
     show yuri at std
     menu:
         " "
@@ -368,15 +373,41 @@ label chapter26:
     y "And we need to bring Libitina with us!"
     y "She's still the only way to really solve things."
     show yuri at std
-    # TODO Should Libitina have got the Third Eye sickness?
-    # is it every time she hits an admin with it?
     show renier at foc
     r "No problem, our car's not too far."
     scene warehouse_outside_night with wipeleft
     "We head back to the warehouse."
+    "I hear a scream as we approach it."
+    scene warehouse_inside_1_rift with wipeleft
+    "The room inside is pretty much intact except for the rift."
+    "I guess killing an admin sort of ends her frenzy, so she didn't have time to ravage the place like she did in the forest." # Maybe the equiv of this line should be in ch24.
+    "Libitina's on the floor vomiting blood again, like she did after killing Adam."
+    show yuri at foc
+    y "Noooo!"
+    show yuri at std
+    b "Hel--"
+    "More blood comes out."
+    "More screams."
+    show linda at foc
+    l "Is it every time she catches an admin with her distortion...?"
+    show linda at std
+    show yuri at foc
+    y "But I caught it before when it wasn't me who did it..."
+    show yuri at std
+    show linda at foc
+    l "You were in the room, right?"
+    l "And in the adjacent cell the other time?"
+    l "Maybe it hits every other nearby Third Eye-bearer?"
+    show linda at std
     "Renier picks up Libitina again."
-    scene driving_night dissolve_scene
+    # What if Renier had caught it too from being slow to get out because he saved Albert?
+    scene warehouse_outside_night with wipeleft
+    scene city_night with wipeleft
+    scene driving_night with dissolve_scene
     "We head back to where we parked, Albert takes the wheel, and we drive out of the city as fast as possible."
+    "Libitina is still vomiting."
+    "My heart aches watching her."
+    "Yuri is crying."
     menu:
         " "
         "I want you to know, her death still isn't irreversible. I can still bring people back to life. - Adam":
