@@ -719,7 +719,11 @@ label chapter22:
     "This has gotta be stupidly dangerous."
     "Just think of the reason I'm here..."
     "I have to do this to get my memories and my friends back."
-    scene facility with dissolve
+    scene black
+    show mask_2
+    show mask_3
+    show facility_rift
+    with dissolve
     "We see the camp, and like Monika said..."
     "... the world just stops in the middle of the place, and there's space beyond it."
     "The hell am I looking at?"
