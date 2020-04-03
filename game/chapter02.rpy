@@ -28,7 +28,7 @@ label chapter2:
     m "I'll make it so they speak to all of us."
     call updateconsole("import viewport")
     call updateconsole("vp = viewport.get_viewport()")
-    call updateconsole("vp.choices_target = Voice(\n anchor = " + mc_name + ")")
+    call updateconsole("vp.choices_target = Voice(\n anchor = " + mc_name.lower() + ")")
     call hideconsole
     $ consolehistory = []
     m u124111 "There we go..."
