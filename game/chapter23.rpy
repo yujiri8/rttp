@@ -150,9 +150,9 @@ label chapter23:
     "... Okay."
     menu:
         " "
-        "Wait a minute, have you checked admin.extract? The function Linda used to get the others out of DDLC.":
+        "Wait a minute, have you checked admin.extract_character? The function Linda used to get the others out of DDLC.":
             pass
-    call updateconsole('admin.extract', "AttributeError: module 'admin' has no\n attribute 'restrict_access'")
+    call updateconsole('admin.extract_character', "AttributeError: module 'admin' has no\n attribute 'extract_character'")
     m "Didn't think so..."
     m "If that was a thing, he probably wouldn't have even needed to do all this Third Eye stuff."
     m "Although..."

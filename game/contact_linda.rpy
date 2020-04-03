@@ -170,7 +170,7 @@ label contact_linda:
     l "The first parameter is the world object, which you get by its name from admin.get_world, I think."
     call updateconsole("ddlc = admin.get_world('doki_doki_literature_club')")
     call updateconsole("ddlc", "<Virtual world 'doki_doki_literature_club'>")
-    call updateconsole("admin.jail(ddlc, adam)", "ValueError: character conscious")
+    call updateconsole("challenge = admin.jail(ddlc, adam)", "ValueError: character conscious")
     menu:
         " "
         "Yeah, it didn't work. Thanks for telling me about it though. - Monika":

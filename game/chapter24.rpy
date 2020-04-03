@@ -487,7 +487,9 @@ label assault_facility:
     m c117212 "Oh crap!"
     show monika c217212
     call updateconsole("ddlc = admin.get_world(\n  'doki_doki_literature_club')")
-    call updateconsole("admin.jail(ddlc, libitina)", "Libitina moved to jail\n doki_doki_literature_club")
+    call updateconsole("ch = admin.jail(ddlc, libitina)")
+    call updateconsole("sig = pgp_sign(ch, markov_key")
+    call updateconsole("admin.complete_action(sig)", "Libitina moved to jail\n doki_doki_literature_club")
     $ delete_character('libitina')
     call hideconsole
     $ consolehistory = []
@@ -874,7 +876,7 @@ label assault_facility:
     m c113113 "Let me schedule my insertion."
     m "I'll add on a Character.reset so I don't get a bruise..."
     call updateconsole("import time")
-    call updateconsole("def insert_monika():\n time.sleep(60)\n monika.reset()\n admin.jail(ddlc, monika)")
+    call updateconsole("def insert_monika():\n time.sleep(60)\n monika.reset()\n challenge = admin.jail(ddlc, monika)\n signature = pgp_sign(challenge, markov_key)\n admin.complete_action(signature)")
     call updateconsole("insert_monika()")
     call hideconsole
     $ consolehistory = []

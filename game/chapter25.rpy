@@ -281,7 +281,7 @@ label chapter25:
     show monika at foc
     m c114114 "Oh, that?"
     m "Yeah, he got in near the end."
-    m "But I just kicked him back out with admin.extract."
+    m "But I just kicked him back out with admin.extract_character."
     show monika at std
     "..."
     show sayori at std(p51)
@@ -311,7 +311,7 @@ label chapter25:
     m c114112 "Huh...?"
     show monika at std
     show libitina at foc
-    b "When I was at my peak, I looked around trying to find how to break out..." # it isn't done with admin.extract
+    b "When I was at my peak, I looked around trying to find how to break out..." # it isn't done with admin.extract_character
     b "... I was delirious, but I think I saw a method that the normal part of me wanted to keep in mind for once we got out."
     b "Was it viewport.set_strict_mode?"
     show libitina at std

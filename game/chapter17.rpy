@@ -64,7 +64,7 @@ label chapter17_portal:
         correct = False
         try:
             with open(config.basedir + '/DESTINATION.txt') as f:
-                correct = (f.read().strip() == '/')
+                correct = f.read().strip() == '/'
         except: pass
     if correct:
         jump escape_ddlc
