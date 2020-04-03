@@ -175,6 +175,8 @@ label chapter23:
 label markov_pov: # He doesn't notice he's been made POV.
     scene path with dissolve_scene_full
     $ k_name = "Adam"
+    $ delete_character('markov')
+    $ restore_character('adam')
     play music lament fadein 1.0
     k "(sigh...)"
     call screen dialog("I guess Adam is his name... I kind of forgot Markov was a surname.", ok_action=Return())
