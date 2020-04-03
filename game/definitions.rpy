@@ -420,6 +420,7 @@ image facility_hall = "mod_assets/bg/cult_hallway_darker.webp"
 image facility_hall_r = im.Flip("mod_assets/bg/cult_hallway_darker.webp", horizontal = True)
 image vr_room = "mod_assets/bg/hospital_room2.png"
 image facility_rift = "mod_assets/bg/facility_rift.png"
+image facility_ruin = "mod_assets/bg/facility_ruin.png"
 image path = "mod_assets/bg/path.jpg"
 image village = "mod_assets/bg/village.jpg"
 image forest = "mod_assets/bg/forest.png"

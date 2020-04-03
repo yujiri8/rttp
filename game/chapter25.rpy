@@ -1,6 +1,6 @@
 label chapter25:
     "..."
-    scene facility with wipeleft_scene
+    scene facility_ruin with wipeleft_scene
     play music yawa
     "..."
     show yuri c115111 at foc(p11)
@@ -15,7 +15,7 @@ label chapter25:
     show renier u1113 at foc(p21)
     r "It must've been easy to take it over when he can basically control people's minds with scripts and memory wiping."
     show renier at std
-    scene facility with wipeleft_scene
+    scene facility_ruin with wipeleft_scene
     "Several minutes pass."
     show mc c124115 at foc(p11)
     mc "I don't know how long we should be expecting this to take..."
@@ -29,7 +29,7 @@ label chapter25:
     l "I'm not sure how long it would take me."
     show mc at foc
     mc "I guess so..."
-    scene facility with wipeleft_scene
+    scene facility_ruin with wipeleft_scene
     "We wait a while longer."
     show mc c126215 at foc(p11)
     mc "Okay, what time is it?"
@@ -191,7 +191,7 @@ label chapter25:
     al "Wow..."
     al "Well, thanks for sharing."
     show albert at std
-    scene facility with wipeleft_scene
+    scene facility_ruin with wipeleft_scene
     "A few more minutes pass."
     show natsuki c223111 at foc(p11)
     n "This is awful!"

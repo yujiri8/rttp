@@ -243,7 +243,7 @@ label assault_facility:
     hide distort2
     with Dissolve(0.4)
     "I feel like I lose my sense of time, and then..."
-    scene facility with dissolve_scene_full
+    scene facility_ruin with dissolve_scene_full
     "..."
     "I'm laying on the ground."
     "Things seem quiet."
