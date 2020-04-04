@@ -254,9 +254,10 @@ label assault_facility:
     "Maybe the last time Monika reset me, I couldn't be reset inside it, so the game spawned me out of it."
     "..."
     "The half-built buildings are a total wreckage."
+    "I guess Libitina's Third Eye is this powerful, and I never saw her go uninterrupted before."
     "I see dismembered cultists everywhere..."
     "... and Libitina's lying in the dirt, seemingly unhurt, but unconscious."
-    "Monika must've reset her too."
+    "Monika must've reset her too eventually."
     l "Hello...?"
     show renier ru2283 at foc(p11)
     r "Linda!"

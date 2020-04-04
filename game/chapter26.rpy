@@ -242,39 +242,52 @@ label chapter26:
     "Oh no, oh no, oh no..."
     "(Did she snap too?)"
     "Her distortion might kill us all!"
+    "I see Albert trying to shoot at Libitina."
+    "But of course, it's not affecting her."
+    "It looks like his bullets are just vanishing as they fly near her."
+    "No one can hear each other, so I can't speak to him."
+    "Renier grabs Albert and starts dragging him away."
+    "{i}He's just going to get himself killed too!{/i}"
+    "There's nothing I can do. I have to think about my own survival."
     "I make it out the warehouse door."
     "And bolt across the street."
-    scene city with wipeleft
+    scene city_night with wipeleft
     "Hopefully the others make it out too."
-    # would it be better if others shot Libitina?
-    # maybe Albert tries.
-    # but anyone who tries will likely fail. i want lib to survive and remain an active threat.
-    # Is it ok if Albert or someone else tries and dies as a result?
-    # Maybe Albert tries and Renier stops him? I like that. TODO
-    scene city with wipeleft
+    $ delete_character('monika')
+    scene city_night with wipeleft_scene
     "I make it a few blocks away before I stop."
     "I turn around and pant."
     "I see the others catching up, and the backdrop behind them."
     "Outer space lies past the warehouse."
     "It looks like everyone escaped, except for Monika and Libitina."
     "The two most important members of our group."
-    show renier at foc
-    r "What the fuck happened!?!"
+    show albert 11142 at std(p11)
+    "Albert looks the most shocked, the only one who's never witnessed something like that before."
+    show albert at foc
+    "I still can't make out what he's saying, but I think he's thanking Renier for saving his life back there."
+    show albert at std(p22)
+    show renier u2283 at foc(p21)
+    r "You're welcome..."
+    r "So what the fuck happened!?!"
     show renier at std
-    "I can barely hear him."
-    show linda at foc
+    "I can barely hear him, even as he's shouting."
+    show renier at std(p31)
+    show albert at std(p32)
+    show linda 116442 at foc(p33)
     l "Libitina..."
     l "... she snapped and shot to feed her Third Eye."
-    show linda at std
-    show yuri at foc
+    show linda at std(p43)
+    show renier at std(p41)
+    show albert at std(p42)
+    show yuri c124128 at foc(p44)
     y "No..."
-    y "I think she got scared that Monika would snap and shot her out of fear!"
+    y c125128 "I think she got scared that Monika would snap and shot her out of fear!"
     y "Without thinking it through..."
     y "I'm so sorry, she caught me off guard...!"
     y "I should've stopped her!"
     show yuri at std
     show linda at foc
-    l "Now we don't have Monika!"
+    l 118443 "Now we don't have Monika!"
     l "And she can't restore herself!"
     l "And without reset, we can't even use the rift to start a new game!"
     l "What the hell do we do?!?"
@@ -287,62 +300,86 @@ label chapter26:
     show renier at std
     mc "Would we even know if he disconnected the viewport?"
     mc "Assuming he's right that it would make this world independent again?"
-    show natsuki at foc
-    n c117224 "There just has to be some way to bring Monika back!"
+    show renier at std(p51)
+    show albert at std(p52)
+    show linda at std(p53)
+    show yuri at std(p54)
+    show natsuki c117224 at foc(p55)
+    n "There just has to be some way to bring Monika back!"
     n "We've always found a loophole in situations like this!"
     n "What haven't we tried?"
     n "[persistent.playername], think!"
+    show natsuki at std(p55)
+    show renier at std(p51)
+    show albert at std(p52)
+    show linda at std(p53)
+    show yuri at std(p54)
+    show sayori c227232 at foc(p66)
+    s "It's useless!"
+    s "Only Adam can do it now!"
+    s "The only way to save Monika is to put her in DDLC where restore_character isn't broken..."
+    s "... but the only person in the world who can do that now is Adam!"
+    show natsuki at foc
+    n "There {i}has{/i} to be something we can do!"
     show natsuki at std
+    "We can't be beaten..."
+    "Just five goddamn minutes ago we were all convinced we had it!"
+    "There isn't a curse word in my vocabulary strong enough for this."
     menu:
         " "
-        "Christ! - Adam":
+        "I'm so sorry, everyone! - Adam":
             pass
-    "Adam!!"
-    "You bast-"
+    mc "Adam!!"
+    mc "You bastard!"
     menu:
         " "
         "I didn't mean for this to happen! I swear! - Adam":
             pass
     menu:
         " "
-        "If I could've done something, I would've, but she acted too fast! - Adam":
+        "I did {i}not{/i} plan for Libitina to do that! - Adam":
+            pass
+    menu:
+        " "
+        "If I could've done something, I would've, but Monika broke Character.reset...! - Adam":
             pass
     show renier at foc
-    r "You're responsible for this too!"
+    r u2297 "You're responsible for this too!"
     r "Add this to the list of reasons you deserve to die!"
     show renier at std
-    $ delete_character('monika')
     "I hear screams I don't recognize from someone around the corner."
     "Oh no..."
     menu:
         " "
         "Investigate! - Adam":
             pass
+    show renier at foc
     r "We don't need you to tell us you murderous freak!"
-    scene city with wipeleft
+    scene city_night with wipeleft
     "Around the corner, the screams are coming from a man being held against a wall and eye-gouged by another man."
     "The aggressor looks he has an open Third Eye alright."
     "That unmistakable look..."
     "(... Is this like the epidemic that happened in Yuri's town?!?)"
     "Renier points a gun at the attacker."
     "I cover my ears."
-    r "Only one way to..."
-    menu:
-        " "
-        "Waaiiiit!! - Adam":
-            pass
-    menu:
-        " "
-        "Renier you have a Third Eye! - Adam":
-            pass # TODO If Adam still wants the POV to die, why wouldn't he let Renier do it and then make him POV?
+    show renier at foc(p11)
+    r u2286 "Only one way to..."
+    show renier at std(p21)
+    show linda at foc(p22)
+    l 118443 "Renier you have a Third Eye!!"
+    show linda at std
+    show renier u2283
     "Being reminded, Renier manages to stop himself from pulling the trigger."
-    "Albert takes the shot."
+    "Albert takes the shot instead."
     "He fires two, the second one landing in the head."
     "The attacker falls over."
     "The survivor runs away, still screaming."
+#    "... I guess Albert forgot we didn't know for sure if he had a Third Eye or not, but it looks like he's not freaking out."
     "..."
-    show yuri at foc
-    y "The epidemic that happened in my town!"
+    show renier at std(p31)
+    show linda at std(p32)
+    show yuri at foc(p33)
+    y c128135 "The epidemic that happened in my town!"
     y "It's happening here too...!"
     y "What have we done?"
     show yuri at std
@@ -358,7 +395,9 @@ label chapter26:
         " "
         "Killing an admin with the Third Eye messes things up, and not just the admin themselves. - Adam":
             pass
-    l "That makes sense..."
+    show linda at foc
+    l 116443 "That makes sense..."
+    show linda at std
     show yuri at foc
     "Yuri holds out her gun to Linda."
     y "We can't hold these!"
@@ -366,128 +405,51 @@ label chapter26:
     "Linda takes it."
     "The rest of us Eye-bearers also hand off our guns."
     "Yuri also gives Linda her knife."
-    show sayori at foc
+    show renier at std(p41)
+    show linda at std(p42)
+    show yuri at foc(p43)
+    show sayori c127132 at foc(p44)
     s "We need to get out of here!"
     show sayori at std
     show yuri at foc
-    y "And we need to bring Libitina with us!"
-    y "She's still the only way to really solve things."
+    y c1251 "And we need to bring Libitina with us!"
+    y "She's still the closest thing we have to an out."
     show yuri at std
     show renier at foc
-    r "No problem, our car's not too far."
+    r u2133 "No problem, our car's not too far."
     scene warehouse_outside_night with wipeleft
     "We head back to the warehouse."
     "I hear a scream as we approach it."
     scene warehouse_inside_1_rift with wipeleft
     "The room inside is pretty much intact except for the rift."
-    "I guess killing an admin sort of ends her frenzy, so she didn't have time to ravage the place like she did in the forest." # Maybe the equiv of this line should be in ch24.
     "Libitina's on the floor vomiting blood again, like she did after killing Adam."
-    show yuri at foc
+    show yuri c128138 at foc(p21)
     y "Noooo!"
     show yuri at std
     b "Hel--"
     "More blood comes out."
     "More screams."
-    show linda at foc
-    l "Is it every time she catches an admin with her distortion...?"
+    show linda at foc(p22)
+    l 11b113 "Is it every time she catches an admin with her distortion...?"
     show linda at std
     show yuri at foc
-    y "But I caught it before when it wasn't me who did it..."
+    y c124118 "But I caught it before when it wasn't me who did it..."
     show yuri at std
     show linda at foc
     l "You were in the room, right?"
     l "And in the adjacent cell the other time?"
-    l "Maybe it hits every other nearby Third Eye-bearer?"
+    l "Maybe it hits every nearby Third Eye-bearer?"
     show linda at std
+    show yuri c123128
     "Renier picks up Libitina again."
-    # What if Renier had caught it too from being slow to get out because he saved Albert?
     scene warehouse_outside_night with wipeleft
     scene city_night with wipeleft
     scene driving_night with dissolve_scene
     "We head back to where we parked, Albert takes the wheel, and we drive out of the city as fast as possible."
-    "Libitina is still vomiting."
+    "Libitina continues to scream and vomit blood."
     "My heart aches watching her."
     "Yuri is crying."
-    menu:
-        " "
-        "I want you to know, her death still isn't irreversible. I can still bring people back to life. - Adam":
-            pass
-    menu:
-        " "
-        "By using admin.jail, I can put dead people into DDLC, where restore_character works, and then restore and extract them. - Adam":
-            pass
-    menu:
-        " "
-        "I made sure to leave this workaround available because I never wanted to risk anyone permanently dying. - Adam":
-            pass
-    s "Use that to restore Monika!"
-    s "If you're still expecting us to believe you're really sorry, then prove it!"
-    menu:
-        " "
-        "I already tried... - Adam":
-            pass
-    menu:
-        " "
-        "I put her in DDLC where she should be able to restore herself and then re-extract. - Adam":
-            pass
-    menu:
-        " "
-        "But she isn't. - Adam":
-            pass
-    menu:
-        " "
-        "Maybe putting her in DDLC didn't fix her console. She's still messed up from Libitina's distortion.":
-            pass
-    menu:
-        " "
-        "True... - Adam":
-            pass
-    s "You're going into DDLC to reset her!"
-    menu:
-        " "
-        "You're right. - Adam":
-            pass
-    menu:
-        " "
-        "If she's still in that horrid glitched state... I have to save her from it. - Adam":
-            pass
-    menu:
-        " "
-        "It's faster if I come to you and let you knock me out like you did with Monika than if I try to fall asleep. - Adam":
-            pass
-    menu:
-        " "
-        "I'd do that, but you'll shoot me on sight... - Adam":
-            pass
-    s "We won't shoot you on sight!"
-    s "If you're really the only way we can save Monika... then we're not stupid."
-    if persistent.player_advocate_mercy[0]:
-        s "I want to torture you."
-        s "I want to see you bleed and cry, just like you did to us..."
-        "Sayori sniffles."
-        s "But I'm not stupid."
-        $ temp = "There's no way you'd be that stupid"
-    else:
-        s "We've worked with people who did horrible things before!"
-        $ temp = "I should trust you"
-    menu:
-        " "
-        "... - Adam":
-            pass
-    menu:
-        " "
-        "You're right. [temp]. Dammit. I'll meet you. - Adam":
-            pass
-    menu:
-        " "
-        "Take road 27 and pull over a good half a mile out of the city limits to make sure you're safe. - Adam":
-            pass
-    menu:
-        " "
-        "I will be there. - Adam":
-            pass
-    r "He's just sending us on another goddamn goose chase!"
-    r "He's not gonna be there, and we'll lose even more time!"
+    # I want Adam to claim he tried to put Monika into DDLC and have the player suggest that her console is still messed up, but it's contrary to his motives to say it.
     mc "Hold on!"
     mc "That ERROR.txt file a few minutes back!"
     mc "What if that was the result of his hack?"
@@ -498,4 +460,174 @@ label chapter26:
     l "It would seem skipping time doesn't count, or it would've worked while we were driving."
     l "But I bet you're right."
     l "I bet we're not on the clock anymore, but it's essential that we protect you."
+    #TODO probably insert some of the speculation dialogue in SCRAPS in here.
+    # Up until now, he was still waiting for them to get farther away.
+    $ delete_character('adam')
+    l "{i}Oh no.{/i}"
+    l "He tricked us into leaving the area and now he's going to where Monika died!"
+    l "He'll shoot himself, put himself in DDLC, reset Monika and then extract them both and have her alone!"
+    l "He'll be able to make her POV and then kill her and run his hack!"
+    al "Oh shit, I'm turning back!!"
+    "Albert turns around as aggressively as possible."
+    al "I can't believe we got fooled like this!"
+    mc "I bet he was right near the warehouse waiting for this!"
+    mc "We can't get back in time!"
+    s "[persistent.playername], you have to switch the viewport destination back to DDLC!"
+    s "Warning Monika is our only hope!"
+    s "Change DESTINATION.txt to say /jails/doki_doki_literature_club again!"
+    $ persistent.autoload = "return_to_ddlc"
+    while True:
+        " "
     return
+
+label return_to_ddlc:
+    scene black
+    python:
+        correct = False
+        try:
+            with open(config.basedir + '/DESTINATION.txt') as f:
+                correct = f.read().strip() == '/jails/doki_doki_literature_club'
+        except: pass
+    if correct:
+        jump returned_to_ddlc
+    else:
+        'Invalid destination.'
+        $ renpy.quit()
+
+label returned_to_ddlc:
+    $ vpchar = mc_name if mc_dislike_player() < 2 else "Renier"
+    $ persistent.autoload = 'returned_to_ddlc'
+    $ quick_menu = False
+    "{cps=200}Fatal error: player character missing.{/cps}"
+    k "What?!?"
+    "{cps=200}Fatal error: player character missing.{/cps}"
+    m "What happened?"
+    "{cps=200}Fatal error: player character missing.{/cps}"
+    k "I don't get it..."
+    "{cps=200}Fatal error: player character missing.{/cps}"
+    k "... It's stuck."
+    "{cps=200}Fatal error: player character missing.{/cps}"
+    m "[persistent.playername]?"
+    m "You set the viewport back to DDLC...?"
+    "{cps=200}Fatal error: player character missing.{/cps}"
+    k "It looks like it."
+    k "Because the POV character is still set to [vpchar], but he's not here, so it can't work."
+    menu:
+        " "
+        "What happened here?":
+            pass
+    m "Adam reset me."
+    m "He really did."
+    menu:
+        " "
+        "We're in trouble, Monika. He wins if he kills the POV character.":
+            pass
+    m "What...?"
+    k "[persistent.playername], I promise, I'm not even trying to cut you out of the picture anymore!"
+    "{cps=200}Fatal error: player character missing.{/cps}"
+    k "I think we just need to set one of us as POV to fix the error so we can extract."
+    "{cps=200}Fatal error: player character missing.{/cps}"
+    call updateconsole("import viewport")
+    call updateconsole("vp = viewport.get_viewport()")
+    call updateconsole("vp.pov_character = monika", "POV changed to Monika") # This, as well as Character.pov, only work if the viewport is connected.
+    "{cps=200}Fatal error: player character missing.{/cps}"
+    "Wait... you said he wins if he kills the POV character?!?"
+    "He just made me POV and delete_character isn't broken in here!"
+    "I have to get myself out!"
+    call updateconsole("ch = admin.extract_character(monika)")
+    call updateconsole("sig = pgp_sign(ch, markov_key)")
+    call updateconsole("admin.complete_action(sig)", "Action failed: Invalid state")
+    m "Ah...!"
+    "{cps=200}Fatal error: player character missing.{/cps}"
+#    call updateconsole("delete_character(monika)", "Action failed: Invalid state")
+    k "It won't work while the world is stuck like this."
+    k "Even though we gave it a valid POV character, we still need to make it update."
+    k "It probably takes a restart."
+    "{cps=200}Fatal error: player character missing.{/cps}"
+    menu:
+        " "
+        "Monika, be VERY careful. If he deletes you now, we lose.":
+            pass
+    "{cps=200}Fatal error: player character missing.{/cps}"
+    m "What happened while we were waiting for you to switch back?"
+    "{cps=200}Fatal error: player character missing.{/cps}"
+    m "As long as the world is stuck like this, I don't think he can do anything dangerous..."
+    m "... or he would've already, if he was going to."
+    "{cps=200}Fatal error: player character missing.{/cps}"
+    m "So it's safe to take time to explain."
+    "{cps=200}Fatal error: player character missing.{/cps}"
+    menu:
+        " "
+        "[explain events since Monika's death]":
+            pass
+    m "I see."
+    m "So we do lose if I get deleted."
+    "{cps=200}Fatal error: player character missing.{/cps}"
+    # TODO why does the player shut off, or does Adam do it?
+    $ renpy.quit()
+label returned_to_ddlc2:
+    play music m1
+    show mask_2
+    show mask_3
+    show room_mask as rm at room_mask
+    show room_mask2 as rm2 at room_mask2
+    show bg space_room
+    with open_eyes
+    "..."
+    m "Here we are..."
+    show markov u11511 at std(p11)
+    k "..."
+    k "Wait a minute..."
+    k u22541 "Now that the viewport is here..." # XXX This doesn't gain him anything anymore
+    call updateconsole("adam.pov = True")
+    m "No!"
+    $ persistent.autoload = 'after_return_to_ddlc'
+label after_return_to_ddlc:
+    $ persistent.autoload = None
+    $ autosave()
+    scene warehouse_inside_1 with dissolve_scene
+    "I'm back."
+    "I look around."
+    "I see..."
+    show markov at foc
+    "No...!"
+    "He picks up a gun that was laying right next to him."
+    m "Noo!"
+    scene black
+    "I hear a shot." # I hope I'm not invoking the "surprise it didn't really happen" trope
+    "The flinch forces my eyes shut."
+    "But I don't feel anything."
+    n "{cps=40}GOT YOU!!{/cps}"
+    "I reopen my eyes."
+    scene warehouse_inside_1 with open_eyes
+    show natsuki c215122 at foc(p21)
+    show markov at std(p22)
+    "Natsuki... shot Adam..."
+    show markov at thide
+    hide markov
+    "Adam falls down, dropping his gun." # maybe someone else should run over and take it
+    "He starts to scream."
+    "The others come in."
+    show natsuki at std(p32)
+    show mc c118131 at foc(p31)
+    mc "You got him?!?"
+    mc c123331 "We win!!"
+    show mc at std
+    show natsuki at xif(p32)
+    n c222113 "You did it, [persistent.playername]!"
+    n "You slowed him down enough for us to get back just in time!"
+    show natsuki at std
+    k "No, nooooo!!"
+    "Adam continues to scream in pain."
+    "I'm still speechless at what just happened."
+    #TODO
+    m "So we're still in the danger zone?"
+    show linda 124111b at foc
+    l "Uh... yeah..."
+    show linda at std
+    m "We'd better get out, before it hits {i}me{/i}!!"
+    "I see the 'oh crap' look on everyone else's face."
+    "I run toward the exit."
+    m "Someone carry Adam!"
+    m "He has to come with us!"
+    "Renier and Albert together carry the mortally wounded Adam back to our vehicle."
