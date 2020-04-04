@@ -349,3 +349,119 @@ l "And restores their file, of course."
 #    "It's more in accord with his goals."
 #    "So why did he lie to get an excuse not to do it?"
 #    "..."
+
+
+
+    "It looks like the viewport is still trying to follow [vpchar], and it's errorirng out because he's not here."
+
+    k "But why did this happen?"
+    k "The viewport shouldn't be able to stop us from..."
+    k "Ugh..."
+    k "Unless it happened during the connection phase."
+    k "Another bug I didn't think about."
+    menu:
+        " "
+        "We're in trouble, Monika. He wins if he kills the POV character.":
+            pass
+    "Wait what...?"
+    "You stupid idiot, [persistent.playername]!"
+    "You needed him not to kill the POV character, so you pointed the viewport over here so POV stuff became available again?"
+    "Now all he has to do is..."
+    call updateconsole("c=admin.extract_character(monika)")
+    call updateconsole("c=admin.extract_character(monika)")
+    "Wait why's he trying to extract me instead of delete me?"
+
+    # I just need a reason why extract doesn't work, but other things do.
+    ""
+
+    
+    call updateconsole("import viewport")
+    "... make me POV and then delete me again!"
+    "Point the viewport back!!!"
+    menu:
+        " "
+        "Wait, I've got it! Don't click this!": # this strat only makes sense if you had time to explain...
+            pass
+    # Doesn't the player .
+    menu:
+        " "
+        "Negative, that would make him win. We have to buy more time.":
+            pass
+    call updateconsole("vp = viewport.get_viewport()")
+    "I might be able to slow him down...!"
+    "I just have to stop him from deleting me while I'm POV!"
+    "Now that the viewport is back over here, it should let me switch {i}his{/i} flag on!"
+    call updateconsole("adam.pov=True")
+    call updateconsole("vp.pov_character = monika", "POV changed to Monika")
+    "He just set it to me..."
+    "But I can make it him before he deletes me!"
+    call updateconsole("vp.pov_character = adam", "POV changed to Adam")
+    call updateconsole("delete_character(monika)", "Monika deleted successfully")
+    $ temp1, temp2, temp3 = glitchtext(30), glitchtext(20), glitchtext(15)
+    "[temp]"
+    "[temp2]Crap[temp3]"
+
+    
+    k "I don't get it..."
+    "{cps=200}Fatal error: player character missing.{/cps}"
+    k "... It's stuck."
+    "{cps=200}Fatal error: player character missing.{/cps}"
+    m "[persistent.playername]?"
+    m "You set the viewport back to DDLC...?"
+    "{cps=200}Fatal error: player character missing.{/cps}"
+    k "It looks like it."
+    k "Because the POV character is still set to [vpchar], but he's not here, so it can't work."
+    menu:
+        " "
+        "What happened here?":
+            pass
+    m "Adam reset me."
+    m "He really did."
+    menu:
+        " "
+        "We're in trouble, Monika. He wins if he kills the POV character.":
+            pass
+    m "What...?"
+    k "[persistent.playername], I promise, I'm not even trying to cut you out of the picture anymore!"
+    "{cps=200}Fatal error: player character missing.{/cps}"
+    k "I think we just need to set one of us as POV to fix the error so we can extract."
+    "{cps=200}Fatal error: player character missing.{/cps}"
+    call updateconsole("import viewport")
+    call updateconsole("vp = viewport.get_viewport()")
+    call updateconsole("vp.pov_character = monika", "POV changed to Monika") # This, as well as Character.pov, only work if the viewport is connected.
+    "{cps=200}Fatal error: player character missing.{/cps}"
+    "Wait... you said he wins if he kills the POV character?!?"
+    "He just made me POV and delete_character isn't broken in here!"
+    "I have to get myself out!"
+    call updateconsole("ch = admin.extract_character(monika)")
+    call updateconsole("sig = pgp_sign(ch, markov_key)")
+    call updateconsole("admin.complete_action(sig)", "Action failed: Invalid state")
+    m "Ah...!"
+    "{cps=200}Fatal error: player character missing.{/cps}"
+#    call updateconsole("delete_character(monika)", "Action failed: Invalid state")
+    k "It won't work while the world is stuck like this."
+    k "Even though we gave it a valid POV character, we still need to make it update."
+    k "It probably takes a restart."
+    "{cps=200}Fatal error: player character missing.{/cps}"
+    menu:
+        " "
+        "Monika, be VERY careful. If he deletes you now, we lose.":
+            pass
+    "{cps=200}Fatal error: player character missing.{/cps}"
+    m "What happened while we were waiting for you to switch back?"
+    "{cps=200}Fatal error: player character missing.{/cps}"
+    m "As long as the world is stuck like this, I don't think he can do anything dangerous..."
+    m "... or he would've already, if he was going to."
+    "{cps=200}Fatal error: player character missing.{/cps}"
+    m "So it's safe to take time to explain."
+    "{cps=200}Fatal error: player character missing.{/cps}"
+    menu:
+        " "
+        "[explain events since Monika's death]":
+            pass
+    m "I see."
+    m "So we do lose if I get deleted."
+    "{cps=200}Fatal error: player character missing.{/cps}"
+    # TODO why does the player shut off, or does Adam do it?
+    $ renpy.quit()
+

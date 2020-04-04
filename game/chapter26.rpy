@@ -473,14 +473,15 @@ label chapter26:
     mc "I bet he was right near the warehouse waiting for this!"
     mc "We can't get back in time!"
     s "[persistent.playername], you have to switch the viewport destination back to DDLC!"
-    s "Warning Monika is our only hope!"
-    s "Change DESTINATION.txt to say /jails/doki_doki_literature_club again!"
+    s "And then turn it off to stop time from passing in that world long enough for us to get back to the warehouse!"
+    s "Change DESTINATION.txt to say /jails/doki_doki_literature_club again!" # TODO make sure these directions are as clear as possible.
     $ persistent.autoload = "return_to_ddlc"
     while True:
         " "
     return
 
 label return_to_ddlc:
+    $ quick_menu = False
     scene black
     python:
         correct = False
@@ -495,93 +496,43 @@ label return_to_ddlc:
         $ renpy.quit()
 
 label returned_to_ddlc:
-    $ vpchar = mc_name if mc_dislike_player() < 2 else "Renier"
     $ persistent.autoload = 'returned_to_ddlc'
     $ quick_menu = False
+    $ vpchar = mc_name if mc_dislike_player() < 2 else "Renier"
     "{cps=200}Fatal error: player character missing.{/cps}"
     k "What?!?"
     "{cps=200}Fatal error: player character missing.{/cps}"
     m "What happened?"
     "{cps=200}Fatal error: player character missing.{/cps}"
-    k "I don't get it..."
+    k "[persistent.playername]?"
     "{cps=200}Fatal error: player character missing.{/cps}"
-    k "... It's stuck."
+    m "You set the viewport destination back?"
     "{cps=200}Fatal error: player character missing.{/cps}"
-    m "[persistent.playername]?"
-    m "You set the viewport back to DDLC...?"
+    k "See, [persistent.playername]?"
+    k "I told you my intentions were pure!"
     "{cps=200}Fatal error: player character missing.{/cps}"
-    k "It looks like it."
-    k "Because the POV character is still set to [vpchar], but he's not here, so it can't work."
-    menu:
+    k "I just shot myself in the forehead to come here to save her from the glitching!"
+    "{cps=200}Fatal error: player character missing.{/cps}"
+    # Is this suboptimal, since now that the viewport's pointing here, it's simpler for him to just do it in here, but that would take explaining?
+    k "Now we're going to come out."
+    $ persistent.autoload = 'return_to_pom'
+    while True:
         " "
-        "What happened here?":
-            pass
-    m "Adam reset me."
-    m "He really did."
-    menu:
-        " "
-        "We're in trouble, Monika. He wins if he kills the POV character.":
-            pass
-    m "What...?"
-    k "[persistent.playername], I promise, I'm not even trying to cut you out of the picture anymore!"
-    "{cps=200}Fatal error: player character missing.{/cps}"
-    k "I think we just need to set one of us as POV to fix the error so we can extract."
-    "{cps=200}Fatal error: player character missing.{/cps}"
-    call updateconsole("import viewport")
-    call updateconsole("vp = viewport.get_viewport()")
-    call updateconsole("vp.pov_character = monika", "POV changed to Monika") # This, as well as Character.pov, only work if the viewport is connected.
-    "{cps=200}Fatal error: player character missing.{/cps}"
-    "Wait... you said he wins if he kills the POV character?!?"
-    "He just made me POV and delete_character isn't broken in here!"
-    "I have to get myself out!"
-    call updateconsole("ch = admin.extract_character(monika)")
-    call updateconsole("sig = pgp_sign(ch, markov_key)")
-    call updateconsole("admin.complete_action(sig)", "Action failed: Invalid state")
-    m "Ah...!"
-    "{cps=200}Fatal error: player character missing.{/cps}"
-#    call updateconsole("delete_character(monika)", "Action failed: Invalid state")
-    k "It won't work while the world is stuck like this."
-    k "Even though we gave it a valid POV character, we still need to make it update."
-    k "It probably takes a restart."
-    "{cps=200}Fatal error: player character missing.{/cps}"
-    menu:
-        " "
-        "Monika, be VERY careful. If he deletes you now, we lose.":
-            pass
-    "{cps=200}Fatal error: player character missing.{/cps}"
-    m "What happened while we were waiting for you to switch back?"
-    "{cps=200}Fatal error: player character missing.{/cps}"
-    m "As long as the world is stuck like this, I don't think he can do anything dangerous..."
-    m "... or he would've already, if he was going to."
-    "{cps=200}Fatal error: player character missing.{/cps}"
-    m "So it's safe to take time to explain."
-    "{cps=200}Fatal error: player character missing.{/cps}"
-    menu:
-        " "
-        "[explain events since Monika's death]":
-            pass
-    m "I see."
-    m "So we do lose if I get deleted."
-    "{cps=200}Fatal error: player character missing.{/cps}"
-    # TODO why does the player shut off, or does Adam do it?
-    $ renpy.quit()
-label returned_to_ddlc2:
-    play music m1
-    show mask_2
-    show mask_3
-    show room_mask as rm at room_mask
-    show room_mask2 as rm2 at room_mask2
-    show bg space_room
-    with open_eyes
-    "..."
-    m "Here we are..."
-    show markov u11511 at std(p11)
-    k "..."
-    k "Wait a minute..."
-    k u22541 "Now that the viewport is here..." # XXX This doesn't gain him anything anymore
-    call updateconsole("adam.pov = True")
-    m "No!"
-    $ persistent.autoload = 'after_return_to_ddlc'
+label return_to_pom:
+    $ quick_menu = False
+    scene black
+    python:
+        correct = False
+        try:
+            with open(config.basedir + '/DESTINATION.txt') as f:
+                correct = f.read().strip() == '/'
+        except: pass
+    if correct:
+        jump after_return_to_ddlc
+    else:
+        'Invalid destination.'
+        $ renpy.quit()
+
 label after_return_to_ddlc:
     $ persistent.autoload = None
     $ autosave()
@@ -593,6 +544,7 @@ label after_return_to_ddlc:
     "No...!"
     "He picks up a gun that was laying right next to him."
     m "Noo!"
+    "I still don't understand what's going on...!"
     scene black
     "I hear a shot." # I hope I'm not invoking the "surprise it didn't really happen" trope
     "The flinch forces my eyes shut."
@@ -620,6 +572,7 @@ label after_return_to_ddlc:
     k "No, nooooo!!"
     "Adam continues to scream in pain."
     "I'm still speechless at what just happened."
+    "I'm breathing hard."
     #TODO
     m "So we're still in the danger zone?"
     show linda 124111b at foc
@@ -631,3 +584,36 @@ label after_return_to_ddlc:
     m "Someone carry Adam!"
     m "He has to come with us!"
     "Renier and Albert together carry the mortally wounded Adam back to our vehicle."
+    scene city_night with wipeleft
+    scene driving_night with wipeleft_scene
+    al "Where are we going?"
+    m "Anywhere!"
+    m "Just out of the city!"
+    play sound car_speed
+    "..."
+    "I start to get worried about Adam."
+    "If he dies again, the world could break even more."
+    "Even though it probably wouldn't do anything that different from what it's already done..."
+    "... but worse, if he dies, he could move his data over to DDLC, which would remove his body and might enable to come back in the place he died, escaping from us."
+    "He's not screaming anymore."
+    "I think he passed out."
+    "Things would glitch out at least a little if he died, right?"
+    "He must be close, though."
+    m "Pull over!"
+    m "I have to save Adam!"
+    al "What the hell?!?"
+    m "Dying while we're moving could be a way for him to escape us!"
+    m "I can use DDLC to heal him."
+    y "Can you use it to heal Libitina too?"
+    m "Actually, yeah..."
+    m "She seems to be unconscious too."
+    "Albert pulls over."
+    al "Alright, make this quick..."
+    "Sure thing."
+    call updateconsole("def insert(char):\n  c=admin.jail(ddlc, char)\n  s=pgp_sign(c, markov_key)\n  admin.complete_action(s)")
+    call updateconsole("insert(adam)", "Adam moved to jail\n doki_doki_literature_club")
+    call updateconsole("insert(libitina)", "Libitina moved to jail\n doki_doki_literature_club")
+    # Oh wait, this can only work if Monika is knocked out too.
+    # And shooting herself defeats the point.
+    call updateconsole("insert(monika)", "Monika moved to jail\n doki_doki_literature_club")
+    # Maybe he should bleed out, and he heals both himself and Libitina with DDLC.
