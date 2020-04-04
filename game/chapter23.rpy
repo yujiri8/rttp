@@ -169,7 +169,7 @@ label chapter23:
     $ consolehistory = []
     m "Ooh."
     m "I've got a better idea."
-    m "If I make {i}him{/i} POV, we should be able to see where he is." # TODO maybe I should edit it so he broke memory reading already, otherwise Moni could've used that to simplify this part and not need Libitina's story. But he must not've broke console spying.
+    m "If I make {i}him{/i} POV, we should be able to see where he is."
     m "Let's try this."
     call switch_pov('markov')
 label markov_pov: # He doesn't notice he's been made POV.

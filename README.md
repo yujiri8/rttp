@@ -16,15 +16,15 @@ The file 'SCRAPS' contains a couple of less important thoughts (that I don't nee
 
 * The kiss may be a solvable problem now. I contrived Renier's arrival to stop this in part 1 because I couldn't write it even if I wanted to, but now that MC isn't always POV, it's possible he and his favorite girl could do it at some point in part 3 where it could be offscreen or something. I would love to not do it at all, but with them having wanted to since DDLC, it's entirely implausible that they never get around to it after all this.
 
+* Chapter 26 is marked with a couple of TODOs where I feel it might be necessary to insert dialogue where they consider / cross out some of the possibilities I'm not running with.
+
+* I need to decide what to do about the unfinished branch where Natsuki punches Libitina if Libitina shot her. I shouldn't make that happen. It's a pretty damning portrayal of Natsuki when I think about it.
+
 # Outline for the ending
 
-* They meet Adam, he cooperates, and comes out with Monika.
+* They escape the danger zone, and use DDLC to heal Libitina and Adam. A lot of talk. Adam's going to help.
 
-* They decide to do their thing: make Libitina admin to get out.
-
-	These could be the same event.
-
-* Adam makes Libitina admin.
+* They decide to do their thing: make Libitina admin to get out. Adam uses the DDLC escape trick to make Libitina admin.
 
 * They do their plan: open Libitina's Eye and then stop her after she opens the portal.
 
@@ -34,13 +34,7 @@ The file 'SCRAPS' contains a couple of less important thoughts (that I don't nee
 
 * Adam's survival depends on whether you've picked the mercy-favoring options. If so he escapes with them into the real world. Otherwise Libitina destroys him.
 
-* (I think I've mentioned this before) I want to make it so Libitina will also die unless the player correctly remembers the name and syntax of some admin command. How to make this happen exactly I'll have to figure out.
-
-# Concerns
-
-* Non-admin character agency, of course. I think if all of the Eye-bearers have to work together to stop Libitina, that will be good enough for them, but I still feel a little bad about Natsuki (and I guess Albert) (Linda's fine). I'd like to have them both do something really important.
-
-	* Another old idea I had (back in part 1 times before the plot looked anything like it does) was that they would eventually use DDLC to make all of them admin. If that happened, it might help with this.
+* I want to make it so Libitina will also die unless the player correctly remembers the name and syntax of some admin command. How to make this happen exactly I'll have to figure out.
 
 # Other, smaller things
 
@@ -52,9 +46,9 @@ The file 'SCRAPS' contains a couple of less important thoughts (that I don't nee
 
 # Images needed
 
-* improve Amy/Michael sprites (Amy should be taller, Michael may need expression improvement) - I can do this myself
+* Improve Amy/Michael sprites (Amy should be taller, Michael may need expression improvement) - I can do this myself
 
-* ideally a better warehouse interior than the Uncle Mugen temple-like drawing I'm currently using
+* Ideally a better warehouse interior than the Uncle Mugen temple-like drawing I'm currently using. Probably also get a rifted version of it, if not one of the city.
 
 * Logo? I'm still using the DDMC logo. It would be great if I had a logo of the Portrait of Markov book with the eye symbol on it. Maybe I could draw it.
 
