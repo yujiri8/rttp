@@ -545,6 +545,7 @@ label after_return_to_ddlc:
     "He picks up a gun that was laying right next to him."
     m "Noo!"
     "I still don't understand what's going on...!"
+    "When he rescued me I really believed his intentions were sincere--"
     scene black
     "I hear a shot." # I hope I'm not invoking the "surprise it didn't really happen" trope
     "The flinch forces my eyes shut."
@@ -573,12 +574,19 @@ label after_return_to_ddlc:
     "Adam continues to scream in pain."
     "I'm still speechless at what just happened."
     "I'm breathing hard."
-    #TODO
+    show yuri at foc
+    # Come to think of it, they already knew this from experience in DDLC.
+#    y "Assuming he did shoot himself to be able to go back to DDLC, it doesn't look like his death made the rift get any worse."
+#    y "It really is only when an admin is killed by a Third Eye."
+    show yuri at std
+    m "Hold it, I'm way out of the loop."
+    m "What did I {i}miss{/i} after Libitina killed me?"
+    "The others fill me in."
     m "So we're still in the danger zone?"
     show linda 124111b at foc
     l "Uh... yeah..."
     show linda at std
-    m "We'd better get out, before it hits {i}me{/i}!!"
+    m "We'd better get out, before it hits {i}me{/i}!"
     "I see the 'oh crap' look on everyone else's face."
     "I run toward the exit."
     m "Someone carry Adam!"
@@ -592,28 +600,34 @@ label after_return_to_ddlc:
     play sound car_speed
     "..."
     "I start to get worried about Adam."
-    "If he dies again, the world could break even more."
-    "Even though it probably wouldn't do anything that different from what it's already done..."
-    "... but worse, if he dies, he could move his data over to DDLC, which would remove his body and might enable to come back in the place he died, escaping from us."
+    "If he dies again, he could move his data over to DDLC, which would remove his body and might enable him to come back in the place he died, escaping from us."
     "He's not screaming anymore."
     "I think he passed out."
-    "Things would glitch out at least a little if he died, right?"
-    "He must be close, though."
+    "He's not dead, because his file isn't disappearing..."
+    "... but he must be close."
+    # He can't insert himself if he's unconscious. But if he dies, he can be mentally concsious and able to act while the game effectively sees him as unconscious.
     m "Pull over!"
     m "I have to save Adam!"
     al "What the hell?!?"
     m "Dying while we're moving could be a way for him to escape us!"
     m "I can use DDLC to heal him."
     y "Can you use it to heal Libitina too?"
-    m "Actually, yeah..."
+    m "Yeah..."
     m "She seems to be unconscious too."
     "Albert pulls over."
     al "Alright, make this quick..."
     "Sure thing."
-    call updateconsole("def insert(char):\n  c=admin.jail(ddlc, char)\n  s=pgp_sign(c, markov_key)\n  admin.complete_action(s)")
-    call updateconsole("insert(adam)", "Adam moved to jail\n doki_doki_literature_club")
-    call updateconsole("insert(libitina)", "Libitina moved to jail\n doki_doki_literature_club")
-    # Oh wait, this can only work if Monika is knocked out too.
-    # And shooting herself defeats the point.
-    call updateconsole("insert(monika)", "Monika moved to jail\n doki_doki_literature_club")
-    # Maybe he should bleed out, and he heals both himself and Libitina with DDLC.
+    # TODO image thought: maybe I should get a nighttime filter of the daytime city image and use this one only here.
+    scene city_night with wipeleft
+    m "Oh..."
+    m "I'll have to be knocked out again to do this..."
+    r "I don't have the pipe anymore."
+    # TODO I don't want them to use a gun. How else can they resolve this?
+#    m "Well, now we know for sure that admins don't get messed up when they die unless they're killed by a Third Eye."
+#    m "Maybe someone has to shoot me."
+#    call updateconsole("def insert(char):\n  c=admin.jail(ddlc, char)\n  s=pgp_sign(c, markov_key)\n  admin.complete_action(s)")
+#    call updateconsole("insert(adam)", "Adam moved to jail\n doki_doki_literature_club")
+#    call updateconsole("insert(libitina)", "Libitina moved to jail\n doki_doki_literature_club")
+#    call updateconsole("insert(monika)", "Monika moved to jail\n doki_doki_literature_club")
+    ""
+    return
