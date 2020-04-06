@@ -9,43 +9,52 @@ label chapter26:
     "The first town he ever experimented in."
     "We make a short stop for food, and then head for the warehouse."
     play music determination
-    show linda at foc
+    show linda 114111 at foc(p11)
     l "Let's be really careful here."
     l "I don't see anything unusual yet, but it's {i}gotta{/i} be a trap."
-    show linda at std
-    show natsuki at foc
+    show linda at std(p22)
+    show natsuki c114114 at foc(p21)
     n "You know, the longer I think about this, the dummer it seems."
     n "We're basically walking into a situation where we're likely to be shot at any second?"
     n "Honestly, it feels bleaker going into this than it did being on the clock and not having a lead."
     n "With no restore_character..."
-    show natsuki at std
-    show libitina at foc
+    show natsuki at std(p32)
+    show linda at std(p33)
+    show libitina 1261111 at foc(p31)
     b "Worst case scenario, I'll open my Third Eye and ruin them all."
     b "Some of us might die, but we almost can't lose."
     show libitina at std
-    n "Maybe, but still, dying is hardly an attractive thought!"
-    n "Also, no you won't if you're the first one to get shot."
-    show yuri at foc
-    y "Actually..."
+    show natsuki at xif(p32)
+    n c223111 "Maybe, but still, dying is hardly an attractive thought!"
+    n c224111 "Also, no you won't if you're the first one to get shot."
+    show natsuki at std(p43)
+    show linda at std(p44)
+    show libitina at std(p42)
+    show yuri at foc(p41)
+    y c125111 "Actually..."
     y "We probably won't be ambushed."
     y "Adam doesn't want to kill us all."
     y "He demonstrated that earlier."
     y "He's afraid that [persistent.playername] will stop playing."
     y "And he can't do that until he succeeds in disconnecting the viewport."
     show yuri at std
-    show natsuki at foc
+    show natsuki at xif(p43)
     n "That's a good point..."
-    n "I actually feel a lot better now. Thanks."
+    n xc4111 "I actually feel a lot better now. Thanks."
     n "Still though, we can't be sure."
     show natsuki at std
     mc "I feel like we should move faster."
     mc "We must look really suspicious."
     show yuri at foc
-    y c125113 "Also... shouldn't we break Character.reset before we go into danger?"
+    y c125113 "Hold on..."
+    y "Shouldn't we break Character.reset before we go into danger?"
     y "If our ability to win in case of an ambush depends on using our Third Eyes, we need to make sure he can't counter it."
-    show yuri at std
-    show monika at foc
-    m c114111 "Good idea..."
+    show yuri at std(p52)
+    show libitina at std(p53)
+    show natsuki at std(p54)
+    show linda at std(p55)
+    show monika c114111 at foc(p51)
+    m "Good idea..."
     show monika c214113
     call updateconsole("ursula.reset()", "ERROR: escaped character.\nDisabling Character.reset.")
     call hideconsole
@@ -53,8 +62,12 @@ label chapter26:
     m "There's no reset and no restore."
     m "It does give us better odds of winning, but it's unnerving."
     $ consolehistory = []
-    show monika at std
-    show albert 11111 at foc
+    show monika at std(p62)
+    show yuri at std(p63)
+    show libitina at std(p64)
+    show natsuki at std(p65)
+    show linda at std(p66)
+    show albert 11111 at foc(p61)
     al "We should move strung out, so if we do get ambushed by cultists, they can't take us all out quickly."
     show albert at std
     l "That's a good thought."
@@ -63,19 +76,23 @@ label chapter26:
     al "Who's that?"
     al "Me and Natsuki, the only ones with no admin experience and no Third Eyes?"
     show albert at std
-    l "I..."
+    show linda at foc
+    l 114113 "I..."
     l "I'm sorry, but yes."
+    show linda at std
     show natsuki at foc
-    n "Hold on now..."
+    n c114214 "Hold on now..."
     show natsuki at std
     show albert at foc
     al "Oh wait, maybe this doesn't even work."
     al "Assuming this is a trap, Adam's watching the viewport."
     al "Which, again, means he sees everything the POV character sees."
     show albert at std
-    l "Good point."
-    l "Well, crap, I guess he already knows we're here and everything we've said."
+    show linda at foc
+    l 115112 "Good point."
+    l 114112 "Well, crap, I guess he already knows we're here and everything we've said."
     l "Whether this is an ambush or not, there's no way he isn't watching."
+    show linda at std
     show albert at foc
     $ vpchar = mc_name if mc_dislike_player() < 2 else 'Renier'
     al "What if [vpchar] stays separate so he won't know exactly where we are?"
@@ -83,8 +100,9 @@ label chapter26:
     al "That would mitigate Adam's information advantage."
     show albert at std
     mc "I guess that's true..."
-    "I want to be with everyone else, but I also like the excuse to not be going into danger."
+    "I want to be with everyone else, but I also like the possibility of not going into danger."
     mc "I can do that, then."
+    show monika c114111 at foc
     menu:
         m "[persistent.playername], anything to say before we do this?"
         "Have you seen ERROR.txt?":
@@ -97,8 +115,8 @@ label chapter26:
         m "When did that appear?"
         "Seemed to appear right when the city loaded in.":
             pass
-    m "..."
-    m "I'm not sure what to make of that."
+    m c114121 "..."
+    m c114111 "I'm not sure what to make of that."
     m "Could be an error from something Adam tried that got automatically written to a file for some reason?"
     m "Because of the way the viewport skips time, if it appeared for you when the city loaded in then it could've happened at any point during the drive."
     m "I guess there's nothing to do about it right now."
@@ -124,53 +142,61 @@ label chapter26:
     al "Doctor Markov?"
     al "You in here?"
     "We follow him into the building."
-    scene warehouse_inside
+    scene warehouse_inside_1 with wipeleft
     "Well, here we are in this horrid place one last time..."
     "But there doesn't seem to be anyone here."
-    show albert at foc
+    show albert 11121 at foc(p11)
     al "It doesn't look like it was a trap."
-    show albert at std
-    show libitina at foc
+    show albert at std(p62)
+    show libitina 2271441 at foc(p21)
     "Libitina gasps as she walks in."
     b "This place...!"
-    show libitina at std
-    show yuri at foc
+    show libitina at std(p32)
+    show albert at std(p33)
+    show yuri c125117 at foc(p31)
     y "I vividly remember being cornered here that night."
     y "Hearing Mr. Markov's voice come to rescue me from a kinder death."
-    y "What a place of hell..."
+    y c125127 "What a place of hell..."
     show yuri at std
     show libitina at foc
-    b "I remember when he discovered in one of his first experiments that being cut make the Third Eye recede!"
+    b 2271113 "I remember when he discovered in one of his first experiments that being cut make the Third Eye recede!"
     b "He tested it on me in this very room!"
     "Libitina's shaking with fury."
     show libitina at std
     show yuri at foc
-    y "Try to stay calm..."
+    y c125117 "Try to stay calm..."
     y "This is a dangerous place for all of us Eye-bearers who were kept here."
     y "Given how sensitive yours is, you risk opening it if you don't stay calm."
-    show yuri at std
-    show renier at foc
+    show yuri at std(p42)
+    show libitina at std(p43)
+    show albert at std(p44)
+    show renier u2283 at foc(p41)
     r "Holy shit..."
     r "What if..."
     r "... that was his plan?!"
-    r "If I were him I'd've known fully well what being in this place would do to us."
+    r u1213 "If I were him I'd've known fully well what being in this place would do to us."
     r "It's like he wanted to lure us into a place where one of us might snap and open her Third Eye."
     r "Especially given we were all here together and armed, any one of us who snapped could kill everyone else."
     show renier at std
     show yuri at foc
-    y "But does that do him any good?"
+    y c125113 "But does that do him any good?"
     y "Wouldn't that just lead to us starting a new game?"
-    show yuri at std
+    show yuri at std(p53)
+    show renier at std(p52)
+    show libitina at std(p54)
+    show albert at std(p55)
+    show linda 124111 at foc(p51)
     l "Not without reset."
     l "We might not actually be able to start a new game, one way or another."
     l "With both restore_character and Character.reset gone."
     "..."
-    l "It's also possible he {i}wanted{/i} us to start a new game now."
+    l 114111 "It's also possible he {i}wanted{/i} us to start a new game now."
     l "With his other plan foiled, maybe he wanted to split us up for some reason?"
     l "Hard to say."
+    show linda at std
     "..."
     show albert at foc
-    al "Frankly, I don't think he's coming."
+    al "Well frankly, I don't think he's coming."
     al "This wasn't an ambush. Maybe he just sent us here to buy time to think of a new plan."
     show albert at std
     # TODO what specifically prompts this?
@@ -197,9 +223,11 @@ label chapter26:
     m c114282 "No..."
     m "Oh no..."
     show monika at std
-    l "Have we been tricked?"
+    show linda at foc
+    l 33a443 "Have we been tricked?"
     l "That explains why it didn't work to make Libitina an admin."
     l "Maybe you didn't really do the thing."
+    show linda at std
     show monika at foc
     m "No, no, no!"
     m "I have to restore our memories."
@@ -213,11 +241,13 @@ label chapter26:
     m "viewport.set_strict_mode worked!"
     m "So it must not've been a trick...!"
     show monika at std
-    l "{i}No...{/i}"
-    l "It logged a message, and had a docstring."
+    show linda at foc
+    l 11a332 "{i}No...{/i}"
+    l 11a112 "It logged a message, and had a docstring."
     l "But the viewport object is shared between each admin's console namespace."
     l "And since it's Python, he could've added a method to it."
     l "I think viewport.set_strict_mode is a function he attached that does nothing but says it worked!"
+    show linda at std
     show monika at foc
     m c118382 "{cps=10}Nooooooo!!{/cps}"
     show monika at std
