@@ -464,4 +464,3 @@ l "And restores their file, of course."
     "{cps=200}Fatal error: player character missing.{/cps}"
     # TODO why does the player shut off, or does Adam do it?
     $ renpy.quit()
-

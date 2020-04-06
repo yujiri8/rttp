@@ -592,42 +592,150 @@ label after_return_to_ddlc:
     m "Someone carry Adam!"
     m "He has to come with us!"
     "Renier and Albert together carry the mortally wounded Adam back to our vehicle."
+    "It's really cramped, even with a 7-seat van."
+    "We squeeze four of us on the back bench and place Adam on the floor, while Libitina, who's finished vomiting and passed out by now, lays across our laps on the back."
     scene city_night with wipeleft
     scene driving_night with wipeleft_scene
     al "Where are we going?"
     m "Anywhere!"
     m "Just out of the city!"
     play sound car_speed
-    "..."
-    "I start to get worried about Adam."
-    "If he dies again, he could move his data over to DDLC, which would remove his body and might enable him to come back in the place he died, escaping from us."
+    "Albert speeds down the road like a madman."
+    y "Monika?"
+    y "You can use DDLC to heal people with Character.reset, right?"
+    m "Yeah..."
+    y "Can you do it to Libitina?"
+    m "I would, but I have to get either knocked out or killed again."
+    y "I see..."
+    m "Though..."
+    m "I'm starting to get worried about Adam."
+    m "If he dies again, he could move his data over to DDLC, which would remove his body and might enable him to come back in the place he died, escaping from us."
     "He's not screaming anymore."
     "I think he passed out."
     "He's not dead, because his file isn't disappearing..."
     "... but he must be close."
-    # He can't insert himself if he's unconscious. But if he dies, he can be mentally concsious and able to act while the game effectively sees him as unconscious.
-    m "Pull over!"
-    m "I have to save Adam!"
+    y "So you can't let him bleed out."
+    m "Yeah, I think so..."
+    m "Albert, pull over!"
+    m "We have to save Adam!"
     al "What the hell?!?"
+    # He can't insert himself if he's unconscious. But if he dies, he can be mentally concsious and able to act while the game effectively sees him as unconscious.
     m "Dying while we're moving could be a way for him to escape us!"
-    m "I can use DDLC to heal him."
-    y "Can you use it to heal Libitina too?"
-    m "Yeah..."
-    m "She seems to be unconscious too."
+    m "I'm gonna use DDLC to heal him and Libitina."
+    al "Alright..."
     "Albert pulls over."
-    al "Alright, make this quick..."
-    "Sure thing."
+    al "Let's make this quick! We're still in the danger zone."
     # TODO image thought: maybe I should get a nighttime filter of the daytime city image and use this one only here.
     scene city_night with wipeleft
-    m "Oh..."
-    m "I'll have to be knocked out again to do this..."
-    r "I don't have the pipe anymore."
-    # TODO I don't want them to use a gun. How else can they resolve this?
-#    m "Well, now we know for sure that admins don't get messed up when they die unless they're killed by a Third Eye."
-#    m "Maybe someone has to shoot me."
-#    call updateconsole("def insert(char):\n  c=admin.jail(ddlc, char)\n  s=pgp_sign(c, markov_key)\n  admin.complete_action(s)")
-#    call updateconsole("insert(adam)", "Adam moved to jail\n doki_doki_literature_club")
-#    call updateconsole("insert(libitina)", "Libitina moved to jail\n doki_doki_literature_club")
-#    call updateconsole("insert(monika)", "Monika moved to jail\n doki_doki_literature_club")
-    ""
+    show yuri c125111 at foc(p11)
+    y "We should make sure someone else is POV while you're in the DDLC world."
+    y "I don't guess Adam would really gain anything from breaking the viewport anymore..."
+    y "... but just incase."
+    show yuri at std
+    m "Good idea."
+    show yuri at std(p22)
+    # TODO maybe not if she was murdered.
+    show natsuki c124111 at foc(p21)
+    n "I'll take it."
+    n "It should be someone who doesn't have a Third Eye."
+    show natsuki at std
+    m "Alright."
+    call switch_pov('natsuki')
+    scene city_night with dissolve_scene_full
+    show monika c124111 at foc(p11)
+    m "Okay..."
+    m "It's you now."
+    show monika c224113
+    call updateconsole("def insert(char):\n  c=admin.jail(ddlc, char)\n  s=pgp_sign(c, markov_key)\n  admin.complete_action(s)")
+    call updateconsole("def insert_all():\n time.sleep(30)\n insert(adam)\n insert(libitina)\n insert(monika)")
+    call updateconsole("import time")
+    call updateconsole("insert_all()")
+    m c114113 "Thirty seconds."
+#    call updateconsole("Adam moved to jail\n doki_doki_literature_club")
+#    call updateconsole("Libitina moved to jail\n doki_doki_literature_club")
+#    call updateconsole("Monika moved to jail\n doki_doki_literature_club")
+    show monika at std
+    n "Okay..."
+    "I guess I'm the one to do it."
+    # TODO I'd prefer if they didn't use a gun. I don't know, maybe being knocked out wouldn't delay her.
+    # But Renier doesn't have the pipe.
+    "Everyone but me and Monika covers their ears."
+    "On second thought, it was pretty dumb of me to volunteer for this when it could've been Linda."
+    "Oh well. No more time to lose."
+    "I aim for Monika's forehead."
+    play sound gunshot1
+    scene black
+    "I make sure not to look at where Monika fell."
+    "I don't what to see what happened to her head."
+    "As many times as I've seen that stuff now, it still makes me nauseous."
+    "The thirty seconds pass."
+    show yuri at foc(p11)
+    y "It's happening."
+    y "They're all gone."
+    show yuri at std
+    n "Alright..."
+    n "I hope she gets back soon."
+    n "We're still in danger every second we're in this city."
+    # TODO probably a few lines
+    "..."
+    scene city_night with wipeleft
+    "A minute later, Adam, Monika and Libitina all reappear, uninjured."
+    show libitina at std(p31)
+    show markov at std(p33)
+    show monika at foc(p32)
+    m "We're back!"
+    show monika at std
+    show markov at foc
+    k "..."
+    show markov at std
+    show libitina at foc
+    b "..."
+    b "Him!!"
+    show libitina at std
+    show markov at foc
+    k "...!!"
+    show markov at std
+    "Wait Libitina, you've missed a lot!"
+    "Stop!"
+    # How will they possibly stop her?
+    # Especially consider this is still in the city.
+    # Remem, these could be the same event.
+    # Wait, could they make that happen already?
+    # I bet they can.
+
+    k "If you kill me again you'll get the Third Eye sickness again!"
+
+    show libitina at foc
+    b "Um..."
+    b "I'm sorry that I shot you, Monika..."
+    show libitina at std
+    show monika at foc
+    m c227113 "Yeah, normal people don't just shoot their friends out of the blue!"
+    m c121111 "In the end though, it was the reason we caught Adam."
+    m "We might not've had any other way to lure him to the warehouse."
+    show monika at std
+
+    show markov at foc
+    k "It is time."
+    k "Time for me to grant Libitina the rank of admin."
+    k "Libitina."
+    k "Let us go to DDLC."
+    k "We will do what I fooled you and Monika into thinking you had done."
+    k "I'm positive it will work."
+    show markov at std
+    #
+    show monika at foc
+    m "How are you going to start a new game in that world?"
+    m "To make the Presidency status take effect?"
+    show monika at std
+    show markov at foc
+    k "I won't need to."
+    k "I'll use admin.inflict_epiphany."
+    k "The API for doing it directly that I broke when I found out your plan."
+    k "It won't work here, but it will work in DDLC."
+    k "And then..."
+    k "... I'll still have to let her kill me to break out."
+    show markov at std
+    #
+    k "I just wish I had turned myself in before you trapped me with that dialog exploit."
     return
