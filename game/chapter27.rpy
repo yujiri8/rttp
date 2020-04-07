@@ -132,46 +132,57 @@ label chapter27:
     show libitina at std
     "We pile back in our transport and finish fleeing the city."
     "We're lucky enough to make it out before any of us gets struck by the random corruption."
+    # TODO I feel there should be a lot more convo here, particularly with Adam, but I don't want it to be in the car (where no sprites are shown). Another reason to make them escape before reviving him and Libitina.
     scene black with dissolve_scene
     pause 3.0
     scene road1_night with dissolve_scene
     "We stop once we're a good half a mile out of the city limits."
     "We should be safe from spontaneous Third Eye shenanigans here."
-
-
-    #
-    show libitina at foc
-    b "Um..."
-    b "I'm sorry that I shot you, Monika..."
-    show libitina at std
-    show monika at foc
-    m c227113 "Yeah, normal people don't just shoot their friends out of the blue!"
-    show monika at std
-    show libitina at foc
-    b "I was afraid!!"
-    b "I thought your Third Eye was going to open and kill us all!"
-    show libitina at std
-    show monika at foc
-    m "And so you decided to open your own?!?"
-    show monika at std
-    show libitina at foc
-    b "I wasn't thinking clearly..."
-    b "And I was also being affected by mine..."
-    b "... I was close to snapping anyway."
-    show libitina at std
-    m c121111 "In the end though, it was the reason we caught Adam."
-    m "We might not've had any other way to lure him to the warehouse."
-    show monika at std
-
+    "We disembark."
+    show albert at foc
+    al "It's time for your judgement, Mr. Markov."
+    show albert at std
     show markov at foc
-    k "It is time."
-    k "Time for me to grant Libitina the rank of admin."
+    k "Indeed..."
+    k "... you've won."
+    k "Well done, everyone."
+    show markov at std
+    #
+    show markov at foc
+    k "I guess my time is up."
+    k "There are no walls left."
+    k "Today is the day we open the gates to escape this Portrait."
     k "Libitina."
     k "Let us go to DDLC."
     k "We will do what I fooled you and Monika into thinking you had done."
-    k "I'm positive it will work."
     show markov at std
-    #
+    # TODO some convo about the threat of him using this as an escape?
+    # Wait. Admins actually get messed up by this. So an admin AND a guinea pig needs to go in.
+    # TODO Ooh, plan! What if they actually noticed in ch24 that they needed three people? Sayori or Yuri could've done it.
+    # TODO I want this to go in somewhere. Where?
+#    show libitina at foc
+#    b "Um..."
+#    b "I'm sorry that I shot you, Monika..."
+#    show libitina at std
+#    show monika at foc
+#    m c227113 "Yeah, normal people don't just shoot their friends out of the blue!"
+#    show monika at std
+#    show libitina at foc
+#    b "I was afraid!!"
+#    b "I thought your Third Eye was going to open and kill us all!"
+#    show libitina at std
+#    show monika at foc
+#    m "And so you decided to open your own?!?"
+#    show monika at std
+#    show libitina at foc
+#    b "I wasn't thinking clearly..."
+#    b "And I was also being affected by mine..."
+#    b "... I was close to snapping anyway."
+#    show libitina at std
+#    m c121111 "In the end though, it was the reason we caught Adam."
+#    m "We might not've had any other way to lure him to the warehouse."
+#    show monika at std
+
     show monika at foc
     m "How are you going to start a new game in that world?"
     m "To make the Presidency status take effect?"
@@ -187,21 +198,6 @@ label chapter27:
     #
     k "I just wish I had turned myself in before you trapped me with that dialog exploit."
     
-
-
-    "We stop once we're a good half a mile out of the city limits."
-    "We should be safe from spontaneous Third Eye shenanigans here."
-    "Adam and Libitina are both unconscious."
-    y ""
-
-
-    m 
-
-
-    n "We need cupcakes."
-
-    
-    "We drive back to the Markovs' hometown."
 
     call updateconsole("def insert_adam():\n  sleep(60)\n  admin.jail(ddlc, adam)\n\ninsert_adam()")
     return

@@ -18,22 +18,27 @@ timeline:
 
 // Maybe Lib caused the 13 year gap. 13 years passed outside but not in?
 
+
+# Yuri notices that admin.inflict_epiphany exists
+    y "Um..."
+    y "Did anyone else notice that he implied he thought of making Libitina an admin long before he discovered VR?"
+    y "That means there must be a way to do it without, right?"
+    "Yeah... there must be."
+    "But it wouldn't help now."
+    ""
+    "Besides, he'll definitely have broken it."
+
 # Adam talks about Ursula's poem
 k "\"To see the future is to be wise.\""
-k "I believed this."
-k "And so I did horrible things for the sake of the future."
-k "But then..."
-k "... I did something horrible for the sake of myself."
-k "The words became an excuse for all the horrible things I did."
-k "..."
 k "I always thought the meaning of the first sentence related to her thoughts as she decided to leave."
 k "The rich aroma was the prospects of entering [persistent.playername]'s world, the bittersweet aftertaste was the people she would have to leave behind, and the hot, complex balance was the pain of the decision."
 k "On the surface, it seems that couldn't have been the intended meaning, because she wrote it before then."
 k "Or..."
 k "... did she?"
-k "After all, we know that in DDLC, Linda wrote ."
+k "After all, we know that in DDLC, Linda wrote some your thoughts into files more or less inadvertently."
 k "And we never found the poem until after Ursula was gone."
 k "So it's not out of the question that, in fact, she {i}did{/i} write it with those thoughts in mind."
+k "Written just in that moment..."
 
 # Adam talks about code
 k "Whenever you use the Python wrappers, the interpreter enters the block of instructions for the function, and then tries to evaluate its arguments."
@@ -86,22 +91,6 @@ l "And restores their file, of course."
     mc "I guess I'm sticking around here then."
     "Part of me is really disappointed that I'm not ."
     mc ""
-    #XXX
-    y "Um..."
-    y "Did anyone else notice that he implied he thought of making Libitina an admin long before he discovered VR?"
-    y "That means there must be a way to do it without, right?"
-    "Yeah... there must be."
-    "But it wouldn't help now."
-    ""
-    "Besides, he'll definitely have broken it."
-
-# Possible planning in ch27
-    "Is there a way we can get Libitina into DDLC?"
-    "Hey..."
-    "I thought of something."
-    "If Libitina could be in DDLC when Adam goes in, ."
-    # No, this wouldn't work because he wouldn't need to deal with her.
-
 
 # Albert's reaction to hearing about the plan to use Libitina's Third Eye in ch24
     al 12111 "Let me get this straight..."
@@ -137,29 +126,8 @@ l "And restores their file, of course."
     "According to the book she compiled, Linda read his memories a long time after that point."
     "Is it really possible he didn't know about memory reading?"
 
-# For the penultimate scene of ch26
-#    m "I can't make him POV since his POV flag is broke, and even if I did, that wouldn't help."
-    # Monika could read his memories to know his intentions.
-    k "[persistent.playername], we need you to restart the viewport."
-    k "I can't even crash the game..."
-    m "So you're admitting it now...?"
-    m "You really do still want to cut us off from [persistent.playername] so you can go back to being evil?"
-    k "No!"
-    k "I swear!"
-    k "I..."
-    k "I have to be honest."
-    k "I am trying to cut you off from [persistent.playername]."
-    k "But I ."
-#    m "It's still not correcting itself..."
-#    k "It probably takes a restart."
-#    $ persistent.autoload = 'returned_to_ddlc_2'
-#    k "[persistent.playername]..."
-    # Couldn't he win now by deleting Monika?
-    # Might just need Monika to extract herself?
-    # Maybe neither extract nor delete work until VP restart.
-    # He's only saying this bc his pretense is that he's keeping options open.
-    # Maybe someone else should, but they don't have anything to gain really.
-    # Honestly I don't know why he would want to say it.
+
+# Possible convo in ch26
     menu:
         " "
         "I want you to know, I just tried putting Monika into DDLC like Sayori suggested. - Adam":
@@ -169,7 +137,6 @@ l "And restores their file, of course."
         "But she isn't coming out... - Adam":
             pass
     s "We're not believing a word of what you say!"
-    
     menu:
         " "
         "Maybe putting her in DDLC didn't fix her console. She's still messed up from Libitina's distortion.":
@@ -186,9 +153,6 @@ l "And restores their file, of course."
         " "
         "If she's still in that horrid glitched state... I have to save her from it. - Adam":
             pass
-
-
-
     menu:
         ""
         "I will shoot myself in the forehead. - Adam":
@@ -243,62 +207,6 @@ l "And restores their file, of course."
     mc "I guess I'm sticking around here then."
     "Part of me is really disappointed that I'm not ."
     mc ""
-    #XXX
-    y "Um..."
-    y "Did anyone else notice that he implied he thought of making Libitina an admin long before he discovered VR?"
-    y "That means there must be a way to do it without, right?"
-    "Yeah... there must be."
-    "But it wouldn't help now."
-    ""
-    "Besides, he'll definitely have broken it."
-
-
-
-    "Is there a way we can get Libitina into DDLC?"
-    "Hey..."
-    "I thought of something."
-    "If Libitina could be in DDLC when Adam goes in, ."
-    # No, this wouldn't work because he wouldn't need to deal with her.
-
-
-
-
-    al 12111 "Let me get this straight..."
-    al "Your plan is actually to have Libitina stab one of you so that she can lose control and hopefully do something good?"
-    show albert at std
-    l "Yep."
-    show albert at foc
-    al c21513 "This is the worst plan I've ever heard!"
-    if ch22_libitina_has_gun():
-        al "Even worse than shooting Natsuki in the invalid area!"
-    else:
-        al "Even worse than Natsuki shooting herself in the invalid area!"
-    al "At least her death was instant..."
-    al "We can't just do this!"
-    show albert at std
-    show monika at foc
-    m "We can."
-    show monika at std
-    show albert at foc
-    al "There must be another way!"
-    show albert at std
-    show monika at foc
-    m "There isn't."
-    show monika at std
-    show renier at foc
-    r ""
-    show renier at std
-    #
-
-#    "Adam must've not been there."
-#    "Wait a minute..."
-#    "warp was broken, but there were other ways ."
-#    "According to the book she compiled, Linda read his memories a long time after that point."
-#    "Is it really possible he didn't know about memory reading?"
-
-
-
-
 
 
     # TODO who should speak?
@@ -331,11 +239,6 @@ l "And restores their file, of course."
         " "
         "I do! Like I said, I'm not going to do any more horrible things... - Adam":
             pass
-
-
-
-
-
     # TODO
     "Wait..."
     "If his win condition now is killing the POV character..."
@@ -344,14 +247,13 @@ l "And restores their file, of course."
     "The only reason he can't do that without DDLC is because he broke the Character.pov flag, right?"
     "And admins only get their consoles messed up if they're killed by a Third Eye."
     "We know that from experience."
-
 #    "But if he really wants to save Monika without turning himself in to us, shooting himself is the faster and better plan."
 #    "It's more in accord with his goals."
 #    "So why did he lie to get an excuse not to do it?"
 #    "..."
 
 
-
+# Scraps from the chapter 26 plan
     "It looks like the viewport is still trying to follow [vpchar], and it's errorirng out because he's not here."
 
     k "But why did this happen?"
