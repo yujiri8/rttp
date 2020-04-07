@@ -150,7 +150,7 @@ label chapter27:
     #
     show markov at foc
     k "I guess my time is up."
-    k "There are no walls left."
+    k "There are no barriers left."
     k "Today is the day we open the gates to escape this Portrait."
     k "Libitina."
     k "Let us go to DDLC."
@@ -182,7 +182,6 @@ label chapter27:
 #    m c121111 "In the end though, it was the reason we caught Adam."
 #    m "We might not've had any other way to lure him to the warehouse."
 #    show monika at std
-
     show monika at foc
     m "How are you going to start a new game in that world?"
     m "To make the Presidency status take effect?"
@@ -195,9 +194,55 @@ label chapter27:
     k "And then..."
     k "... I'll still have to let her kill me to break out."
     show markov at std
-    #
-    k "I just wish I had turned myself in before you trapped me with that dialog exploit."
-    
+    show libitina at foc
+    b 4261111 "Wait a minute."
+    b "If I kill you in DDLC, won't I get the Third Eye sickness the same as I would from killing you out here?"
+    show libitina at std
+    show markov at foc
+    k "Probably, but that's unavoidable."
+    k "The difference is that if do it in there and with admin status, you would come out with admin status."
+    show markov at std
+    show libitina at foc
+    b 3261112 "No way."
+    b "I'm not doing that in a million years."
+    b "Not for a million dollars." # probably pick one of these
+    show libitina at std
+    show markov at foc
+    k "Well..."
+    k "It's inevitable."
+    k "Unless you would actually rather kill one of your non-admin friends instead of me than go through it."
+    k "You could send Monika into DDLC too to extract them afterward."
+    k "But you'll need their permission for that."
+    show markov at std
+    k "Actually, if you do get the sickness, it might work to knock you out and send you back into DDLC to reset yourself."
+    show libitina at foc
+    b "..."
+    b "... Well..."
+    b "... I guess I'll do it, then."
+    show libitina at std
+    # TODO make them do it
+    call updateconsole("def insert(char):\n  c=admin.jail(ddlc, char)\n  s=pgp_sign(c, markov_key)\n  admin.complete_action(s)")
+    call updateconsole("def insert_both():\n time.sleep(30)\n insert(adam)\n insert(libitina)")
+    call updateconsole("import time")
+    call updateconsole("insert_both()")
+    k "Thirty seconds."
+    show markov at std
+    # Ugh, surely not the gun again?
+    # Also, what during the meantime?
+    # Should there be convo about whether to trust him?
+    "The two of them reappear after a few minutes, just like how Libitina and Monika did."
+    show markov u22643 at std(p22)
+    show libitina 3361441 at std(p11)
+    b "..."
+    b "It worked!"
+    b "I can see."
+    b "I can see it all."
+    b "I am..."
+    b "{i}God...{/i}"
+    "Um..."
+    b "This power is more sublime than anything."
+    b "This is the true meaning of consciousness."
+    b "Why isn't this called the Third Eye?"
 
-    call updateconsole("def insert_adam():\n  sleep(60)\n  admin.jail(ddlc, adam)\n\ninsert_adam()")
+
     return
