@@ -153,5 +153,12 @@ label albert_pickup_natsuki:
     al "Alright!"
     al "We're on our way."
     if ch22_libitina_has_gun() and not persistent.explicitly_advocate_murder_natsuki:
-        "Libitina and I still have something to settle."
+        "..."
+        al "I wanted to ask you something."
+        "How do you feel about what happened back there?"
+        "I sigh."
+        n "I hate to say it, but I'm over it."
+        n "She had to..."
+        n "... and I would've done the same thing."
+        # TODO finish
     return
