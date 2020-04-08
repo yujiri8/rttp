@@ -234,15 +234,50 @@ label chapter27:
     show markov u22643 at std(p22)
     show libitina 3361441 at std(p11)
     b "..."
+    show libitina at foc
     b "It worked!"
     b "I can see."
     b "I can see it all."
     b "I am..."
     b "{i}God...{/i}"
+    # I guess she's not getting the sickness? I'd rather not deal with the complications.
     "Um..."
+    "Don't scare us!"
+    show libitina at foc
     b "This power is more sublime than anything."
     b "This is the true meaning of consciousness."
     b "Why isn't this called the Third Eye?"
+    show libitina at std
+    # Stitching.
+    # TODO what about the plan to get cupcakes? I do kinda want it to fail, but it seems like they'd want to go do it now.
+label the_final_plan:
+    play music determination
+    k "So..."
+    k "We all know what has to happen."
+    k "Libitina has to activate her Third Eye..."
+    k "... open the portal..."
+    k "... and then, she needs to be stopped before she can exit, so that the portal can be held open."
+    k "All evidence indicates it will close if she steps through it."
+    k "But if she doesn't, our best hope is the theory that someone {i}else{/i} going through it {i}wouldn't{/i} close it."
+    k "At least if it's a normal character."
+    k "If that theory proves true, then we know how to get everyone out of this world."
+    k "And if it proves false, we won't be deprived of our means of re-opening it."
 
+    k "My theory is that the people who build this world... the Portrait of Markov..."
+    k "chose Ursula for their first experiment with medium-awareness."
+    k "Maybe they never wanted to try again, or maybe I was their next choice after Ursula escaped so easily."
+    k "And then they haven't done anything with it in the years since."
 
+    "How are we possibly going to stop her?"
+    "We've seen that bullets can't touch her."
+
+    k "Bullets don't, but if anything will, other Third Eyes will."
+    k "If we're lucky, [mc_name]'s rallying effect could be strong enough to keep her lucid and prevent her from forgetting the plan."
+    k "But that's unlikely."
+    k "If we're less lucky, perhaps other Third Eye-bearers can combine their powers to stop her."
+    k "Maybe Monika, by combining her Third Eye with admin status again, could stop her."
+    k "There's still a lot we don't know."
+    k "But there isn't really any other way to learn more."
+    k "There will be no more experiments."
+    
     return
