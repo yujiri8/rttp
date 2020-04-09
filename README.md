@@ -20,17 +20,7 @@ The file 'SCRAPS' contains a couple of less important thoughts (that I don't nee
 
 * I need to decide what to do about the unfinished branch where Natsuki punches Libitina if Libitina shot her. I shouldn't make that happen. It's a pretty damning portrayal of Natsuki when I think about it.
 
-# Outline for the ending
-
-* They escape the danger zone, and use DDLC to heal Libitina and Adam. A lot of talk. Adam's going to help.
-
-* They decide to do their thing: make Libitina admin to get out. Adam uses the DDLC escape trick to make Libitina admin.
-
-* They do their plan: open Libitina's Eye and then stop her after she opens the portal.
-
-	They'll have her open the portal and then try to stop her from going through it (since they know that closes it). They might theorize the portal only closes if someone with an open Third Eye goes through it. They'll succeed in stopping her by using everyone else's Third Eye, but they'll break the world so much that everything else is destroyed, including the whole population except for them, and they can't undo it. Finally, they'll leave.
-
-	* Maybe it's opening the portal on top of a rift that breaks everything irreversibly.
+# Plans for the ending
 
 * Adam's survival depends on whether you've picked the mercy-favoring options. If so he escapes with them into the real world. Otherwise Libitina destroys him.
 
@@ -44,7 +34,7 @@ The file 'SCRAPS' contains a couple of less important thoughts (that I don't nee
 
 * A thing I've decided on that I haven't said anywhere is that probably, the Third Eye is a naturally occurring thing in the Portrait of Markov even before Ursula's escape, but it's dormant until some contact with medium-awareness. Contact with an admin character seems to count. (If I don't explain this, it doesn't make sense that it was never discovered before Ursula's awakening and escape.)
 
-# Images needed
+# Images
 
 * Improve Amy/Michael sprites (Amy should be taller, Michael may need expression improvement) - I can do this myself
 
