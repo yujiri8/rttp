@@ -35,8 +35,8 @@ label chapter27:
     show yuri at std
     m "Good idea."
     show yuri at std(p22)
-    # TODO maybe not if she was murdered.
     show natsuki c124111 at foc(p21)
+    # TODO maybe not if she was murdered in ch22.
     n "I'll take it."
     n "It should be someone who doesn't have a Third Eye."
     show natsuki at std
@@ -143,16 +143,16 @@ label chapter27:
     al "It's time for your judgement, Mr. Markov."
     show albert at std
     show markov at foc
-    k "Indeed..."
+    k u11413 "Indeed..."
     k "... you've won."
     k "Well done, everyone."
     show markov at std
     #
     show markov at foc
-    k "I guess my time is up."
+    k u11513 "I guess my time is up."
     k "There are no barriers left."
     k "Today is the day we open the gates to escape this Portrait."
-    k "Libitina."
+    k u12513 "Libitina."
     k "Let us go to DDLC."
     k "We will do what I fooled you and Monika into thinking you had done."
     show markov at std
@@ -247,9 +247,14 @@ label chapter27:
     b "This power is more sublime than anything."
     b "This is the true meaning of consciousness."
     b "Why isn't this called the Third Eye?"
+
+    b "You were right..."
+    b "Our world..."
+    b "... is a horrific prison..."
+    b "We must get out!"
     show libitina at std
-    # Stitching.
-    # TODO what about the plan to get cupcakes? I do kinda want it to fail, but it seems like they'd want to go do it now.
+    # TODO Stitching.
+    # what about the plan to get cupcakes? I do kinda want it to fail, but it seems like they'd want to go do it now.
 label the_final_plan:
     play music determination
     k "So..."
@@ -262,15 +267,12 @@ label the_final_plan:
     k "At least if it's a normal character."
     k "If that theory proves true, then we know how to get everyone out of this world."
     k "And if it proves false, we won't be deprived of our means of re-opening it."
-
-    k "My theory is that the people who build this world... the Portrait of Markov..."
-    k "chose Ursula for their first experiment with medium-awareness."
-    k "Maybe they never wanted to try again, or maybe I was their next choice after Ursula escaped so easily."
-    k "And then they haven't done anything with it in the years since."
-
+    show markov at std
+    # Don't they expect killing Adam alone will stop her?
+    # Maybe being admin herself makes her not vulnerable to that, as they found out when she became one.
     "How are we possibly going to stop her?"
     "We've seen that bullets can't touch her."
-
+    show markov at foc
     k "Bullets don't, but if anything will, other Third Eyes will."
     k "If we're lucky, [mc_name]'s rallying effect could be strong enough to keep her lucid and prevent her from forgetting the plan."
     k "But that's unlikely."
@@ -279,5 +281,175 @@ label the_final_plan:
     k "There's still a lot we don't know."
     k "But there isn't really any other way to learn more."
     k "There will be no more experiments."
-    
+    show markov at std
+    show libitina at foc
+    b "So I'm going to use you as fuel..."
+    b "And then..."
+    b "The other Eye-bearers are all going to open their Third Eyes too and try to fight me together?"
+    show libitina at std
+    show markov at foc
+    k "Pretty much."
+    show markov at std
+    mc "My ability to open others' Third Eyes might come in handy here."
+    mc "If I open mine..."
+    mc "Maybe I could get everyone else's open without them having to each kill someone."
+    show albert at foc
+    al 22112 "[mc_name], I will be your sacrifice."
+    show albert at std
+    mc "Eh...?"
+    "{i}Without even being pressured...?[/i}"
+    show albert at foc
+    al "Someone must, and again, I'm one who hasn't been through it yet."
+    al "The only one who hasn't suffered anything equivalent either."
+    al "I also know you have more attachment to the others who haven't than to me."
+    show albert at std
+    "I..."
+    "I don't know what to say."
+    mc "I..."
+    mc "Thank you."
+    mc "Very much."
+    "Albert gives a solemn nod."
+    "Okay."
+    show sayori at foc
+    s "I can't believe we're doing this again..."
+    show sayori at std
+    show renier at foc
+    r "Just remember..."
+    r "Last time..."
+    r "... it worked."
+    show renier at std
+label do_the_final_plan:
+    show albert at foc
+    al "[mc_name]..."
+    al "You need to kill me first."
+    al "Since your Third Eye will take longer to open than Libitina's."
+    show albert at std
+    "Okay... oh my God..."
+    "I can't believe things have come to this."
+    "I start to breathe hard and sweat just thinking about what I'm going to do."
+    "I close my eyes."
+    "I imagine how the next few seconds are going to be."
+    "I'm going to inflict that same pain on this man that I felt when Monika stabbed me."
+    "I'm going to have to listen to his screams and keep feeding it."
+    "I'm going to go insane."
+    "I'm deliberately entering a situation where I basically won't be in control of my actions."
+    "What kind of deed is this?"
+    "..."
+    "I feel like it's a good sign that I hesitate longer than Monika did."
+    "Does that make me a better person than her?"
+    "I'm just distracting myself."
+    al "[mc_name], stop dragging out this tension."
+    "I jump."
+    "My eyes water again."
+    "But yes... it's time to feed that dark monster I know is in me."
+    "Here it... {i}fucking...{/i} goes."
+    scene black
+    play sound stab
+    play music our_reality
+    "My mind is instantly flooded with flashbacks."
+    "I forgot how familiar I already was with the feeling of stabbing someone from my time in the facility."
+    "It's one of the most empowering feelings in the world."
+    "I remember the people I killed during experiments and during my escape."
+    "I'm adding another one."
+    play sound stab
+    "I feel like I'm getting goosebumps all over."
+    "My body convulses."
+    "I hear the cries of my friends, almost drown by Albert's screams."
+    "I hear [persistent.mc_favorite]'s cry."
+    $ style.say_dialogue = style.edited
+    "But I no longer feel any remorse."
+    "My Third Eye is my God."
+    "I do as it commands."
+    "I am it."
+    "I continue to make a mess of Albert's flesh."
+    "The rivers of blood I spill are a sacrifice to God."
+    "A gravely insufficient sacrifice."
+    "I need more."
+    menu:
+        " "
+        "[mc_name], remember! You need to open everyone else's Third Eye!":
+            pass
+    "Who?"
+    "[persistent.playername]?"
+    "..."
+    "Who do you think you are?"
+    "You don't compare to this power."
+    "Why should I follow you?"
+    "With my Third Eye, I am a greater being than you."
+    menu:
+        " "
+        "You knew it was going to affect you like this! You're not a greater being if you can't resist an influence you thought you were prepared for!":
+            pass
+    "I am not the same person as [mc_name] before he opened his Third Eye."
+    "That boy... was an imbecile."
+    "He didn't know anything."
+    "He couldn't {cps=8}{i}feel{/i}{/cps} anything."
+    "Hell, he was nothing more than a minion of you."
+    if persistent.player_allow_free_will_test:
+        menu:
+            " "
+            "You remember how we proved that wasn't true!":
+                pass
+    else:
+        # TODO is this necessarily true?
+        menu:
+            " "
+            "You know from experience that's not true! You defied me before!":
+                pass
+        "Stop calling that imbecile me."
+    "He may have had a slimmer of identity, but he still did what you asked."
+    "He was still an extra in an endeavor controlled by you."
+    "You sick control freak!"
+    "You don't own me, [persistent.playername]!"
+    "I will ruin your plan!"
+    "I serve God!"
+    "Who should I kill next?"
+
+    "In the meantime, Libitina has stabbed Adam."
+    "Her own Third Eye is open."
+    # TODO probably the gate is opened now.
+    "Ah..."
+    "A contester."
+    "This is more fitting."
+    "A better certification of my power."
+    "A clash with her would be the perfect event to punctuate my rise to supremacy."
+    "I try to attack her with my knife."
+    show libitina at foc(p11)
+    b 3371443 "Back, weakling!"
+    show libitina at std
+    play sound glitch_horror
+    show distort1 zorder 100
+    show distort2 zorder 100
+    with Dissolve(0.2)
+    "What in the fucking hell!?!"
+    "I feel weak suddenly."
+    "I can't see, and I feel the sharpest ambient pain I've ever felt..."
+    "... like the pain of being in the glitched state when restoring Linda back then... but worse."
+    "I drop to my knees."
+    "I can't resist her distortion!"
+    "She is..."
+    "... a far stronger being than I am..."
+    "I need help."
+    mc "Sayori!"
+    mc "Monika!"
+    mc "Yuri!"
+    mc "Renier!"
+    mc "Assist me!"
+    "They had better not be too weak."
+
+    "I hear a shout from Sayori."
+    "My headache clears..."
+    show distort1:
+        alpha 0.3
+    show distort2:
+        alpha 0.3
+    with Dissolve(0.5)
+    "I feel empowered again."
+    # Maybe Linda/Natsuki use guns to stop the other Eye-bearers.
+    # If they shoot Sayori last, everyone may survive.
     return
+
+    k "My theory is that the people who build this world... the Portrait of Markov..."
+    k "chose Ursula for their first experiment with medium-awareness."
+    k "Maybe they never wanted to try again, or maybe I was their next choice after Ursula escaped so easily."
+    k "And then they haven't done anything with it in the years since."
