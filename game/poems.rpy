@@ -164,10 +164,44 @@ It's not that the supernatural being is impervious to me. It's that deception, p
 """)
 
     poem_ursula = Poem(
-    author = "mc", # IDK maybe Libitina has MC-like handwriting
+    author = "yuri", # Libitina has Yuri-like handwriting
     title = "The Third Eye",
     text = """\
 What is a man without knowing the rich aroma of the future; the hot, complex balance of the present; and the bittersweet aftertaste of the past?
 
 Everyone can see the present and the past; those are the two universal eyes. To see the future is to be wise.
+""")
+
+    poem_adam = Poem(
+    author = "mc", # Adam has MC-like handwriting
+    title = "The Fence of Repentance",
+    text = """\
+There's a Fence in the center of the universe that separates trying from despairing.
+Only from atop this Fence can one see how beautiful the universe is.
+
+From atop this Fence, every star is visible. All things are posssible.
+The universe contained within one decision: a destiny of pain or a destiny of sin?
+
+I covered my eyes as I wandered farther into the nebulas of sin, denied that the other side of the Fence existed.
+But despite everything I did, she saw a future in me.
+
+When I saw what I'd become, it was as much a hiding place as it was an inescapable pain.
+I tried to convince myself I was eternally evil, that I had destroyed my soul beyond repair.
+
+But a soul is never destroyed.
+It only starts moving.
+
+And so I sat atop the Fence again.
+I don't think you can fully appreciate its beauty without having been evil.
+In that way, my sins were a blessing.
+And she gave me the chance to jump down the other side.
+
+I owe everything to her mercy. To yours.
+
+I can't know how long I will be in servitude to my sins.
+Their magnitude is unfathomable. I can't imagine a lifetime of good deeds can make up for it.
+
+May I get another one.
+
+- Adam Markov
 """)
