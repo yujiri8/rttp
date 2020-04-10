@@ -47,7 +47,7 @@ label chapter27:
     m "Okay..."
     m "It's you now."
     show monika c224113
-    call updateconsole("def insert(char):\n  c=admin.jail(ddlc, char)\n  s=pgp_sign(c, markov_key)\n  admin.complete_action(s)")
+    call updateconsole("def insert(char):\n c=admin.jail(ddlc, char)\n s=pgp_sign(c, markov_key)\n admin.complete_action(s)")
     call updateconsole("def insert_all():\n time.sleep(30)\n insert(adam)\n insert(libitina)\n insert(monika)")
     call updateconsole("import time")
     call updateconsole("insert_all()")
