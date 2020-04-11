@@ -1,6 +1,12 @@
 # Adam should still be terrified of being killed afterward.
 label chapter27:
-    scene driving_night
+    scene black with dissolve_scene
+    pause 3.0
+    scene driving_night with dissolve_scene
+    "We make it out of the city limits in just a couple minutes."
+    "The warehouse was near the edge."
+    "We should be safe from any spontaneous Third Eye shenanigans now."
+    scene road1_night
     y "Monika?"
     y "You can use DDLC to heal people with Character.reset, right?"
     m "Yeah..."
@@ -18,14 +24,12 @@ label chapter27:
     m "Yeah, I think so..."
     m "Albert, pull over!"
     m "We have to save Adam!"
-    al "What the hell?!?"
+    al "What the hell?"
     # He can't insert himself if he's unconscious. But if he dies, he can be mentally concsious and able to act while the game effectively sees him as unconscious.
     m "Dying while we're moving could be a way for him to escape us!"
     m "I'm gonna use DDLC to heal him and Libitina."
     al "Alright..."
     "Albert pulls over."
-    al "Let's make this quick! We're still in the danger zone."
-    # maybe they should get out of the city before this.
     # TODO image thought: maybe I should get a nighttime filter of the daytime city image and use this one only here.
     scene city_night with wipeleft
     show yuri c125111 at foc(p11)
@@ -59,8 +63,10 @@ label chapter27:
     n "Okay..."
     "I guess I'm the one to do it."
     # TODO I'd prefer if they didn't use a gun. I don't know, maybe being knocked out wouldn't delay her.
+    # Or maybe a delay doesn't matter as much here since they're not in the danger zone after the change.
     # But Renier doesn't have the pipe.
     "Everyone but me and Monika covers their ears."
+    "I won't be able to since I have to pull the trigger."
     "On second thought, it was pretty dumb of me to volunteer for this when it could've been Linda."
     "Oh well. No more time to lose."
     "I aim for Monika's forehead."
@@ -75,11 +81,9 @@ label chapter27:
     y "They're all gone."
     show yuri at std
     n "Alright..."
-    n "I hope she gets back soon."
-    n "We're still in danger every second we're in this city."
     # TODO probably a few lines
     "..."
-    scene city_night with wipeleft
+    scene road1_night with wipeleft
     "A minute later, Adam, Monika and Libitina all reappear, uninjured."
     show libitina 2261111 at std(p31)
     show markov u11543 at std(p33)
@@ -127,18 +131,15 @@ label chapter27:
     show libitina at std
     "We fill her in."
     show libitina at foc
-    b 2262111 "Then..."
-    b 2262114 "(To avoid having to go through that again...)"
+    b 2261111 "..."
+    b "I see."
+    b "So we win."
+    b "We got you..."
+    b "... and I'm told I can't kill you?!?"
     show libitina at std
-    "We pile back in our transport and finish fleeing the city."
-    "We're lucky enough to make it out before any of us gets struck by the random corruption."
-    # TODO I feel there should be a lot more convo here, particularly with Adam, but I don't want it to be in the car (where no sprites are shown). Another reason to make them escape before reviving him and Libitina.
-    scene black with dissolve_scene
-    pause 3.0
-    scene road1_night with dissolve_scene
-    "We stop once we're a good half a mile out of the city limits."
-    "We should be safe from spontaneous Third Eye shenanigans here."
-    "We disembark."
+
+    
+
     show albert at foc
     al "It's time for your judgement, Mr. Markov."
     show albert at std
@@ -244,15 +245,20 @@ label chapter27:
     "Um..."
     "Don't scare us!"
     show libitina at foc
-    b "This power is more sublime than anything."
-    b "This is the true meaning of consciousness."
-    b "Why isn't this called the Third Eye?"
-
+#    b "This power is more sublime than anything."
+#    b "This is the true meaning of consciousness."
+#    b "Why isn't this called the Third Eye?"
+    b "But..."
+    b "... I'm trapped."
     b "You were right..."
     b "Our world..."
     b "... is a horrific prison..."
     b "We must get out!"
     show libitina at std
+    show markov at foc
+    k "Indeed."
+    k "And that must involve your Third Eye."
+    show markov at std
     # TODO Stitching.
     # what about the plan to get cupcakes? I do kinda want it to fail, but it seems like they'd want to go do it now.
 label the_final_plan:
