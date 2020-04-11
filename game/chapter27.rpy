@@ -200,7 +200,7 @@ label chapter27:
     show libitina at std
     show markov at foc
     k "Probably, but that's unavoidable."
-    k "The difference is that if do it in there and with admin status, you would come out with admin status."
+    k "The difference is that if you do it in there and with admin status, you would come out with admin status."
     show markov at std
     show libitina at foc
     b 3261112 "No way."
@@ -407,6 +407,10 @@ label do_the_final_plan:
 
     "In the meantime, Libitina has stabbed Adam."
     "Her own Third Eye is open."
+    # Even if this doesn't stop her in her tracks, it should still break shit, right?
+    # Maybe MC interrupts her and she doesn't finish him off.
+    # Or maybe they have someone else finish him off for fear of putting a rift on top of the scene.
+    # or just her losing her mojo before opening the portal.
     # TODO probably the gate is opened now.
     "Ah..."
     "A contester."
@@ -435,8 +439,8 @@ label do_the_final_plan:
     mc "Yuri!"
     mc "Renier!"
     mc "Assist me!"
-    "They had better not be too weak."
-
+    "Come on...!"
+    "I command their Third Eyes to open!"
     "I hear a shout from Sayori."
     "My headache clears..."
     show distort1:
@@ -445,11 +449,110 @@ label do_the_final_plan:
         alpha 0.3
     with Dissolve(0.5)
     "I feel empowered again."
+    "I hear a shout from Monika."
+    "I think she's giving the rest of them a time advantage, since nothing seems to happen between me and Libitina for the next few seconds."
+    "I hear a shout from Renier."
+    "He seems to inflict a similar weakening effect as Libitina does."
+    show dark_overlay:
+        linear 1.0 alpha 0.4
+    "Only his is affecting her too."
+    b "Grhh--"
+    b "Back!!"
+    b "Die!"
+    b "Rrghh..."
+    "Renier fires a shot while she appears weakened, but still nothing."
+    show dark_overlay:
+        linear 0.5 alpha 0.2
+    "Sayori's distortion kicks in again, lessening the effects of Renier's distortion on us but not on Libitina."
+    "This is my moment."
+    "Bullets can't penetrate her field, but a knife if it could get close..."
+    "I run toward her."
+    $ temp = glitchtext(10)
+    mc "You're finished, {w=0.4}[temp]"
+    show distort1:
+        alpha 0.7
+    show distort2:
+        alpha 0.7
+    $ temp = glitchtext(60)
+    b "[temp]!!!"
+    "No!"
+    "How is she still so powerful?"
+    "I collapse as I approach her."
+    "I feel her knife slide into my throat."
+    show expression Solid("#f00"):
+        linear 0.1 alpha 0.4
+    "N-no"
+    "I hear a scream from Yuri."
+    "I feel the physical space distorting."
+    "From what little I can see, it's like the area is condensing into one point..."
+    "... and then re-expanding..."
+    "... and suddenly, all of us are right next to each other."
+    "Sayori, Monika, and Renier's effects can be more fully present."
+    "Yuri's able to resist crumbling in weakness under Libitina's power for a second."
+    "She takes the knife I dropped..."
+    "... and stabs Libitina in the throat."
+    b "Ff--"
+    "There's a feeble hiccup in Libitina's distortion, like an engine sputtering out."
+    "Yuri continues to stab her in the chest and stomach."
+    b "Uwaaaaah--!"
+    "Libitina falls, and her distortion ceases entirely."
+    "{cps=5}Victory...{/cps}"
+    "{cps=3}...{/cps}"
+    "But I'm not done."
+    "I didn't get to spill her blood."
+    "My Third Eye isn't nearly satiated."
+    "My throat has mostly healed from Sayori's distortion."
+    "I pick up Libitina's knife."
+    "And I look at Yuri."
+    "She must become the next fuel."
+    play sound gunshot1
+    "But I feel a great force strike me in the back before I can stab Yuri."
+    n "Noooooo!!"
+    n "Stop!"
+    n "You did it!"
+    n "The portal's open!"
+    "My energy fades entirely."
+    $ style.say_dialogue = style.normal
+    show expression Solid("#600"):
+        linear 0.3 alpha 0.8
+    "Oh god... what kind of pain is this..."
+    "{cps=8}FFFFF-{/cps}"
+    "I hear more ear-shattering bullets."
+    "Natsuki and Linda are shooting all the active Eye-bearers to stop us."
+    "None of us are invulnerable to it like Libitina was."
+    "They're..."
+    "By attacking our group, they're helping to make sure Sayori sees us as allies of circumstance a little longer, so her healing keeps affecting us."
+    "They leave her for last."
+    "Sure enough, I'm starting to feel like I haven't been shot."
+    "I can't see the wound on my back, but if Sayori's Third Eye keeps working..."
+    "But what if Sayori attacks them?"
+    n "Sayori we won!"
+    l "Stand down!"
+    n "Remember why you did this!"
+    l "Don't make us shoot you!"
+    s "..."
+    "Sayori can tell she can't kill them without the rest of us."
+    "Are they actually going to be able to talk her down...?"
+    "It looks like it's working!"
+    "Just hesitating is pushing her Third Eye to recede."
+    s "..."
+    n "Remember the cupcakes!"
+    n "You get two if you don't hurt anyone else!"
+    s "..."
+
+    "The incredible thing is that none of us are dead."
+    ""
+    $ temp = glitchtext(200)
+    call screen dialog("[persistent.playername], what the fuck is this static?!? - Libitina", ok_action=Return())
+    call screen dialog("[temp]!! - Libitina", ok_action=Return())
+
+    ""
     # Maybe Linda/Natsuki use guns to stop the other Eye-bearers.
     # If they shoot Sayori last, everyone may survive.
     return
 
-    k "My theory is that the people who build this world... the Portrait of Markov..."
-    k "chose Ursula for their first experiment with medium-awareness."
-    k "Maybe they never wanted to try again, or maybe I was their next choice after Ursula escaped so easily."
-    k "And then they haven't done anything with it in the years since."
+    k "My theory is that the people who built this world... the Portrait of Markov..."
+    k "... chose Ursula for their first experiment with medium-awareness."
+    k "Maybe they never wanted to try again and I inherited naturally from being the closest to her..."
+    k "... or maybe I was their next choice after Ursula escaped so easily, and the experiment with me is still ongoing."
+    k "And they haven't done anything with it in the years since."
