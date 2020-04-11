@@ -25,7 +25,7 @@ label chapter27:
     m "Albert, pull over!"
     m "We have to save Adam!"
     al "What the hell?"
-    # He can't insert himself if he's unconscious. But if he dies, he can be mentally concsious and able to act while the game effectively sees him as unconscious.
+    # He can't insert himself if he's unconscious. But if he dies, he can be mentally conscious and able to act while the game effectively sees him as unconscious.
     m "Dying while we're moving could be a way for him to escape us!"
     m "I'm gonna use DDLC to heal him and Libitina."
     al "Alright..."
@@ -137,8 +137,13 @@ label chapter27:
     b "We got you..."
     b "... and I'm told I can't kill you?!?"
     show libitina at std
-
-    
+    show monika at foc
+    m "Yes."
+    if persistent.player_advocate_mercy[1]:
+        m "I'm sorry."
+    else:
+        m "Don't worry, it's just a temporary situation."
+    show monika at std
 
     show albert at foc
     al "It's time for your judgement, Mr. Markov."
@@ -259,8 +264,58 @@ label chapter27:
     k "Indeed."
     k "And that must involve your Third Eye."
     show markov at std
-    # TODO Stitching.
-    # what about the plan to get cupcakes? I do kinda want it to fail, but it seems like they'd want to go do it now.
+    # TODO
+label pre_final_plan:
+    n "Wait."
+    n "What about the cupcakes I was gonna make?"
+    n "We need those."
+    n "We deserve them."
+    show markov at foc
+    k "We can go to our home town."
+    k "You can make cupcakes there."
+    k "I understand if you want to rest before our final plan."
+    show markov at std
+    show libitina at foc
+    b "We're doing the plan now or I'm stabbing someone."
+    b "I'm not waiting another cursed minute."
+    b "I need to let my power loose."
+    b "To free us from this mind cage."
+    b "To find Mom."
+    b "I will."
+    b "It's fucking time."
+    b "We're doing the plan right now."
+    show libitina at std
+    n "But what about my cupcakes?!?"
+    n "We all need one!"
+    n "And I promised Monika!"
+    show libitina at foc
+    b "Listen, Natsuki."
+    b "I don't care about your cupcakes."
+    b "I don't care about you."
+    b "I don't care about Monika."
+    b "I don't care about this world."
+    b "If you won't cooperate, you're only going to make it more painful for yourself."
+    show libitina at std
+    show yuri at foc
+    y "Libitina, what's gotten into you?!?"
+    y "You're out of line!"
+    y "Have you forgotten how we rescued you from the facility?"
+    show yuri at std
+    show libitina at foc
+    b "I..."
+    b "Well..."
+    b "I'm sorry, Yuri."
+    b "But, now that I'm admin..."
+    b "Everything is different."
+    b "I can't wait."
+    b "You are asking me to stay inside our cage!"
+    show libitina at std
+    show yuri at foc
+    y "..."
+    y "I feel for you."
+    y "But you don't have the right to force us to do this now, especially not when you owe us your life."
+    show yuri at std
+    # TODO
 label the_final_plan:
     play music determination
     k "So..."
