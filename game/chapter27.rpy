@@ -144,20 +144,10 @@ label chapter27:
     else:
         m "Don't worry, it's just a temporary situation."
     show monika at std
-
-    show albert at foc
-    al "It's time for your judgement, Mr. Markov."
-    show albert at std
-    show markov at foc
-    k u11413 "Indeed..."
-    k "... you've won."
-    k "Well done, everyone."
-    show markov at std
-    #
     show markov at foc
     k u11513 "I guess my time is up."
     k "There are no barriers left."
-    k "Today is the day we open the gates to escape this Portrait."
+    k "Tonight is the night we open the gates to escape this Portrait."
     k u12513 "Libitina."
     k "Let us go to DDLC."
     k "We will do what I fooled you and Monika into thinking you had done."
