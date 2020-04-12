@@ -28,10 +28,6 @@ The file 'SCRAPS' contains a couple of less important thoughts (that I don't nee
 
 * Should I edit chapter22 so Adam actually tries to wipe Natsuki's memories at the rift, but it doesn't work? I feel it's a bit iffy that he just offhandly reveals that memory wipe doesn't work on prepared characters without the player seeing it fail.
 
-* I still haven't really nailed down in canon what makes the Third Eye grow if anything. I'm thinking that it grows from having one's mind essentially destroyed by traumatization like they all were at the facility. It might have a limit. I plan to have Adam exposit on this in chapter27 or so, or maybe Renier and Linda in chapter24.
-
-* A thing I've decided on that I haven't said anywhere is that probably, the Third Eye is a naturally occurring thing in the Portrait of Markov even before Ursula's escape, but it's dormant until some contact with medium-awareness. Contact with an admin character seems to count. (If I don't explain this, it doesn't make sense that it was never discovered before Ursula's awakening and escape.)
-
 # Images
 
 * Improve Amy/Michael sprites (Amy should be taller, Michael may need expression improvement) - I can do this myself

@@ -65,10 +65,6 @@ label chapter27:
     # TODO I'd prefer if they didn't use a gun. I don't know, maybe being knocked out wouldn't delay her.
     # Or maybe a delay doesn't matter as much here since they're not in the danger zone after the change.
     # But Renier doesn't have the pipe.
-    "Everyone but me and Monika covers their ears."
-    "I won't be able to since I have to pull the trigger."
-    "On second thought, it was pretty dumb of me to volunteer for this when it could've been Linda."
-    "Oh well. No more time to lose."
     "I aim for Monika's forehead."
     play sound gunshot1
     scene black
@@ -92,6 +88,7 @@ label chapter27:
     show monika at std
     show markov at foc
     k "..."
+    k "Thank you for the heal..."
     show markov at std
     show libitina at foc
     b 2271441 "..."
@@ -127,7 +124,7 @@ label chapter27:
     "Finally, Libitina stops chasing him."
     "The fear of suffering that again was the only thing that could even make her pause."
     show libitina at foc
-    b 2371113 "What the hell happened?!?"
+    b 2371113 "So what the hell happened?!?"
     show libitina at std
     "We fill her in."
     show libitina at foc
@@ -135,7 +132,7 @@ label chapter27:
     b "I see."
     b "So we win."
     b "We got you..."
-    b "... and I'm told I can't kill you?!?"
+    b "... and I can't kill you?!?"
     show libitina at std
     show monika at foc
     m "Yes."
@@ -143,7 +140,44 @@ label chapter27:
         m "I'm sorry."
     else:
         m "Don't worry, it's just a temporary situation."
-    show monika at std
+        m "We are gonna settle the score, let's just complete our plans first."
+        show monika at std
+        show markov at foc
+        k "Understood."
+        show markov at std
+    #What?
+    show markov at foc
+    k "I named the Third Eye after Ursula's poem."
+    k "Back when I still thought there was a closer relationship between the powers."
+    k "There is a relationship, though."
+    k "The Third Eye is only catalyzed by contact with an admin."
+    k "Not only did no one else ever discover it before Ursula's awakening..."
+    k "... but yours and hers were both apparently sensitive enough that there's no way you wouldn't have opened by accident at some point."
+    k "And all the Eye-bearers I found and abducted..."
+    k "... none of them had ever opened it before meeting me."
+    #
+    k "\"To see the future is to be wise.\""
+    k "I always thought the meaning of the first sentence related to her thoughts as she decided to leave."
+    k "The rich aroma was the prospects of entering [persistent.playername]'s world, the bittersweet aftertaste was the people she would have to leave behind, and the hot, complex balance was the pain of the decision."
+    k "On the surface, it seems that couldn't have been the intended meaning, because she wrote it before then."
+    k "Or..."
+    k "... did she?"
+    k "After all, we know that in DDLC, Linda wrote some your thoughts into files more or less inadvertently."
+    k "And we never found the poem until after Ursula was gone."
+    k "So it's not out of the question that, in fact, she {i}did{/i} write it with those thoughts in mind."
+    k "Written just in that moment..."
+    show markov at std
+
+
+    k "I learned a lot."
+    k "I did find that the strength of a person's Third Eye wasn't entirely fixed..."
+    k "In some ways, it feeds on suffering."
+    k "After destroying a person's soul with trauma, the strength of their Third Eye increased."
+    k "Sensitivity also tended to increase with increased power."
+    k "But, there seemed to be a limit to how far that could go."
+    k "I never tortured anyone else into becoming as stong as Libitina."
+    k ""
+
     show markov at foc
     k u11513 "I guess my time is up."
     k "There are no barriers left."
@@ -254,14 +288,13 @@ label chapter27:
     k "Indeed."
     k "And that must involve your Third Eye."
     show markov at std
-    # TODO
 label pre_final_plan:
     n "Wait."
     n "What about the cupcakes I was gonna make?"
     n "We need those."
     n "We deserve them."
     show markov at foc
-    k "We can go to our home town."
+    k "We can go to our home."
     k "You can make cupcakes there."
     k "I understand if you want to rest before our final plan."
     show markov at std
@@ -369,6 +402,7 @@ label the_final_plan:
     r "Last time..."
     r "... it worked."
     show renier at std
+
 label do_the_final_plan:
     show albert at foc
     al "[mc_name]..."
@@ -583,23 +617,20 @@ label do_the_final_plan:
     l "Don't make us shoot you!"
     s "..."
     "Sayori can tell she can't kill them without the rest of us."
+    "Knowing that seems to be giving her confliction."
     "Are they actually going to be able to talk her down...?"
+    s "..."
     "It looks like it's working!"
     "Just hesitating is pushing her Third Eye to recede."
-    s "..."
     n "Remember the cupcakes!"
     n "You get two if you don't hurt anyone else!"
     s "..."
 
     "The incredible thing is that none of us are dead."
-    ""
+
     $ temp = glitchtext(200)
     call screen dialog("[persistent.playername], what the fuck is this static?!? - Libitina", ok_action=Return())
     call screen dialog("[temp]!! - Libitina", ok_action=Return())
-
-    ""
-    # Maybe Linda/Natsuki use guns to stop the other Eye-bearers.
-    # If they shoot Sayori last, everyone may survive.
     return
 
     k "My theory is that the people who built this world... the Portrait of Markov..."
