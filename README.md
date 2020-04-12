@@ -18,8 +18,6 @@ The file 'SCRAPS' contains a couple of less important thoughts (that I don't nee
 
 * Chapter 26 is marked with a couple of TODOs where I feel it might be necessary to insert dialogue where they consider / cross out some of the possibilities I'm not running with.
 
-* I need to decide what to do about the unfinished branch where Natsuki punches Libitina if Libitina shot her. I shouldn't make that happen. It's a pretty damning portrayal of Natsuki when I think about it.
-
 # Plans for the ending
 
 * Adam's survival depends on whether you've picked the mercy-favoring options. If so he escapes with them into the real world. Otherwise Libitina destroys him.

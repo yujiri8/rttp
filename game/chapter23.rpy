@@ -833,26 +833,34 @@ label albert_natsuki_pickup_monika_and_libitina:
     n "Hi Monika~!"
     show natsuki at std
     m "Nice to see you two~"
+    if ch22_libitina_has_gun():
+        show albert at std(p33)
+        show natsuki at std(p32)
+        show libitina 2161114 at foc(p31)
+        b "Um... Natsuki...?"
+        show libitina at std
+        show natsuki at foc
+        n c124111 "Yeah, you know what?"
+        n "I get it."
+        n xc4111 "I'd shoot you too if I had to to stop Adam from beating us."
+        show natsuki at std
+        show libitina at foc
+        b "Okay..."
+        b "I thought you'd be more mad at me."
+        show libitina at std
+        show natsuki at foc
+        n "You're still kind of evil for murdering Linda before..."
+        n "... and for mugging me, and almost murdering Albert..."
+        n "... and I hate that we're still working with you."
+        n "But we are."
+        show natsuki at std
+    else:
+        pass
     m "So we're heading to meet [mc_name], Sayori, Yuri and Linda and the warehouse, right?"
     show albert at foc
     al 12311 "I believe so."
     al "Hop on board, everyone."
     show albert at std
-    if ch22_libitina_has_gun() and not persistent.player_explicitly_advocate_murder_natsuki:
-        play sound punch
-        "Natsuki punches Libitina in the face."
-        b "Ow--!"
-        n "How would you feel if I just shot you in the face because 'you'll probably come back'?!?"
-        menu:
-            " "
-            "":
-                pass
-            "Natsuki, she did the right thing. I might've been able to persuade you, but that situation was too urgent to wait.":
-                menu:
-                    " "
-                    "And nothing bad even ended up happening to you.":
-                        pass
-        "Branch unfinished"#TODO
     scene driving with dissolve_scene
     "As soon as we get aboard, Albert's cell phone rings."
     al "It's Renier..."

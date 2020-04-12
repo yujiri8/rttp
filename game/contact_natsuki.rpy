@@ -44,6 +44,20 @@ label contact_natsuki:
         else:
             n "But she's lucky I'm okay!"
             n "I still plan to bloody her nose."
+            menu:
+                " "
+                "Natsuki, she had to...":
+                    pass
+            menu:
+                " "
+                "I'm sure you would've done it eventually, but the situation was too urgent.":
+                    pass
+            n "Save it!"
+            n "You wouldn't be saying that if you were the one who got shot!"
+            call screen dialog("[persistent.playername], I think she needs some time to think about it first. - Monika", ok_action=Return())
+            "I feel like what I just said probably isn't true, which leaves a bad taste in my mouth."
+            "[persistent.playername]'s argument kind of makes sense."
+            "But it just wasn't okay for her to do that to me!"
             n "Anyway..."
             n "Where are we at?"
     else:
@@ -149,16 +163,22 @@ label albert_pickup_natsuki:
         " "
         "Sounds good. - Monika":
             pass
-    # She gives him the address, but I'm not going to come up with it.
+    # She gives him the address, but I'm not going to make one up.
     al "Alright!"
     al "We're on our way."
-    if ch22_libitina_has_gun() and not persistent.explicitly_advocate_murder_natsuki:
+    if ch22_libitina_has_gun():
         "..."
         al "I wanted to ask you something."
         "How do you feel about what happened back there?"
         "I sigh."
+        al "I'm sure I'd be angry too."
         n "I hate to say it, but I'm over it."
-        n "She had to..."
-        n "... and I would've done the same thing."
-        # TODO finish
+        if persistent.explicitly_advocate_murder_natsuki:
+            n "[persistent.playername] was right. There was no other choice."
+            n "And I would've done the same thing."
+        else:
+            n "She had to..."
+            n "... and I would've done the same thing."
+        al "Ah..."
+        al "Well, I'm glad to hear it."
     return
