@@ -9,7 +9,7 @@ label chapter25:
     show yuri at std
     l "Maybe it was being built for something unrelated, and he commandeered it later?"
     l "Maybe it was going to be some kind of research facility for something else."
-    l "Or maybe some other top-secret, horrifying thing..."
+    l "Or maybe some other horrific top-secret thing..."
     l "Who knows."
     show yuri at std(p22)
     show renier u1113 at foc(p21)
@@ -131,9 +131,9 @@ label chapter25:
         show yuri at std(p63)
         show sayori at std(p64)
         show natsuki at std(p65)
-        show renier ru1113 at rightinfoc(p66)
+        show renier ru2113 at rightinfoc(p66)
     else:
-        show renier ru1113 at foc
+        show renier ru2113 at foc
     r "Wait..."
     r "You used your Third Eye to open theirs?"
     r "You could do that?"
@@ -152,7 +152,7 @@ label chapter25:
     s "Well, eventually one of them did..."
     s "But I think it actually turned out to be what saved us."
     s "One of them shot me."
-    s "It didn't overcome my Third Eye completely..."
+    s "It didn't close my Third Eye completely..."
     s "... but it made me sort of lucid for a moment, kind of like how we saw it affect Monika when Yuri stabbed her."
     s "I think it was what made me decide to flee instead of staying to kill more of them."
     s "I don't remember everything I was thinking, but I think some part of me knew that I'd peter out soon if I kept killing..."
@@ -179,7 +179,7 @@ label chapter25:
     l "... and maybe useful at some point."
     show renier at foc
     r "What were Monika's unique powers?"
-    r "I don't think anyone ever found out mine... and I don't remember finding anything unusual with Yuri." # TODO it would be good to mention Yuri's unique power here. She could do something memory-related or something.
+    r "I don't think anyone ever found out mine..."
     show renier at std
     show sayori at foc
     s c213111 "I think Monika's was a sort of time bubble effect."
@@ -187,9 +187,20 @@ label chapter25:
     s "I think that's why Adam couldn't do anything about our escape."
     s "To him, it all happened in a second, and we were gone before he even heard about it."
     show sayori at std
+    show yuri at foc zorder 1
+    y c114111 "Renier, do you know mine?"
+    show yuri at std
+    show renier at foc
+    r "Yours distorts space more than other people's."
+    r "You could effectively use it to move things or people around."
+    show renier at std
+    show yuri c125121 at foc
+    "Yuri gasps."
+    y "Like how I used it in that first virtual reality test to fly out of the water trap..."
+    show yuri at std
     show albert at foc zorder 2
     al "Wow..."
-    al "Well, thanks for sharing."
+    al "Well, thanks for sharing everyone."
     show albert at std
     scene facility_ruin with wipeleft_scene
     "A few more minutes pass."
