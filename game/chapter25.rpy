@@ -94,7 +94,7 @@ label chapter25:
         show renier ru1113 at rightinfoc(p66)
         r "Well, like you taught me way back when..."
         r "People can convince themselves of whatever they want."
-        show renier at std
+        show renier at xis(p66)
     else:
         l "Well, like I learned in my time in the cult..."
         l "There's almost no limit to what we can convince ourselves of if we really want to think it."
@@ -214,6 +214,7 @@ label chapter25:
     $ restore_character('monika')
     $ restore_character('libitina')
     $ restore_character('adam')
+    stop music
     show natsuki c224113 at std(p33)
     show libitina 2271111 at foc(p11)
     b "Hello...?"
@@ -372,11 +373,7 @@ label chapter25:
     m "It's broken! There's no turning the protection off!"
     show monika at std
     "I let out a long sigh of relief."
-    show sayori at foc zorder 2
-    s c122111 "You did it!"
-    s "You're a hero!"
-    show sayori at std
-    l "I think we turned the tables..."
+    l "I think we turned the tables after all..."
     l "His plan to cut [persistent.playername] out of the picture should be impossible now."
     show natsuki at foc zorder 1
     n "I'll be sure to make those cupcakes as soon as we have time..."
@@ -409,7 +406,6 @@ label chapter25:
     show sayori at std
     "Sayori starts to hum what she remembers the tune to be."
     "I'm pretty sure she has it wrong, but whatever."
-    stop music fadeout 5.0
     menu:
         " "
         "What?!? - Adam":
@@ -445,10 +441,11 @@ label chapter25:
     show mc c124113
     show monika c124113
     show natsuki c115112
+    stop music fadeout 8.0
     show renier u2223 at leftinfoc(p51) zorder 3
     r "Give it up, asshole!"
     r "We got you!"
-    show renier at std
+    show renier at xis(p51)
     show natsuki c225112 at foc zorder 2
     n "Surrender now and we'll make your death a little less painful!"
     show natsuki at std
@@ -517,33 +514,43 @@ label chapter25:
         l "Oh well."
         l "Maybe if we talk about something else to flush the history and take our minds off it?"
     else:
+        show mc at foc zorder 3
         mc "So I guess he thinks we think he thinks he's tricking us?"
-    # TODO posing not done after this.
-    show sayori at foc
+        show mc at std
+    show libitina at thide
+    hide libitina
+    show monika at std(p64)
+    show renier at std(p63)
+    show yuri at std(p62)
+    show sayori at leftinfoc(p61) zorder 5
     s c115111 "At least we'll be able to get food once we're back in town."
-    show sayori at std
-    show mc at foc
+    show sayori at xis(p61)
+    show mc at foc zorder 4
     mc c214111 "Are we actually going there?"
     show mc at std
     l "We still have to find him to win..."
     show mc at foc
     mc "It's gotta be a trap."
     show mc at std
-    show monika at foc
+    show monika at foc zorder 5
     m c223113 "We'll make it {i}our{/i} trap."
     m "He's the one who doesn't have a Third Eye, and almost all the admin powers that could help him in a confrontation are broken."
     m "If he confronts us, he's going down."
     m "Even if he has more cultists with him."
     show monika at std
-    show albert at foc
+    show renier at thide
+    hide renier
+    show yuri at std(p63)
+    show sayori at std(p62)
+    show albert at leftinfoc(p61) zorder 6
     al 21111 "About that!"
     al 11111 "You should break the ability to restore memories to stop him from restoring the memories of more people who used to be his cultists."
-    show albert at std
+    show albert at xis(p61)
     show monika at foc
     m c124111 "Good idea..."
     m c224112 "I feel a little nervous breaking this one, but I guess it's safe with memory wiping also broken..."
     show monika at std
-    show natsuki at foc
+    show natsuki at foc zorder 5
     n "Wait, maybe you shouldn't?"
     n "If he's planning to get more cultists and ambush us, it was probably his first thought and he already restored their memories."
     n "Maybe you should keep the function around for our own use."
@@ -552,38 +559,45 @@ label chapter25:
     m c124111 "Even though memory wiping is broken...?"
     show monika at std
     show natsuki at foc
-    n "Well... it's still possible we could need it in other ways."
+    n "Well... it's still possible we could need it in other ways, right?"
     n "Isn't it possible the new game memory wipe doesn't depend on that API?"
     n "Or he might come up with some other weird way of doing it?"
     n "I feel like we should keep that power just incase."
     show natsuki at std
-    m c114212 "Hm..."
-    m "I think you're right."
-    m "Of course, maybe you gave him time to restore their memories by delaying me..."
+    show monika at foc
+    m c114111 "Hm..."
+    m "I guess you're right."
+    m c112111 "Of course, maybe you gave him time to restore their memories by delaying me..."
     show monika at std
     show natsuki at foc
-    n "Uu.... well..."
-    show natsuki at std
+    n xc4234 "Uu.... well..."
+    show natsuki xc4111 at std
     show monika at foc
-    m "No matter."
+    m c114111 "No matter."
     m "Regardless, there's no way he hasn't done it by now if he's going to."
     m "I'll leave the API intact."
     show monika at std
     show albert at foc
-    al 11131 "So we're probably going to have to through cultists after all..."
+    al 11131 "So we're probably going to have to go through cultists after all..."
     show albert at std
     show natsuki at foc
-    n c224111 "Everyone should pick up one of these before we leave."
+    n c114111 "Everyone should pick up one of these before we leave."
     show natsuki at std
     "Natsuki picks up a gun from a fallen cultist."
     "I pick one up as well."
-    show libitina at foc
+    show natsuki at std(p65)
+    show mc at std(p64)
+    show monika at std(p63)
+    show yuri at thide
+    hide yuri
+    show libitina at rightinfoc(p66) zorder 6
     b 2261111 "With one of these, it'll be trivial for me to open my Third Eye in a pinch."
-    show libitina at std
+    show libitina at xis(p66)
     show albert at foc
     al 11111 "Wonderful..."
     al "I feel safer than ever before."
     show albert at std
+    show libitina zorder 0
     show natsuki at foc
     n xc4111 "Me too..."
     n "... but she seems stable with it for now."
@@ -593,42 +607,42 @@ label chapter25:
     l "Since Adam can see the POV character's thoughts, I think it's best if it's not me."
     l "Since I know a lot about admin stuff, I'm more likely to get a useful idea, and be unable to not divulge the plan."
     if mc_dislike_player() < 2:
-        show mc at foc
-        mc "I guess I wouldn't mind having [persistent.playername] back."
-        mc "I kind of miss feeling important, like I'm the eyes and ears of our guardian angel."
+        show mc at foc zorder 6
+        mc c124111 "I guess I wouldn't mind having [persistent.playername] back."
+        mc c129141 "I kind of miss feeling important, like I'm the eyes and ears of our guardian angel."
         show mc at std
-        show monika at foc
-        m "Great!"
-        $ temp = mc_name.lower()
-        call updateconsole("vp.pov_character = [temp]", "POV changed to [mc_name]")
+        show monika at foc zorder 7
+        m c221111 "Great!"
+        call switch_pov(mc_name.lower())
     else:
-        show mc at foc
-        mc "Okay, how do I say this..."
-        mc "[persistent.playername], I don't want you back in my head."
+        show mc at foc zorder 6
+        mc c116111 "Okay, how do I say this..."
+        mc c112111 "[persistent.playername], I don't want you back in my head."
         mc "I don't consider you a friend."
         show mc at std
-        l "Well, there's a real downside to [persistent.player_subj_pronoun] being in mine..."
-        show sayori at foc
-        s "I could be POV."
+        l "Well, there's a real downside to [persistent.player_obj_pronoun] being in mine..."
+        show sayori at foc zorder 6
+        s c215111 "I could be POV."
         show sayori at std
         l "But you also have admin experience."
         l "That kinda defeats the point."
-        show albert at foc
+        show albert at foc zorder 7
         al "What about me?"
         al "I wouldn't mind."
         show albert at std
-        show monika at foc
+        show monika at foc zorder 7
         m "It can't be you..."
         m "Your pov flag isn't set. Adam broke it before I could set it, so it won't let you be POV."
         show monika at std
-        show renier at foc
+        show albert at thide
+        hide albert
+        show renier u2113 at leftinfoc(p61) zorder 8
         r "How about me?"
-        r "I'll do it."
-        show renier at std
+        show renier at xis(p61)
         show monika at foc
-        m "Sounds good."
+        m c221111 "Sounds good."
         show monika at std
-        call updateconsole("vp.pov_character = renier", "POV changed to Renier")
+        call switch_pov('renier')
     return
 
 
