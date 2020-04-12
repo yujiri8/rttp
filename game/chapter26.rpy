@@ -266,16 +266,16 @@ label chapter26:
     play sound gunshot1
     pause 0.5
     play sound2 gunshot1
-    "I hear more ear-shattering shots."
+    "I hear more shots."
     "Shit, what's happening?"
     "As I reach the warehouse door, I glance back and notice it's Libitina shooting Monika."
     "Oh no, oh no, oh no..."
     "(Did she snap too?)"
     "Her distortion might kill us all!"
     "I see Albert trying to shoot at Libitina."
-    "But of course, it's not affecting her."
+    "But it's not even affecting her now that her Third Eye is open."
     "It looks like his bullets are just vanishing as they fly near her."
-    "No one can hear each other, so I can't speak to him."
+    r "Albert she's immune!"
     "Renier grabs Albert and starts dragging him away."
     "{i}He's just going to get himself killed too!{/i}"
     "There's nothing I can do. I have to think about my own survival."
@@ -294,13 +294,13 @@ label chapter26:
     show albert 11142 at std(p11)
     "Albert looks the most shocked, the only one who's never witnessed something like that before."
     show albert at foc
-    "I still can't make out what he's saying, but I think he's thanking Renier for saving his life back there."
+    al "Renier..."
+    al "Thanks..."
+    al "I think I'd have died trying to stop her..."
     show albert at std(p22)
     show renier u2283 at foc(p21)
     r "You're welcome..."
     r "So what the fuck happened!?!"
-    show renier at std
-    "I can barely hear him, even as he's shouting."
     show renier at std(p31)
     show albert at std(p32)
     show linda 116442 at foc(p33)

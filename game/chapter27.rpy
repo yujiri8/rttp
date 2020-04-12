@@ -153,7 +153,7 @@ label chapter27:
     k "We will do what I fooled you and Monika into thinking you had done."
     show markov at std
     # TODO some convo about the threat of him using this as an escape?
-    # Wait. Admins actually get messed up by this. So an admin AND a guinea pig needs to go in.
+    # Wait. Admins actually get messed up by this. So an admin AND a guinea pig needs to go in. Need Moni and Adam both.
     # TODO Ooh, plan! What if they actually noticed in ch24 that they needed three people? Sayori or Yuri could've done it.
     # TODO I want this to go in somewhere. Where?
 #    show libitina at foc
