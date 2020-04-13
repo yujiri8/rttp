@@ -1,4 +1,3 @@
-# Adam should still be terrified of being killed afterward.
 label chapter27:
     scene black with dissolve_scene
     pause 3.0

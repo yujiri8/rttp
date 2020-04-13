@@ -499,14 +499,14 @@ label chapter26:
     "(... Is this like the epidemic that happened in Yuri's town?!?)"
     if mc_dislike_player() < 2:
         "Renier points a gun at the attacker."
-        show renier at foc(p11)
-        r u2286 "Only one way to..."
+        show renier u2286 at foc(p11)
+        r "Only one way to..."
         show renier at std(p21)
+        show linda 118443 at foc(p22)
     else:
         "I point a gun at the attacker."
         r "only one way to..."
-    # TODO Posing not done after here.
-    show linda 118443 at foc(p22)
+        show linda 118443 at foc(p11)
     l "Renier you have a Third Eye!!"
     show linda at std
     if mc_dislike_player() < 2:
@@ -524,10 +524,14 @@ label chapter26:
     "The attacker falls over."
     "The survivor runs away, still screaming."
     "..."
-    show renier at std(p31)
-    show linda at std(p32)
-    show yuri at foc(p33)
-    y c128135 "The epidemic that happened in my town!"
+    if mc_dislike_player() < 2:
+        show renier at std(p31)
+        show linda at std(p32)
+        show yuri c128135 at foc(p33)
+    else:
+        show linda at std(p21)
+        show yuri c128135 at foc(p22)
+    y "The epidemic that happened in my town!"
     y "It's happening here too...!"
     y "What have we done?"
     show yuri at std
@@ -543,62 +547,78 @@ label chapter26:
         " "
         "Killing an admin with the Third Eye messes things up, and not just the admin themselves. - Adam":
             pass
+    show yuri c124128
     show linda at foc
-    l 116443 "That makes sense..."
+    l 11b443 "That makes sense..."
     show linda at std
     show yuri at foc
     "Yuri holds out her gun to Linda."
-    y "We can't hold these!"
+    y c128138 "We can't hold these!"
     show yuri at std
     "Linda takes it."
     "The rest of us Eye-bearers also hand off our guns."
     "Yuri also gives Linda her knife."
-    show renier at std(p41)
-    show linda at std(p42)
-    show yuri at foc(p43)
-    show sayori c127132 at foc(p44)
+    if mc_dislike_player() < 2:
+        show renier at std(p41)
+        show linda at std(p42)
+        show yuri at std(p43)
+        show sayori c127132 at foc(p44)
+    else:
+        show linda at std(p31)
+        show yuri at std(p32)
+        show sayori c127132 at foc(p33)
     s "We need to get out of here!"
     show sayori at std
     show yuri at foc
-    y c1251 "And we need to bring Libitina with us!"
+    y c128138 "And we need to bring Libitina with us!"
     y "She's still the closest thing we have to an out."
     show yuri at std
-    show renier at foc
-    r u2133 "No problem, our car's not too far."
+    if mc_dislike_player() < 2:
+        show renier u2133 at foc
+    r "No problem, our car's not too far."
     scene warehouse_outside_night with wipeleft
     "We head back to the warehouse."
     "I hear a scream as we approach it."
     scene warehouse_inside_1_rift with wipeleft
     "The room inside is pretty much intact except for the rift."
     "Libitina's on the floor vomiting blood again, like she did after killing Adam."
-    show yuri c128138 at foc(p21)
+    show yuri c1281y8 at foc(p21)
     y "Noooo!"
     show yuri at std
     b "Hel--"
     "More blood comes out."
     "More screams."
-    show linda at foc(p22)
-    l 11b113 "Is it every time she catches an admin with her distortion...?"
+    show linda 11b443 at foc(p22)
+    l "Is it every time she catches an admin with her distortion...?"
     l "... Regardless of whether she kills them?"
     show linda at std
     show yuri at foc
-    y c124118 "But I caught it before when it wasn't me who did it..."
+    y c1241y8 "But I caught it before when it wasn't me who did it..."
     show yuri at std
     show linda at foc
     l "You were in the room, right?"
     l "And in the adjacent cell the other time?"
     l "Maybe it hits every nearby Third Eye-bearer?"
     show linda at std
-    show yuri c123128
-    "Renier picks up Libitina again."
+    if mc_dislike_player() < 2:
+        "Renier picks up Libitina again."
+    else:
+        "I pick up Libitina again."
     scene warehouse_outside_night with wipeleft
     scene city_night with wipeleft
     scene driving_night with dissolve_scene
     "We head back to where we parked, Albert takes the wheel, and we drive out of the city as fast as possible."
     "Libitina continues to scream and vomit blood."
-    "My heart aches watching her."
-    "Yuri is crying."
+    if mc_dislike_player() < 2:
+        "My heart aches watching her."
+        "Yuri is crying."
+    else:
+        "God..."
+        "I'd feel awful for her if it wasn't her fault we're screwed...!"
+        "Yuri's crying."
     # I want Adam to claim he tried to put Monika into DDLC and have the player suggest that her console is still messed up, but it's contrary to his motives to say it.
+    # Maybe they should notice that Monika should be able to do it herself, and realize that her console must be messed up.
+    # Though I'm unsure about doing that because it leads to the idea that their plan in chapter 24 wouldn't have worked anyway.
     mc "Hold on!"
     mc "That ERROR.txt file a few minutes back!"
     mc "What if that was the result of his hack?"
@@ -609,7 +629,8 @@ label chapter26:
     l "It would seem skipping time doesn't count, or it would've worked while we were driving."
     l "But I bet you're right."
     l "I bet we're not on the clock anymore, but it's essential that we protect you."
-    #TODO probably insert some of the speculation dialogue in SCRAPS in here.
+    #TODO probably insert some of the speculation dialogue in SCRAPS in here. They should consider why couldn't he use DDLC self-insertion, if APIs broken in POM work in DDLC, and make himself POV and then kill himself, if killing an admin outside of the Third Eye doesn't mess them up?
+    # The answer is because (he probably tried it as soon as he got ERROR.txt) the Character.pov flag doesn't exist while a viewport's not connected.
     # Up until now, he was still waiting for them to get farther away.
     $ delete_character('adam')
     l "{i}Oh no.{/i}"
