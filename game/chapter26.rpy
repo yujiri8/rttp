@@ -380,10 +380,10 @@ label chapter26:
     if mc_dislike_player() < 2:
         show renier at std(p31)
         show albert at std(p32)
-        show linda 11b442 at foc(p33)
+        show linda 119442 at foc(p33)
     else:
         show albert at std(p21)
-        show linda 11b442 at foc(p22)
+        show linda 119442 at foc(p22)
     l "Libitina..."
     l "... she snapped and shot to feed her Third Eye."
     if mc_dislike_player() < 2:
@@ -402,7 +402,7 @@ label chapter26:
     y "I should've stopped her!"
     show yuri at std
     show linda at foc
-    l 118443 "Now we don't have Monika!"
+    l 119443 "Now we don't have Monika!"
     l "And she can't restore herself!"
     l "And without reset, we can't even use the rift to start a new game!"
     l "What the hell do we do?!?"
@@ -413,13 +413,20 @@ label chapter26:
     r "We've also lost [persistent.playername] then!"
     r "We're completely fucking screwed!"
     r "If his hack isn't done yet, it could be any minute!"
+    show yuri c125128
     if mc_dislike_player() < 2:
         show renier at std
     else:
-        show mc at foc()
+        show mc c118335 at foc(p41)
+        show albert at std(p42)
+        show linda at std(p43)
+        show yuri at std(p44)
     mc "Would we even know if he disconnected the viewport?"
     mc "Assuming he's right that it would make this world independent again?"
-    show renier at std(p51)
+    if mc_dislike_player() < 2:
+        show renier at std(p51)
+    else:
+        show mc at std(p51)
     show albert at std(p52)
     show linda at std(p53)
     show yuri at std(p54)
@@ -428,16 +435,20 @@ label chapter26:
     n "We've always found a loophole in situations like this!"
     n "What haven't we tried?"
     n "[persistent.playername], think!"
-    show natsuki at std(p55)
-    show renier at std(p51)
-    show albert at std(p52)
-    show linda at std(p53)
-    show yuri at std(p54)
+    if mc_dislike_player() < 2:
+        show renier at std(p61)
+    else:
+        show mc at std(p61)
+    show albert at std(p62)
+    show linda at std(p63)
+    show yuri at std(p64)
+    show natsuki at std(p65)
     show sayori c227232 at foc(p66)
     s "It's useless!"
     s "Only Adam can do it now!"
     s "The only way to save Monika is to put her in DDLC where restore_character isn't broken..."
     s "... but the only person in the world who can do that now is Adam!"
+    show sayori at std
     show natsuki at foc
     n "There {i}has{/i} to be something we can do!"
     show natsuki at std
@@ -448,8 +459,12 @@ label chapter26:
         " "
         "I'm so sorry, everyone! - Adam":
             pass
+    if mc_dislike_player() >= 2:
+        show mc c118133 at foc
     mc "Adam!!"
     mc "You bastard!"
+    if mc_dislike_player() >= 2:
+        show mc at std
     menu:
         " "
         "I didn't mean for this to happen! I swear! - Adam":
@@ -462,38 +477,52 @@ label chapter26:
         " "
         "If I could've done something, I would've, but you broke Character.reset...! - Adam":
             pass
-    show renier at foc
-    r u2297 "You're responsible for this too!"
+    if mc_dislike_player() < 2:
+        show renier u2297 at foc
+    r "You're responsible for this too!"
     r "Add this to the list of reasons you deserve to die!"
-    show renier at std
+    if mc_dislike_player() < 2:
+        show renier at std
     "I hear screams I don't recognize from someone around the corner."
     "Oh no..."
     menu:
         " "
         "Investigate! - Adam":
             pass
-    show renier at foc
+    if mc_dislike_player() < 2:
+        show renier at foc
     r "We don't need you to tell us you murderous freak!"
     scene city_night with wipeleft
     "Around the corner, the screams are coming from a man being held against a wall and eye-gouged by another man."
     "The aggressor looks he has an open Third Eye alright."
     "That unmistakable look..."
     "(... Is this like the epidemic that happened in Yuri's town?!?)"
-    "Renier points a gun at the attacker."
-    "I cover my ears."
-    show renier at foc(p11)
-    r u2286 "Only one way to..."
-    show renier at std(p21)
-    show linda at foc(p22)
-    l 118443 "Renier you have a Third Eye!!"
+    if mc_dislike_player() < 2:
+        "Renier points a gun at the attacker."
+        show renier at foc(p11)
+        r u2286 "Only one way to..."
+        show renier at std(p21)
+    else:
+        "I point a gun at the attacker."
+        r "only one way to..."
+    # TODO Posing not done after here.
+    show linda 118443 at foc(p22)
+    l "Renier you have a Third Eye!!"
     show linda at std
-    show renier u2283
-    "Being reminded, Renier manages to stop himself from pulling the trigger."
+    if mc_dislike_player() < 2:
+        show renier u2283
+        "Being reminded, Renier manages to stop himself from pulling the trigger."
+    else:
+        "Oh crap...!"
+        "Don't pull the trigger, forget about it..."
+        "I stop myself from pulling the trigger."
     "Albert takes the shot instead."
+    play sound gunshot1
+    pause 0.5
+    play sound gunshot1
     "He fires two, the second one landing in the head."
     "The attacker falls over."
     "The survivor runs away, still screaming."
-#    "... I guess Albert forgot we didn't know for sure if he had a Third Eye or not, but it looks like he doesn't."
     "..."
     show renier at std(p31)
     show linda at std(p32)
