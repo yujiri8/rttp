@@ -179,10 +179,11 @@ label chapter26:
     y c125117 "Try to stay calm..."
     y "This is a dangerous place for all of us Eye-bearers who were kept here."
     y "Given how sensitive yours is, you risk opening it if you don't stay calm."
-    show yuri at std(p42)
-    show libitina at std(p43)
-    show albert at std(p44)
-    show renier u2283 at foc(p41)
+    if mc_dislike_player() < 2:
+        show yuri at std(p42)
+        show libitina at std(p43)
+        show albert at std(p44)
+        show renier u2283 at foc(p41)
     r "Holy shit..."
     r "What if..."
     r "... that was his plan?!"
@@ -190,25 +191,47 @@ label chapter26:
     r "It's like he wanted to lure us into a place where one of us might snap and open her Third Eye."
     r "Especially given we were all here together and armed, any one of us who snapped could kill everyone else."
     r "Including the POV character..."
-    show renier at std
+    if mc_dislike_player() < 2:
+        show renier at std
     show libitina 2261111
     show yuri at foc zorder 1
     y c125113 "But he sent us here before ERROR.txt appeared... right?"
     show yuri at std
-    show renier at foc zorder 2
+    if mc_dislike_player() < 2:
+        show renier at foc zorder 2
     r u12131 "Yeah, I'm not sure about that part..."
-    show renier at std
+    if mc_dislike_player() < 2:
+        show renier at std
     show albert at foc
     al "Well frankly, I don't think he's coming."
     al "This wasn't an ambush. Maybe he just sent us here to buy time to think of a new plan."
-    show albert at std
-    # TODO what specifically prompts this?
+    if mc_dislike_player() < 2:
+        show renier at std(p51)
+        show yuri at std(p52)
+        show libitina at std(p53)
+        show albert at std(p54)
+        show monika c114114 at foc(p55)
+    else:
+        show yuri at std(p41)
+        show libitina at std(p42)
+        show albert at std(p43)
+        show monika c114114 at foc(p44)
+    m "Well now I feel completely lost again."
+    m "We're not on a clock anymore, but we still have no way to find him."
+    m c114124 "I just don't get why that cheat to give Libitina admin status didn't work..."
+    m "We did exactly the same things that worked for me!"
+    show monika at std
     menu:
-         " "
-         "Monika... are you sure you know what really happened when you three were in DDLC?":
-             pass
+        " "
+        "Monika... are you sure you know what really happened when you three were in DDLC?":
+            pass
+    if mc_dislike_player() < 2:
+        show renier u1233
+    show yuri c124118
+    show libitina 2261114
+    show albert 11112
     show monika at foc
-    m "What do you mean...?"
+    m c114312 "What do you mean...?"
     show monika at std
     menu:
         " "
@@ -222,45 +245,68 @@ label chapter26:
         " "
         "So in that time he was in there with you two, he could've wiped and rewrote your memories.":
             pass
+    show libitina 2261444
+    show yuri c114128
+    show albert 11142
+    if mc_dislike_player() < 2:
+        show renier u11a3
     show monika at foc
     m c114282 "No..."
     m "Oh no..."
-    show monika at std
-    show linda at foc
-    l 33a443 "Have we been tricked?"
-    l "That explains why it didn't work to make Libitina an admin."
+    if mc_dislike_player() < 2:
+        show monika at std(p66)
+        show albert at std(p65)
+        show libitina at std(p64)
+        show yuri at std(p63)
+        show renier at std(p62)
+        show linda 334443 at foc(p61) zorder 2
+    else:
+        show monika at std(p55)
+        show albert at std(p54)
+        show libitina at std(p53)
+        show yuri at std(p52)
+        show linda 334443 at foc(p51) zorder 2
+    l "Have we been tricked?"
+    l "That would explain it."
     l "Maybe you didn't really do the thing."
     show linda at std
     show monika at foc
-    m "No, no, no!"
-    m "I have to restore our memories."
-    show monika c214212
+    m c117382 "No, no, no!"
+    m "I have to restore our memories!"
+    show monika c214382
     call updateconsole("for char in ('monika', 'libitina'):\n  char.old_memories.unlock()", "Monika's memories unlocked\nLibitina's memories unlocked")
     m c114282 "..."
     m c118382 "It's true!!"
+    call hideconsole
+    $ consolehistory = []
     m "The last thing I remember is trying to fix the new game function and not being able to!"
     m "Adam must've snuck in while I was trying and used the opportunity to wipe my memories before I noticed him!"
-    m "But wait...!"
+    m c117382 "But wait...!"
     m "viewport.set_strict_mode worked!"
     m "So it must not've been a trick...!"
     show monika at std
     show linda at foc
-    l 11a332 "{i}No...{/i}"
-    l 11a112 "It logged a message, and had a docstring."
+    l 114332 "{i}No...{/i}"
+    l 114112 "It logged a message, and had a docstring."
     l "But the viewport object is shared between each admin's console namespace."
     l "And since it's Python, he could've added a method to it."
     l "I think viewport.set_strict_mode is a function he attached that does nothing but says it worked!"
     show linda at std
     show monika at foc
-    m c118382 "{cps=10}Nooooooo!!{/cps}"
+    m c118382 "{cps=20}Nooooooo!!{/cps}"
     show monika at std
     "Monika's scream hurts my ears."
     "I remember Yuri's words of warning to Libitina..."
     "Monika's shaking with fury now."
+    scene black with close_eyes
+    stop music
     "The next few seconds are a flash."
     "Sayori is trying to wrestle Monika's gun."
     "Monika continues to scream."
-    "I run toward Monika to help Sayori..."
+    if mc_dislike_player() < 2:
+        "I run toward Monika to help Sayori..."
+    else:
+        "[mc_name] runs toward Monika to help Sayori..."
     play sound gunshot1
     "... but then I hear something fire."
     "And it looks Monika was the one who was shot."
@@ -272,51 +318,87 @@ label chapter26:
     "I hear more shots."
     "Shit, what's happening?"
     "As I reach the warehouse door, I glance back and notice it's Libitina shooting Monika."
-    "Oh no, oh no, oh no..."
+    if mc_dislike_player() < 2:
+        "Oh no, oh no, oh no..."
+    else:
+        "Oh shit, oh shit, oh shit..."
     "(Did she snap too?)"
     "Her distortion might kill us all!"
     "I see Albert trying to shoot at Libitina."
     "But it's not even affecting her now that her Third Eye is open."
     "It looks like his bullets are just vanishing as they fly near her."
-    r "Albert she's immune!"
-    "Renier grabs Albert and starts dragging him away."
-    "{i}He's just going to get himself killed too!{/i}"
-    "There's nothing I can do. I have to think about my own survival."
-    "I make it out the warehouse door."
-    "And bolt across the street."
-    scene city_night with wipeleft
-    "Hopefully the others make it out too."
-    $ delete_character('monika')
-    scene city_night with wipeleft_scene
-    "I make it a few blocks away before I stop."
-    "I turn around and pant."
-    "I see the others catching up, and the backdrop behind them."
-    "Outer space lies past the warehouse."
-    "It looks like everyone escaped, except for Monika and Libitina."
-    "The two most important members of our group."
+    if mc_dislike_player() < 2:
+        r "Albert she's immune!"
+        "Renier grabs Albert and starts dragging him away."
+        r "You dumbass!"
+        "{i}He's just going to get himself killed too!{/i}"
+        "There's nothing I can do. I have to think about my own survival."
+        "I make it out the warehouse door."
+        "And bolt across the street."
+        scene city_night with wipeleft
+        "Hopefully the others make it out too."
+        $ delete_character('monika')
+        scene city_night with wipeleft_scene
+        "I make it a few blocks away before I stop."
+        "I turn around and pant."
+        "I see the others catching up, and the backdrop behind them."
+        "Outer space lies past the warehouse."
+        "It looks like everyone escaped, except for Monika and Libitina."
+    else:
+        "Dammit, that moron!"
+        r "Albert she's immune!"
+        "He doesn't stop shooting."
+        "What the hell's wrong with him?!?"
+        "I run back toward him and grab him by the arm."
+        "Hell if I'm gonna let him die like an idiot here."
+        r "You dumbass!"
+        "Finally he comes to his senses and starts following me."
+        "Somehow we still manage to make it out the warehouse door before Libitina's distortion turns on and catches us."
+        "I bolt across the street."
+        scene city_night with wipeleft
+        "Looks like everyone else made it out too."
+        "Except Monika and Libitina, of course..."
+        "The two most important members of our group."
+        $ delete_character('monika')
+        scene city_night with wipeleft_scene
+        "We run a few blocks away before we stop."
+        "I turn around and pant."
+        "I see the backdrop behind the warehouse..."
+        "It might a new rift alright."
     show albert 11142 at std(p11)
     "Albert looks the most shocked, the only one who's never witnessed something like that before."
     show albert at foc
     al "Renier..."
     al "Thanks..."
     al "I think I'd have died trying to stop her..."
-    show albert at std(p22)
-    show renier u2283 at foc(p21)
+    show albert at std
+    if mc_dislike_player() < 2:
+        show albert at std(p22)
+        show renier u2283 at foc(p21)
     r "You're welcome..."
     r "So what the fuck happened!?!"
-    show renier at std(p31)
-    show albert at std(p32)
-    show linda 116442 at foc(p33)
+    if mc_dislike_player() < 2:
+        show renier at std(p31)
+        show albert at std(p32)
+        show linda 11b442 at foc(p33)
+    else:
+        show albert at std(p21)
+        show linda 11b442 at foc(p22)
     l "Libitina..."
     l "... she snapped and shot to feed her Third Eye."
-    show linda at std(p43)
-    show renier at std(p41)
-    show albert at std(p42)
-    show yuri c124128 at foc(p44)
+    if mc_dislike_player() < 2:
+        show linda at std(p43)
+        show renier at std(p41)
+        show albert at std(p42)
+        show yuri c124128 at foc(p44)
+    else:
+        show linda at std(p32)
+        show albert at std(p31)
+        show yuri c124128 at foc(p33)
     y "No..."
     y c125128 "I think she got scared that Monika would snap and shot her out of fear!"
     y "Without thinking it through..."
-    y "I'm so sorry, she caught me off guard...!"
+    y c125127 "I'm so sorry, she caught me off guard...!"
     y "I should've stopped her!"
     show yuri at std
     show linda at foc
@@ -325,12 +407,16 @@ label chapter26:
     l "And without reset, we can't even use the rift to start a new game!"
     l "What the hell do we do?!?"
     show linda at std
-    show renier at foc
+    if mc_dislike_player() < 2:
+        show renier at foc
     r "Beats me!"
     r "We've also lost [persistent.playername] then!"
     r "We're completely fucking screwed!"
     r "If his hack isn't done yet, it could be any minute!"
-    show renier at std
+    if mc_dislike_player() < 2:
+        show renier at std
+    else:
+        show mc at foc()
     mc "Would we even know if he disconnected the viewport?"
     mc "Assuming he's right that it would make this world independent again?"
     show renier at std(p51)
@@ -374,7 +460,7 @@ label chapter26:
             pass
     menu:
         " "
-        "If I could've done something, I would've, but Monika broke Character.reset...! - Adam":
+        "If I could've done something, I would've, but you broke Character.reset...! - Adam":
             pass
     show renier at foc
     r u2297 "You're responsible for this too!"
@@ -407,7 +493,7 @@ label chapter26:
     "He fires two, the second one landing in the head."
     "The attacker falls over."
     "The survivor runs away, still screaming."
-#    "... I guess Albert forgot we didn't know for sure if he had a Third Eye or not, but it looks like he's not freaking out."
+#    "... I guess Albert forgot we didn't know for sure if he had a Third Eye or not, but it looks like he doesn't."
     "..."
     show renier at std(p31)
     show linda at std(p32)
@@ -422,7 +508,7 @@ label chapter26:
             pass
     menu:
         " "
-        "It wasn't something I did! It was Libitina killing me back in the facility that caused the outbreak in Yuri's town! - Adam":
+        "It wasn't something I did! Libitina killing me back in the facility caused the outbreak in Yuri's town as well as the rift! - Adam":
             pass
     menu:
         " "
