@@ -1,9 +1,9 @@
 label chapter26:
     scene driving with dissolve_scene_full
     pause 5.0
-    scene city_night
+    scene city_night with dissolve_scene
     python:
-        with open('ERROR.txt', 'w') as f:
+        with open(config.basedir + '/ERROR.txt', 'w') as f:
             f.write("ERROR: not allowed while a POV character is being followed.")
     "We roll back into the town with the warehouse."
     "The first town he ever experimented in."
@@ -14,7 +14,7 @@ label chapter26:
     l "I don't see anything unusual yet, but it's {i}gotta{/i} be a trap."
     show linda at std(p22)
     show natsuki c114114 at foc(p21)
-    n "You know, the longer I think about this, the dummer it seems."
+    n "You know, the longer I think about this, the dumber it seems."
     n "We're basically walking into a situation where we're likely to be shot at any second?"
     n "Honestly, it feels bleaker going into this than it did being on the clock and not having a lead."
     n "With no restore_character..."
@@ -30,8 +30,8 @@ label chapter26:
     show natsuki at std(p43)
     show linda at std(p44)
     show libitina at std(p42)
-    show yuri at foc(p41)
-    y c125111 "Actually..."
+    show yuri c125111 at foc(p41)
+    y "Actually..."
     y "We probably won't be ambushed."
     y "Adam doesn't want to kill us all."
     y "He demonstrated that earlier."
@@ -41,7 +41,7 @@ label chapter26:
     show natsuki at xif(p43)
     n "That's a good point..."
     n xc4111 "I actually feel a lot better now. Thanks."
-    n "Still though, we can't be sure."
+    n "We still can't be sure, though."
     show natsuki at std
     mc "I feel like we should move faster."
     mc "We must look really suspicious."
@@ -57,10 +57,10 @@ label chapter26:
     m "Good idea..."
     show monika c214113
     call updateconsole("ursula.reset()", "ERROR: escaped character.\nDisabling Character.reset.")
-    call hideconsole
     m c114113 "Well there we go."
     m "There's no reset and no restore."
     m "It does give us better odds of winning, but it's unnerving."
+    call hideconsole
     $ consolehistory = []
     show monika at std(p62)
     show yuri at std(p63)
@@ -76,11 +76,11 @@ label chapter26:
     al "Who's that?"
     al "Me and Natsuki, the only ones with no admin experience and no Third Eyes?"
     show albert at std
-    show linda at foc
+    show linda at foc zorder 1
     l 114113 "I..."
     l "I'm sorry, but yes."
     show linda at std
-    show natsuki at foc
+    show natsuki at foc zorder 1
     n c114214 "Hold on now..."
     show natsuki at std
     show albert at foc
@@ -88,21 +88,27 @@ label chapter26:
     al "Assuming this is a trap, Adam's watching the viewport."
     al "Which, again, means he sees everything the POV character sees."
     show albert at std
-    show linda at foc
+    show linda at foc zorder 2
     l 115112 "Good point."
+    l "It sure is easy to forget that..."
     l 114112 "Well, crap, I guess he already knows we're here and everything we've said."
     l "Whether this is an ambush or not, there's no way he isn't watching."
     show linda at std
     show albert at foc
     $ vpchar = mc_name if mc_dislike_player() < 2 else 'Renier'
     al "What if [vpchar] stays separate so he won't know exactly where we are?"
-    al "[vpchar] could hang back a distance, maybe serve as a rear guard."
+    al "He could hang back a distance, maybe serve as a rear guard."
     al "That would mitigate Adam's information advantage."
     show albert at std
-    mc "I guess that's true..."
-    "I want to be with everyone else, but I also like the possibility of not going into danger."
-    mc "I can do that, then."
-    show monika c114111 at foc
+    if mc_dislike_player() < 2:
+        mc "I guess that's true..."
+        "I want to be with everyone else, but I also like the possibility of not going into danger."
+        mc "I can do that, then."
+    else:
+        r "I guess that's true..."
+        "I feel bad sitting out the most dangerous part, but it's not really something I can complain about."
+        r "I could do that then."
+    show monika c114111 at foc zorder 1
     menu:
         m "[persistent.playername], anything to say before we do this?"
         "Have you seen ERROR.txt?":
@@ -129,13 +135,18 @@ label chapter26:
     l "I think so. Maybe you should just close your eyes so you don't give away our exact position."
     l "And we'll keep you in the middle of the group."
     show linda at std
-    mc "Um... okay..."
-    "I end up closing my eyes and letting [persistent.mc_favorite] lead me by the hand."
-#    "Me, Monika, and Libitina are in the center, since we're the three most important." TODO this depends on a lot
-#    "Albert's taking point."
-#    "Yuri, Renier and Linda are in the back, ."
-    scene warehouse_outside_night
+    if mc_dislike_player() < 2:
+        mc "Um... okay..."
+    else:
+        r "Uh... okay..."
+    "I end up closing my eyes and letting Monika lead me by the hand."
+    scene black with close_eyes
+    "Me, Monika, and Libitina are in the center, since we're the three most important."
+    "Albert and Natsuki are taking point."
+    $ temp = 'Renier' if mc_dislike_player() < 2 else 'MC'
+    "Yuri, [temp], and Linda are in the back, since they're more important than an ordinary person but not as much as us in the center."
     "..."
+    scene warehouse_outside_night
     "I open my eyes in a flash when I hear a door opening."
     "We're here."
     "Albert walks in, pointing his gun."
@@ -145,9 +156,10 @@ label chapter26:
     scene warehouse_inside_1 with wipeleft
     "Well, here we are in this horrid place one last time..."
     "But there doesn't seem to be anyone here."
+    play music spooky fadeout 5.0
     show albert 11121 at foc(p11)
     al "It doesn't look like it was a trap."
-    show albert at std(p62)
+    show albert at std(p22)
     show libitina 2271441 at foc(p21)
     "Libitina gasps as she walks in."
     b "This place...!"
@@ -177,24 +189,15 @@ label chapter26:
     r u1213 "If I were him I'd've known fully well what being in this place would do to us."
     r "It's like he wanted to lure us into a place where one of us might snap and open her Third Eye."
     r "Especially given we were all here together and armed, any one of us who snapped could kill everyone else."
+    r "Including the POV character..."
     show renier at std
-    show yuri at foc
-    y c125113 "But does that do him any good?"
-    y "Wouldn't that just lead to us starting a new game?"
-    show yuri at std(p53)
-    show renier at std(p52)
-    show libitina at std(p54)
-    show albert at std(p55)
-    show linda 124111 at foc(p51)
-    l "Not without reset."
-    l "We might not actually be able to start a new game, one way or another."
-    l "With both restore_character and Character.reset gone."
-    "..."
-    l 114111 "It's also possible he {i}wanted{/i} us to start a new game now."
-    l "With his other plan foiled, maybe he wanted to split us up for some reason?"
-    l "Hard to say."
-    show linda at std
-    "..."
+    show libitina 2261111
+    show yuri at foc zorder 1
+    y c125113 "But he sent us here before ERROR.txt appeared... right?"
+    show yuri at std
+    show renier at foc zorder 2
+    r u12131 "Yeah, I'm not sure about that part..."
+    show renier at std
     show albert at foc
     al "Well frankly, I don't think he's coming."
     al "This wasn't an ambush. Maybe he just sent us here to buy time to think of a new plan."

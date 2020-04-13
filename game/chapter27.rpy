@@ -40,7 +40,6 @@ label chapter27:
     m "Good idea."
     show yuri at std(p22)
     show natsuki c124111 at foc(p21)
-    # TODO maybe not if she was murdered in ch22.
     n "I'll take it."
     n "It should be someone who doesn't have a Third Eye."
     show natsuki at std
