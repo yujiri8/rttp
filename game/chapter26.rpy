@@ -579,6 +579,7 @@ label chapter26:
     "More screams."
     show linda at foc(p22)
     l 11b113 "Is it every time she catches an admin with her distortion...?"
+    l "... Regardless of whether she kills them?"
     show linda at std
     show yuri at foc
     y c124118 "But I caught it before when it wasn't me who did it..."
@@ -614,15 +615,15 @@ label chapter26:
     l "{i}Oh no.{/i}"
     l "He tricked us into leaving the area and now he's going to where Monika died!"
     l "He'll shoot himself, put himself in DDLC, reset Monika and then extract them both and have her alone!"
-    l "He'll be able to make her POV and then kill her and run his hack!"
+    l "He'll be able to make her POV and then kill her again and run his hack!"
     al "Oh shit, I'm turning back!!"
     "Albert turns around as aggressively as possible."
     al "I can't believe we got fooled like this!"
     mc "I bet he was right near the warehouse waiting for this!"
     mc "We can't get back in time!"
-    s "[persistent.playername], you have to switch the viewport destination back to DDLC!"
-    s "And then turn it off to stop time from passing in that world long enough for us to get back to the warehouse!"
-    s "Change DESTINATION.txt to say /jails/doki_doki_literature_club again!" # TODO make sure these directions are as clear as possible.
+    s "[persistent.playername], you have to switch back to DDLC!"
+    s "Change DESTINATION.txt to say /jails/doki_doki_literature_club again!"
+    s "Then start the game so it gets connected and then turn it off again to stop time from passing in that world long enough for us to get back to the warehouse!"
     $ persistent.autoload = "return_to_ddlc"
     while True:
         " "

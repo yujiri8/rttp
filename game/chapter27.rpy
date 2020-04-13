@@ -143,8 +143,22 @@ label chapter27:
         show monika at std
         show markov at foc
         k "Understood."
-        show markov at std
-    #What?
+        "..."
+    show markov at foc
+    k u11513 "I really, really was sincere..."
+    k "I really intended to not go back to experimenting."
+    k "I only intended to get rid of [persistent.playername]."
+    k "And when I sent you to the warehouse, I was really planning to meet you if you didn't bring guns."
+    k "And I was only going to kill the POV character because I could make it quick, and I would use the DDLC trick to restore them immediately once [persistent.playername] was gone!"
+    show markov at std
+    show libitina at foc
+    b 3271113 "Save your lies!"
+    b "For every lie you tell, I'm going to kill you an extra time!"
+    show libitina at std
+    show markov at foc
+    k "..."
+    show markov at std
+
     show markov at foc
     k "I named the Third Eye after Ursula's poem."
     k "Back when I still thought there was a closer relationship between the powers."
