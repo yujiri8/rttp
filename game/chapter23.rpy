@@ -1,9 +1,7 @@
 label chapter23:
     python:
-        names = {'sayori':'abbey', 'yuri':'elyssa', 'natsuki':'maria', 'renier':'renier', 'linda':'linda', 'albert':'albert'}
-        for name in names:
-            with open(config.basedir + '/characters/' + names[name] + '.chr', 'wb') as f:
-                f.write(renpy.file(name + '.chr').read())
+        for char in 'sayori', 'yuri', 'natsuki', 'renier', 'linda', 'albert', 'markov':
+            restore_character(char)
     play music t6r
     show noise zorder 3:
         alpha 0.3
@@ -73,10 +71,11 @@ label chapter23:
     m "Well..."
     m "I guess we're safe for now."
     m "Markov doesn't seem able to delete me either."
-    call updateconsole("abbey, daniel, maria, elyssa, \\\n renier, linda, libitina", "(<Character object at 0x0x801436610>,\n<Character object at 0x801436710>,\n...)")
+    call updateconsole("sayori, "+mc_name.lower()+", natsuki, yuri, \\\n renier, linda, libitina", "(<Character object at 0x0x801436610>,\n<Character object at 0x801436710>,\n...)")
     call hideconsole
     $ consolehistory = []
     m "... or them. There are no NameErrors."
+    "(In the admin console, characters can be referenced by any name the admin knows them by.)"
     "..."
     m "[persistent.playername]..."
     m "I..."
@@ -503,7 +502,7 @@ label libitina_pov:
         linear 0.5 alpha 1.0
     call hideconsole
     $ consolehistory = []
-    call updateconsole('adam.reset()', '0') # You can reference the character by any name that you know about.
+    call updateconsole('adam.reset()', '0')
     "Before I can stop it, I pass out."
     call hideconsole
     $ consolehistory = []
