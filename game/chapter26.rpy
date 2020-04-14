@@ -1,4 +1,5 @@
 label chapter26:
+    $ vpchar = mc_name if mc_dislike_player() < 2 else 'Renier'
     scene driving with dissolve_scene_full
     pause 5.0
     scene city_night with dissolve_scene
@@ -95,12 +96,11 @@ label chapter26:
     l "Whether this is an ambush or not, there's no way he isn't watching."
     show linda at std
     show albert at foc
-    $ vpchar = mc_name if mc_dislike_player() < 2 else 'Renier'
     al "What if [vpchar] stays separate so he won't know exactly where we are?"
     al "He could hang back a distance, maybe serve as a rear guard."
     al "That would mitigate Adam's information advantage."
     show albert at std
-    if mc_dislike_player() < 2:
+    if vpchar == mc_name:
         mc "I guess that's true..."
         "I want to be with everyone else, but I also like the possibility of not going into danger."
         mc "I can do that, then."
@@ -135,7 +135,7 @@ label chapter26:
     l "I think so. Maybe you should just close your eyes so you don't give away our exact position."
     l "And we'll keep you in the middle of the group."
     show linda at std
-    if mc_dislike_player() < 2:
+    if vpchar == mc_name:
         mc "Um... okay..."
     else:
         r "Uh... okay..."
@@ -143,7 +143,7 @@ label chapter26:
     scene black with close_eyes
     "Me, Monika, and Libitina are in the center, since we're the three most important."
     "Albert and Natsuki are taking point."
-    $ temp = 'Renier' if mc_dislike_player() < 2 else 'MC'
+    $ temp = 'Renier' if vpchar == mc_name else mc_name
     "Yuri, [temp], and Linda are in the back, since they're more important than an ordinary person but not as much as us in the center."
     "..."
     scene warehouse_outside_night
@@ -179,7 +179,7 @@ label chapter26:
     y c125117 "Try to stay calm..."
     y "This is a dangerous place for all of us Eye-bearers who were kept here."
     y "Given how sensitive yours is, you risk opening it if you don't stay calm."
-    if mc_dislike_player() < 2:
+    if vpchar == mc_name:
         show yuri at std(p42)
         show libitina at std(p43)
         show albert at std(p44)
@@ -191,21 +191,21 @@ label chapter26:
     r "It's like he wanted to lure us into a place where one of us might snap and open her Third Eye."
     r "Especially given we were all here together and armed, any one of us who snapped could kill everyone else."
     r "Including the POV character..."
-    if mc_dislike_player() < 2:
+    if vpchar == mc_name:
         show renier at std
     show libitina 2261111
     show yuri at foc zorder 1
     y c125113 "But he sent us here before ERROR.txt appeared... right?"
     show yuri at std
-    if mc_dislike_player() < 2:
+    if vpchar == mc_name:
         show renier at foc zorder 2
     r u12131 "Yeah, I'm not sure about that part..."
-    if mc_dislike_player() < 2:
+    if vpchar == mc_name:
         show renier at std
     show albert at foc
     al "Well frankly, I don't think he's coming."
     al "This wasn't an ambush. Maybe he just sent us here to buy time to think of a new plan."
-    if mc_dislike_player() < 2:
+    if vpchar == mc_name:
         show renier at std(p51)
         show yuri at std(p52)
         show libitina at std(p53)
@@ -225,7 +225,7 @@ label chapter26:
         " "
         "Monika... are you sure you know what really happened when you three were in DDLC?":
             pass
-    if mc_dislike_player() < 2:
+    if vpchar == mc_name:
         show renier u1233
     show yuri c124118
     show libitina 2261114
@@ -248,12 +248,12 @@ label chapter26:
     show libitina 2261444
     show yuri c114128
     show albert 11142
-    if mc_dislike_player() < 2:
+    if vpchar == mc_name:
         show renier u11a3
     show monika at foc
     m c114282 "No..."
     m "Oh no..."
-    if mc_dislike_player() < 2:
+    if vpchar == mc_name:
         show monika at std(p66)
         show albert at std(p65)
         show libitina at std(p64)
@@ -303,7 +303,7 @@ label chapter26:
     "The next few seconds are a flash."
     "Sayori is trying to wrestle Monika's gun."
     "Monika continues to scream."
-    if mc_dislike_player() < 2:
+    if vpchar == mc_name:
         "I run toward Monika to help Sayori..."
     else:
         "[mc_name] runs toward Monika to help Sayori..."
@@ -318,7 +318,7 @@ label chapter26:
     "I hear more shots."
     "Shit, what's happening?"
     "As I reach the warehouse door, I glance back and notice it's Libitina shooting Monika."
-    if mc_dislike_player() < 2:
+    if vpchar == mc_name:
         "Oh no, oh no, oh no..."
     else:
         "Oh shit, oh shit, oh shit..."
@@ -327,7 +327,7 @@ label chapter26:
     "I see Albert trying to shoot at Libitina."
     "But it's not even affecting her now that her Third Eye is open."
     "It looks like his bullets are just vanishing as they fly near her."
-    if mc_dislike_player() < 2:
+    if vpchar == mc_name:
         r "Albert she's immune!"
         "Renier grabs Albert and starts dragging him away."
         r "You dumbass!"
@@ -372,12 +372,12 @@ label chapter26:
     al "Thanks..."
     al "I think I'd have died trying to stop her..."
     show albert at std
-    if mc_dislike_player() < 2:
+    if vpchar == mc_name:
         show albert at std(p22)
         show renier u2283 at foc(p21)
     r "You're welcome..."
     r "So what the fuck happened!?!"
-    if mc_dislike_player() < 2:
+    if vpchar == mc_name:
         show renier at std(p31)
         show albert at std(p32)
         show linda 119442 at foc(p33)
@@ -386,7 +386,7 @@ label chapter26:
         show linda 119442 at foc(p22)
     l "Libitina..."
     l "... she snapped and shot to feed her Third Eye."
-    if mc_dislike_player() < 2:
+    if vpchar == mc_name:
         show linda at std(p43)
         show renier at std(p41)
         show albert at std(p42)
@@ -407,14 +407,14 @@ label chapter26:
     l "And without reset, we can't even use the rift to start a new game!"
     l "What the hell do we do?!?"
     show linda at std
-    if mc_dislike_player() < 2:
+    if vpchar == mc_name:
         show renier at foc
     r "Beats me!"
     r "We've also lost [persistent.playername] then!"
     r "We're completely fucking screwed!"
     r "If his hack isn't done yet, it could be any minute!"
     show yuri c125128
-    if mc_dislike_player() < 2:
+    if vpchar == mc_name:
         show renier at std
     else:
         show mc c118335 at foc(p41)
@@ -423,7 +423,7 @@ label chapter26:
         show yuri at std(p44)
     mc "Would we even know if he disconnected the viewport?"
     mc "Assuming he's right that it would make this world independent again?"
-    if mc_dislike_player() < 2:
+    if vpchar == mc_name:
         show renier at std(p51)
     else:
         show mc at std(p51)
@@ -435,7 +435,7 @@ label chapter26:
     n "We've always found a loophole in situations like this!"
     n "What haven't we tried?"
     n "[persistent.playername], think!"
-    if mc_dislike_player() < 2:
+    if vpchar == mc_name:
         show renier at std(p61)
     else:
         show mc at std(p61)
@@ -459,11 +459,11 @@ label chapter26:
         " "
         "I'm so sorry, everyone! - Adam":
             pass
-    if mc_dislike_player() >= 2:
+    if vpchar != mc_name:
         show mc c118133 at foc
     mc "Adam!!"
     mc "You bastard!"
-    if mc_dislike_player() >= 2:
+    if vpchar != mc_name:
         show mc at std
     menu:
         " "
@@ -477,7 +477,7 @@ label chapter26:
         " "
         "If I could've done something, I would've, but you broke Character.reset...! - Adam":
             pass
-    if mc_dislike_player() < 2:
+    if vpchar == mc_name:
         show renier u2297 at foc
     r "You're responsible for this too!"
     r "Add this to the list of reasons you deserve to die!"
@@ -489,7 +489,7 @@ label chapter26:
         " "
         "Investigate! - Adam":
             pass
-    if mc_dislike_player() < 2:
+    if vpchar == mc_name:
         show renier at foc
     r "We don't need you to tell us you murderous freak!"
     scene city_night with wipeleft
@@ -497,7 +497,7 @@ label chapter26:
     "The aggressor looks he has an open Third Eye alright."
     "That unmistakable look..."
     "(... Is this like the epidemic that happened in Yuri's town?!?)"
-    if mc_dislike_player() < 2:
+    if vpchar == mc_name:
         "Renier points a gun at the attacker."
         show renier u2286 at foc(p11)
         r "Only one way to..."
@@ -509,7 +509,7 @@ label chapter26:
         show linda 118443 at foc(p11)
     l "Renier you have a Third Eye!!"
     show linda at std
-    if mc_dislike_player() < 2:
+    if vpchar == mc_name:
         show renier u2283
         "Being reminded, Renier manages to stop himself from pulling the trigger."
     else:
@@ -524,7 +524,7 @@ label chapter26:
     "The attacker falls over."
     "The survivor runs away, still screaming."
     "..."
-    if mc_dislike_player() < 2:
+    if vpchar == mc_name:
         show renier at std(p31)
         show linda at std(p32)
         show yuri c128135 at foc(p33)
@@ -558,7 +558,7 @@ label chapter26:
     "Linda takes it."
     "The rest of us Eye-bearers also hand off our guns."
     "Yuri also gives Linda her knife."
-    if mc_dislike_player() < 2:
+    if vpchar == mc_name:
         show renier at std(p41)
         show linda at std(p42)
         show yuri at std(p43)
@@ -573,7 +573,7 @@ label chapter26:
     y c128138 "And we need to bring Libitina with us!"
     y "She's still the closest thing we have to an out."
     show yuri at std
-    if mc_dislike_player() < 2:
+    if vpchar == mc_name:
         show renier u2133 at foc
     r "No problem, our car's not too far."
     scene warehouse_outside_night with wipeleft
@@ -600,7 +600,7 @@ label chapter26:
     l "And in the adjacent cell the other time?"
     l "Maybe it hits every nearby Third Eye-bearer?"
     show linda at std
-    if mc_dislike_player() < 2:
+    if vpchar == mc_name:
         "Renier picks up Libitina again."
     else:
         "I pick up Libitina again."
@@ -609,7 +609,7 @@ label chapter26:
     scene driving_night with dissolve_scene
     "We head back to where we parked, Albert takes the wheel, and we drive out of the city as fast as possible."
     "Libitina continues to scream and vomit blood."
-    if mc_dislike_player() < 2:
+    if vpchar == mc_name:
         "My heart aches watching her."
         "Yuri is crying."
     else:
