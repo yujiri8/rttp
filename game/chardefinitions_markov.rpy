@@ -20,6 +20,7 @@ image markov u21543 = im.Composite((960, 960), (0, 0), "mod_assets/markov/1_unif
 image markov u22541 = im.Composite((960, 960), (0, 0), "mod_assets/markov/1_uniform/1_body_left/2.png", (0, 0), "mod_assets/markov/1_uniform/2_body_right/2.png", (0, 0), "mod_assets/markov/2_face/1_mouth/5.png", (0, 0), "mod_assets/markov/2_face/2_eyes/4.png", (0, 0), "mod_assets/markov/2_face/3_eyebrows/1.png")
 image markov u22542 = im.Composite((960, 960), (0, 0), "mod_assets/markov/1_uniform/1_body_left/2.png", (0, 0), "mod_assets/markov/1_uniform/2_body_right/2.png", (0, 0), "mod_assets/markov/2_face/1_mouth/5.png", (0, 0), "mod_assets/markov/2_face/2_eyes/4.png", (0, 0), "mod_assets/markov/2_face/3_eyebrows/2.png")
 image markov u22643 = im.Composite((960, 960), (0, 0), "mod_assets/markov/1_uniform/1_body_left/2.png", (0, 0), "mod_assets/markov/1_uniform/2_body_right/2.png", (0, 0), "mod_assets/markov/2_face/1_mouth/6.png", (0, 0), "mod_assets/markov/2_face/2_eyes/4.png", (0, 0), "mod_assets/markov/2_face/3_eyebrows/3.png")
+image markov u22742 = im.Composite((960, 960), (0, 0), "mod_assets/markov/1_uniform/1_body_left/2.png", (0, 0), "mod_assets/markov/1_uniform/2_body_right/2.png", (0, 0), "mod_assets/markov/2_face/1_mouth/7.png", (0, 0), "mod_assets/markov/2_face/2_eyes/4.png", (0, 0), "mod_assets/markov/2_face/3_eyebrows/2.png")
 
 
 
