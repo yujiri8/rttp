@@ -413,7 +413,19 @@ label the_final_plan:
     r "Last time..."
     r "... it worked."
     show renier at std
-
+    show markov at foc
+    k "We should make [mc_name] POV."
+    k "If he's the most important one to keep on target..."
+    k "... besides the one who can't be..."
+    k "... [persistent.playername] should be connected to him, so [persistent.player_subj_pronoun] can talk to him."
+    show markov at std
+    if mc_dislike_player() > 2:
+        mc "Alright..."
+    else:
+        mc "Sounds good."
+    show markov at foc
+    $ switch_pov(mc_name.lower())
+    scene road1_night with dissolve_scene
 label do_the_final_plan:
     show albert at foc
     al "[mc_name]..."
