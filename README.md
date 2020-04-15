@@ -12,8 +12,6 @@ The file 'SCRAPS' contains a couple of less important thoughts (that I don't nee
 
 * The kiss may be a solvable problem now. I contrived Renier's arrival to stop this in part 1 because I couldn't write it even if I wanted to, but now that MC isn't always POV, it's possible he and his favorite girl could do it at some point in part 3 where it could be offscreen or something. I would love to not do it at all, but with them having wanted to since DDLC, it's entirely implausible that they never get around to it after all this.
 
-* Chapter 26 is marked with a couple of TODOs where I feel it might be necessary to insert dialogue where they consider / cross out some of the possibilities I'm not running with.
-
 # Plans for the ending
 
 * Adam's survival depends on whether you've picked the mercy-favoring options. If so he escapes with them into the real world. Otherwise Libitina destroys him.
