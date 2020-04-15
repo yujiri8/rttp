@@ -364,7 +364,7 @@ label chapter26:
         "We run a few blocks away before we stop."
         "I turn around and pant."
         "I see the backdrop behind the warehouse..."
-        "It might a new rift alright."
+        "It made a new rift alright."
     show albert 11142 at std(p11)
     "Albert looks the most shocked, the only one who's never witnessed something like that before."
     show albert at foc
@@ -404,7 +404,7 @@ label chapter26:
     show linda at foc
     l 119443 "Now we don't have Monika!"
     l "And she can't restore herself!"
-    l "And without reset, we can't even use the rift to start a new game!"
+    l "And we can't even use the rift to start a new game because that would mean killing the POV character!"
     l "What the hell do we do?!?"
     show linda at std
     if vpchar == mc_name:
@@ -481,7 +481,84 @@ label chapter26:
         show renier u2297 at foc
     r "You're responsible for this too!"
     r "Add this to the list of reasons you deserve to die!"
-    if mc_dislike_player() < 2:
+    if vpchar == mc_name:
+        show renier at std
+    show sayori at foc
+    s c228314 "Besides, if you meant what you said, you could restore Monika with DDLC!"
+    show sayori at std
+    menu:
+        " "
+        "I tried. She isn't restoring herself. - Adam":
+            pass
+    menu:
+        " "
+        "Her console must've been messed up by Libitina's distortion... - Adam":
+            pass
+    show sayori at foc
+    s c123114 "Then you could send yourself into DDLC to reset her!"
+    show sayori at std
+    menu:
+        " "
+        "That requires falling asleep. - Adam":
+            pass
+    show sayori at foc
+    s "No it doesn't!"
+    s "You could shoot yourself in the head!"
+    show sayori at std
+    menu:
+        " "
+        "That would mess up my console too. - Adam":
+            pass
+    menu:
+        " "
+        "It only causes a rift if you're killed by a Third Eye, but admins get their consoles corrupted by any death and need to be reset. - Adam":
+            pass
+    show sayori at foc
+    s "We know for a fact that's not true!"
+    s "Monika and I and Linda all died plenty of times in DDLC and didn't get our consoles messed up!"
+    s "We know it only happens if you're killed by a Third Eye or something like your deep script."
+    show sayori at std
+    menu:
+        " "
+        "Well... - Adam":
+            pass
+    menu:
+        " "
+        "I guess that's true... - Adam":
+            pass
+    show sayori at foc
+    s "You liar!"
+    s "That {i}couldn't{/i} have been an honest mistake!"
+    show sayori at std
+    menu:
+        " "
+        "Look, if I hadn't had a change of heart, I could've killed myself earlier, put myself in DDLC, made myself POV, and then extracted myself and killed myself again. - Adam":
+            pass
+    menu:
+        " "
+        "That would've enabled me to run my hack without having to go through all this trouble. - Adam":
+            pass
+    s "..."
+    mc "Wait..."
+    l "That can't be..."
+    l "There's on way that's actually been an option to him this whole time and he hasn't done it."
+    mc "What if he has?!?"
+    menu:
+        " "
+        "I haven't! I'll prove it. I'll give [persistent.playername] a dialog option. - Adam":
+            pass
+    menu:
+        " "
+        "I'm still here.":
+            pass
+    mc "Like you couldn't have faked that!"
+    # Maybe they can tell the difference.
+    #TODO
+    
+#    "Wait a minute, if broken APIs still work in DDLC..."
+#    "... what stops him from putting himself in there, making himself POV, and then extracting himself and killing himself?"
+#    "He doesn't need to kill one of us to get able to run his hack."
+    if vpchar == mc_name:
         show renier at std
     "I hear screams I don't recognize from someone around the corner."
     "Oh no..."
@@ -629,7 +706,6 @@ label chapter26:
     l "It would seem skipping time doesn't count, or it would've worked while we were driving."
     l "But I bet you're right."
     l "I bet we're not on the clock anymore, but it's essential that we protect you."
-    #TODO probably insert some of the speculation dialogue in SCRAPS in here. They should consider why couldn't he use DDLC self-insertion, if APIs broken in POM work in DDLC, and make himself POV and then kill himself, if killing an admin outside of the Third Eye doesn't mess them up?
     # The answer is because (he probably tried it as soon as he got ERROR.txt) the Character.pov flag doesn't exist while a viewport's not connected.
     # Up until now, he was still waiting for them to get farther away.
     $ delete_character('adam')
@@ -666,6 +742,9 @@ label return_to_ddlc:
         $ renpy.quit()
 
 label returned_to_ddlc:
+    $ delete_all_characters()
+    $ restore_character('monika')
+    $ restore_character('adam')
     $ persistent.autoload = 'returned_to_ddlc'
     $ quick_menu = False
     $ vpchar = mc_name if mc_dislike_player() < 2 else "Renier"
@@ -679,6 +758,7 @@ label returned_to_ddlc:
     m "You set the viewport destination back?"
     "{cps=200}Fatal error: player character missing.{/cps}"
     k "See, [persistent.playername]?"
+    k "She's restored!"
     k "I told you my intentions were pure!"
     "{cps=200}Fatal error: player character missing.{/cps}"
     k "I just shot myself in the forehead to come here to save her from the glitching!"
@@ -706,6 +786,9 @@ label return_to_pom:
 label after_return_to_ddlc:
     $ persistent.autoload = None
     $ autosave()
+    python:
+        for char in 'sayori', 'yuri', 'natsuki', 'renier', 'linda', 'libitina', 'albert', 'adam':
+            restore_character(char)
     scene warehouse_inside_1 with dissolve_scene
     "I'm back."
     "I look around."
