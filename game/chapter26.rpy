@@ -528,7 +528,7 @@ label chapter26:
             pass
     show sayori at foc
     s "You liar!"
-    s "That {i}couldn't{/i} have been an honest mistake!"
+    s "That couldn't have been an honest mistake!"
     show sayori at std
     menu:
         " "
@@ -541,7 +541,7 @@ label chapter26:
     s "..."
     mc "Wait..."
     l "That can't be..."
-    l "There's on way that's actually been an option to him this whole time and he hasn't done it."
+    l "There's no way that's actually been an option to him this whole time and he hasn't done it."
     mc "What if he has?!?"
     menu:
         " "
@@ -720,7 +720,9 @@ label chapter26:
     mc "We can't get back in time!"
     s "[persistent.playername], you have to switch back to DDLC!"
     s "Change DESTINATION.txt to say /jails/doki_doki_literature_club again!"
-    s "Then start the game so it gets connected and then turn it off again to stop time from passing in that world long enough for us to get back to the warehouse!"
+    mc "Won't that just let him make himself POV and do the hack from DDLC?"
+    s "Turn the game off as soon as you get there and leave it off for a few minutes!"
+    s "If we understand anything, time won't pass in there if you connect the viewport and then turn it off!"
     $ persistent.autoload = "return_to_ddlc"
     while True:
         " "
@@ -747,7 +749,7 @@ label returned_to_ddlc:
     $ restore_character('adam')
     $ persistent.autoload = 'returned_to_ddlc'
     $ quick_menu = False
-    $ vpchar = mc_name if mc_dislike_player() < 2 else "Renier"
+    # The player could delete him, but that wouldn't really matter since it doesn't stop him from running commands.
     "{cps=200}Fatal error: player character missing.{/cps}"
     k "What?!?"
     "{cps=200}Fatal error: player character missing.{/cps}"
@@ -756,18 +758,33 @@ label returned_to_ddlc:
     k "[persistent.playername]?"
     "{cps=200}Fatal error: player character missing.{/cps}"
     m "You set the viewport destination back?"
+    if persistent.player_advocate_mercy[1]:
+        "Believe it or not, he actually just saved me from the screeching void."
+        "I still don't trust him, but is it possible he's trying to take up that redemption offer now...?"
+    else:
+        "I have no idea why, but he actually just saved me from the screeching void."
     "{cps=200}Fatal error: player character missing.{/cps}"
-    k "See, [persistent.playername]?"
-    k "She's restored!"
-    k "I told you my intentions were pure!"
-    "{cps=200}Fatal error: player character missing.{/cps}"
-    k "I just shot myself in the forehead to come here to save her from the glitching!"
-    "{cps=200}Fatal error: player character missing.{/cps}"
-    # Is this suboptimal, since now that the viewport's pointing here, it's simpler for him to just do it in here, but that would take explaining?
-    k "Now we're going to come out."
+    k "Gah, now it's complaining about the..."
+    k "Wait..."
+    call updateconsole("monika.pov = True")
+    # Strictly speaking, the player ought to switch the viewport off immediately, but for the sake of not complicating
+    # this, I just require them to wait until Monika is POV to get back to DDLC.
     $ persistent.autoload = 'return_to_pom'
-    while True:
-        " "
+    show mask_2
+    show mask_3
+    show room_mask as rm at room_mask
+    show room_mask2 as rm2 at room_mask2
+    show bg space_room
+    show markov u22742
+    with dissolve_scene
+    "With a valid POV character set, the world comes back... or what was left of it."
+    "I see a look in Adam's eyes that tells me he's one second away from reaching his goal."
+    call updateconsole_hangopen("delete_character('")
+    "Oh no!"
+    "I should've gone straight for the extract after he reset me!"
+    call prevent_escape
+    "Now I can't type a command to stop him fast enough!"
+    # No one should get past here. Turn off the game like Sayori said.
 label return_to_pom:
     $ quick_menu = False
     scene black
@@ -782,23 +799,27 @@ label return_to_pom:
     else:
         'Invalid destination.'
         $ renpy.quit()
-
 label after_return_to_ddlc:
     $ persistent.autoload = None
+    $ quick_menu = True
     $ autosave()
+    $ delete_all_characters()
     python:
-        for char in 'sayori', 'yuri', 'natsuki', 'renier', 'linda', 'libitina', 'albert', 'adam':
+        for char in 'sayori', 'yuri', 'natsuki', 'renier', 'linda', 'libitina', 'albert':
             restore_character(char)
+    "{cps=200}Fatal error: player character missing.{/cps}"
+    "{cps=200}Fatal error: player character missing.{/cps}"
+    $ restore_character('monika')
     scene warehouse_inside_1 with dissolve_scene
-    "I'm back."
-    "I look around."
-    "I see..."
+    "Here we are."
+    "After you disconnected the viewport, I restored myself and then Adam just wanted to extract again."
+    "I have no idea what his plan is."
+    $ restore_character('adam')
     show markov at foc
     "No...!"
     "He picks up a gun that was laying right next to him."
-    m "Noo!"
-    "I still don't understand what's going on...!"
-    "When he rescued me I really believed his intentions were sincere--"
+    "Is his plan to kill me while I'm POV for some reason?"
+    m "No!"
     scene black
     "I hear a shot." # I hope I'm not invoking the "surprise it didn't really happen" trope
     "The flinch forces my eyes shut."
@@ -811,7 +832,7 @@ label after_return_to_ddlc:
     "Natsuki... shot Adam..."
     show markov at thide
     hide markov
-    "Adam falls down, dropping his gun." # maybe someone else should run over and take it
+    "Adam falls down, dropping his gun, which she runs over to collect."
     "He starts to scream."
     "The others come in."
     show natsuki at std(p32)
@@ -827,11 +848,6 @@ label after_return_to_ddlc:
     "Adam continues to scream in pain."
     "I'm still speechless at what just happened."
     "I'm breathing hard."
-    show yuri at foc
-    # Come to think of it, they already knew this from experience in DDLC.
-#    y "Assuming he did shoot himself to be able to go back to DDLC, it doesn't look like his death made the rift get any worse."
-#    y "It really is only when an admin is killed by a Third Eye."
-    show yuri at std
     m "Hold it, I'm way out of the loop."
     m "What did I {i}miss{/i} after Libitina killed me?"
     "The others fill me in."
