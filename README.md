@@ -10,10 +10,6 @@ The file 'SCRAPS' contains a couple of less important thoughts (that I don't nee
 
 # Big things that still need doing
 
-* There is a way to make a character admin without using VR, but Adam broke that API once he realized it would let them win easy. Dialog on this is in SCRAPS. It needs to be inserted somewhere. Since a broken API is the same as nonexistent one, when they realize it and try different possibilities, they'll conclude not that it's broken but that they can't figure out what it's called. He'll reveal the truth some time in chapter26/chapter27.
-
-	If I insert it in chapter24, it seems to not play well with the drama of what Monika has to do (since she'd still have to do it either way since they aren't sure Adam will try to get Libitina out for them), and in chapter25 it doesn't seem like there's a space for it in the strict schedule of other things that have to happen once Libitina and Monika come back.
-
 * The kiss may be a solvable problem now. I contrived Renier's arrival to stop this in part 1 because I couldn't write it even if I wanted to, but now that MC isn't always POV, it's possible he and his favorite girl could do it at some point in part 3 where it could be offscreen or something. I would love to not do it at all, but with them having wanted to since DDLC, it's entirely implausible that they never get around to it after all this.
 
 * Chapter 26 is marked with a couple of TODOs where I feel it might be necessary to insert dialogue where they consider / cross out some of the possibilities I'm not running with.

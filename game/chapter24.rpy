@@ -793,7 +793,6 @@ label assault_facility:
         " "
         "I'll start a throttled loop to keep trying to put me in every few seconds until it works. - Adam":
             pass
-    # Could this be a good point to insert the dialogue where someone notices that admin.inflict_epiphany exists?
     show monika at foc
     m c114211 "..."
     show monika at std
@@ -811,6 +810,21 @@ label assault_facility:
     show monika at foc
     m c117114 "Ugh, you're right..."
     m c114214 "I still have to do this."
+    # Should this be given to the player?
+    menu:
+        " "
+        "(say nothing)":
+            pass
+        "Hold on, did you notice he implied that he thought of making Libitina an admin before he discovered VR?":
+            menu:
+                " "
+                "There must be a way to do it without that.":
+                    pass
+            m "That wouldn't help though."
+            m "We already put her in."
+            m "Which means we can't access her data from out here."
+            m "I still have to go in to get her."
+            m "Besides, there's no way he didn't break it after that conversation, and since we can't tell the difference between a broken API and one that never existed, it's not even any use trying to guess it."
     m "I could try to fall asleep before him and put myself in first, like we were going to do."
     show monika at std
     show mc at thide

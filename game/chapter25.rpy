@@ -4,7 +4,7 @@ label chapter25:
     play music yawa
     "..."
     show yuri c115111 at foc(p11)
-    y "So what was this place?" # Maybe Albert could get these lines if Yuri gets the admin.inflict_epiphany dialogue.
+    y "So what was this place?"
     y "It couldn't have been his facility."
     show yuri at std
     l "Maybe it was being built for something unrelated, and he commandeered it later?"
