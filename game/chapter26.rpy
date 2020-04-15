@@ -728,7 +728,7 @@ label chapter26:
     $ delete_character('adam')
     l "{i}Oh no.{/i}"
     l "He tricked us into leaving the area and now he's going to where Monika died!"
-    l "He'll shoot himself, put himself in DDLC, reset Monika and then extract them both and have her alone!"
+    l "{i}Now{/i} he's going to put himself in DDLC so he can reset Monika and then extract them both and have her alone!"
     l "He'll be able to make her POV and then kill her again and run his hack!"
     al "Oh shit, I'm turning back!!"
     "Albert turns around as aggressively as possible."
@@ -764,6 +764,7 @@ label returned_to_ddlc:
     $ delete_all_characters()
     $ restore_character('monika')
     $ restore_character('adam')
+    $ k_name = 'Adam'
     $ persistent.autoload = 'returned_to_ddlc'
     $ quick_menu = False
     # The player could delete him, but that wouldn't really matter since it doesn't stop him from running commands.
@@ -792,11 +793,11 @@ label returned_to_ddlc:
     show room_mask as rm at room_mask
     show room_mask2 as rm2 at room_mask2
     show bg space_room
-    show markov u22742
+    show markov u22742 at std(p11)
     with dissolve_scene
     "With a valid POV character set, the world comes back... or what was left of it."
     "I see a look in Adam's eyes that tells me he's one second away from reaching his goal."
-    call updateconsole_hangopen("delete_character('")
+    call console_hangopen("delete_character('")
     "Oh no!"
     "I should've gone straight for the extract after he reset me!"
     call prevent_escape
@@ -830,14 +831,16 @@ label after_return_to_ddlc:
     scene warehouse_inside_1 with dissolve_scene
     "Here we are."
     "After you disconnected the viewport, I restored myself and then Adam just wanted to extract again."
-    "I have no idea what his plan is."
+    "I have no idea what his plan is, but I'm back in Portrait of Markov n--"
     $ restore_character('adam')
-    show markov at foc
+    $ k_name = 'Adam'
+    show markov u22742 at foc(p11)
     "No...!"
     "He picks up a gun that was laying right next to him."
     "Is his plan to kill me while I'm POV for some reason?"
     m "No!"
     scene black
+    play sound gunshot1
     "I hear a shot." # I hope I'm not invoking the "surprise it didn't really happen" trope
     "The flinch forces my eyes shut."
     "But I don't feel anything."
@@ -850,6 +853,7 @@ label after_return_to_ddlc:
     show markov at thide
     hide markov
     "Adam falls down, dropping his gun, which she runs over to collect."
+    show natsuki at std
     "He starts to scream."
     "The others come in."
     show natsuki at std(p32)
@@ -869,19 +873,25 @@ label after_return_to_ddlc:
     m "What did I {i}miss{/i} after Libitina killed me?"
     "The others fill me in."
     m "So we're still in the danger zone?"
-    show linda 124111b at foc
+    show mc at std(p32)
+    show natsuki at std(p33)
+    show linda 124111b at foc(p31)
     l "Uh... yeah..."
     show linda at std
     m "We'd better get out, before it hits {i}me{/i}!"
+    show linda 11b443b
+    show mc c124335
+    show natsuki c224224
     "I see the 'oh crap' look on everyone else's face."
     "I run toward the exit."
+    scene warehouse_inside_1 with wipeleft
     m "Someone carry Adam!"
     m "He has to come with us!"
     "Renier and Albert together carry the mortally wounded Adam back to our vehicle."
-    "It's really cramped, even with a 7-seat van."
-    "We squeeze four of us on the back bench and place Adam on the floor, while Libitina, who's finished vomiting and passed out by now, lays across our laps on the back."
     scene city_night with wipeleft
     scene driving_night with wipeleft_scene
+    "It's really cramped, even with a 7-seat van."
+    "We squeeze four of us on the back bench and place Adam on the floor, while Libitina, who's finished vomiting and passed out by now, lays across our laps on the back."
     al "Where are we going?"
     m "Anywhere!"
     m "Just out of the city!"
