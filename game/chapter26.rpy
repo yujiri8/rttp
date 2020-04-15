@@ -423,6 +423,23 @@ label chapter26:
         show yuri at std(p44)
     mc "Would we even know if he disconnected the viewport?"
     mc "Assuming he's right that it would make this world independent again?"
+    if vpchar != mc_name:
+        show mc c114235
+    mc "Wait..."
+    if vpchar != mc_name:
+        show mc c118235
+    mc "That ERROR.txt file a few minutes back!"
+    mc "What if he already completed his brute-force search and that was the result of running the hack?"
+    if vpchar != mc_name:
+        show mc at std
+    show linda at foc
+    l 334443 "That could be..."
+    l "The hack targeted the viewport."
+    l "So it could be that his exploit only works while the POV character is dead or unconscious."
+    l "Skipping time must not count, or it would've worked while we were driving."
+    l "But I bet you're right."
+    l "If that's the only thing standing between him and cutting us off from [persistent.playername], we must keep [vpchar] alive at all costs."
+    show linda at std
     if vpchar == mc_name:
         show renier at std(p51)
     else:
@@ -484,11 +501,11 @@ label chapter26:
     if vpchar == mc_name:
         show renier at std
     show sayori at foc
-    s c228314 "Besides, if you meant what you said, you could restore Monika with DDLC!"
+    s c228314 "If you meant what you said, you could restore Monika with DDLC!"
     show sayori at std
     menu:
         " "
-        "I tried. She isn't restoring herself. - Adam":
+        "I tried. She isn't extracting herself. - Adam":
             pass
     menu:
         " "
@@ -527,7 +544,7 @@ label chapter26:
         "I guess that's true... - Adam":
             pass
     show sayori at foc
-    s "You liar!"
+    s c228314 "You liar!"
     s "That couldn't have been an honest mistake!"
     show sayori at std
     menu:
@@ -538,11 +555,21 @@ label chapter26:
         " "
         "That would've enabled me to run my hack without having to go through all this trouble. - Adam":
             pass
-    s "..."
+    s c218324 "..."
+    if vpchar != mc_name:
+        show mc c118235 at foc
     mc "Wait..."
-    l "That can't be..."
+    if vpchar != mc_name:
+        show mc at std
+    show linda at foc zorder 1
+    l 114443 "That can't be..."
     l "There's no way that's actually been an option to him this whole time and he hasn't done it."
+    show linda at std
+    if vpchar != mc_name:
+        show mc c118335 at foc
     mc "What if he has?!?"
+    if vpchar != mc_name:
+        show mc at std
     menu:
         " "
         "I haven't! I'll prove it. I'll give [persistent.playername] a dialog option. - Adam":
@@ -551,13 +578,17 @@ label chapter26:
         " "
         "I'm still here.":
             pass
-    mc "Like you couldn't have faked that!"
-    # Maybe they can tell the difference.
-    #TODO
-    
-#    "Wait a minute, if broken APIs still work in DDLC..."
-#    "... what stops him from putting himself in there, making himself POV, and then extracting himself and killing himself?"
-#    "He doesn't need to kill one of us to get able to run his hack."
+    if vpchar != mc_name:
+        show mc c114131 at foc
+    mc "[persistent.playername]...?"
+    mc "Thank goodness..."
+    if vpchar != mc_name:
+        show mc at std
+    show linda at foc
+    l "It must be that Character.pov can only be changed with the viewport connected."
+    l "He's trying to trick us!"
+    l "I bet he tried it earlier and it didn't work!"
+    show linda at std
     if vpchar == mc_name:
         show renier at std
     "I hear screams I don't recognize from someone around the corner."
@@ -693,20 +724,6 @@ label chapter26:
         "God..."
         "I'd feel awful for her if it wasn't her fault we're screwed...!"
         "Yuri's crying."
-    # I want Adam to claim he tried to put Monika into DDLC and have the player suggest that her console is still messed up, but it's contrary to his motives to say it.
-    # Maybe they should notice that Monika should be able to do it herself, and realize that her console must be messed up.
-    # Though I'm unsure about doing that because it leads to the idea that their plan in chapter 24 wouldn't have worked anyway.
-    mc "Hold on!"
-    mc "That ERROR.txt file a few minutes back!"
-    mc "What if that was the result of his hack?"
-    r "Eh...?"
-    l "It's plausible..."
-    l "The hack targeted the viewport."
-    l "Could it be that he already completed the brute-force attack, but his exploit only works while the POV character is dead or unconscious?"
-    l "It would seem skipping time doesn't count, or it would've worked while we were driving."
-    l "But I bet you're right."
-    l "I bet we're not on the clock anymore, but it's essential that we protect you."
-    # The answer is because (he probably tried it as soon as he got ERROR.txt) the Character.pov flag doesn't exist while a viewport's not connected.
     # Up until now, he was still waiting for them to get farther away.
     $ delete_character('adam')
     l "{i}Oh no.{/i}"
