@@ -153,7 +153,7 @@ label chapter26:
     al "Doctor Markov?"
     al "You in here?"
     "We follow him into the building."
-    scene warehouse_inside_1 with wipeleft
+    scene warehouse_inside with wipeleft
     "Well, here we are in this horrid place one last time..."
     "But there doesn't seem to be anyone here."
     play music spooky fadeout 5.0
@@ -687,7 +687,7 @@ label chapter26:
     scene warehouse_outside_night with wipeleft
     "We head back to the warehouse."
     "I hear a scream as we approach it."
-    scene warehouse_inside_1_rift with wipeleft
+    scene warehouse_inside_rift with wipeleft
     "The room inside is pretty much intact except for the rift."
     "Libitina's on the floor vomiting blood again, like she did after killing Adam."
     show yuri c1281y8 at foc(p21)
@@ -828,7 +828,7 @@ label after_return_to_ddlc:
     "{cps=200}Fatal error: player character missing.{/cps}"
     "{cps=200}Fatal error: player character missing.{/cps}"
     $ restore_character('monika')
-    scene warehouse_inside_1 with dissolve_scene
+    scene warehouse_inside with dissolve_scene
     "Here we are."
     "After you disconnected the viewport, I restored myself and then Adam just wanted to extract again."
     "I have no idea what his plan is, but I'm back in Portrait of Markov n--"
@@ -846,7 +846,7 @@ label after_return_to_ddlc:
     "But I don't feel anything."
     n "{cps=40}GOT YOU!!{/cps}"
     "I reopen my eyes."
-    scene warehouse_inside_1 with open_eyes
+    scene warehouse_inside with open_eyes
     show natsuki c215122 at foc(p21)
     show markov at std(p22)
     "Natsuki... shot Adam..."
@@ -884,7 +884,7 @@ label after_return_to_ddlc:
     show natsuki c224224
     "I see the 'oh crap' look on everyone else's face."
     "I run toward the exit."
-    scene warehouse_inside_1 with wipeleft
+    scene warehouse_inside with wipeleft
     m "Someone carry Adam!"
     m "He has to come with us!"
     "Renier and Albert together carry the mortally wounded Adam back to our vehicle."
