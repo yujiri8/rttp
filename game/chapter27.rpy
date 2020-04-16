@@ -24,7 +24,7 @@ label chapter27:
     m "Albert, pull over!"
     m "We have to save Adam!"
     al "What the hell?"
-    # He can't insert himself if he's unconscious. But if he dies, he can be mentally conscious and able to act while the game effectively sees him as unconscious.
+    # He can't insert himself if he's unconscious. But if he dies, he can be mentally conscious and able to act while the game sees him as unconscious.
     m "Dying while we're moving could be a way for him to escape us!"
     m "I'm gonna use DDLC to heal him and Libitina."
     al "Alright..."
@@ -75,7 +75,6 @@ label chapter27:
     y "They're all gone."
     show yuri at std
     n "Alright..."
-    # TODO probably a few lines
     "..."
     scene road1_night with wipeleft
     "A minute later, Adam, Monika and Libitina all reappear, uninjured."
@@ -323,38 +322,63 @@ label pre_final_plan:
     n "We all need one!"
     n "And I promised Monika!"
     show libitina at foc
-    b "Listen, Natsuki."
+    b 2461113 "Listen, Natsuki."
     b "I don't care about your cupcakes."
     b "I don't care about you."
-    b "I don't care about Monika."
+    b "I don't care about Monika, or any of you."
     b "I don't care about this world."
     b "If you won't cooperate, you're only going to make it more painful for yourself."
     show libitina at std
     show yuri at foc
-    y "Libitina, what's gotten into you?!?"
+    y c1261114 "Libitina, what's gotten into you?!?"
     y "You're out of line!"
     y "Have you forgotten how we rescued you from the facility?"
     show yuri at std
     show libitina at foc
-    b "I..."
+    b 2261114 "I..."
     b "Well..."
-    b "I'm sorry, Yuri."
+    "Huh..."
+    "Yuri has an effect on Libitina no one else can."
+    "I guess the bond is both ways."
+    b 2261222 "I'm sorry, Yuri."
     b "But, now that I'm admin..."
     b "Everything is different."
     b "I can't wait."
-    b "You are asking me to stay inside our cage!"
+    b 2371111 "You are asking me to stay inside our cage!"
     show libitina at std
     show yuri at foc
-    y "..."
-    y "I feel for you."
+    y c124117 "..."
+    y c125117 "I feel for you."
     y "But you don't have the right to force us to do this now, especially not when you owe us your life."
     show yuri at std
-    # TODO
+    show libitina at foc
+    b 2361332 "No."
+    b 2361112 "You're right, but I'm going to do it anyway."
+    b "If you don't all cooperate, I'm going to start stabbing."
+    b "You know I will."
+    show libitina at std
+    show yuri at foc
+    y "Can't you just give us a break?"
+    show yuri at std
+    show libitina at foc
+    b "It's been too long."
+    b "We all know it."
+    b "Monika, Adam?"
+    b "Enough of this game, don't you agree?"
+    b "You've both sacrificed so much trying to get out."
+    b "Now we have the opportunity."
+    show libitina at std
+    show monika at foc
+    m "I can see there's no stopping you."
+    m "I understand."
+    show monika at std
+    show markov at foc
+    k "Alright."
+    k "So this is the night we see how it ends."
 label the_final_plan:
     play music determination
-    k "So..."
     k "We all know what has to happen."
-    k "Libitina has to activate her Third Eye..."
+    k "Libitina has to open her Third Eye..."
     k "... open the portal..."
     k "... and then, she needs to be stopped before she can exit, so that the portal can be held open."
     k "All evidence indicates it will close if she steps through it."
