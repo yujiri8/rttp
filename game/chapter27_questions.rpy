@@ -3,25 +3,26 @@ label adam_questions:
     k "Do you have any questions?"
     k "Anything you want me to explain?"
     $ qtext = "Now's a good time."
-    $ persistent.asked_adam_about_experiments = False
-    $ persistent.asked_adam_about_ursula_awakening = False
-    $ persistent.asked_adam_about_power_relationship = False
-    $ persistent.asked_adam_about_ursula_poem = False
+    $ persistent.adam_questions = {'experiments':False, 'ursula_awakening':False, 'power_relationship':False, 'ursula_poem':False}
+    $ page = 0
 label adam_questions_menu:
     menu:
         k "[qtext]"
-        "Did you actually learn anything from your experiments?" if not persistent.asked_adam_about_experiments:
+        "Did you actually learn anything from your experiments?" if not persistent.adam_questions['experiments'] and page == 0:
             call adam_discuss_findings
-            $ persistent.asked_adam_about_experiments = True
-        "What do you think caused Ursula's admin awakening?" if not persistent.asked_adam_about_ursula_awakening:
+            $ persistent.adam_questions['experiments'] = True
+        "What do you think caused Ursula's admin awakening?" if not persistent.adam_questions["ursula_awakening"] and page == 0:
             call adam_discuss_ursula_awakening
-            $ persistent.asked_adam_about_ursula_awakening = True
-        "Is there any relationship between the Third Eye and admin powers?" if not persistent.asked_adam_about_power_relationship:
+            $ persistent.adam_questions['ursula_awakening'] = True
+        "Is there any relationship between the Third Eye and admin powers?" if not persistent.adam_questions['power_relationship'] and page == 1:
             call adam_discuss_power_relationship
-            $ persistent.asked_adam_about_power_relationship = True
-        "Do you still think Ursula's poem means anything?" if not persistent.asked_adam_about_ursula_poem:
+            $ persistent.adam_questions['power_relationship'] = True
+        "Do you still think Ursula's poem means anything?" if not persistent.adam_questions["ursula_poem"] and page == 1:
             call adam_discuss_power_relationship
-            $ persistent.asked_adam_about_ursula_poem = True
+            $ persistent.adam_questions['ursula_poem'] = True
+        "(More options)":
+            $ page = 1 if page == 0 else 0
+            jump adam_questions_menu
         "Done.":
             jump end_adam_questions
     $ qtext = "Anything else?"
