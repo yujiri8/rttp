@@ -1,13 +1,4 @@
-timeline:
-9 at new game
-13 when Lib awakens
-15 when Renier arrives
-17 when others arrive
-18 after the plan
-20 when they get back
-
-// I was previously thinking you couldn't move a dead character's data; Moni came out not because that was her last location, but because it was the one she remembered.
-	-- i don't think it's true. I think you can move a dead char's data; otherwise Adam would've been way more reluctant to break restore_character.
+// I was previously thinking you couldn't move a dead character's location, but maybe you can; Moni came out not because that was her last location, but because it was the one she remembered.
 
 // Maybe at the end of it all, it'll say emergency purge while it's killing everyone, since that phrase is familiar.
 
@@ -17,16 +8,6 @@ timeline:
 // maybe she should also break Character.suppressed. The player would suggest it if she forgot.
 
 // Maybe Lib caused the 13 year gap. 13 years passed outside but not in?
-
-
-# Yuri notices that admin.inflict_epiphany exists
-    y "Um..."
-    y "Did anyone else notice that he implied he thought of making Libitina an admin long before he discovered VR?"
-    y "That means there must be a way to do it without, right?"
-    "Yeah... there must be."
-    "But it wouldn't help now."
-    ""
-    "Besides, he'll definitely have broken it."
 
 # Adam talks about code
 k "Whenever you use the Python wrappers, the interpreter enters the block of instructions for the function, and then tries to evaluate its arguments."
@@ -42,35 +23,6 @@ k "For example, I'm sure [persistent.playername] saw how being caught in Libitin
 l "Internally, restore_character uses Character.reset."
 l "restore_character is essentially a wrapper that resets a character and marks them as alive."
 l "And restores their file, of course."
-
-#
-    menu:
-        " "
-        "Don't make me break admin.jail! - Adam":
-            pass
-
-    "It bought me all the time I needed."
-    "My hack is complete."
-    "It just needs one certain thing to happen to make an opening."
-
-    menu:
-        " "
-        "I sent you to the warehouse because I just needed to buy time to finish my hack. - Adam":
-            pass
-    menu:
-        " "
-        "But it actually finished... and it didn't work anyway. - Adam":
-            pass
-    l "Wait..."
-    l "... even though viewport.set_memory_protection was a fake?"
-    menu:
-        " "
-        "Yes, it was. - Adam":
-            pass
-    menu:
-        " "
-        "I don't know why it doesn't work. - Adam":
-            pass
 
 # Albert's reaction to hearing about the plan to use Libitina's Third Eye in ch24
     al 12111 "Let me get this straight..."
@@ -105,129 +57,3 @@ l "And restores their file, of course."
     "warp was broken, but there were other ways ."
     "According to the book she compiled, Linda read his memories a long time after that point."
     "Is it really possible he didn't know about memory reading?"
-
-
-# Possible convo in ch26
-    menu:
-        " "
-        "I want you to know, I just tried putting Monika into DDLC like Sayori suggested. - Adam":
-            pass
-    menu:
-        " "
-        "But she isn't coming out... - Adam":
-            pass
-    s "We're not believing a word of what you say!"
-    menu:
-        " "
-        "Maybe putting her in DDLC didn't fix her console. She's still messed up from Libitina's distortion.":
-            pass
-    menu:
-        " "
-        "True... - Adam":
-            pass
-    menu:
-        " "
-        "I think I have to go into DDLC myself to reset her. - Adam":
-            pass
-    menu:
-        " "
-        "If she's still in that horrid glitched state... I have to save her from it. - Adam":
-            pass
-    menu:
-        ""
-        "I will shoot myself in the forehead. - Adam":
-            pass
-            # Oh, if they restore Monika, they'll want to go back to get her.
-    # TODO Why does he actually tell this lie?
-    # Maybe someone else does.
-    # But doesn't he just admit he's going to shoot himself?
-    # Maybe one of the GGs is worried about him killing himself, and he slips that he already tried.
-    menu:
-        " "
-        "It's faster if I come to you and let you knock me out like you did with Monika than if I try to fall asleep. - Adam":
-            pass
-    menu:
-        " "
-        "I'd do that, but you'll shoot me on sight... - Adam":
-            pass
-    s "We won't shoot you on sight!"
-    s "If you're really the only way we can save Monika... then we're not stupid."
-    if persistent.player_advocate_mercy[0]:
-        s "I want to torture you."
-        s "I want to see you bleed and cry, just like you did to us..."
-        "Sayori sniffles."
-        s "But I'm not stupid."
-        $ temp = "There's no way you'd be that stupid"
-    else:
-        s "We've worked with people who did horrible things before!"
-        $ temp = "I should trust you"
-    menu:
-        " "
-        "... - Adam":
-            pass
-    menu:
-        " "
-        "You're right. [temp]. Dammit. I'll meet you. - Adam":
-            pass
-    menu:
-        " "
-        "Take road 27 and pull over a good half a mile out of the city limits to make sure you're safe. - Adam":
-            pass
-    menu:
-        " "
-        "I will be there. - Adam":
-            pass
-    r "He's just sending us on another goddamn goose chase!"
-    r "He's not gonna be there, and we'll lose even more time!"
-    #
-    show albert at std
-    mc "I guess... that makes sense."
-    "We all nod in agreement."
-    mc "Alright..."
-    mc "I guess I'm sticking around here then."
-    "Part of me is really disappointed that I'm not ."
-    mc ""
-
-
-    # TODO who should speak?
-    "Wait, hey Adam!"
-    "Can't you just shoot yourself in the forehead?"
-    "That would be the fastest."
-    "Admins only get messed up if they're killed by the Third Eye, right?" # maybe he should say he already tried?
-    # They wouldn't suggest this because they want to meet him.
-    # Maybe they don't say it to him but he hears.
-    # Why doesn't he want them to think he's doing that.
-    menu:
-        " "
-        "No, it happens regardless of how we die. - Adam":
-            pass
-    "That's not true!"
-    "Monika, Sayori {i}and{/i} Linda have got killed before in other ways and it didn't mess them up!"
-    "..."
-    ""
-    menu:
-        " "
-        "... I forgot about that. - Adam":
-            pass
-    menu:
-        " "
-        "Guess I would've been better off not answering. - Adam":
-            pass
-    s "You just lied!"
-    s "So much for you convincing us you have good intentions now!"
-    menu:
-        " "
-        "I do! Like I said, I'm not going to do any more horrible things... - Adam":
-            pass
-    # TODO
-    "Wait..."
-    "If his win condition now is killing the POV character..."
-    "... and we learned that broken APIs work inside DDLC..."
-    "... what stops him from killing himself, putting himself in DDLC, making himself POV, then coming out and killing himself again?"
-    "The only reason he can't do that without DDLC is because he broke the Character.pov flag, right?"
-    "And admins only get their consoles messed up if they're killed by a Third Eye."
-    "We know that from experience."
-#    "But if he really wants to save Monika without turning himself in to us, shooting himself is the faster and better plan."
-#    "It's more in accord with his goals."
-#    "So why did he lie to get an excuse not to do it?"
-#    "..."

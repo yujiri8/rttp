@@ -1,5 +1,3 @@
-# This gets its own file because it's so big.
-
 label questions(showing_chars):
     show monika at foc
     m c121111 "So [persistent.playername], I've been meaning to give you a chance to ask some questions."
