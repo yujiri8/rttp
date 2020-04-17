@@ -1,4 +1,5 @@
 label adam_questions:
+    show markov at foc
     k "Before we do this..."
     k "Do you have any questions?"
     k "Anything you want me to explain?"
