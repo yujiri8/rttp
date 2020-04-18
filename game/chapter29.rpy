@@ -1,4 +1,4 @@
-label chapter28:
+label chapter29:
     show yuri at foc
     y "What about Mom and Dad?"
     y "Will we never see them again?"

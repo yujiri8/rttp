@@ -138,6 +138,7 @@ label do_the_final_plan:
     "My Third Eye is my God."
     "I do as it commands."
     "I am it."
+    $ delete_character('albert')
     "I continue to make a mess of Albert's flesh."
     "The rivers of blood I spill are a sacrifice to God."
     "An offensively insufficient sacrifice."
@@ -184,6 +185,7 @@ label do_the_final_plan:
     "In the meantime, Libitina has stabbed Adam."
     "Her own Third Eye is open."
     play sound gunshot1
+    $ delete_character('adam')
     "Natsuki fires the shot to end him before Libitina does."
     "As we planned, it still works for Libitina to open that portal."
     play sound glitch_horror
@@ -196,7 +198,11 @@ label do_the_final_plan:
     play sound glitch_basic
     pause 0.4
     hide screen tear
-    # TODO Monika or Adam should change the dialog so it's not a voice anymore.
+    call updateconsole("vp.choices_target = " + mc_name.lower())
+    call screen dialog("I undid what Monika did to the choice system a long time ago, so your choices speak to " + mc_name + "'s mind again! - Adam", ok_action=Return())
+    call screen dialog("This way you stand a chance to influence him without him resisting. - Adam", ok_action=Return())
+    call hideconsole
+    $ cosolehistory = []
     menu:
         " "
         "Stop her.":
@@ -296,16 +302,19 @@ label do_the_final_plan:
     "Yuri continues to stab her in the chest and stomach."
     b "Uwaaaaah--!"
     "Libitina falls, and her distortion ceases entirely."
+    $ renpy.music.set_volume(0.5, 1)
     "{cps=5}Victory...{/cps}"
     "{cps=3}...{/cps}"
     "But I'm not done."
     "I didn't get to spill her blood."
     "My Third Eye isn't nearly satiated."
     "My throat has mostly healed from Sayori's distortion."
+    $ renpy.music.set_volume(1.0, 1)
     "I pick up Libitina's knife."
     "And I look at Yuri."
     "She must become the next fuel."
     play sound gunshot1
+    stop music fadeout 2.0
     "But I feel a great force strike me in the back before I can stab Yuri."
     n "Noooooo!!"
     n "Stop!"
@@ -355,9 +364,70 @@ label do_the_final_plan:
     show natsuki at std
     show sayori at foc
     s "..."
+    s "Uhhrrh..."
     show sayori at std
-    #TODO
-    $ temp = glitchtext(200)
+    "Sayori seems to be reacting the same way Libitina did after emerging from DDLC as an admin."
+    "She's managing to close her Third Eye."
+    "She collapses along with the rest of us."
+    show sayori at thide
+    hide sayori
+    s "Ahhhhhh..."
+    "They did it."
+    "They timed this so Sayori's positive distortion would heal our wounds before her own Third Eye closed."
+    "Perfect..."
+    show natsuki at foc
+    n "We did it..."
+    n "The portal's hanging open and we saved them..."
+    n "Great job, Sayori... and all of you."
+    show natsuki at std
+    show linda at foc
+    l "We didn't save..."
+    show linda at std
+    "Libitina..."
+    "Sayori's positive distortion wasn't applying to her because she never saw her as an ally."
+    "I haven't been hearing her scream though."
+    "Has she already bled to death?"
+    "Oh crap... I think she has."
+    "Yuri stabbed her in the throat."
+    "She doesn't seem to be breathing."
+    "There's a massive pool of blood under her."
+label pom_breaks:
+    scene road1_night
+    y "Oh no..."
+    call prevent_skip
+    $ delete_character('libitina')
+    show screen invert(4, 0)
+    play sound glitch_horror
+    $ gtext = glitchtext(50) + '\n' + glitchtext(50) + '\n' + glitchtext(50)
+    "{cps=300}[gtext]{nw}"
+    play sound2 glitch_medium
+    show screen tear(20, 0.1, 0.1, 0, 40)
+    pause 0.5
+    play sound glitch_horror
+    pause 0.3
+    hide screen tear
+    
+    mc "Oh my God!"
+    "She counted as killed by Yuri's Third Eye!"
+    "Now we've rifted the world again!"
+    l "Nooo!"
+    s "Oh crap!"
+    m "Dammit!"
+    r "Fuck, why did no one put a bullet in her?!?"
+    y "What've we done?!?"
+    n "Was this for nothing?!?"
+    n "Does the portal still work?"
+    l "I dunno, but don't touch anything!"
     call screen dialog("[persistent.playername], what the fuck is this static?!? - Libitina", ok_action=Return())
+    $ temp = glitchtext(200)
     call screen dialog("[temp]!! - Libitina", ok_action=Return())
+    call screen dialog("Help me! - Libitina", ok_action=Return())
+    
+    y "Libitina, if you can hear this, put yourself in DDLC so you can reset yourself!"
+    
+    
+    call updateconsole("vp.choices_target = Voice(\n anchor = " + mc_name.lower() + ")")
+    call hideconsole
+    $ consolehistory = []
+    call screen dialog("I made it so your choices speak to everyone again! - Adam", ok_action=Return())
     return
