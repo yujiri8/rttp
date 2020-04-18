@@ -109,6 +109,8 @@ label chapter27:
     m "Libitina, tell me that..."
     show monika at std
     # I guess she's not getting the sickness? I'd rather not deal with the complications.
+    # TODO Or maybe she'll come out with it, reset herself, and go back in and out.
+    # Maybe she starts puking after her first few lines.
     show libitina at foc
     b 2261441 "It worked!"
     b "I can see."

@@ -1,5 +1,9 @@
-define persistent.steam = ("steamapps" in config.basedir.lower())
 define config.developer = True
+define _dismiss_pause = config.developer
+define config.mouse = None
+default allow_skipping = True
+default basedir = config.basedir
+default currentpos = 0 # Position in the music track.
 
 python early:
     import singleton, os
@@ -184,8 +188,6 @@ image bg kitchen = "bg/kitchen.png"
 image bg space_room = "images/cg/monika/monika_room.png"
 
 # Stuff for space
-image room_mask = LiveComposite((1280, 720), (0, 0), "mask_test", (0, 0), "mask_test2")
-image room_mask2 = LiveComposite((1280, 720), (0, 0), "mask_test3", (0, 0), "mask_test4")
 image mask_child:
     "images/cg/monika/child_2.png"
     xtile 2
@@ -202,6 +204,8 @@ image mask_test = AnimatedMask("#ff6000", "mask_mask", "maskb", 0.10, 32)
 image mask_test2 = AnimatedMask("#ffffff", "mask_mask", "maskb", 0.03, 16)
 image mask_test3 = AnimatedMask("#ff6000", "mask_mask_flip", "maskb", 0.10, 32)
 image mask_test4 = AnimatedMask("#ffffff", "mask_mask_flip", "maskb", 0.03, 16)
+image room_mask = LiveComposite((1280, 720), (0, 0), "mask_test", (0, 0), "mask_test2")
+image room_mask2 = LiveComposite((1280, 720), (0, 0), "mask_test3", (0, 0), "mask_test4")
 transform room_mask:
     size (320,180)
     pos (30,200)
@@ -248,100 +252,6 @@ image natsuki glitch1:
     "natsuki 4e"
 
 image natsuki vomit = "natsuki/vomit.png"
-
-image n_blackeyes = "images/natsuki/blackeyes.png"
-
-image y_glitch_head:
-    "images/yuri/za.png"
-    0.15
-    "images/yuri/zb.png"
-    0.15
-    "images/yuri/zc.png"
-    0.15
-    "images/yuri/zd.png"
-    0.15
-    repeat
-
-image yuri stab_1 = "yuri/stab/1.png"
-image yuri stab_2 = "yuri/stab/2.png"
-image yuri stab_3 = "yuri/stab/3.png"
-image yuri stab_4 = "yuri/stab/4.png"
-image yuri stab_5 = "yuri/stab/5.png"
-image yuri stab_6 = LiveComposite((960,960), (0, 0), "yuri/stab/6-mask.png", (0, 0), "yuri stab_6_eyes", (0, 0), "yuri/stab/6.png")
-
-image yuri stab_6_eyes:
-    "yuri/stab/6-eyes.png"
-    subpixel True
-    parallel:
-        choice:
-            xoffset 0.5
-        choice:
-            xoffset 0
-        choice:
-            xoffset -0.5
-        0.2
-        repeat
-    parallel:
-        choice:
-            yoffset 0.5
-        choice:
-            yoffset 0
-        choice:
-            yoffset -0.5
-        0.2
-        repeat
-    parallel:
-        2.05
-        easeout 1.0 yoffset -15
-        linear 10 yoffset -15
-
-image yuri glitch:
-    "yuri/glitch1.png"
-    pause 0.1
-    "yuri/glitch2.png"
-    pause 0.1
-    "yuri/glitch3.png"
-    pause 0.1
-    "yuri/glitch4.png"
-    pause 0.1
-    "yuri/glitch5.png"
-    pause 0.1
-    repeat
-image yuri glitch2:
-    "yuri/0a.png"
-    pause 0.1
-    "yuri/0b.png"
-    pause 0.5
-    "yuri/0a.png"
-    pause 0.3
-    "yuri/0b.png"
-    pause 0.3
-    "yuri 1"
-
-image yuri dragon:
-    "yuri 3"
-    0.25
-    parallel:
-        "yuri/dragon1.png"
-        0.01
-        "yuri/dragon2.png"
-        0.01
-        repeat
-    parallel:
-        0.01
-        choice:
-            xoffset -1
-            xoffset -2
-            xoffset -5
-            xoffset -6
-            xoffset -9
-            xoffset -10
-        0.01
-        xoffset 0
-        repeat
-    time 0.55
-    xoffset 0
-    "yuri 3"
 
 image monika g1:
     "monika/g1.png"
@@ -443,6 +353,7 @@ image driving = "mod_assets/bg/driving.jpg"
 # FUCK Renpy for this. Pure black is replaced with grey, so I had to make a black image with a tiny splot of dark grey somewhere.
 image dark_overlay = "mod_assets/bg/black.png"
 image driving_night = night("mod_assets/bg/driving.jpg")
+image portal = "mod_assets/bg/portal.jpg"
 
 
 define narrator = Character(ctc="ctc", ctc_position="fixed")
@@ -455,6 +366,7 @@ define r = DynamicCharacter('r_name', image='renier', what_prefix='"', what_suff
 define l = DynamicCharacter('l_name', image='linda', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed")
 define b = DynamicCharacter('b_name', image='libitina', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed")
 define k = DynamicCharacter('k_name', image='markov', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed")
+define al = DynamicCharacter('al_name', image='albert', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed")
 define kn = DynamicCharacter('k_name', what_prefix='{i}', what_suffix='{/i}', ctc="ctc", ctc_position="fixed")
 define ny = Character('Nat & Yuri', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed")
 define ms = DynamicCharacter('ms_name', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed")
@@ -470,8 +382,6 @@ define dad = DynamicCharacter("dad_name", what_prefix='"', what_suffix='"', ctc=
 define mom = DynamicCharacter("mom_name", what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed")
 define ln = Character('Linda', what_prefix='{i}', what_suffix='{/i}', ctc="ctc", ctc_position="fixed")
 define rn = Character('Renier', what_prefix='{i}', what_suffix='{/i}', ctc="ctc", ctc_position="fixed")
-define al = DynamicCharacter('al_name', image='albert', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed")
-
 
 default s_name = "Sayori"
 default m_name = "Monika"
@@ -481,16 +391,14 @@ default r_name = "Renier"
 default l_name = "Linda"
 default b_name = "Libitina"
 default k_name = "Markov"
+default al_name = "Albert"
 default o_name = "???"
 default ms_name = "Monika & Sayori"
 default a_name = "Abbey"
 default c_name = "Clare"
 default d_name = "Daniel"
-default al_name = "Albert"
 default dad_name = "Elyssa's Dad"
 default mom_name = "Elyssa's Mom"
-
-define _dismiss_pause = config.developer
 
 default currentuser = "Player"
 default persistent.playername = "Player"
@@ -519,16 +427,9 @@ your our only hope
 
 dont forget everything i taut yoooooooooo"""
 
-define config.mouse = None
-default allow_skipping = True
-default basedir = config.basedir
-default currentpos = 0 # Position in the music track.
-default faint_effect = None
-
-
-# Story persistent vars for the mod.
+# Story persistent vars.
 default persistent.newgame = 0 # The game number the player will start next.
-default persistent.escape_ddlc = False
+default persistent.escape_ddlc = False # True after chapter 17.
 # Flags set throughout the plot just here so a default value is set if I skip ahead for testing.
 default persistent.mc_awakened = False
 default persistent.monika_request_shutdown = False

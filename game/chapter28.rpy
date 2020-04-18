@@ -10,10 +10,10 @@ label the_final_plan:
     k "If that theory proves true, then we know how to get everyone out of this world."
     k "And if it proves false, we won't be deprived of our means of re-opening it."
     show markov at std
-    # Don't they expect killing Adam alone will stop her?
-    # Maybe being admin herself makes her not vulnerable to that, as they found out when she became one.
-    "How are we possibly going to stop her?"
-    "We've seen that bullets can't touch her."
+    show albert at foc
+    al "How are we possibly going to stop her?"
+    al "We've seen that bullets can't touch her."
+    show albert at std
     show markov at foc
     k "Bullets don't, but if anything will, other Third Eyes will."
     k "If we're lucky, [mc_name]'s rallying effect could be strong enough to keep her lucid and prevent her from forgetting the plan."
@@ -31,7 +31,16 @@ label the_final_plan:
     show libitina at std
     show markov at foc
     k "Pretty much."
+    k "But we have to make sure you don't kill me, or else you'll probably quit on the spot..."
+    k "... like happened the other two times you killed an admin."
     show markov at std
+    n "I could shoot you in the head after she takes enough blood to open her Third Eye, so it doesn't count as her killing you."
+    show markov at foc
+    k "That will probably work."
+    k "It's our best shot."
+    #k "Though I'm a little worried about it causing her to attack you..."
+    show markov at std
+    
     mc "My ability to open others' Third Eyes might come in handy here."
     mc "If I open mine..."
     mc "Maybe I could get everyone else's open without them having to each kill someone."
@@ -41,8 +50,7 @@ label the_final_plan:
     mc "Eh...?"
     "{i}Without even being pressured...?[/i}"
     show albert at foc
-    al "Someone must, and again, I'm one who hasn't been through it yet."
-    al "The only one who hasn't suffered anything equivalent either."
+    al "Someone must, and again, I'm the only who hasn't been through it or some equivalent horror yet."
     al "I also know you have more attachment to the others who haven't than to me."
     show albert at std
     "I..."
@@ -60,7 +68,7 @@ label the_final_plan:
     r "Last time..."
     r "... it worked."
     show renier at std
-    show markov at foc
+    show markov at foc # TODO move
     k "We should make [mc_name] POV."
     k "If he's the most important one to keep on target..."
     k "... besides the one who can't be..."
@@ -71,7 +79,7 @@ label the_final_plan:
     else:
         mc "Sounds good."
     show markov at foc
-    $ switch_pov(mc_name.lower())
+    call switch_pov(mc_name.lower())
     scene road1_night with dissolve_scene
 label do_the_final_plan:
     show albert at foc
@@ -85,15 +93,18 @@ label do_the_final_plan:
     "I close my eyes."
     "I imagine how the next few seconds are going to be."
     "I'm going to inflict that same pain on this man that I felt when Monika stabbed me."
-    "I'm going to have to listen to his screams and keep feeding it."
+    "I'm going to have to listen to his screams and keep stabbing him."
     "I'm going to go insane."
-    "I'm deliberately entering a situation where I basically won't be in control of my actions."
+    "I'm deliberately entering a situation where I basically won't be in control of my actions..."
+    "... and will be a huge danger to everyone around me."
     "What kind of deed is this?"
     "..."
     "I feel like it's a good sign that I hesitate longer than Monika did."
     "Does that make me a better person than her?"
-    "I'm just distracting myself."
-    al "[mc_name], stop dragging out this tension."
+    "... I'm just distracting myself."
+    show albert at foc
+    al 11 "[mc_name], stop dragging out this tension."
+    show albert at std
     "I jump."
     "My eyes water again."
     "But yes... it's time to feed that dark monster I know is in me."
@@ -102,10 +113,12 @@ label do_the_final_plan:
     play sound stab
     play music our_reality
     "My mind is instantly flooded with flashbacks."
-    "I forgot how familiar I already was with the feeling of stabbing someone from my time in the facility."
+    "I forgot how already familiar I was with the feeling of stabbing someone from my time in the facility."
     "It's one of the most empowering feelings in the world."
     "I remember the people I killed during experiments and during my escape."
+    "I remember how great each one felt."
     "I'm adding another one."
+    "And it feels better than anything."
     play sound stab
     "I feel like I'm getting goosebumps all over."
     "My body convulses."
@@ -118,7 +131,7 @@ label do_the_final_plan:
     "I am it."
     "I continue to make a mess of Albert's flesh."
     "The rivers of blood I spill are a sacrifice to God."
-    "A gravely insufficient sacrifice."
+    "An offensively insufficient sacrifice."
     "I need more."
     menu:
         " "
@@ -157,18 +170,40 @@ label do_the_final_plan:
     "You sick control freak!"
     "You don't own me, [persistent.playername]!"
     "I will ruin your plan!"
-    "I serve God!"
+    "{i}I{/i} am the God now!"
     "Who should I kill next?"
-
     "In the meantime, Libitina has stabbed Adam."
     "Her own Third Eye is open."
-    # Even if this doesn't stop her in her tracks, it should still break shit, right?
-    # Maybe MC interrupts her and she doesn't finish him off.
-    # Or maybe they have someone else finish him off for fear of putting a rift on top of the scene.
-    # or just her losing her mojo before opening the portal.
-    # TODO probably the gate is opened now.
+    play sound gunshot1
+    "Natsuki fires the shot to end him before Libitina does."
+    "As we planned, it still works for Libitina to open that portal."
+    play sound glitch_horror
+    show screen tear(20, 0.1, 0.1, 0, 40)
+    play sound glitch_basic
+    pause 0.4
+    hide screen tear
+    scene portal with dissolve_scene
+    show screen tear(20, 0.1, 0.1, 0, 40)
+    play sound glitch_basic
+    pause 0.4
+    hide screen tear
+    # TODO Monika or Adam should change the dialog so it's not a voice anymore.
+    menu:
+        " "
+        "Stop her.":
+            pass
+    menu:
+        " "
+        "She's trying to leave.":
+            pass
+    menu:
+        " "
+        "But killing her would be far more satisfying than killing anyone else.":
+            pass
     "Ah..."
-    "A contester."
+    "That's true."
+    "She can't just walk away from me."
+    "I'm going to kill her."
     "This is more fitting."
     "A better certification of my power."
     "A clash with her would be the perfect event to punctuate my rise to supremacy."
@@ -215,6 +250,7 @@ label do_the_final_plan:
     b "Back!!"
     b "Die!"
     b "Rrghh..."
+    play sound gunshot1
     "Renier fires a shot while she appears weakened, but still nothing."
     show dark_overlay:
         linear 0.5 alpha 0.2
@@ -223,7 +259,7 @@ label do_the_final_plan:
     "Bullets can't penetrate her field, but a knife if it could get close..."
     "I run toward her."
     $ temp = glitchtext(10)
-    mc "You're finished, {w=0.4}[temp]"
+    mc "You're finished, {w=0.4}[temp]{nw}"
     show distort1:
         alpha 0.7
     show distort2:
@@ -233,14 +269,14 @@ label do_the_final_plan:
     "No!"
     "How is she still so powerful?"
     "I collapse as I approach her."
-    "I feel her knife slide into my throat."
+    "Instead of sliding my knife into her throat, I feel hers slide into mine."
     show expression Solid("#f00"):
         linear 0.1 alpha 0.4
     "N-no"
+    "I can't lose..."
     "I hear a scream from Yuri."
     "I feel the physical space distorting."
     "From what little I can see, it's like the area is condensing into one point..."
-    "... and then re-expanding..."
     "... and suddenly, all of us are right next to each other."
     "Sayori, Monika, and Renier's effects can be more fully present."
     "Yuri's able to resist crumbling in weakness under Libitina's power for a second."
@@ -281,23 +317,37 @@ label do_the_final_plan:
     "Sure enough, I'm starting to feel like I haven't been shot."
     "I can't see the wound on my back, but if Sayori's Third Eye keeps working..."
     "But what if Sayori attacks them?"
+    show natsuki at foc
     n "Sayori we won!"
+    show natsuki at std
+    show linda at foc
     l "Stand down!"
+    show linda at std
+    show natsuki at foc
     n "Remember why you did this!"
+    show natsuki at std
+    show linda at foc
     l "Don't make us shoot you!"
+    show linda at std
+    show sayori at foc
     s "..."
+    show sayori at std
     "Sayori can tell she can't kill them without the rest of us."
     "Knowing that seems to be giving her confliction."
     "Are they actually going to be able to talk her down...?"
+    show sayori at foc
     s "..."
+    show sayori at std
     "It looks like it's working!"
     "Just hesitating is pushing her Third Eye to recede."
+    show natsuki at foc
     n "Remember the cupcakes!"
     n "You get two if you don't hurt anyone else!"
+    show natsuki at std
+    show sayori at foc
     s "..."
-
-    "The incredible thing is that none of us are dead."
-
+    show sayori at std
+    #TODO
     $ temp = glitchtext(200)
     call screen dialog("[persistent.playername], what the fuck is this static?!? - Libitina", ok_action=Return())
     call screen dialog("[temp]!! - Libitina", ok_action=Return())
