@@ -191,16 +191,30 @@ label chapter27:
     k "I told her!"
     k "She didn't figure it out!"
     k "It's admin.inflict_epiphany, and I told her voluntarily {i}after{/i} I knew what she would do with it!"
+    k "I helped you even when I knew I'd be stabbed!"
     show markov at std
     show monika at foc
     m "That's actually true..."
     show monika at std
-    show libitina at foc
-    n "He just did it to earn trust!"
-    n "It means nothing!"
-    show libitina at std
+    show mc at foc
+    mc "So what?"
+    mc "He just did it to earn trust!"
+    mc "It means nothing!"
+    mc "We're still going to make him pay for all of his crimes as soon as we're sure we don't need him."
+    show mc at std
+    if not persistent.player_advocate_mercy[1]:
+        show monika at foc
+        m "I agree."
+        show monika at std
+    else:
+        show monika at foc
+        m "..."
+        show monika at std
+        "I don't get her."
+        "She seems like she doesn't want to punish Adam."
+        "How's that {i}possible{/i}?"
+        "She went through way more at his hands than I did!"
     show markov at foc
-    k "..."
     k "This is the tragedy of sin."
     k "You have taken away my option to turn back, in that no matter what I do, it will not be recognized."
     k u11513 "I really, really was sincere..."
@@ -209,14 +223,20 @@ label chapter27:
     k "And when I sent you to the warehouse, I was really planning to meet you if you didn't bring guns."
     k "And I was only going to kill the POV character because I could make it quick, and I would use the DDLC trick to restore them immediately once [persistent.playername] was gone!"
     show markov at std
-    show libitina at foc
-    n "Save your lies!"
-    n "For every lie you tell, I'm going to kill you an extra time!"
-    show libitina at std
+    show mc at foc
+    mc "Oh, save your lies!"
+    mc "We don't need to hear it."
+    show mc at std
     show markov at foc
-    k "{i}You don't want to believe I'm sorry because then you couldn't hate me as much as you want to.{/i}"
+    k "{i}You don't want to think I'm sorry because then you couldn't hate me as much as you want to.{/i}"
     show markov at std
-    #TODO
+    show mc at foc
+    mc "Not."
+    mc "Another."
+    mc "Word."
+    mc "Monster."
+    show mc at std
+    show markov
     "Before long, Libitina comes out again."
     show libitina at foc
     b "..."
@@ -224,13 +244,12 @@ label chapter27:
     b "Thanks so much, Natsuki."
     show libitina at std
     n "You're welcome."
-    call adam_questions
     show yuri at foc
-    y "I have a question..."
-    y "Libitina, what's it like to be have gained admin status?"
+    y "So what's it like to be have gained admin status?"
     show yuri at std
     show libitina at foc
     b "It feels like being God."
+    "Isn't that the same way Monika described the Third Eye?"
     b "I'm on a whole new level of existence now."
     b "But I'm a God trapped in a jar for the amusement of [persistent.playername]..."
     b "Monika and Adam were right!"
@@ -241,6 +260,7 @@ label chapter27:
     k "Indeed."
     k "And that's going to involve your Third Eye."
     show markov at std
+    call adam_questions
 label pre_final_plan:
     n "Wait."
     n "What about the cupcakes I was gonna make?"
