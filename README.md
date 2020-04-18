@@ -2,7 +2,7 @@
 
 Description of the mod and installation instructions [here](https://yujiri.xyz/works/return_to_the_portrait/).
 
-Also, obviously, the license only applies to stuff I made. Other people's assets may not be under the same terms (and original DDLC content is under [these terms](http://teamsalvato.com/ip-guidelines/)), but I've made sure I have permission to use them.
+Also, obviously, the license only applies to stuff I made. Other people's assets may not be under the same terms (and original DDLC content is under [these terms](https://teamsalvato.com/ip-guidelines/)), but I've made sure I have permission to use them.
 
 ---
 
