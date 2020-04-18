@@ -40,10 +40,32 @@ label the_final_plan:
     k "It's our best shot."
     #k "Though I'm a little worried about it causing her to attack you..."
     show markov at std
-    
+    n "Count on me."
+    show mc at foc
     mc "My ability to open others' Third Eyes might come in handy here."
     mc "If I open mine..."
     mc "Maybe I could get everyone else's open without them having to each kill someone."
+    show mc at std
+    show markov at foc
+    k "Indeed."
+    k "We should make you POV."
+    k "If you're the most important one to keep on target..."
+    k "... besides the one who can't be..."
+    k "... [persistent.playername] should be connected to you, so [persistent.player_subj_pronoun] can talk to you."
+    show markov at std
+    if mc_dislike_player() > 2:
+        mc "Alright..."
+    else:
+        mc "Sounds good."
+    show markov at foc
+    call switch_pov(mc_name.lower())
+    scene road1_night with dissolve_scene
+    mc ""
+    if mc_dislike_player() > 2:
+        "Welcome back, [persistent.playername]."
+    else:
+        "Guess you're back in my head again, [persistent.playername]."
+        "I Guess it won't last long though."
     show albert at foc
     al 22112 "[mc_name], I will be your sacrifice."
     show albert at std
@@ -68,19 +90,6 @@ label the_final_plan:
     r "Last time..."
     r "... it worked."
     show renier at std
-    show markov at foc # TODO move
-    k "We should make [mc_name] POV."
-    k "If he's the most important one to keep on target..."
-    k "... besides the one who can't be..."
-    k "... [persistent.playername] should be connected to him, so [persistent.player_subj_pronoun] can talk to him."
-    show markov at std
-    if mc_dislike_player() > 2:
-        mc "Alright..."
-    else:
-        mc "Sounds good."
-    show markov at foc
-    call switch_pov(mc_name.lower())
-    scene road1_night with dissolve_scene
 label do_the_final_plan:
     show albert at foc
     al "[mc_name]..."
