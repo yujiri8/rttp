@@ -99,38 +99,91 @@ label chapter27:
     show yuri at std
     n "Alright..."
     "..."
-    #TODO a few lines
+    n "So when they get out, Libitina's going to be as powerful as them?"
+    n "And shocked by the epiphany?"
+    n "I gotta say that makes me kinda nervous."
+    show natsuki at std
+    show yuri at foc
+    y "I don't think she'll still be in shock from the epiphany."
+    y "She'll have had it for a few minutes before they come out."
+    show yuri at std
+    "..."
+    "I realize something that's probably going to upset Yuri... knowing how much more she cares for Libitina than I do."
+    n "Yuri..."
+    n "If she stabs Adam to open her Third Eye to break out, she's probably going to have that Third Eye sickness again."
+    show yuri at foc
+    y "..."
+    y "..."
+    y "It's unavoidable."
+    y "Maybe, if the plan works, we can send her back in where she can reset herself and then re-extract?"
+    show yuri at std
+    # Maybe Natsuki should ask Yuri whether the sickness is more painful than being stabbed.
     scene road1_night with wipeleft
-    "A minute later, Adam, Monika and Libitina all reappear, uninjured."
-    show libitina 2261441 at std(p31)
+    "A minute later, Monika and Adam reappear."
     show markov u22543 at std(p33)
-    show monika c222111 at foc(p32)
-    m "We're back..."
-    m "Libitina, tell me that..."
+    show monika c214112 at foc(p32)
+    m "We're back...!"
+    m "We left before she knocked herself out finishing him off, so she'd follow us with her Eye still open."
+    m "Should be any..."
     show monika at std
-    # I guess she's not getting the sickness? I'd rather not deal with the complications.
-    # TODO Or maybe she'll come out with it, reset herself, and go back in and out.
-    # Maybe she starts puking after her first few lines.
-    show libitina at foc
-    b 2261441 "It worked!"
-    b "I can see."
-    b "I can see it all."
-    b "I am..."
-    b "{i}God...{/i}"
+    show libitina 3371443 at foc
+    b "..."
+    b "I..."
+    b 3361443 "I got out..."
+    b "Must kill..."
+    b 2261224 "Uhhh--..."
     show libitina at std
-    "Um..."
-    "Don't scare us!"
-    show libitina at foc
-    b "But..."
-    b "... I'm trapped."
-    b "You were right..."
-    b "Our world..."
-    b "... is a horrific prison..."
-    b "We must get out!"
-    show libitina at std
+    "She stumbles."
+    "Like Monika before, It looks like breaking out pretty much sapped all her mojo."
+    show libitina at thide
+    hide libitina
+    "She falls down."
+    "I think her Third Eye's closing."
+    b "Can't..."
+    b "EKH--"
+    "She sounds like she just had the first wave of a puke."
+    b "No..."
+    b "N--!"
+    "It starts."
+    "She pukes up a bit of blood."
+    b "Yaaaaahhh!"
+    show yuri at foc
+    y "Do something!"
+    show yuri at std
     show markov at foc
-    k "Indeed."
-    k "And that must involve your Third Eye."
+    k "She can't go back into DDLC while she's alive and conscious..."
+    show markov at std
+    b "Hel--"
+    "More blood."
+    "She can barely get any words out between it."
+    show yuri at foc
+    y "Natsuki!"
+    y "Do it!"
+    show yuri at std
+    n "Wait, you mean shoot her?!?"
+    show yuri at foc
+    y "Yes!"
+    y "It'll let her be put back into DDLC where she can be reset!"
+    show yuri at std
+    "Jeez!"
+    n "Libitina, do you want me to-"
+    "She manages to nod while she can't speak."
+    "Guess I'm doing this again."
+    "I point it at her head to make sure it kills her instantly."
+    play sound gunshot1
+    scene black
+    "My eyes flich closed again."
+    "I still don't want to look."
+    n "I feel like I'm getting desensitized to this." # Lol, it's me who's degrading its significance by using it for things like this so often. I'm super clever for having characters allude to criticisms of my story.
+    k "She's gone."
+    "I open my eyes."
+    scene road1_night with open_eyes
+    "There's still a pool of blood on the ground."
+    show markov at foc
+    k "I guess that means it worked."
+    k "We didn't send her back to DDLC. She must've put herself back in after you killed her."
+    k "So giving her admin status worked."
+    k "She must be going to restore herself in just a minute."
     show markov at std
     n "So Monika, did you guess the name of the function that gives admin powers?"
     n "What was it?"
@@ -143,8 +196,8 @@ label chapter27:
     m "That's actually true..."
     show monika at std
     show libitina at foc
-    b "He just did it to earn trust!"
-    b "It means nothing!"
+    n "He just did it to earn trust!"
+    n "It means nothing!"
     show libitina at std
     show markov at foc
     k "..."
@@ -157,16 +210,36 @@ label chapter27:
     k "And I was only going to kill the POV character because I could make it quick, and I would use the DDLC trick to restore them immediately once [persistent.playername] was gone!"
     show markov at std
     show libitina at foc
-    b 3271113 "Save your lies!"
-    b "For every lie you tell, I'm going to kill you an extra time!"
+    n "Save your lies!"
+    n "For every lie you tell, I'm going to kill you an extra time!"
     show libitina at std
     show markov at foc
     k "{i}You don't want to believe I'm sorry because then you couldn't hate me as much as you want to.{/i}"
     show markov at std
     #TODO
+    "Before long, Libitina comes out again."
+    show libitina at foc
+    b "..."
+    b "It worked."
+    b "Thanks so much, Natsuki."
+    show libitina at std
+    n "You're welcome."
     call adam_questions
+    show yuri at foc
+    y "I have a question..."
+    y "Libitina, what's it like to be have gained admin status?"
+    show yuri at std
+    show libitina at foc
+    b "It feels like being God."
+    b "I'm on a whole new level of existence now."
+    b "But I'm a God trapped in a jar for the amusement of [persistent.playername]..."
+    b "Monika and Adam were right!"
+    b "Our world is a horrific prison."
+    b "And we must get out."
+    show libitina at std
     show markov at foc
-    k "Tonight is the night we open the gates to escape this Portrait."
+    k "Indeed."
+    k "And that's going to involve your Third Eye."
     show markov at std
 label pre_final_plan:
     n "Wait."
