@@ -354,6 +354,7 @@ image driving = "mod_assets/bg/driving.jpg"
 image dark_overlay = "mod_assets/bg/black.png"
 image driving_night = night("mod_assets/bg/driving.jpg")
 image portal = "mod_assets/bg/portal.jpg"
+image portal_half = "mod_assets/bg/portal_half.png"
 
 
 define narrator = Character(ctc="ctc", ctc_position="fixed")

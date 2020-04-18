@@ -406,7 +406,10 @@ label pom_breaks:
     play sound glitch_horror
     pause 0.3
     hide screen tear
-    
+    scene black
+    show mask_2
+    show mask_3
+    show portal_half
     mc "Oh my God!"
     "She counted as killed by Yuri's Third Eye!"
     "Now we've rifted the world again!"
@@ -431,3 +434,6 @@ label pom_breaks:
     $ consolehistory = []
     call screen dialog("I made it so your choices speak to everyone again! - Adam", ok_action=Return())
     return
+
+    # Somehow, Libitina must optionally die.
+    # Maybe she can't speak?
