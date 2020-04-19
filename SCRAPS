@@ -57,3 +57,27 @@ l "And restores their file, of course."
     "warp was broken, but there were other ways ."
     "According to the book she compiled, Linda read his memories a long time after that point."
     "Is it really possible he didn't know about memory reading?"
+
+# I kinda want this in, but idk if it can.
+    show libitina at foc
+    b "Um..."
+    b "I'm sorry that I shot you, Monika..."
+    show libitina at std
+    show monika at foc
+    m c227113 "Yeah, normal people don't just shoot their friends out of the blue!"
+    show monika at std
+    show libitina at foc
+    b "I was afraid!!"
+    b "I thought your Third Eye was going to open and kill us all!"
+    show libitina at std
+    show monika at foc
+    m "And so you decided to open your own?!?"
+    show monika at std
+    show libitina at foc
+    b "I wasn't thinking clearly..."
+    b "And I was also being affected by mine..."
+    b "... I was close to snapping anyway."
+    show libitina at std
+    m c121111 "In the end though, it was the reason we caught Adam."
+    m "We might not've had any other way to lure him to the warehouse."
+    show monika at std
