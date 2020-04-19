@@ -64,6 +64,11 @@ label start:
         call chapter25
         call chapter26
         call chapter27
+    label after_return_to_ddlc:
+        call chapter27_after_return_to_ddlc
+        call chapter28
+        call chapter29
+        call chapter30
 
     scene black with dissolve_scene
     "The demo is over."

@@ -817,7 +817,7 @@ label return_to_pom:
     else:
         'Invalid destination.'
         $ renpy.quit()
-label after_return_to_ddlc:
+label ch26_after_return_to_ddlc:
     $ persistent.autoload = None
     $ quick_menu = True
     $ autosave()
