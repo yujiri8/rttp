@@ -8,7 +8,7 @@ label sayori_and_mc:
     "I probably should've packed a second one."
     "But I got here!"
     "Hopefully [mc_name]'s already there."
-    "I remember where's the warehouse is at from before."
+    "I remember where the warehouse is at from before."
     scene warehouse_outside_day with wipeleft_scene
     "..."
     show mc c124161 at std(p11)
@@ -17,6 +17,25 @@ label sayori_and_mc:
     show mc at foc
     mc c113112 "Oh! Sayori!"
     show mc at std
+    menu:
+        " "
+        "Huh. It looks like the viewport didn't update our sprites. - Monika":
+            pass
+    mc c124111 "Eh?"
+    menu:
+        " "
+        "It's four years ago, but it hasn't changed our sprites since we were eighteen. - Monika":
+            pass
+    "You still see us the same?"
+    menu:
+        " "
+        "I guess the viewport only generates sprites for a character when a new one's introduced? - Monika":
+            pass
+    menu:
+        " "
+        "And apparently it counted as needing sprites for [mc_name] before even though they were never shown? - Adam":
+            pass
+    s "Weird..."
     s "So are we going into the spooky house of evil?"
     show mc at foc
     mc c114261 "Yeah, guess so..."
@@ -49,8 +68,8 @@ label sayori_and_mc:
     "..."
     scene warehouse_inside_rev with wipeleft
     # This exposition should've been given by Monika way earlier in the story, but now that I didn't, I put it here.
-    show mc at foc
-    mc c217111 "So, Sayori..."
+    show mc c217111 at foc
+    mc "So, Sayori..."
     mc "This might not be the best time, but maybe it'll take our minds off our memories..."
     mc "What was it like to be President?"
     show mc at std

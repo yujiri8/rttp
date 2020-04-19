@@ -354,6 +354,7 @@ image hospital_outside = "mod_assets/bg/hospital_outside.jpg"
 image warehouse_outside_day = "mod_assets/bg/warehouse_outside_day.png"
 image warehouse_outside_night = "mod_assets/bg/warehouse_outside_night.png"
 image warehouse_inside = "mod_assets/bg/temple1.jpg"
+image warehouse_inside_rev = im.Flip("mod_assets/bg/temple1.jpg", horizontal = True)
 image warehouse_inside_back = "mod_assets/bg/steam_machinery.jpg"
 image office = "mod_assets/bg/office.jpg"
 image forest_path = "mod_assets/bg/forest_path.jpg"
