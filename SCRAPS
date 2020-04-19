@@ -81,3 +81,18 @@ l "And restores their file, of course."
     m c121111 "In the end though, it was the reason we caught Adam."
     m "We might not've had any other way to lure him to the warehouse."
     show monika at std
+
+# end, before I realized Libitina can't do this while she's glitched
+python:
+        with open(basedir + '/WTF.txt', 'w') as f;
+            f.write("""
+            What the fuck is this static?!?!?!?
+
+            """+persistent.playername+""", what the fuck???
+
+            It hurts like hell!
+            """)
+    call screen dialog("[persistent.playername], what the fuck is this static?!? - Libitina", ok_action=Return())
+    $ temp = glitchtext(200)
+    call screen dialog("[temp]!! - Libitina", ok_action=Return())
+    call screen dialog("Help me! - Libitina", ok_action=Return())

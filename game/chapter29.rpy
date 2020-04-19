@@ -73,10 +73,22 @@ label chapter29:
     python:
         for i in range(10):
             write_error_file()
-    call screen dialog("I get the same result trying to put myself there. - Adam", ok_action=Return())
-    call screen dialog("Putting a rift on top of the portal... - Adam", ok_action=Return())
-    call screen dialog("We've broken things worse than I ever thought possible. - Adam", ok_action=Return())
-    call screen dialog("I don't think there's any coming back from this. - Adam", ok_action=Return())
+    menu:
+        " "
+        "I get the same result trying to put myself there. - Adam":
+            pass
+    menu:
+        " "
+        "Putting a rift on top of the portal... - Adam":
+            pass
+    menu:
+        " "
+        "We've broken things worse than I ever thought possible. - Adam":
+            pass
+    menu:
+        " "
+        "I don't think there's any coming back from this. - Adam":
+            pass
     show monika at foc
     python:
         for i in range(10):
@@ -90,48 +102,58 @@ label chapter29:
             write_error_file()
     m "... anyone else who died in all this?"
     show monika at std
-    call screen dialog("I don't know. And I can barely think amid the cacophony... - Adam", ok_action=Return())
+    menu:
+        " "
+        "I don't know. And I can barely think amid the cacophony... - Adam":
+            pass
     python:
         for i in range(10):
             write_error_file()
-    
-    
-    python:
-        with open(basedir + '/WTF.txt', 'w') as f;
-            f.write("""
-            What the fuck is this static?!?!?!?
-
-            """+persistent.playername+""", what the fuck???
-
-            It hurts like hell!
-            """)
-    call screen dialog("[persistent.playername], what the fuck is this static?!? - Libitina", ok_action=Return())
-    $ temp = glitchtext(200)
-    call screen dialog("[temp]!! - Libitina", ok_action=Return())
-    call screen dialog("Help me! - Libitina", ok_action=Return())
-    
-    
+    menu:
+        " "
+        "Let me go ahead and make it so [persistent.playername]'s choices speak to everyone again... - Adam":
+            pass
     call updateconsole("vp.choices_target = Voice(\n anchor = " + mc_name.lower() + ")")
     call hideconsole
     $ consolehistory = []
-    call screen dialog("I made it so your choices speak to everyone again! - Adam", ok_action=Return())
-    return
-
-
+    python:
+        for i in range(10):
+            write_error_file()
     $ style.say_dialogue = style.edited
     "MAXIMUM NUMBER OF ERROR FILES REACHED."
     "INITIATING FINAL PURGE."
     $ style.say_dialogue = style.normal
-    k "What the hell?!?"
+    menu:
+        " "
+        "What the hell?!? - Adam":
+            pass
     $ style.say_dialogue = style.edited
     "SHREDDING ALL CHARACTERS."
     $ style.say_dialogue = style.normal
-    k "No no no!"
-    k "'Shredding'..."
-    k "It's going to make them irrecoverable."
-    k "Everyone."
-    k "We have to stop it!"
-    k "Try turning off the game!"
+    menu:
+        " "
+        "No no no! - Adam":
+            pass
+    menu:
+        " "
+        "'Shredding'... - Adam":
+            pass
+    menu:
+        " "
+        "It's going to make them irrecoverable. - Adam":
+            pass
+    menu:
+        " "
+        "Everyone. - Adam":
+            pass
+    menu:
+        " "
+        "We have to stop it! - Adam":
+            pass
+    menu:
+        " "
+        "Try turning off the game! - Adam":
+            pass
     $ persistent.autoload = 'shutdown_to_save_pom'
     while True:
         " "
@@ -161,29 +183,88 @@ label shutdown_to_save_pom:
         " "
         "We have to break it.":
             pass
-    k "That's not how it works..."
-    k "It doesn't use the Python APIs."
-    k "To these internal processes, nothing is broken."
+    menu:
+        " "
+        "That's not how it works... - Adam":
+            pass
+    menu:
+        " "
+        "It doesn't use the Python APIs. - Adam":
+            pass
+    menu:
+        " "
+        "To these internal processes, nothing is broken. - Adam":
+            pass
     # The viewport uses the Python APIs because he wrote it on top of Python. He basically made it its own admin. Prob add a question about that.
     menu:
         " "
         "If nothing's broken, then people can be restored!":
             pass
-    k "Not if they're shredded..."
-    k "That would delete all trace of their data."
-    k "Even restoring from a backup wouldn't reconnect their minds after a destruction like that."
+    menu:
+        " "
+        "Not if they're shredded... - Adam":
+            pass
+    menu:
+        " "
+        "That would delete all trace of their data. - Adam":
+            pass
+    menu:
+        " "
+        "Even restoring from a backup wouldn't reconnect their minds after a destruction like that. - Adam":
+            pass
     menu:
         " "
         "Corrupt its memory.":
             pass
+    show linda at foc
     l "Remember what happened when I tried that!"
-    l "It stopped me and killed us all!"
+    l "It stopped me and almost killed us all!"
+    show linda at std
     menu:
         " "
         "I can't just corrupt its memory like that... - Adam":
             pass
-    
-
+    menu:
+        " "
+        "I have to make it think we're already shredded. - Adam":
+            pass
+    l "The character files!"
+    l "What if we shred them?"
+#    l "Adam, reauthorize the viewport's access {i}now{/i}!"
+    menu:
+        " "
+        "That will only save us! We need to save everyone else in this world! - Adam":
+            pass
+    l "And since they were never onscreen, they don't have files..."
+    menu:
+        " "
+        "... I think it's all we can do. - Adam":
+            pass
+    menu:
+        " "
+        "We don't have long left. - Adam":
+            pass
+    call updateconsole("import random")
+    call updateconsole("for c in monika, sayori, yuri, natsuki,\n "+mc_name.lower()+", renier, linda,\n graveyard.get_character('adam'),\n graveyard.get_character('albert'),\n graveyard.get_character('libitina'):\n  c.set_file_data(b''.join(bytes((random.randint(0, 255),)) for x in range(65536))", "No such character")
+    l "Idiot, set your variables first!"
+    call updateconsole("adam=graveyard.get_character('adam')")
+    call updateconsole("albert=graveyard.get_character('albert')")
+    call updateconsole("libitina=graveyard.get_character('libitina')", 'No such character')
+    menu:
+        " "
+        "It's her! It can't get her data from the graveyard! - Adam":
+            pass
+    show linda at foc
+    l "Do it for the rest of us at least!"
+    show linda at std
+    call updateconsole("for c in monika, sayori, yuri, natsuki,\n "+mc_name.lower()+", renier, linda, adam, albert:\n  c.set_file_data(b''.join(bytes((random.randint(0, 255),)) for x in range(65536))")
+    menu:
+        " "
+        "Did... that work? - Adam":
+            pass
+    show linda at foc
+    l "Only time will tell..."
+    show linda at std
 
 
 label next:
