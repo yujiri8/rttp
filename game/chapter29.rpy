@@ -17,6 +17,8 @@ label chapter29:
     show mask_2
     show mask_3
     show portal_half
+    $ delete_all_saves()
+    $ autosave()
     mc "Oh my God!"
     "She counted as killed by Yuri's Third Eye!"
     "Now we've rifted the world again!"
