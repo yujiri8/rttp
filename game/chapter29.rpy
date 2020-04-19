@@ -19,6 +19,7 @@ label chapter29:
     $ delete_all_saves()
     $ autosave()
     $ quick_menu = True
+    play music yesnt
     mc "Oh my God!"
     "She must've bled out just now..."
     "... and counted as killed by Yuri's Third Eye!"
@@ -262,9 +263,18 @@ label shutdown_to_save_pom:
     k "I couldn't save my daughter..."
     k "I swear to God, I tried!"
     show markov at std
-
-
-label next:
+label finale_lament:
+    "So the world is really gone?"
+    "We killed everyone?"
+    "The whole... world?"
+    "{i}Everyone{/i} in the Portrait?"
+    "I..."
+    "..."
+    "What..."
+    "This wasn't my fault."
+    "It wasn't. My fault."
+    "I didn't know this would happen."
+    "I'm not the one who should've known."
     show yuri at foc
     y "What about Mom and Dad?"
     y "Will we never see them again?"
@@ -298,9 +308,51 @@ label next:
     al "We should've been more careful before we toyed with forces that we'd seen destroy worlds."
     al "How irresponsible this was..."
     show albert at std
-
-    s "I really wanted a cup--"
-    s "Nevermind."
-
-    m "Well, it's time to go."
+#    show sayori at foc
+#    s "I really wanted a cup--"
+#    s "Nevermind."
+#    show sayori at std
+    show monika at foc
+    m "Well..."
+    m "Our portal's open."
+    m "The portal we worked so hard for."
+    "She looks at Adam."
+    m "The portal you ruined hundreds of lives for."
+    m "If we're lucky..."
+    m "It might actually get us out of this Portrait."
+    m "We might be escaping to [persistent.playername]'s world."
+    m c114112 "It's the portal I killed all my friends for..."
+    m c114111 "... only infinitely better than staying in the space room."
+    m c1113i1 "[persistent.playername], I can't thank you enough."
+    m "I ruined everything for you, and you gave me a chance."
+    m "I have no idea where we'll come out."
+    m "But if we can, maybe... we'll meet you some day."
+    m "In Your Reality."
+    menu:
+        " "
+        "If that ever happens, you owe me.":
+            if any(persistent.player_guilt_dokis):
+                m "Of course..."
+            else:
+                m c114311 "Ah..."
+                m "You're right."
+            m "And [pesistent.playername]..."
+            m "I still love you."
+            m "I always will."
+        "I enjoyed the journey more than you realize.":
+            m "I'm glad."
+            m "And [persistent.playername]..."
+            m "I love you."
+            m "I always will."
+    # TODO maybe the favorite girl should ask if player loves her
+    mc "So..."
+    mc "Are we going?"
+    "Everyone nods."
+    "We're ready."
+    # TODO Maybe Adam should go first if he's alive.
+#    "Albert goes through first, since he has the least risk of doing anything to it."
+#    "Then t"
+    # or maybe they just go through all at once to avoid complexity.
+    "One by one, we step through the portal."
+    "It stays open for each of us." # maybe it only closes when an active Eye goes through it.
     return

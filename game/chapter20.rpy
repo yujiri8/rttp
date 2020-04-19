@@ -308,4 +308,3 @@ label found_out_pom_dependent:
     m "We should wait for Libitina to wake up before we do anything."
     m "She might be able to tell us more."
     return
-
