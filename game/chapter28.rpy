@@ -413,14 +413,67 @@ label pom_breaks:
     mc "Oh my God!"
     "She counted as killed by Yuri's Third Eye!"
     "Now we've rifted the world again!"
-    l "Nooo!"
-    s "Oh crap!"
-    m "Dammit!"
-    r "Fuck, why did no one put a bullet in her?!?"
+    show linda at foc
+    l 119443 "Nooo!"
+    show linda at std
+    show sayori at foc
+    s c227232 "Oh crap!"
+    show sayori at std
+    show monika at foc
+    m c118212 "Dammit!"
+    show monika at std
+    show reiner at foc
+    r u2287 "Fuck, why did no one put a bullet in her?!?"
+    show renier at std
+    show yuri at foc
     y "What've we done?!?"
-    n "Was this for nothing?!?"
+    show yuri at std
+    show natsuki at foc
+    n c117124 "Was this for nothing?!?"
     n "Does the portal still work?"
-    l "I dunno, but don't touch anything!"
+    show natsuki at std
+    show linda at foc
+    l 119443 "I dunno, but don't touch anything!"
+    show linda at std
+    python:
+        for i in range(10):
+            write_error_file()
+    show monika at foc
+    m "Libitina probably can't put herself in DDLC because her console is glitched!"
+    m c217212 "I'll have to save her..."
+    call updateconsole("c = admin.jail(ddlc, libitina)", "Doki Doki Literature Club: no such jail")
+    m c118212 "Whaaat?!?"
+    show monika c214112
+    call updateconsole("ddlc = admin.get_world(\n 'doki_doki_literature_club')", "Doki Doki Literature Club: no such jail")
+    m c118212 "No!"
+    m "It looks like DDLC doesn't exist anymore!"
+    show monika at std
+    call screen dialog("I get the same result trying to put myself there. - Adam", ok_action=Return())
+    call screen dialog("Putting a rift on top of the portal... - Adam", ok_action=Return())
+    call screen dialog("We've broken things worse than I ever thought possible. - Adam", ok_action=Return())
+    call screen dialog("I don't think there's any coming back from this. - Adam", ok_action=Return())
+    show monika at foc
+    m "This can't be for real!"
+    m c117112 "Not only we're stuck in the portal room, but DDLC is gone?"
+    m "How are we ever going to resurrect Libitina?"
+    m c114212 "Or..."
+    m "... anyone else who died in all this?"
+    show monika at std
+    call screen dialog("I don't know. And I can barely think amid the cacophony... - Adam", ok_action=Return())
+    python:
+        for i in range(10):
+            write_error_file()
+    
+    
+    python:
+        with open(basedir + '/WTF.txt', 'w') as f;
+            f.write("""
+            What the fuck is this static?!?!?!?
+
+            """+persistent.playername+""", what the fuck???
+
+            It hurts like hell!
+            """)
     call screen dialog("[persistent.playername], what the fuck is this static?!? - Libitina", ok_action=Return())
     $ temp = glitchtext(200)
     call screen dialog("[temp]!! - Libitina", ok_action=Return())
@@ -434,6 +487,3 @@ label pom_breaks:
     $ consolehistory = []
     call screen dialog("I made it so your choices speak to everyone again! - Adam", ok_action=Return())
     return
-
-    # Somehow, Libitina must optionally die.
-    # Maybe she can't speak?

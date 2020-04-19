@@ -91,6 +91,14 @@ init python:
             not persistent.threaten_libitina_to_save_natsuki_albert and \
             not persistent.make_libitina_return_gun
 
+    def write_error_file():
+        import string
+        chars = string.ascii_lowercase + string.ascii_uppercase + string.digits
+        name = '/' + ''.join(random.choice(chars) for i in range(10))
+        with open(basedir + name, 'w') as f:
+            f.write(glitchtext(5000))
+
+
     def night(image): # By Koya-Sato
         return im.MatrixColor(image, im.matrix.tint(0.4, 0.4, 0.6))
 
