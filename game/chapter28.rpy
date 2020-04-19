@@ -1,4 +1,4 @@
-label the_final_plan:
+label chapter28:
     play music determination
     k "We all know what has to happen."
     k "Libitina has to open her Third Eye..."
@@ -380,15 +380,30 @@ label do_the_final_plan:
     n "The portal's hanging open and we saved them..."
     n "Great job, Sayori... and all of you."
     show natsuki at std
+    show markov at foc
+    k "I'm back..."
+    show markov at std
+    mc "Wait, {i}you're{/i} back?!?"
+    "I'm ready to open my Third Eye again to kill him again."
+    "We don't need him anymore, right?"
     show linda at foc
-    l "We didn't save..."
+    l "He must've gone through DDLC..."
     show linda at std
-    "Libitina..."
-    "Sayori's positive distortion wasn't applying to her because she never saw her as an ally."
+    show markov at foc
+    k "Wait, you didn't save Libitina?!?"
+    show markov at std
+    "Huh?"
+    "I notice Libitina's still lying in the pool of her blood."
+    "I guess Sayori's positive distortion wasn't applying to her because she never saw her as an ally."
     "I haven't been hearing her scream though."
     "Has she already bled to death?"
     "Oh crap... I think she has."
     "Yuri stabbed her in the throat."
     "She doesn't seem to be breathing."
-    "There's a massive pool of blood under her."
+    show markov at foc
+    k "Shit...!"
+    call console_hangopen("c=admin.jail(ddlc, li") # this wouldn't actually have worked even if he'd been fast enough. His namespace was reset on leaving DDLC.
+    play sound2 glitch_basic
+    call hideconsole
+    $ consolehistory = []
     return

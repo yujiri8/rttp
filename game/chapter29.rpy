@@ -1,6 +1,5 @@
 label chapter29:
     scene road1_night
-    y "Oh no..."
     call prevent_skip
     $ delete_character('libitina')
     show screen invert(4, 0)
@@ -19,10 +18,14 @@ label chapter29:
     show portal_half
     $ delete_all_saves()
     $ autosave()
+    $ quick_menu = True
     mc "Oh my God!"
     "She must've bled out just now..."
     "... and counted as killed by Yuri's Third Eye!"
     "Now we've rifted the world again!"
+    python:
+        for i in range(10):
+            write_error_file()
     show linda at foc
     l 119443 "Nooo!"
     show linda at std
@@ -33,66 +36,66 @@ label chapter29:
     m c118212 "Dammit!"
     show monika at std
     show reiner at foc
+    python:
+        for i in range(10):
+            write_error_file()
     r u2287 "Fuck, why did no one put a bullet in her?!?"
     show renier at std
     show yuri at foc
     y "What've we done?!?"
     show yuri at std
+    show markov at foc
+    k "I was too slow to put her into DDLC before she died..."
+    show markov at std
+    python:
+        for i in range(10):
+            write_error_file()
     show natsuki at foc
     n c117124 "Was this for nothing?!?"
     n "Does the portal still work?"
     show natsuki at std
-    show linda at foc
-    l 119443 "I dunno, but don't touch anything!"
-    show linda at std
+    show markov at foc
+    k "I don't know, but don't try it yet..."
+    k "It won't fix the world, but I should still be able to restore Libitina..."
+    show markov at std
     python:
         for i in range(10):
             write_error_file()
+    show markov at foc
+    call updateconsole("ddlc = admin.get_world(\n 'doki_doki_literature_club')", "Doki Doki Literature Club: no such jail")
+    k "Whaaat?!?"
+    show markov at std
+    show linda at foc
+    l "Oh my God..."
+    show linda at std
     show yuri at foc
-    y "Libitina, if you can hear this, put yourself in DDLC so you can reset yourself!"
+    y "What?!?"
+    y "I can't see the console!"
     show yuri at std
     show monika at foc
-    m "She probably can't because her console is glitched!"
+    m c118212 "It's saying DDLC doesn't exist!"
     show monika at std
+    call hideconsole
+    $ consolehistory = []
+    python:
+        for i in range(10):
+            write_error_file()
     show yuri at foc
     y "Oh no..."
     y "It's my doing..."
     show yuri at std
+    python:
+        for i in range(10):
+            write_error_file()
+    show markov at foc
+    k "Putting a rift on top of the portal..."
+    k "We've broken things worse than I ever thought possible."
+    k "I don't think there's any coming back from this."
+    show markov at std
+    python:
+        for i in range(10):
+            write_error_file()
     show monika at foc
-    m c217212 "I'll have to save her..."
-    call updateconsole("c = admin.jail(ddlc, libitina)", "Doki Doki Literature Club: no such jail")
-    m c118212 "Whaaat?!?"
-    python:
-        for i in range(10):
-            write_error_file()
-    show monika c214112
-    call updateconsole("ddlc = admin.get_world(\n 'doki_doki_literature_club')", "Doki Doki Literature Club: no such jail")
-    m c118212 "No!"
-    m "It looks like DDLC doesn't exist anymore!"
-    show monika at std
-    python:
-        for i in range(10):
-            write_error_file()
-    menu:
-        " "
-        "I get the same result trying to put myself there. - Adam":
-            pass
-    menu:
-        " "
-        "Putting a rift on top of the portal... - Adam":
-            pass
-    menu:
-        " "
-        "We've broken things worse than I ever thought possible. - Adam":
-            pass
-    menu:
-        " "
-        "I don't think there's any coming back from this. - Adam":
-            pass
-    show monika at foc
-    python:
-        for i in range(10):
-            write_error_file()
     m "This can't be for real!"
     m c117112 "Not only we're stuck in the portal room, but DDLC is gone?"
     m "How are we ever going to resurrect Libitina?"
@@ -102,79 +105,55 @@ label chapter29:
             write_error_file()
     m "... anyone else who died in all this?"
     show monika at std
-    menu:
-        " "
-        "I don't know. And I can barely think amid the cacophony... - Adam":
-            pass
+    show markov at foc
+    k "I don't know."
+    k "I don't know if we can."
     python:
         for i in range(10):
             write_error_file()
-    menu:
-        " "
-        "Let me go ahead and make it so [persistent.playername]'s choices speak to everyone again... - Adam":
-            pass
+    k "Let me go ahead and make it so [persistent.playername]'s choices speak to everyone again..."
     call updateconsole("vp.choices_target = Voice(\n anchor = " + mc_name.lower() + ")")
     call hideconsole
     $ consolehistory = []
+    show markov at std
     python:
         for i in range(10):
             write_error_file()
     $ style.say_dialogue = style.edited
+    #
     "MAXIMUM NUMBER OF ERROR FILES REACHED."
     "INITIATING FINAL PURGE."
     $ style.say_dialogue = style.normal
-    menu:
-        " "
-        "What the hell?!? - Adam":
-            pass
+    show markov at std
+    k "What the hell?!?"
+    show markov at std
     $ style.say_dialogue = style.edited
     "SHREDDING ALL CHARACTERS."
     $ style.say_dialogue = style.normal
-    menu:
-        " "
-        "No no no! - Adam":
-            pass
-    menu:
-        " "
-        "'Shredding'... - Adam":
-            pass
-    menu:
-        " "
-        "It's going to make them irrecoverable. - Adam":
-            pass
-    menu:
-        " "
-        "Everyone. - Adam":
-            pass
-    menu:
-        " "
-        "We have to stop it! - Adam":
-            pass
-    menu:
-        " "
-        "Try turning off the game! - Adam":
-            pass
+    show markov at foc
+    k "No no no!"
+    k "'Shredding'..."
+    k "It's going to make them irrecoverable."
+    k "Everyone."
+    k "We have to stop it!"
+    k "Try turning off the game!"
+    show markov at std
     $ persistent.autoload = 'shutdown_to_save_pom'
     while True:
         " "
 label shutdown_to_save_pom:
     $ persistent.autoload = None
     $ autosave()
-    menu:
-        " "
-        "It didn't stop! - Adam":
-            pass
-    menu:
-        " "
-        "[persistent.playername], the people of this world are dying right now! - Adam":
-            pass
+    show markov at foc
+    k "It didn't stop!"
+    k "[persistent.playername], the people of this world are dying right now!"
+    show markov at std
     mc "What the hell?!?"
     mc "Is it gonna get us?!?"
     mc "Should we go through the portal?"
-    menu:
-        " "
-        "No, we're not giving up! - Adam":
-            pass
+    show markov at foc
+    k "No, we're not giving up!"
+    show markov at std
     menu:
         " "
         "Adam, what API is it using to kill them if delete_character is broken?":
@@ -183,35 +162,19 @@ label shutdown_to_save_pom:
         " "
         "We have to break it.":
             pass
-    menu:
-        " "
-        "That's not how it works... - Adam":
-            pass
-    menu:
-        " "
-        "It doesn't use the Python APIs. - Adam":
-            pass
-    menu:
-        " "
-        "To these internal processes, nothing is broken. - Adam":
-            pass
+    k "That's not how it works..."
+    k "It doesn't use the Python APIs."
+    k "To these internal processes, nothing is broken."
     # The viewport uses the Python APIs because he wrote it on top of Python. He basically made it its own admin. Prob add a question about that.
     menu:
         " "
-        "If nothing's broken, then people can be restored!":
+        "If internal stuff can use the broken APIs, then there might still be a way to restore the people!":
             pass
-    menu:
-        " "
-        "Not if they're shredded... - Adam":
-            pass
-    menu:
-        " "
-        "That would delete all trace of their data. - Adam":
-            pass
-    menu:
-        " "
-        "Even restoring from a backup wouldn't reconnect their minds after a destruction like that. - Adam":
-            pass
+    show markov at foc
+    k "Not if they're shredded..."
+    k "That would delete all trace of their data."
+    k "Even restoring from a backup wouldn't reconnect their minds after a destruction like that."
+    show markov at std
     menu:
         " "
         "Corrupt its memory.":
@@ -220,51 +183,85 @@ label shutdown_to_save_pom:
     l "Remember what happened when I tried that!"
     l "It stopped me and almost killed us all!"
     show linda at std
-    menu:
-        " "
-        "I can't just corrupt its memory like that... - Adam":
-            pass
-    menu:
-        " "
-        "I have to make it think we're already shredded. - Adam":
-            pass
+    show markov at foc
+    k "I can't just corrupt its memory like that..."
+    k "I have to make it think we're already shredded."
+    show markov at std
+    show linda at foc
     l "The character files!"
     l "What if we shred them?"
 #    l "Adam, reauthorize the viewport's access {i}now{/i}!"
-    menu:
-        " "
-        "That will only save us! We need to save everyone else in this world! - Adam":
-            pass
+    show linda at std
+    show markov at foc
+    k "That will only save us! We need to save everyone else in this world!"
+    show markov at std
+    show linda at foc
     l "And since they were never onscreen, they don't have files..."
-    menu:
-        " "
-        "... I think it's all we can do. - Adam":
-            pass
-    menu:
-        " "
-        "We don't have long left. - Adam":
-            pass
+    show linda at std
+    show markov at foc
+    k "... I think it's all we can do."
+    k "We don't have long left."
     call updateconsole("import random")
-    call updateconsole("for c in monika, sayori, yuri, natsuki,\n "+mc_name.lower()+", renier, linda,\n graveyard.get_character('adam'),\n graveyard.get_character('albert'),\n graveyard.get_character('libitina'):\n  c.set_file_data(b''.join(bytes((random.randint(0, 255),)) for x in range(65536))", "No such character")
-    l "Idiot, set your variables first!"
-    call updateconsole("adam=graveyard.get_character('adam')")
-    call updateconsole("albert=graveyard.get_character('albert')")
+    call updateconsole("for c in monika, sayori, yuri, natsuki,\n "+mc_name.lower()+", renier, linda, albert,\n graveyard.get_character('libitina'):\n  c.set_file_data(b''.join(bytes((random.randint(0, 255),)) for i in range(65536))", "No such character")
+    show markov at std
+    show linda at foc
+    l "Idiot, set your variables first so you don't have to retype it!"
+    show linda at std
+    show markov at foc
     call updateconsole("libitina=graveyard.get_character('libitina')", 'No such character')
-    menu:
-        " "
-        "It's her! It can't get her data from the graveyard! - Adam":
-            pass
+    k "I can't get Libitina's data from the graveyard!"
+    show markov at std
     show linda at foc
     l "Do it for the rest of us at least!"
     show linda at std
-    call updateconsole("for c in monika, sayori, yuri, natsuki,\n "+mc_name.lower()+", renier, linda, adam, albert:\n  c.set_file_data(b''.join(bytes((random.randint(0, 255),)) for x in range(65536))")
-    menu:
-        " "
-        "Did... that work? - Adam":
-            pass
+    show markov at foc
+    call updateconsole("for c in monika, sayori, yuri, natsuki,\n "+mc_name.lower()+", renier, linda, albert, adam:\n  c.set_file_data(b''.join(bytes((random.randint(0, 255),)) for i in range(65536))")
+    python:
+        for char in 'monika', 'sayori', 'yuri', 'natsuki', 'linda', 'renier', 'albert', 'adam':
+            with open(basedir+'/characters/'+char+'.chr', 'wb') as f:
+                f.write(b''.join(bytes((random.randint(0, 255),)) for i in range(65536)))
+    k "Did... that work?"
+    show markov at std
     show linda at foc
     l "Only time will tell..."
+    l "There's got to be something else we can--"
     show linda at std
+    $ style.say_dialogue = style.edited
+    "ALL CHARACTERS SHREDDED."
+    "PURGE COMPLETE."
+    "SAFE TO UNLOAD WORLD: Portrait of Markov."
+    $ style.say_dialogue = style.normal
+    m "Does that mean everyone we didn't just save is dead...?"
+    show markov at foc
+    k "I think so."
+    k "Everyone who never had a character file."
+    show markov at std
+    show yuri at foc
+    y "What about Libitina?!?"
+    show yuri at std
+    show markov at foc
+    k "..."
+    "Adam's expression is clear."
+    show markov at std
+    show yuri at foc
+    y "There must be a way!!"
+    show yuri at std
+    show markov at foc
+    k "Her data was shredded..."
+    k "There's no trace of her."
+    k "And even if there was, there would be no way to restore her."
+    show markov at std
+    show yuri at foc
+    y "No! No!"
+    y "That can't be true!"
+    show yuri at std
+    show markov at foc
+    k "After all this..."
+    k "It's my fault..."
+    k "I..."
+    k "I couldn't save my daughter..."
+    k "I swear to God, I tried!"
+    show markov at std
 
 
 label next:
@@ -287,7 +284,20 @@ label next:
     s "I'm so glad we did that step...!"
     show sayori at std
     show albert at foc
-    al "We've killed more people than Adam ever did."
+    al "Our escape plan killed more people than Adam ever did."
+    al "I can't believe..."
+    al "We're the worst malefactors of humanity this world ever knew."
+    al "All of us."
+    show albert at std
+    show renier at foc
+    r "Stop! It wasn't our fault!"
+    r "it wasn't any of our faults!"
+    r "We didn't see this coming!"
+    show renier at std
+    show albert at foc
+    al "We should've been more careful before we toyed with forces that we'd seen destroy worlds."
+    al "How irresponsible this was..."
+    show albert at std
 
     s "I really wanted a cup--"
     s "Nevermind."
