@@ -64,11 +64,12 @@ label contact_yuri:
     mom "El[g2]ys[g3]sa[g1], your Third Eye is drawing me closer[g1]..."
     show amy at std
     "Her voice is distorted, just like Monika's was when her Third Eye was open!"
+    "And she's brandishing a knife!"
     y "Aaaah!!"
     show amy at thide
     hide amy
     "I turn and run."
-    y "Monika, help!!"
+    y "Monika, help!"
     "I can hear her chasing after me."
     call updateconsole(*console_protect_yuri)
     play sound fall
@@ -79,7 +80,7 @@ label contact_yuri:
             pass
     call hideconsole
     $ consolehistory = []
-    "She seems to have passed out."
+    "Mom seems to have passed out."
     y "Thank you..."
     y "..."
     y "But I don't understand..."
@@ -90,7 +91,7 @@ label contact_yuri:
             pass
     menu:
         " "
-        "There are ways to get characters nearby a character I have a name for. I found out about it from reading Adam's command history. - Monika":
+        "There are ways to get characters nearby a character I have a name for. I found out about it from reading Adam's memories. - Monika":
             pass
     menu:
         " "
@@ -147,7 +148,7 @@ label contact_yuri:
     $ o_name = "???"
     o "More blood...!"
     "I jerk my head around."
-    show eric attacking at foc(p11)
+    show eric at foc(p11)
     o "Raah!"
     show eric at thide
     hide eric
@@ -159,11 +160,12 @@ label contact_yuri:
     play sound fall
     y "{i}Phew...{/i}"
     menu:
-        "It's like multiple people became possessed by their Third Eyes and started killing people...":
+        "It's like multiple people became possessed by their Third Eyes and started killing...":
             pass
     y "That's a horrible thought..."
     y "..."
     y "Okay..."
+    y "Since I have you to protect me..."
     y "I'm going to try entering."
     y "Everyone who's alive is probably staying inside with their doors locked."
     y "Which means everyone who will know what happened is inside."
@@ -206,8 +208,12 @@ label contact_yuri:
     o "... he killed Mom, and Dad, and my sister."
     o "I hid."
     o "And I listened to their screams."
+    show michael 1g
     o "And now everything's fucked...!"
     show michael at std
+    "I can't imagine how he feels after living through that."
+    "There's only one thing I know how to say."
+    show michael 1g
     y "I'm so sorry..."
     menu:
         " "
@@ -241,12 +247,13 @@ label contact_yuri:
             pass
     y "Alright..."
     y "I suppose there's time to explain."
+    stop music fadeout 8.0
     scene michael_house with wipeleft
-    "I follow him inside, and I tell him what's happened."
+    "I follow him inside, and I tell him what I know about the Third Eye and how I know it."
     "He doesn't fully believe me, but he's not sure."
     "I find out his name is Michael."
     $ o_name = "Michael"
-    y "So... Your family might not be dead permanently."
+    y "So... your family might not be dead permanently."
     y "Although restore_character is broken, we might find another way."
     y "There's still a lot we don't know."
     show michael 1e at foc(p11)
@@ -397,8 +404,9 @@ label contact_yuri:
     hide red
     y "Aah--!"
     "My head throbs with a brief, horrible pain."
+    play music third_eye
     play sound glitch_medium
-    show red:
+    show red_overlay:
         alpha 0
         linear 0.5 alpha 0.2
     "Out of nowhere, I feel like my Third Eye is more open than it's ever been."
@@ -441,9 +449,9 @@ label contact_yuri:
     $ style.say_dialogue = style.edited
     "{cps=10}Yesss...{/cps}"
     $ style.say_dialogue = style.normal
-    play sound stab_once
     "It doesn't stop it though."
     "My Third Eye calls for more."
+    play sound stab_once
     "I make another."
     menu:
         " "
@@ -459,6 +467,8 @@ label contact_yuri:
     play sound stab_once
     "I make a third massive cut."
     y "Aaaah!!"
+    show red_overlay:
+        linear 2.0 alpha 0
     "I start feeling the pain all the way like a normal person would."
     "It stops feeling good."
     "I collapse to the ground."
@@ -483,12 +493,13 @@ label contact_yuri:
     "I'm healed."
     "That method is miraculous."
     "..."
-    "I never thought cutting myself would be necesary to survive instead of a degenerate pleasure..."
+    "I never thought cutting myself would be essential to survival instead of a degenerate pleasure..."
+    "It makes me feel a little bit better about what I did back then."
     "Okay, I still need to get out of here."
     "I return to running."
     "Being reset replenished my energy too."
     "I make it outside of city limits before the area corruption strikes me again."
-    scene city_outskirts
+    scene city_outskirts with wipeleft_scene
     menu:
         " "
         "You should be out of the danger zone now. - Monika":

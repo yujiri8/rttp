@@ -359,11 +359,13 @@ image warehouse_inside_back = "mod_assets/bg/steam_machinery.jpg"
 image office = "mod_assets/bg/office.jpg"
 image forest_path = "mod_assets/bg/forest_path.jpg"
 image driving = "mod_assets/bg/driving.jpg"
-# FUCK Renpy for this. Pure black is replaced with grey, so I had to make a black image with a tiny splot of dark grey somewhere.
-image dark_overlay = "mod_assets/bg/black.png"
 image driving_night = night("mod_assets/bg/driving.jpg")
 image portal = "mod_assets/bg/portal.jpg"
 image portal_half = "mod_assets/bg/portal_half.png"
+# FUCK Renpy for this. Pure black is replaced with grey, so I had to make a black image with a tiny splot of dark grey somewhere.
+image dark_overlay = "mod_assets/bg/black.png"
+image red_overlay = Solid("f00")
+image darkred_overlay = Solid("400")
 
 
 define narrator = Character(ctc="ctc", ctc_position="fixed")

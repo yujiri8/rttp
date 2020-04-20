@@ -285,7 +285,7 @@ label do_the_final_plan:
     "How is she still so powerful?"
     "I collapse as I approach her."
     "Instead of sliding my knife into her throat, I feel hers slide into mine."
-    show expression Solid("#f00"):
+    show red_overlay:
         linear 0.1 alpha 0.4
     "N-no"
     "I can't lose..."
@@ -322,7 +322,7 @@ label do_the_final_plan:
     n "The portal's open!"
     "My energy fades entirely."
     $ style.say_dialogue = style.normal
-    show expression Solid("#600"):
+    show darkred_overlay:
         linear 0.3 alpha 0.8
     "Oh god... what kind of pain is this..."
     "{cps=8}FFFFF-{/cps}"

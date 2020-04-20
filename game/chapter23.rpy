@@ -56,10 +56,13 @@ label chapter23:
     m "That's definitely what the function was called when he used it on me..."
     call updateconsole("delete_character(markov)", "NameError: name 'delete_character'\n is not defined")
     m "delete_character is gone too?"
+    $ consolehistory.pop()
     call updateconsole("warp(markov, None)", "NameError: name 'warp'\n is not defined")
     m "It's the same error from the warp API, which was seemingly broken before."
+    $ consolehistory.pop()
     call updateconsole("restore_character", "NameError: name 'restore_character'\n is not defined")
-    call updateconsole("get_nearby_characters", "<function get_nearby_characters at 0x80141df80>")
+    $ consolehistory.pop()
+    call updateconsole("get_nearby_characters", "<function get_nearby_characters\n at 0x80141df80>")
     m "So it's not that everything's gone."
     m "But access controls, warp, and delete and restore are."
     call hideconsole
@@ -269,7 +272,6 @@ label libitina_pov:
         "Wait, so you're telling me {i}you{/i} were the original villain here? - Monika":
             pass
     "Damn mind-reading..."
-    "I couldn't not think about it because I had to think about my desire to hide it from you."
     b "Yep."
     b "[persistent.playername], I guess you heard that too."
     b "Please understand...!"
@@ -313,7 +315,7 @@ label libitina_pov:
                     $ persistent.player_give_libitina_food_for_thought = False
     menu:
         " "
-        "It sounds to me like the way out of this world definitely involves combining the Third Eye and admin powers, and they have to be on the same person.":
+        "It sounds to me like the way out of this world definitely involves combining the Third Eye and admin powers on the same person.":
             pass
     menu:
         " "
@@ -396,10 +398,12 @@ label libitina_pov:
             pass
     b "It cannot be denied."
     play sound stab_once
-    show expression Solid("#f00"):
+    show red_overlay:
         alpha 0.3
         linear 0.5 alpha 0
     "I make a small cut on my wrist."
+    "Ahhh..."
+    "I convulse with visceral pleasure."
     "Oh..."
     "That wasn't really \"small\"..."
     "It feels wonderful though."
@@ -467,9 +471,9 @@ label libitina_pov:
     k u22643 "Aaaah!"
     show veins zorder 100:
         additive 0.5
-    show expression Solid("f00") as i1 zorder 100:
+    show red_overlay zorder 100:
         additive 1.0
-    show expression Solid("400") as i2 zorder 100:
+    show darkred_overlay zorder 100:
         additive 0.4
     with dissolve_scene
     "{i}Yes...{/i}"
@@ -481,8 +485,8 @@ label libitina_pov:
     call updateconsole('', '0')
     show markov at std
     hide veins
-    hide i1
-    hide i2
+    hide red_overlay
+    hide darkred_overlay
     "What--"
     show dark_overlay zorder 100:
         alpha 0
