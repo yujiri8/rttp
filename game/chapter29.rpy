@@ -142,7 +142,7 @@ label chapter29:
     $ persistent.autoload = 'shutdown_to_save_pom'
     while True:
         " "
-label shutdown_to_save_pom:
+label chapter29_2:
     $ persistent.autoload = None
     $ autosave()
     show markov at foc

@@ -22,10 +22,12 @@ label start:
     label game2:
         call chapter3
     label after_pom_crash:
+        $ mc_name = persistent.mc_name
         call chapter3_2
         call chapter4
         call chapter5
     label after_linda_crash:
+        $ mc_name = persistent.mc_name
         call chapter6
 
     label game3:
@@ -33,6 +35,7 @@ label start:
         call chapter8
         call chapter9
     label save_scum_experiment:
+        $ mc_name = persistent.mc_name
         call chapter10
 
     label game4:
@@ -41,21 +44,25 @@ label start:
     label game5:
         call chapter12
     label after_delete_script:
+        $ mc_name = persistent.mc_name
         call chapter13
         call chapter14
         call chapter15
         call chapter16
     label mc_in_void:
+        $ mc_name = persistent.mc_name
         call chapter16_2
         call chapter17
 
     label escape_ddlc:
+        $ mc_name = persistent.mc_name
         call chapter18
         call chapter19
         call chapter20
         call chapter21
 
     label after_markov_returns:
+        $ mc_name = persistent.mc_name
         call chapter22
 
     label game6:
@@ -63,14 +70,16 @@ label start:
         call chapter24
         call chapter25
         call chapter26
-        call chapter27
     label after_return_to_ddlc:
-        call chapter27_after_return_to_ddlc
+        $ mc_name = persistent.mc_name
+        $ k_name = "Adam"
+        call chapter26_2
+        call chapter27
         call chapter28
         call chapter29
-        call chapter30
-
-    scene black with dissolve_scene
-    "The demo is over."
-
+    label shutdown_to_save_pom:
+        $ mc_name = persistent.mc_name
+        $ k_name = "Adam"
+        call chapter29_2
+        call credits
     return

@@ -1,6 +1,5 @@
 label chapter13:
     $ persistent.autoload = None
-    $ mc_name = persistent.mc_name
     $ gtext = glitchtext(8)
     $ autosave()
     play music m1

@@ -58,7 +58,6 @@ label chapter17_escape:
         "{cps=200}Fatal error: player character missing.{/cps}"
 
 label chapter17_portal:
-    $ mc_name = persistent.mc_name
     scene black
     python:
         correct = False

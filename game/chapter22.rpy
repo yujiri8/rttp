@@ -803,7 +803,6 @@ label chapter22:
     $ renpy.quit()
 
 label ch22_shutdown:
-    $ mc_name = persistent.mc_name
     $ restore_character('monika')
     scene black
     play music glitch_flatline

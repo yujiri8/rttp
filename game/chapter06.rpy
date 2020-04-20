@@ -10,11 +10,6 @@ label chapter6:
 
 label delete_linda:
     $ persistent.autoload = None
-    #$ s_name = glitchtext(6)
-    #$ m_name = glitchtext(6)
-    #$ ms_name = m_name + " & " + s_name
-    $ r_name = "Renier"
-    $ mc_name = persistent.mc_name
     play music yesnt
     show mask_2
     show mask_3

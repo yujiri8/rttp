@@ -83,7 +83,6 @@ label chapter3:
 
 label chapter3_2:
     $ persistent.autoload = None
-    $ mc_name = persistent.mc_name
     hide screen tear
     stop music
     scene black

@@ -366,7 +366,6 @@ label chapter16:
     # There might be different ways this can go if the player deletes Linda.
 label chapter16_2:
     $ persistent.autoload = None
-    $ mc_name = persistent.mc_name
     scene bg notebook-glitch
     play music glitch_flatline
     $ gtext = glitchtext(15)
