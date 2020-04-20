@@ -487,3 +487,6 @@ default persistent.suggest_albert_stay = False
 default persistent.ch22_kill_guard = None # holds the name of the character if someone did
 default persistent.break_pom = False
 default persistent.contacted = []
+
+default persistent.adam_lived = None
+default persistent.libitina_lived = None

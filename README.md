@@ -24,7 +24,7 @@ The file 'SCRAPS' contains a couple of less important thoughts (that I don't nee
 
 # Images
 
-* Improve Amy/Michael sprites (Amy should be taller, Michael may need expression improvement) - I can do this myself
+* Improve Amy/Michael sprites (Michael may need expression improvement) - I can do this myself
 
 * Ideally a better warehouse interior than the Uncle Mugen temple-like drawing I'm currently using. Probably also get a rifted version of it, if not one of the city.
 
