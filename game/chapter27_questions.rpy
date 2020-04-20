@@ -4,7 +4,7 @@ label adam_questions:
     k "Do you have any questions?"
     k "Anything you want me to explain?"
     $ qtext = "Now's a good time."
-    $ persistent.adam_questions = {'experiments':False, 'ursula_awakening':False, 'power_relationship':False, 'ursula_poem':False}
+    $ persistent.adam_questions = {'experiments':False, 'ursula_awakening':False, 'power_relationship':False, 'ursula_poem':False, 'char_files':False}
     $ page = 0
 label adam_questions_menu:
     menu:
@@ -21,7 +21,10 @@ label adam_questions_menu:
         "Do you still think Ursula's poem means anything?" if not persistent.adam_questions["ursula_poem"] and page == 1:
             call adam_discuss_power_relationship
             $ persistent.adam_questions['ursula_poem'] = True
-        "(More options)":
+        "How do character files work?" if not persistent.adam_questions["char_files"] and page == 1:
+            call adam_discuss_char_files
+            $ persistent.adam_questions['char_files'] = True
+        "(More options)" if not all(persistent.adam_questions.values()):
             $ page = 1 if page == 0 else 0
             jump adam_questions_menu
         "Done.":
@@ -78,4 +81,15 @@ label adam_discuss_findings:
     k "Or just isolation for days..."
     k "It was all for nothing."
     k "I was wrong, and by my own fault."
+    return
+
+label adam_discuss_char_files:
+    k "Character files are a reflection of the actual Character object's state."
+    k "When the viewport sees a file deleted or created, it sends a command to the server to delete or restore the character."
+    k "And when a character is deleted or restored, a command is sent to the viewport to delete or create their file."
+    k "Deleting on the viewport side doesn't work now that the viewport doesn't have those permissions anymore."
+    k "The data in the Character file is meaningless."
+    k "It's read from Character.get_file_data(), which returns whatever data string was set on them."
+    k "The viewport needs data in the files, so when it first needs to create one, it sets the character's file data to something menaingful for them."
+    k "As you know, the data in the girls' files when you played DDLC wasn't the generated data, it was what Linda inserted."
     return
