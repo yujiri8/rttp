@@ -600,7 +600,7 @@ label chapter26:
     if vpchar == mc_name:
         show renier at foc
     r "We don't need you to tell us you murderous freak!"
-    scene city_night with wipeleft
+    scene city2 with wipeleft
     "Around the corner, the screams are coming from a man being held against a wall and eye-gouged by another man."
     "The aggressor looks he has an open Third Eye alright."
     "That unmistakable look..."

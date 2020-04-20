@@ -1,5 +1,5 @@
 label contact_renier:
-    scene city with dissolve_scene_full
+    scene city3 with dissolve_scene_full
     "I stand outside for a few seconds before going back in."
     "Going back to work after lunch has got to be worse than coming here in the morning, cause half the day is gone and I'm still at it."
     "Then suddenly, I start to have visions about all kinds of horrible stuff, and I feel like--"
@@ -14,7 +14,7 @@ label contact_renier:
         "(explain situation)":
             pass
     scene black with dissolve_scene
-    scene city with dissolve_scene
+    scene city3 with dissolve_scene
     r "I see..."
     r "Damn."
     r "So we've got no clue where he is."

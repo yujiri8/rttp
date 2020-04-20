@@ -57,7 +57,7 @@ Kimagure After - backgrounds:
 	* the hospital room, day, dawn and night (https://k-after.at.webry.info/201012/article_2.html)
 	* Natsuki's house (https://k-after.at.webry.info/200812/article_2.html)
 	* the path outside the village (https://k-after.at.webry.info/201712/article_4.html)
-	* city2.jpg
+	* city.jpg, city_night.jpg
 	* forest_path.jpg
 
 Haikei Frame (http://masato.ciao.jp/haikei/furemu.html) - backgrounds:

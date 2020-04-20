@@ -1,5 +1,5 @@
 label sayori_and_mc:
-    scene city2 with dissolve_scene_full
+    scene city with dissolve_scene_full
     play music t2
     "I bike into the city at last."
     "I'm exhausted..."
@@ -139,7 +139,7 @@ label sayori_and_mc:
     s "Okay, let's go...!"
     "I run to get out."
     scene warehouse_outside_day with wipeleft
-    scene city2 with wipeleft
+    scene city with wipeleft
     play music t2
     s "Phew! We made it out of the spooky house of evil!"
     show mc c227111 at foc(p11)
