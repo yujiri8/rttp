@@ -56,7 +56,7 @@ label contact_yuri:
     o "El[g1]ys[g2]sa[g3]!"
     "I jump."
     "Is that..."
-    show amy attacking at std(p11)
+    show amy at std(p11)
     "What...?!?"
     "It's Mom!"
     "What's wrong with...?!"
@@ -65,7 +65,7 @@ label contact_yuri:
     show amy at std
     "Her voice is distorted, just like Monika's was when her Third Eye was open!"
     y "Aaaah!!"
-    show amy attacking at thide
+    show amy at thide
     hide amy
     "I turn and run."
     y "Monika, help!!"
