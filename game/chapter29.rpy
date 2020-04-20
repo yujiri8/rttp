@@ -312,6 +312,7 @@ label finale_lament:
 #    s "I really wanted a cup--"
 #    s "Nevermind."
 #    show sayori at std
+    call adams_fate
     show monika at foc
     m "Well..."
     m "Our portal's open."
@@ -355,4 +356,39 @@ label finale_lament:
     # or maybe they just go through all at once to avoid complexity.
     "One by one, we step through the portal."
     "It stays open for each of us." # maybe it only closes when an active Eye goes through it.
+    return
+
+label adams_fate:
+    # well, Monika wants to kill him if not advocate mercy [1].
+    # Sayori and the others want to kill him if not advocate mercy [0].
+    # in case of conflict...
+    if persistent.player_advocate_mercy[1]:
+        m "Adam..."
+        show markov at foc
+        k "Yes, it's time for your decision."
+        k "What are you going to do with me?"
+        k "Do I die?"
+        show markov at std
+        m "No."
+        $ persistent.adam_lived = True
+    else:
+        mc "I think it's time we get rid of Adam."
+        mc "We don't need him anymore."
+        show markov at foc
+        k "Don't do this..."
+        k "Don't give my story a sad ending."
+        show markov at std
+        mc "We've all had enough of you!"
+        mc "Natsuki! Send him to hell!"
+        show natsuki at foc
+        play sound gunshot1
+        show markov
+        "..."
+        play sound gunshot1
+        $ delete_character('adam')
+        show markov at thide
+        hide markov
+        n "Go to hell, you fucking monster!!"
+        show natsuki at std
+        $ persistent.adam_lived = False
     return

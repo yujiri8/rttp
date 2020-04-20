@@ -28,7 +28,6 @@ label chapter27:
     m "I'm gonna use DDLC to heal him and Libitina."
     al "Alright..."
     "Albert pulls over."
-    # TODO image thought: maybe I should get a nighttime filter of the daytime city image and use this one only here.
     scene road1_night with wipeleft
     "We stop and disembark."
     "I'm sure no one was enjoying being cramped anyway."
