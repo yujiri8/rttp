@@ -65,7 +65,7 @@ label chapter28:
         "Welcome back, [persistent.playername]."
     else:
         "Guess you're back in my head again, [persistent.playername]."
-        "I Guess it won't last long though."
+        "I guess it won't last long though."
     show albert at foc
     al 22112 "[mc_name], I will be your sacrifice."
     show albert at std

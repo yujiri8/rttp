@@ -71,7 +71,7 @@ label adam_discuss_findings:
     k "After destroying a person's soul with trauma, the strength of their Third Eye increased."
     k "Sensitivity also tended to increase with increased power."
     k "But, there seemed to be a limit to how far that could go."
-    k "I never tortured anyone else into becoming as stong as Libitina."
+    k "I never tortured anyone else into becoming as strong as Libitina."
     k "I thought for so long that it was about different kinds of suffering."
     k "Maybe drowning would be more effective than starvation."
     k "Or being prevented from sleeping..."

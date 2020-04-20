@@ -134,7 +134,7 @@ label chapter27:
     b 2261224 "Uhhh--..."
     show libitina at std
     "She stumbles."
-    "Like Monika before, It looks like breaking out pretty much sapped all her mojo."
+    "Like Monika before, it looks like breaking out pretty much sapped all her mojo."
     show libitina at thide
     hide libitina
     "She falls down."
@@ -172,7 +172,7 @@ label chapter27:
     "I point it at her head to make sure it kills her instantly."
     play sound gunshot1
     scene black
-    "My eyes flich closed again."
+    "My eyes flinch closed again."
     "I still don't want to look."
     n "I feel like I'm getting desensitized to this." # Lol, it's me who's degrading its significance by using it for things like this so often. I'm super clever for having characters allude to criticisms of my story.
     k "She's gone."

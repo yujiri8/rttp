@@ -301,7 +301,7 @@ label finale_lament:
     show albert at std
     show renier at foc
     r "Stop! It wasn't our fault!"
-    r "it wasn't any of our faults!"
+    r "It wasn't any of our faults!"
     r "We didn't see this coming!"
     show renier at std
     show albert at foc
