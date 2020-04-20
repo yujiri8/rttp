@@ -40,7 +40,7 @@ label contact_linda:
     "I go behind the front desk."
     l "Albert!"
     l "Do you remember what happened?"
-    al "Linda?!?"
+    al "Linda?"
     show albert 11211 at foc(p11)
     al "We must've started a new game alright!"
     al "Do you know what happened?"
@@ -52,7 +52,7 @@ label contact_linda:
     show albert at std
     "This must look crazy to the other employees and customers, but there's no time."
     scene hospital_outside with wipeleft
-    show albert 11111 at foc
+    show albert 11111 at foc(p11)
     a "So [persistent.playername], Monika?"
     al "What's going on?"
     show albert at std
@@ -73,11 +73,11 @@ label contact_linda:
         "At least one adult should head to the warehouse.":
             pass
     if 'mc' in persistent.contacted and 'sayori' in persistent.contacted:
-        $ text = "Sayori and " + mc_name + "are heading there on bikes, and"
+        $ text = "Sayori and " + mc_name + " are heading there on bikes, and"
     elif 'mc' in persistent.contacted:
         $ text = mc_name + " and probably Sayori are heading there on bikes, and"
     elif 'sayori' in persistent.contacted:
-        $ text = "Sayori and probably " + mc_name + "are heading there on bikes, and"
+        $ text = "Sayori and probably " + mc_name + " are heading there on bikes, and"
     else:
         $ text = "Sayori and MC are probably heading there, and they're probably not traveling by car, so"
     menu:
@@ -115,7 +115,7 @@ label contact_linda:
             pass
     menu:
         " "
-        "I wrote them down before he broke console spying. - Monika":
+        "I wrote them down before he broke memory reading. - Monika":
             pass
     l "Sure! Read them out to me."
     scene driving with dissolve_scene_full
@@ -146,7 +146,7 @@ label contact_linda:
     l "I was going to say that might be why he hasn't used it on you, rather than it being broken."
     menu:
         " "
-        "I see. It makes sense. - Monika":
+        "I see. - Monika":
             pass
     l "I doubt it would do much anyway."
     l "He and you both have access to his key that could get you out from the inside with admin.extract."
@@ -164,11 +164,11 @@ label contact_linda:
             pass
     menu:
         " "
-        "Do you remember what the function is called, by any chance? It's worth a try even if he knows to avoid it. - Monika":
+        "Do you remember what the function's called, by any chance? It's worth a try even if he knows to avoid it. - Monika":
             pass
     l "If I remember correctly, it's admin.jail..."
     l "The first parameter is the world object, which you get by its name from admin.get_world, I think."
-    call updateconsole("ddlc = admin.get_world('doki_doki_literature_club')")
+    call updateconsole("ddlc = admin.get_world(\n 'doki_doki_literature_club')")
     call updateconsole("ddlc", "<Virtual world 'doki_doki_literature_club'>")
     call updateconsole("challenge = admin.jail(ddlc, adam)", "ValueError: character conscious")
     menu:

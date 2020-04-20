@@ -487,7 +487,7 @@ default persistent.threaten_libitina_to_come = False
 default persistent.make_libitina_return_gun = None # for this one, None means she gave it back willingly
 default persistent.suggest_albert_stay = False
 default persistent.ch22_kill_guard = None # holds the name of the character if someone did
-default persistent.contacted = []
+default persistent.contacted = set()
 # ending
 default persistent.adam_lived = None
 default persistent.libitina_lived = None

@@ -32,7 +32,7 @@ label contact_sayori:
     call updateconsole("sayori.reset()", "0")
     call hideconsole
     $ consolehistory = []
-    "My knee fells all better."
+    "My knee feels all better."
     s "Phew!"
     s "That Character.reset thing works like a charm!"
     menu:

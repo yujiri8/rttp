@@ -8,6 +8,7 @@ label contact_renier:
     "My god..."
     "..."
     "... but what happened?!?"
+    "We were all in Albert's hospital and then..."
     menu:
         " "
         "(explain situation)":
@@ -19,7 +20,7 @@ label contact_renier:
     r "So we've got no clue where he is."
     r "I'm gonna head to where the facility eventually is."
     r "It probably isn't there yet."
-    r "But maybe the location had some significance before that."
+    r "But maybe the place had some significance before that."
     r "Or maybe the rift is still there, and we can use it to break the world again."
     menu:
         " "

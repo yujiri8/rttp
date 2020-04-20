@@ -566,7 +566,7 @@ label after_libitina_wakeup:
     show libitina at foc
     b "Yeah..."
     show libitina at std
-    m "I saw a couple of the commands he ran before he realized he had to break console spying."
+    m "I saw a couple of the commands he ran after that before he realized he had to break memory reading to stop me from seeing them."
     m "I didn't understand them, but I took notes, incase Linda will."
     if not libitina_explained_third_eye:
         menu:
@@ -579,8 +579,8 @@ label after_libitina_wakeup:
     show libitina at foc
     b "There was something else I wanted to say."
     b "That line Adam was thinking about in his character file message..."
-    b "I remember where it came from now: a poem of Ursula's!"
-    b "The scraps of an unfinished one she never showed us."
+    b 2361111 "I remember where it came from now: a poem of Ursula's!"
+    b 2261111 "The scraps of an unfinished one she never showed us."
     b "We found it in her desk after she disappeared."
     b "I remember every word I saw on that piece of paper."
     show libitina at std
@@ -640,7 +640,6 @@ label after_libitina_wakeup:
     m "So I thought I'd leave them until you were available again."
     m "So now we'll make each of them POV in turn so we can bring them up to speed and get some leads."
     show libitina at foc
-    b "Hold on."
     b "Doesn't the warehouse make more sense as a rendezvous point than this place?"
     b "If, like you said, only you, Sayori, and [mc_name] know how to get here..."
     b "... then it's more reasonable for us to choose the warehouse, which all of us know where to find, which means they're going there if they're smart."
@@ -658,38 +657,39 @@ label chapter23_switch:
         "Yuri." if not 'yuri' in persistent.contacted:
             call switch_pov('yuri')
             call contact_yuri
-            $ persistent.contacted.append('yuri')
+            $ persistent.contacted.add('yuri')
         "Natsuki." if not 'natsuki' in persistent.contacted:
             call switch_pov('natsuki')
             call contact_natsuki
-            $ persistent.contacted.append('natsuki')
+            $ persistent.contacted.add('natsuki')
         "Sayori." if not 'sayori' in persistent.contacted:
             call switch_pov('sayori')
             call contact_sayori
-            $ persistent.contacted.append('sayori')
+            $ persistent.contacted.add('sayori')
         "[mc_name]." if not 'mc' in persistent.contacted:
             call switch_pov(mc_name.lower())
             call contact_mc
-            $ persistent.contacted.append('mc')
+            $ persistent.contacted.add('mc')
         "Renier." if not 'renier' in persistent.contacted:
             call switch_pov('renier')
             call contact_renier
-            $ persistent.contacted.append('renier')
+            $ persistent.contacted.add('renier')
         "Linda." if not 'linda' in persistent.contacted:
             call switch_pov('linda')
             call contact_linda
-            $ persistent.contacted.append('linda')
+            $ persistent.contacted.add('linda')
+            $ persistent.contacted.add('albert')
         "Can you switch me to Albert?" if not 'albert' in persistent.contacted:
             m "Uhh..."
             m "I guess I forgot about him..."
             m "I didn't set his POV flag while I could."
             m "Sorry, we can't get him."
-            $ persistent.contacted.append('albert')
+            $ persistent.contacted.add('albert')
             $ text = "Next pick?"
             jump chapter23_switch
     call switch_pov('monika')
     scene path with dissolve_scene_full
-    if all(persistent.contacted.values()):
+    if len(persistent.contacted) == 7:
         jump contacted_everyone
     $ text = 'Alright, who do you wanna switch to next?'
     jump chapter23_switch
