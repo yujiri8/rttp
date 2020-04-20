@@ -631,7 +631,8 @@ label begin_escape_plan:
     play sound2 glitch_flatline
     pause 1.5
     $ persistent.autoload = 'after_delete_script'
-    $ persistent.post_escape_plan = True
+    $ persistent.menu_hide_monika = True
+    $ persistent.newgame = 'glitch'
     $ delete_all_characters()
     $ renpy.quit()
     return

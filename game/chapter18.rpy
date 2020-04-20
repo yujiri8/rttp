@@ -2,6 +2,7 @@ label chapter18:
     $ delete_all_saves()
     $ autosave()
     $ persistent.autoload = None
+    $ persistent.newgame = 'deny'
     $ restore_character('monika')
     scene vr_room
     show sayori u115132 at std(p51)

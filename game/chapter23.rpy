@@ -40,7 +40,7 @@ label chapter23:
     scene black with None
     scene bg house2 with dissolve_scene_full
     $ autosave()
-    $ persistent.break_pom = False
+    $ persistent.newgame = 'deny'
     m "Aaaaah!"
     "Everything that happened..."
     "What a nightmare..."

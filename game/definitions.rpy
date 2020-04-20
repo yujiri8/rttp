@@ -437,9 +437,10 @@ your our only hope
 
 dont forget everything i taut yoooooooooo"""
 
-# Story persistent vars.
-default persistent.newgame = 0 # The game number the player will start next.
-default persistent.escape_ddlc = False # True after chapter 17.
+# Story persistent vars
+default persistent.newgame = 0 # The game number the player will start next, or 'glitch' or 'deny' if they can't.
+default persistent.pom_menu = False # Whether to show the POM menu.
+default persistent.menu_hide_monika = False # Set in chapter 13.
 # Flags set throughout the plot just here so a default value is set if I skip ahead for testing.
 default persistent.mc_awakened = False
 default persistent.monika_request_shutdown = False
@@ -455,7 +456,6 @@ default persistent.player_support_renier_experiment = 0 # Chapter 9.
 default persistent.experiment_over = False # Chapter 9.
 default save_is_before_experiment = False # Chapter 9.
 default persistent.player_support_escape_plan = 0 # Chapter 12. 0 means the player never agreed, 1 means the player initially objected but was persuaded, and 2 means the player didn't object.
-default persistent.post_escape_plan = False # Chater 12.
 default persistent.suggest_set_name = False # Chapter 13.
 default persistent.player_early_theorize_elyssa_is_yuri = False # Chapter 14.
 default persistent.player_reject_sayori_sacrifice = False # Chapter 14.
@@ -463,7 +463,7 @@ default persistent.player_guilt_trip_sayori = 0 # Chapter 14.
 default persistent.player_pacifist = 0 # First in Chapter 15.
 default persistent.player_advocate_mercy = [0, 0] # First in ch15, second in ch23.
 default persistent.shutdown_in_pom = False # Chapter 20.
-# Chapter 8 questions.
+# chapter 8 questions
 default persistent.asked_monika_about_player_choices = False
 default persistent.asked_monika_about_time = False
 default persistent.asked_monika_about_mc_time = False
@@ -476,7 +476,7 @@ default persistent.player_suggest_linda_natsuki_mom = 0 # can raise to 2 in ch14
 default persistent.asked_natsuki_forgive_renier = False
 default persistent.asked_yuri_about_cutting = False
 default persistent.asked_about_mc_poems = False
-# Part 3.
+# Part 3
 default persistent.ch22_monika_request_shutdown = False
 default persistent.ch22_shutdown = False
 default persistent.tried_reset_pom = False
@@ -485,8 +485,7 @@ default persistent.threaten_libitina_to_come = False
 default persistent.make_libitina_return_gun = None # for this one, None means she gave it back willingly
 default persistent.suggest_albert_stay = False
 default persistent.ch22_kill_guard = None # holds the name of the character if someone did
-default persistent.break_pom = False
 default persistent.contacted = []
-
+# ending
 default persistent.adam_lived = None
 default persistent.libitina_lived = None

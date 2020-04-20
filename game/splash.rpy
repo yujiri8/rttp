@@ -314,7 +314,7 @@ label splashscreen:
     hide splash_warning with Dissolve(max(0, 6.5 - (datetime.datetime.now() - starttime).total_seconds()), alpha=True)
     $ pause(6.5 - (datetime.datetime.now() - starttime).total_seconds())
     $ config.allow_skipping = True
-    if persistent.escape_ddlc:
+    if persistent.pom_menu:
         stop music
         $ config.main_menu_music = None
     return

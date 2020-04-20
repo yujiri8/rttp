@@ -375,12 +375,15 @@ init -501 screen navigation():
         if not persistent.autoload or not main_menu:
 
             if main_menu:
-                if not persistent.post_escape_plan or persistent.newgame == 5:
-                    textbutton _("New Game") action Start()
-                elif not persistent.escape_ddlc:
+                if persistent.newgame == 'glitch':
                     textbutton _(glitchtext(30)) action NullAction()
+                elif persistent.newgame == 'deny':
+                    textbutton _("New Game") action [
+                        Show(screen="dialog", message="Permission denied.", ok_action=Hide("dialog")),
+                        SetVariable('persistent.tried_reset_pom', True),
+                    ]
                 else:
-                    textbutton _("New Game") action [Show(screen="dialog", message="Permission denied.", ok_action=Hide("dialog")), SetVariable('persistent.tried_reset_pom', True)]
+                    textbutton _("New Game") action Start()
             else:
                 textbutton _("History") action ShowMenu("history") sensitive (renpy.get_screen("history") == None)
                 textbutton _("Save Game") action ShowMenu("save") sensitive (renpy.get_screen("save") == None)
@@ -394,7 +397,8 @@ init -501 screen navigation():
             textbutton _("Settings") action ShowMenu("preferences") sensitive (renpy.get_screen("preferences") == None)
 
             if renpy.variant("pc"):
-                textbutton _("Help") action [Help("README.html"), Show(screen="dialog", message="The help file has been opened in your browser.", ok_action=Hide("dialog"))]
+                textbutton _("Help") action [Help("README.html"), Show(screen="dialog",
+                    message="The help file has been opened in your browser.", ok_action=Hide("dialog"))]
                 textbutton _("Quit") action Quit(confirm=not main_menu)
 
 
@@ -420,6 +424,7 @@ init -501 screen main_menu():
     tag menu
     style_prefix "main_menu"
 
+    # The beginning menu, where everyone's dead.
     if not persistent.first_run:
         add "white"
         add "menu_particles"
@@ -428,7 +433,8 @@ init -501 screen main_menu():
         add "menu_art_n_ghost"
         add "menu_art_s_ghost"
         add "menu_art_m_ghost"
-    elif not persistent.escape_ddlc:
+    # The DDLC menu.
+    elif not persistent.pom_menu:
         add "menu_bg"
         add "menu_art_y"
         add "menu_art_n"
@@ -439,8 +445,10 @@ init -501 screen main_menu():
         add "menu_particles"
         add "menu_logo"
         add "menu_art_s"
-        if not persistent.post_escape_plan:
+        # Chapter 13, where Monika's missing.
+        if not persistent.menu_hide_monika:
             add "menu_art_m"
+    # The POM menu.
     else:
         add "pom_menu"
         use navigation
@@ -450,7 +458,7 @@ init -501 screen main_menu():
             text "[config.name!t]":
                 style "main_menu_title"
             text "[config.version]":
-                if persistent.escape_ddlc:
+                if persistent.pom_menu:
                     style "main_menu_version_pom"
                 else:
                     style "main_menu_version"

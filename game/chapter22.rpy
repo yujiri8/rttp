@@ -880,7 +880,6 @@ label ch22_autoload_1:
         call libitina_kills_natsuki
     else:
         call natsuki_kills_self
-    $ persistent.break_pom = True
     $ persistent.autoload = 'after_break_pom'
     $ renpy.quit()
 

@@ -9,7 +9,7 @@ label start:
     elif persistent.newgame == 3:
         jump game4
     elif persistent.newgame == 4:
-        if persistent.escape_ddlc:
+        if persistent.pom_menu:
             jump escale_ddlc
         jump game5
     elif persistent.newgame == 5:

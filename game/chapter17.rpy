@@ -52,7 +52,7 @@ label chapter17_escape:
     hide renier
     call updateconsole('', "Renier extracted")
     scene black
-    $ persistent.escape_ddlc = True
+    $ persistent.pom_menu = True
     $ persistent.autoload = 'chapter17_portal'
     while True:
         "{cps=200}Fatal error: player character missing.{/cps}"
