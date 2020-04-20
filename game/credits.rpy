@@ -95,6 +95,9 @@ original work on MC sprites, both MC and Michael
 u/GanstaKingOfSA
 Editing casual MC outfit
 
+Akame#8940
+Natsuki's computer room
+
 u/SamCapener
 Comissioning Yuri's forest artwork and letting me use it for free :)
 
