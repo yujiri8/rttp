@@ -23,7 +23,7 @@ define gui.show_name = True
 
 ## The version of the game.
 
-define config.version = "Parts 1-2, first public release"
+define config.version = "Full release, v1"
 
 
 ## Text that is placed on the game's about screen. Place the text between the
@@ -38,7 +38,7 @@ define gui.about = """
 ## or semicolons.
 
 define build.name = "ReturnToThePortrait"
-define build.directory_name = "ReturnToThePortrait-part2"
+define build.directory_name = "ReturnToThePortrait"
 
 
 ## Sounds and music ############################################################
