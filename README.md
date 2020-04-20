@@ -24,8 +24,6 @@ The file 'SCRAPS' contains a couple of less important thoughts (that I don't nee
 
 # Images
 
-* Improve Michael sprites (Michael may need expression improvement) - I can do this myself
-
 * Ideally a better warehouse interior than the Uncle Mugen temple-like drawing I'm currently using. Probably also get a rifted version of it, if not one of the city.
 
 * Logo? I'm still using the DDMC logo. It would be great if I had a logo of the Portrait of Markov book with the eye symbol on it. Maybe I could draw it.
