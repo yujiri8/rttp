@@ -94,8 +94,8 @@ init python:
     def write_error_file():
         import string
         chars = string.ascii_lowercase + string.ascii_uppercase + string.digits
-        name = '/' + ''.join(random.choice(chars) for i in range(10))
-        with open(basedir + name, 'w') as f:
+        name = ''.join(random.choice(chars) for i in range(10))
+        with open(basedir + '/error-' + name + '.txt', 'w') as f:
             f.write(glitchtext(5000))
 
 
