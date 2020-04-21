@@ -43,6 +43,7 @@ Helped plan part 3, found bugs
 
 u/15LarueA / PluralRoses#0136
 Linda, Libitina, Adam, and Albert sprites
+Warehouse water pit room
 
 u/SovietSpartan / SovietSpartan#5727
 Renier sprites

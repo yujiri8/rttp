@@ -43,7 +43,7 @@ label sayori_and_mc:
     mc "We probably won't find anything."
     show mc at std
     "We go inside."
-    scene warehouse_inside with wipeleft
+    scene warehouse_inside with wipeleft_scene
     play music spooky fadeout 1.0
     "We don't see any sign of Adam's cult yet."
     "..."
@@ -66,9 +66,9 @@ label sayori_and_mc:
     show mc at std
     s "Okay..."
     "..."
-    scene warehouse_inside_rev with wipeleft
+    scene warehouse_inside with wipeleft_scene
     # This exposition should've been given by Monika way earlier in the story, but now that I didn't, I put it here.
-    show mc c217111 at foc
+    show mc c217111 at foc(p11)
     mc "So, Sayori..."
     mc "This might not be the best time, but maybe it'll take our minds off our memories..."
     mc "What was it like to be President?"
@@ -108,7 +108,7 @@ label sayori_and_mc:
     show mc at foc
     mc "..."
     show mc at std
-    scene warehouse_inside with wipeleft
+    scene warehouse_inside with wipeleft_scene
     s "[mc_name], did you talk to your parents before you left?"
     show mc c116111 at foc(p11)
     mc "Eh?"
@@ -123,7 +123,7 @@ label sayori_and_mc:
     s "And I guess, if all this doesn't work out and they never see me again, they'll at least have been told what happened to me..."
     scene warehouse_inside_back
     show dark_overlay:
-        alpha 0.85
+        alpha 0.6
     with wipeleft
     "We find some machinery, along with crates and materials lying around."
     "It looks like the warehouse is being used by some kind of construction firm or something."
@@ -138,7 +138,7 @@ label sayori_and_mc:
     show mc at std
     s "Okay, let's go...!"
     "I run to get out."
-    scene warehouse_outside_day with wipeleft
+    scene warehouse_outside_day with wipeleft_scene
     scene city with wipeleft
     play music t2
     s "Phew! We made it out of the spooky house of evil!"

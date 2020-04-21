@@ -9,7 +9,7 @@ u/Yujiri, yujiri.xyz		- Chief story, writing, and programming, and tons of sprit
 	* Yuri's primary pose open and closed cry (y.png and z.png)
 	* Also rescaling/cropping most backgrounds from external sources.
 
-u/15LarueA			- Linda, Libitina, Adam, and Albert sprites (they're Creative Commons Attribution licensed)
+u/15LarueA			- Linda, Libitina, Adam, and Albert sprites, and warehouse water pit room (they're Creative Commons Attribution licensed)
 u/SovietSpartan			- Dadsuki/Renier sprites, Monika casual outfit (Discord: SovietSpartan#5727)
 u/main_gi			- Massive help with planning the lore and resolving plotholes, the determination theme (description.mp3), Adam's lament (sinking_spirit.mp3), and lots of proofreading and testing
 231#1345			- Plot help with part 3 and finding a few bugs
