@@ -1,6 +1,7 @@
 label chapter22:
     $ delete_all_characters()
     $ restore_character('albert')
+    $ restore_character('libitina')
     $ restore_character('markov')
     scene black
     stop music
@@ -9,6 +10,9 @@ label chapter22:
     $ autosave()
     $ persistent.autoload = None
     $ n_name = "Maria"
+    # Set these two again for those playing with a part 2 save.
+    $ persistent.pom_menu = True
+    $ persistent.newgame = 'deny'
     "..."
     "... What...?"
     "What happened...?"
