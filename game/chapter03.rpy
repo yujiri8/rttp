@@ -46,6 +46,8 @@ label chapter3:
     y u125111 "Here it is..."
     y u222113 "I'm excited to read it again, knowing what we now do."
     show yuri at uf
+    "Starting a new game seems to have put us all in a much happier mood, myself included."
+    "I remember as if this morning was the last thing I experienced, so it kind of feels like what happened before we restarted was yesterday."
     show monika at foc
     m u221111 "So how are we reading it?"
     show monika at uf
