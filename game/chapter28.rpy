@@ -1,16 +1,22 @@
 label chapter28:
+    show monika c114113
+    show yuri c124114
     play music determination
-    k "We all know what has to happen."
+    k fu511 "We all know what has to happen."
     k "Libitina has to open her Third Eye..."
     k "... open the portal..."
     k "... and then, she needs to be stopped before she can exit, so that the portal can be held open."
     k "All evidence indicates it will close if she steps through it."
-    k "But if she doesn't, our best hope is the theory that someone {i}else{/i} going through it {i}wouldn't{/i} close it."
-    k "At least if it's a normal character."
+    k "But if she doesn't, our best hope is the theory that it's only the energy of an open Third Eye passing through it that forces it shut."
     k "If that theory proves true, then we know how to get everyone out of this world."
     k "And if it proves false, we won't be deprived of our means of re-opening it."
     show markov at std
-    show albert at foc
+    show monika at thide
+    hide monika
+    show mc at std(p54)
+    show libitina at std(p53)
+    show yuri at std(p52)
+    show albert 11111 at foc(p51)
     al "How are we possibly going to stop her?"
     al "We've seen that bullets can't touch her."
     show albert at std
@@ -41,12 +47,12 @@ label chapter28:
     #k "Though I'm a little worried about it causing her to attack you..."
     show markov at std
     n "Count on me."
-    show mc at foc
+    show mc at foc zorder 2
     mc "My ability to open others' Third Eyes might come in handy here."
-    mc "If I open mine..."
+    mc "If I open mine first..."
     mc "Maybe I could get everyone else's open without them having to each kill someone."
     show mc at std
-    show markov at foc
+    show markov at foc zorder 3
     k "Indeed."
     k "We should make you POV."
     k "If you're the most important one to keep on target..."
@@ -60,17 +66,17 @@ label chapter28:
     show markov at foc
     call switch_pov(mc_name.lower())
     scene road1_night with dissolve_scene
-    mc ""
+    mc "..."
     if mc_dislike_player() > 2:
-        "Welcome back, [persistent.playername]."
-    else:
         "Guess you're back in my head again, [persistent.playername]."
-        "I guess it won't last long though."
-    show albert at foc
-    al 22112 "[mc_name], I will be your sacrifice."
+        "It won't have to last long though."
+    else:
+        "Welcome back, [persistent.playername]."
+    show albert 22112 at foc(p11)
+    al "[mc_name], I will be your sacrifice."
     show albert at std
     mc "Eh...?"
-    "{i}Without even being pressured...?[/i}"
+    "{i}Without even being pressured...?{/i}"
     show albert at foc
     al "Someone must, and again, I'm the only who hasn't been through it or some equivalent horror yet."
     al "I also know you have more attachment to the others who haven't than to me."
@@ -82,13 +88,13 @@ label chapter28:
     mc "Very much."
     "Albert gives a solemn nod."
     "Okay."
-    show sayori at foc
+    show sayori c215113 at foc(p31)
     s "I can't believe we're doing this again..."
     show sayori at std
-    show renier at foc
+    show renier ru2133 at foc(p33)
     r "Just remember..."
     r "Last time..."
-    r "... it worked."
+    r ru2131 "... it worked."
     show renier at std
 label do_the_final_plan:
     show albert at foc
@@ -96,10 +102,15 @@ label do_the_final_plan:
     al "You need to kill me first."
     al "Since your Third Eye will take longer to open than Libitina's."
     show albert at std
+    show sayori at thide
+    show renier at thide
+    hide sayori
+    hide renier
     "Okay... oh my God..."
     "I can't believe things have come to this."
     "I start to breathe hard and sweat just thinking about what I'm going to do."
     "I close my eyes."
+    scene black with close_eyes
     "I imagine how the next few seconds are going to be."
     "I'm going to inflict that same pain on this man that I felt when Monika stabbed me."
     "I'm going to have to listen to his screams and keep stabbing him."
@@ -111,14 +122,11 @@ label do_the_final_plan:
     "I feel like it's a good sign that I hesitate longer than Monika did."
     "Does that make me a better person than her?"
     "... I'm just distracting myself."
-    show albert at foc
-    al 11 "[mc_name], stop dragging out this tension."
-    show albert at std
+    al "[mc_name], stop dragging out this tension."
     "I jump."
     "My eyes water again."
     "But yes... it's time to feed that dark monster I know is in me."
     "Here it... {i}fucking...{/i} goes."
-    scene black
     play sound stab
     play music our_reality
     "My mind is instantly flooded with flashbacks."
@@ -131,7 +139,7 @@ label do_the_final_plan:
     play sound stab
     "I feel like I'm getting goosebumps all over."
     "My body convulses."
-    "I hear the cries of my friends, almost drown by Albert's screams."
+    "I hear the cries of my friends, almost drowned out by Albert's screams."
     "I hear [persistent.mc_favorite]'s cry."
     $ style.say_dialogue = style.edited
     "But I no longer feel any remorse."
@@ -187,7 +195,7 @@ label do_the_final_plan:
     play sound gunshot1
     $ delete_character('adam')
     "Natsuki fires the shot to end him before Libitina does."
-    "As we planned, it still works for Libitina to open that portal."
+    "As we planned, Libitina manages to open the portal."
     play sound glitch_horror
     show screen tear(20, 0.1, 0.1, 0, 40)
     play sound glitch_basic
@@ -247,7 +255,7 @@ label do_the_final_plan:
     "Come on...!"
     "I command their Third Eyes to open!"
     "I hear a shout from Sayori."
-    "My headache clears..."
+    "My headache clears partway..."
     show distort1:
         alpha 0.3
     show distort2:
@@ -255,11 +263,17 @@ label do_the_final_plan:
     with Dissolve(0.5)
     "I feel empowered again."
     "I hear a shout from Monika."
-    "I think she's giving the rest of them a time advantage, since nothing seems to happen between me and Libitina for the next few seconds."
+    "I think she's giving the rest of them a time advantage..."
+    "... since nothing seems to happen between me and Libitina for the next few seconds."
     "I hear a shout from Renier."
     "He seems to inflict a similar weakening effect as Libitina does."
     show dark_overlay:
+        alpha 0.0
         linear 1.0 alpha 0.4
+        block:
+            easein 0.8 alpha 0.3
+            easein 0.8 alpha 0.6
+            repeat
     "Only his is affecting her too."
     b "Grhh--"
     b "Back!!"
@@ -269,6 +283,10 @@ label do_the_final_plan:
     "Renier fires a shot while she appears weakened, but still nothing."
     show dark_overlay:
         linear 0.5 alpha 0.2
+        block:
+            easein 0.8 alpha 0.1
+            easein 0.8 alpha 0.3
+            repeat
     "Sayori's distortion kicks in again, lessening the effects of Renier's distortion on us but not on Libitina."
     "This is my moment."
     "Bullets can't penetrate her field, but a knife if it could get close..."
@@ -276,9 +294,9 @@ label do_the_final_plan:
     $ temp = glitchtext(10)
     mc "You're finished, {w=0.4}[temp]{nw}"
     show distort1:
-        alpha 0.7
+        alpha 0.8
     show distort2:
-        alpha 0.7
+        alpha 0.8
     $ temp = glitchtext(60)
     b "[temp]!!!"
     "No!"
@@ -286,7 +304,7 @@ label do_the_final_plan:
     "I collapse as I approach her."
     "Instead of sliding my knife into her throat, I feel hers slide into mine."
     show red_overlay:
-        linear 0.1 alpha 0.4
+        linear 0.1 alpha 0.7
     "N-no"
     "I can't lose..."
     "I hear a scream from Yuri."
@@ -294,16 +312,44 @@ label do_the_final_plan:
     "From what little I can see, it's like the area is condensing into one point..."
     "... and suddenly, all of us are right next to each other."
     "Sayori, Monika, and Renier's effects can be more fully present."
+    show red_overlay:
+        linear 0.4 alpha 0.4
+    show distort1:
+        alpha 0.6
+    show distort2:
+        alpha 0.6
     "Yuri's able to resist crumbling in weakness under Libitina's power for a second."
     "She takes the knife I dropped..."
+    show red_overlay:
+        linear 0.4 alpha 0.3
     "... and stabs Libitina in the throat."
     b "Ff--"
+    show distort1:
+        linear 0.1 alpha 0.1
+        linear 0.1 alpha 0.4
+    show distort2:
+        linear 0.1 alpha 0.1
+        linear 0.1 alpha 0.4
     "There's a feeble hiccup in Libitina's distortion, like an engine sputtering out."
+    show red_overlay:
+        linear 0.4 alpha 0.2
     "Yuri continues to stab her in the chest and stomach."
     b "Uwaaaaah--!"
     "Libitina falls, and her distortion ceases entirely."
+    show libitina at thide
+    hide libitina
+    play sound fall
+    show distort1:
+        linear 0.4 alpha 0
+    show distort2:
+        linear 0.4 alpha 0
+    show red_overlay:
+        linear 0.4 alpha 0
     $ renpy.music.set_volume(0.5, 1)
     "{cps=5}Victory...{/cps}"
+    hide distort1
+    hide distort2
+    hide red_overlay
     "{cps=3}...{/cps}"
     "But I'm not done."
     "I didn't get to spill her blood."
@@ -313,32 +359,47 @@ label do_the_final_plan:
     "I pick up Libitina's knife."
     "And I look at Yuri."
     "She must become the next fuel."
+    "She is worthy--"
     play sound gunshot1
     stop music fadeout 2.0
     "But I feel a great force strike me in the back before I can stab Yuri."
+    $ style.say_dialogue = style.normal
     n "Noooooo!!"
     n "Stop!"
     n "You did it!"
     n "The portal's open!"
     "My energy fades entirely."
-    $ style.say_dialogue = style.normal
     show darkred_overlay:
-        linear 0.3 alpha 0.8
+        alpha 0
+        linear 1.5 alpha 0.8
     "Oh god... what kind of pain is this..."
     "{cps=8}FFFFF-{/cps}"
     "I hear more ear-shattering bullets."
     "Natsuki and Linda are shooting all the active Eye-bearers to stop us."
+    hide dark_overlay
+    show darkred_overlay:
+        linear 2.0 alpha 0.6
     "None of us are invulnerable to it like Libitina was."
     "They're..."
+    show darkred_overlay:
+        linear 2.0 alpha 0.5
     "By attacking our group, they're helping to make sure Sayori sees us as allies of circumstance a little longer, so her healing keeps affecting us."
+    show darkred_overlay:
+        linear 2.0 alpha 0.4
     "They leave her for last."
+    show darkred_overlay:
+        linear 2.0 alpha 0.3
     "Sure enough, I'm starting to feel like I haven't been shot."
+    show darkred_overlay:
+        linear 2.0 alpha 0.2
     "I can't see the wound on my back, but if Sayori's Third Eye keeps working..."
+    show darkred_overlay:
+        linear 10.0 alpha 0
     "But what if Sayori attacks them?"
-    show natsuki at foc
+    show natsuki c113221 at foc(p21)
     n "Sayori we won!"
     show natsuki at std
-    show linda at foc
+    show linda 119443b at foc(p22)
     l "Stand down!"
     show linda at std
     show natsuki at foc
@@ -346,15 +407,16 @@ label do_the_final_plan:
     show natsuki at std
     show linda at foc
     l "Don't make us shoot you!"
-    show linda at std
-    show sayori at foc
+    show linda at std(p33)
+    show natsuki at std(p32)
+    show sayori c2151d6 at foc(p31)
     s "..."
     show sayori at std
     "Sayori can tell she can't kill them without the rest of us."
     "Knowing that seems to be giving her confliction."
     "Are they actually going to be able to talk her down...?"
     show sayori at foc
-    s "..."
+    s c2151d4 "..."
     show sayori at std
     "It looks like it's working!"
     "Just hesitating is pushing her Third Eye to recede."
@@ -363,9 +425,10 @@ label do_the_final_plan:
     n "You get two if you don't hurt anyone else!"
     show natsuki at std
     show sayori at foc
-    s "..."
+    s c2151d3 "..."
+    show sayori c215113 with dissolve_cg
     s "Uhhrrh..."
-    show sayori at std
+    show sayori c215193 at std
     "Sayori seems to be reacting the same way Libitina did after emerging from DDLC as an admin."
     "She's managing to close her Third Eye."
     "She collapses along with the rest of us."
@@ -375,14 +438,18 @@ label do_the_final_plan:
     "They did it."
     "They timed this so Sayori's positive distortion would heal our wounds before her own Third Eye closed."
     "Perfect..."
+    show linda 334441
     show natsuki at foc
-    n "We did it..."
+    n c113123 "We did it..."
     n "The portal's hanging open and we saved them..."
-    n "Great job, Sayori... and all of you."
-    show natsuki at std
-    show markov at foc
+    n c114123 "Great job, Sayori... and all of you."
+    show natsuki at std(p31)
+    show linda at std(p32)
+    show markov u11111 at foc(p33)
     k "I'm back..."
     show markov at std
+    show natsuki c113122
+    show linda 334444
     mc "Wait, {i}you're{/i} back?!?"
     "I'm ready to open my Third Eye again to kill him again."
     "We don't need him anymore, right?"
@@ -390,9 +457,11 @@ label do_the_final_plan:
     l "He must've gone through DDLC..."
     show linda at std
     show markov at foc
-    k "Wait, you didn't save Libitina?!?"
+    k u21513 "Wait, you didn't save Libitina?!?"
     show markov at std
     "Huh?"
+    show natsuki c114124
+    show linda 334443
     "I notice Libitina's still lying in the pool of her blood."
     "I guess Sayori's positive distortion wasn't applying to her because she never saw her as an ally."
     "I haven't been hearing her scream though."
@@ -401,7 +470,7 @@ label do_the_final_plan:
     "Yuri stabbed her in the throat."
     "She doesn't seem to be breathing."
     show markov at foc
-    k "Shit...!"
+    k u22643 "Shit...!"
     call console_hangopen("c=admin.jail(ddlc, li") # this wouldn't actually have worked even if he'd been fast enough. His namespace was reset on leaving DDLC.
     play sound2 glitch_basic
     call hideconsole

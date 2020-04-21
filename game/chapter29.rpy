@@ -27,7 +27,7 @@ label chapter29:
     python:
         for i in range(10):
             write_error_file()
-    show linda at foc
+    show linda at foc(p11)
     l 119443 "Nooo!"
     show linda at std
     show sayori at foc
@@ -351,12 +351,8 @@ label finale_lament:
     mc "Are we going?"
     "Everyone nods."
     "We're ready."
-    # TODO Maybe Adam should go first if he's alive.
-#    "Albert goes through first, since he has the least risk of doing anything to it."
-#    "Then t"
-    # or maybe they just go through all at once to avoid complexity.
     "One by one, we step through the portal."
-    "It stays open for each of us." # maybe it only closes when an active Eye goes through it.
+    "It stays open for each of us." # It only closes when an active Eye goes through it.
     return
 
 label adams_fate:
