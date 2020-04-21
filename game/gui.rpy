@@ -101,7 +101,7 @@ define -2 gui.quick_button_text_hover_color = "#fcc"
 define -2 gui.quick_button_text_selected_color = gui.accent_color
 define -2 gui.quick_button_text_insensitive_color = "#a66"
 
-define -2 gui.choice_button_width = 420
+define -2 gui.choice_button_width = 500
 define -2 gui.choice_button_height = None
 define -2 gui.choice_button_tile = False
 define -2 gui.choice_button_borders = Borders(100, 5, 100, 5)
