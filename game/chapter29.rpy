@@ -27,36 +27,42 @@ label chapter29:
     python:
         for i in range(10):
             write_error_file()
-    show linda at foc(p11)
-    l 119443 "Nooo!"
+    show linda 119443 at foc(p22)
+    l "Nooo!"
     show linda at std
-    show sayori at foc
-    s c227232 "Oh crap!"
-    show sayori at std
-    show monika at foc
-    m c118212 "Dammit!"
-    show monika at std
-    show reiner at foc
+    show sayori c227232 at foc(p21)
+    s "Oh crap!"
+    show sayori at std(p32)
+    show linda at std(p33)
+    show monika c118212 at foc(p31)
+    m "Dammit!"
+    show monika at std(p42)
+    show sayori at std(p43)
+    show linda at std(p44)
+    show reiner u2287 at foc(p41)
     python:
         for i in range(10):
             write_error_file()
-    r u2287 "Fuck, why did no one put a bullet in her?!?"
-    show renier at std
-    show yuri at foc
+    r "Fuck, why did no one put a bullet in her?!?"
+    show renier at std(p52)
+    show monika at std(p53)
+    show sayori at std(p54)
+    show linda at std(p55)
+    show yuri c228125 at foc(p51)
     y "What've we done?!?"
     show yuri at std
-    show markov at foc
+    show markov u12543 at foc
     k "I was too slow to put her into DDLC before she died..."
     show markov at std
     python:
         for i in range(10):
             write_error_file()
-    show natsuki at foc
-    n c117124 "Was this for nothing?!?"
+    show natsuki c117124 at foc
+    n "Was this for nothing?!?"
     n "Does the portal still work?"
     show natsuki at std
     show markov at foc
-    k "I don't know, but don't try it yet..."
+    k "I don't know, but don't try it yet."
     k "It won't fix the world, but I should still be able to restore Libitina..."
     show markov at std
     python:
@@ -64,13 +70,13 @@ label chapter29:
             write_error_file()
     show markov at foc
     call updateconsole("ddlc = admin.get_world(\n 'doki_doki_literature_club')", "Doki Doki Literature Club: no such jail")
-    k "Whaaat?!?"
+    k u12643 "Whaaat?!?"
     show markov at std
     show linda at foc
     l "Oh my God..."
     show linda at std
     show yuri at foc
-    y "What?!?"
+    y "What is it?!?"
     y "I can't see the console!"
     show yuri at std
     show monika at foc
@@ -82,14 +88,14 @@ label chapter29:
         for i in range(10):
             write_error_file()
     show yuri at foc
-    y "Oh no..."
+    y c225325 "Oh no..."
     y "It's my doing..."
     show yuri at std
     python:
         for i in range(10):
             write_error_file()
     show markov at foc
-    k "Putting a rift on top of the portal..."
+    k u12543 "Putting a rift on top of the portal..."
     k "We've broken things worse than I ever thought possible."
     k "I don't think there's any coming back from this."
     show markov at std
