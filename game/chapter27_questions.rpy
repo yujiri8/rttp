@@ -1,31 +1,34 @@
 label adam_questions:
     show markov at foc
-    k "Before we do this..."
+    k u11513 "Before we do this..."
     k "Do you have any questions?"
     k "Anything you want me to explain?"
     $ qtext = "Now's a good time."
     $ persistent.adam_questions = {'experiments':False, 'ursula_awakening':False, 'power_relationship':False, 'ursula_poem':False, 'char_files':False}
-    $ page = 0
+    $ page = 1
 label adam_questions_menu:
     menu:
         k "[qtext]"
-        "Did you actually learn anything from your experiments?" if not persistent.adam_questions['experiments'] and page == 0:
+        "Did you actually learn anything from your experiments?" if not persistent.adam_questions['experiments'] and page == 1:
             call adam_discuss_findings
             $ persistent.adam_questions['experiments'] = True
-        "What do you think caused Ursula's admin awakening?" if not persistent.adam_questions["ursula_awakening"] and page == 0:
+        "What do you think caused Ursula's admin awakening?" if not persistent.adam_questions["ursula_awakening"] and page == 1:
             call adam_discuss_ursula_awakening
             $ persistent.adam_questions['ursula_awakening'] = True
         "Is there any relationship between the Third Eye and admin powers?" if not persistent.adam_questions['power_relationship'] and page == 1:
             call adam_discuss_power_relationship
             $ persistent.adam_questions['power_relationship'] = True
-        "Do you still think Ursula's poem means anything?" if not persistent.adam_questions["ursula_poem"] and page == 1:
+        "Do you still think Ursula's poem means anything?" if not persistent.adam_questions["ursula_poem"] and page == 2:
             call adam_discuss_power_relationship
             $ persistent.adam_questions['ursula_poem'] = True
-        "How do character files work?" if not persistent.adam_questions["char_files"] and page == 1:
+        "How do character files work?" if not persistent.adam_questions["char_files"] and page == 2:
             call adam_discuss_char_files
             $ persistent.adam_questions['char_files'] = True
-        "(More options)" if not all(persistent.adam_questions.values()):
-            $ page = 1 if page == 0 else 0
+        "(-> page 2)" if not all(persistent.adam_questions.values()) and page == 1:
+            $ page = 2
+            jump adam_questions_menu
+        "(-> page 1)" if not all(persistent.adam_questions.values()) and page == 2:
+            $ page = 1
             jump adam_questions_menu
         "Done.":
             jump end_adam_questions

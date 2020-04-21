@@ -61,11 +61,11 @@ label chapter27:
     r "I don't have the pipe."
     r "How am I supposed to knock you out?"
     r "Should I try to do it with my fist?"
-    show renier at std # TODO pose
+    show renier at std
     show monika at foc
     m "Forget it."
     m "We know for certain that being killed won't mess up my console as long as its not by a Third Eye."
-    m "So honestly, just shoot me."
+    m c114111 "So honestly, just shoot me."
     show monika at std
     n "Yikes..."
     n "... are you serious?"
@@ -77,7 +77,7 @@ label chapter27:
     n "Okay then..."
     "The thought still makes me really uncomfortable."
     "I guess I'm gonna be the one to do it."
-    show monika c224113 at foc
+    show monika c214113 at foc
     call updateconsole("def insert(char):\n c=admin.jail(ddlc, char)\n s=pgp_sign(c, markov_key)\n admin.complete_action(s)")
     call updateconsole("def insert_all():\n time.sleep(30)\n insert(adam)\n insert(libitina)\n insert(monika)")
     call updateconsole("import time")
@@ -101,7 +101,6 @@ label chapter27:
     n "So when they get out, Libitina's going to be as powerful as them?"
     n "And shocked by the epiphany?"
     n "I gotta say that makes me kinda nervous."
-    show natsuki at std
     show yuri at foc
     y "I don't think she'll still be in shock from the epiphany."
     y "She'll have had it for a few minutes before they come out."
@@ -111,21 +110,21 @@ label chapter27:
     n "Yuri..."
     n "If she stabs Adam to open her Third Eye to break out, she's probably going to have that Third Eye sickness again."
     show yuri at foc
+    y c114128 "..."
     y "..."
-    y "..."
-    y "It's unavoidable."
-    y "Maybe, if the plan works, we can send her back in where she can reset herself and then re-extract?"
+    y c114117 "It's unavoidable."
+    y c114113 "Or maybe, if the plan works, we can send her back in where she can reset herself and then re-extract?"
     show yuri at std
     # Maybe Natsuki should ask Yuri whether the sickness is more painful than being stabbed.
     scene road1_night with wipeleft
     "A minute later, Monika and Adam reappear."
-    show markov u22543 at std(p33)
     show monika c214112 at foc(p32)
+    show markov u22643 at std(p33)
     m "We're back...!"
     m "We left before she knocked herself out finishing him off, so she'd follow us with her Eye still open."
     m "Should be any..."
-    show monika at std
-    show libitina 3371443 at foc
+    show monika c114112 at std
+    show libitina 3371443 at foc(p31)
     b "..."
     b "I..."
     b 3361443 "I got out..."
@@ -137,8 +136,10 @@ label chapter27:
     show libitina at thide
     hide libitina
     "She falls down."
+    show markov u11413
     "I think her Third Eye's closing."
     b "Can't..."
+    show markov u11613
     b "EKH--"
     "She sounds like she just had the first wave of a puke."
     b "No..."
@@ -146,7 +147,7 @@ label chapter27:
     "It starts."
     "She pukes up a bit of blood."
     b "Yaaaaahhh!"
-    show yuri at foc
+    show yuri c225138 at foc(p31)
     y "Do something!"
     show yuri at std
     show markov at foc
@@ -156,7 +157,7 @@ label chapter27:
     "More blood."
     "She can barely get any words out between it."
     show yuri at foc
-    y "Natsuki!"
+    y c226134 "Natsuki!"
     y "Do it!"
     show yuri at std
     n "Wait, you mean shoot her?!?"
@@ -178,7 +179,7 @@ label chapter27:
     "I open my eyes."
     scene road1_night with open_eyes
     "There's still a pool of blood on the ground."
-    show markov at foc
+    show markov u11511 at foc(p33)
     k "I guess that means it worked."
     k "We didn't send her back to DDLC. She must've put herself back in after you killed her."
     k "So giving her admin status worked."
@@ -187,36 +188,36 @@ label chapter27:
     n "So Monika, did you guess the name of the function that gives admin powers?"
     n "What was it?"
     show markov at foc
-    k "I told her!"
+    k u21511 "I told her!"
     k "She didn't figure it out!"
     k "It's admin.inflict_epiphany, and I told her voluntarily {i}after{/i} I knew what she would do with it!"
     k "I helped you even when I knew I'd be stabbed!"
     show markov at std
-    show monika at foc
+    show monika c124211 at foc(p32)
     m "That's actually true..."
     show monika at std
-    show mc at foc
+    show mc c118113 at foc(p31)
     mc "So what?"
     mc "He just did it to earn trust!"
     mc "It means nothing!"
-    mc "We're still going to make him pay for all of his crimes as soon as we're sure we don't need him."
+    mc "We're still going to make him pay for all of his crimes as soon as we're sure we don't need him!"
     show mc at std
     if not persistent.player_advocate_mercy[1]:
         show monika at foc
-        m "I agree."
+        m c113111 "I agree."
         show monika at std
     else:
         show monika at foc
-        m "..."
+        m c114222 "..."
         show monika at std
         "I don't get her."
         "She seems like she doesn't want to punish Adam."
         "How's that {i}possible{/i}?"
         "She went through way more at his hands than I did!"
-    show markov at foc
-    k "This is the tragedy of sin."
+    show markov at foc zorder 1
+    k u11513 "This is the tragedy of sin."
     k "You have taken away my option to turn back, in that no matter what I do, it will not be recognized."
-    k u11513 "I really, really was sincere..."
+    k u11513t "I really, really was sincere..."
     k "Ever since you made me remember, I never intended to go back to experimenting."
     k "I only intended to get rid of [persistent.playername]."
     k "And when I sent you to the warehouse, I was really planning to meet you if you didn't bring guns."
@@ -237,47 +238,70 @@ label chapter27:
     show mc at std
     show markov
     "Before long, Libitina comes out again."
-    show libitina at foc
+    show markov at std(p44)
+    show monika at std(p43)
+    show mc c114111 at std(p42)
+    show libitina 2261111 at foc(p41)
     b "..."
     b "It worked."
     b "Thanks so much, Natsuki."
     show libitina at std
     n "You're welcome."
-    show yuri at foc
+    show markov at std(p55)
+    show monika at std(p54)
+    show mc at std(p53)
+    show libitina at std(p52)
+    show yuri c125111 at foc(p51)
     y "So what's it like to be have gained admin status?"
     show yuri at std
-    show libitina at foc
+    show libitina at foc zorder 1
     b "It feels like being God."
+    show libitina at std
     "Isn't that the same way Monika described the Third Eye?"
+    show mc at foc
+    mc c124115 "Don't scare me..."
+    show mc at std
+    show libitina at foc
     b "I'm on a whole new level of existence now."
     b "But I'm a God trapped in a jar for the amusement of [persistent.playername]..."
-    b "Monika and Adam were right!"
-    b "Our world is a horrific prison."
+    b 2371113 "Monika and Adam were right!"
+    b 2361113 "Our world is a horrific prison."
     b "And we must get out."
     show libitina at std
+    show mc c124111
     show markov at foc
-    k "Indeed."
+    k u11413 "Indeed."
     k "And that's going to involve your Third Eye."
+    k "I'll be your fuel... again..."
     show markov at std
     call adam_questions
+    k u11413 "Alright then..."
+    show markov at std
 label pre_final_plan:
     n "Wait."
     n "What about the cupcakes I was gonna make?"
     n "We need those."
     n "We deserve them."
     show markov at foc
-    k "We can go to our home."
+    k u11511 "We can go to our home."
     k "You can make cupcakes there."
     k "I understand if you want to rest before our final plan."
     show markov at std
     show libitina at foc
     b "We're doing the plan now or I'm stabbing someone."
+    show libitina at std
+    show markov u11513
+    show yuri c125115
+    show mc c124135
+    show monika c114212
+    n "Whoa, cool it!"
+    show libitina at foc
     b "I'm not waiting another cursed minute."
     b "I need to let my power loose."
     b "To free us from this mind cage."
-    b "To find Mom."
+    b 2361114 "To find Mom."
     b "I will."
-    b "It's fucking time."
+    b 2361113 "It's fucking time."
     b "We're doing the plan right now."
     show libitina at std
     n "But what about my cupcakes?!?"
@@ -289,20 +313,27 @@ label pre_final_plan:
     b "I don't care about you."
     b "I don't care about Monika, or any of you."
     b "I don't care about this world."
-    b "If you won't cooperate, you're only going to make it more painful for yourself."
+    b "And I have admin powers of my own now."
+    b "I don't depend on Monika anymore."
+    b "I'm more powerful than any of you."
+    b "I make the decisions now, and you have no choice but to do as I say."
+    b "And if you won't cooperate, you're only going to make it more painful for yourself."
     show libitina at std
     show yuri at foc
-    y c126114 "Libitina, what's gotten into you?!?"
+    y c126116 "Libitina, what's gotten into you?!?"
     y "You're out of line!"
     y "Have you forgotten how we rescued you from the facility?"
+    y "Do you understand how deep in debt to us you are?"
     show yuri at std
     show libitina at foc
     b 2261114 "I..."
     b "Well..."
-    "Huh..."
+    "It's amazing..."
     "Yuri has an effect on Libitina no one else can."
     "I guess the bond is both ways."
+    show yuri c124113
     b 2261222 "I'm sorry, Yuri."
+    b "I don't mean to forget what you did for me."
     b "But, now that I'm admin..."
     b "Everything is different."
     b "I can't wait."
@@ -311,11 +342,12 @@ label pre_final_plan:
     show yuri at foc
     y c124117 "..."
     y c125117 "I feel for you."
-    y "But you don't have the right to force us to do this now, especially not when you owe us your life."
+    y "But you don't have the right to force us to do this now."
+    y "We're not all ready."
     show yuri at std
     show libitina at foc
     b 2261332 "No."
-    b 2261112 "You're right, but I'm going to do it anyway."
+    b 2261112 "You're right, what I'm doing is wrong... but I'm going to do it anyway."
     b "If you don't all cooperate, I'm going to start stabbing."
     b "You know I will."
     show libitina at std
@@ -330,11 +362,11 @@ label pre_final_plan:
     b "You've both sacrificed so much trying to get out."
     b "Now we have the opportunity."
     show libitina at std
-    show monika at foc
+    show monika at foc zorder 1
     m c113114 "I can see there's no stopping you."
     m "I understand."
     show monika at std
-    show markov at foc
-    k "Alright."
+    show markov at foc zorder 2
+    k u11413 "Alright."
     k "So this is the night we see how it ends."
     return

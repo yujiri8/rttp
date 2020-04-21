@@ -848,7 +848,7 @@ label chapter26_2:
     "I reopen my eyes."
     scene warehouse_inside with open_eyes
     show natsuki c215122 at foc(p21)
-    show markov at std(p22)
+    show markov u11643s at std(p22)
     "Natsuki... shot Adam..."
     show markov at thide
     hide markov
