@@ -828,7 +828,7 @@ label chapter26_2:
     "{cps=200}Fatal error: player character missing.{/cps}"
     "{cps=200}Fatal error: player character missing.{/cps}"
     $ restore_character('monika')
-    scene warehouse_inside with dissolve_scene
+    scene warehouse_inside_rift with dissolve_scene
     "Here we are."
     "After you disconnected the viewport, I restored myself and then Adam just wanted to extract again."
     "I have no idea what his plan is, but I'm back in Portrait of Markov n--"
@@ -846,7 +846,7 @@ label chapter26_2:
     "But I don't feel anything."
     n "{cps=40}GOT YOU!!{/cps}"
     "I reopen my eyes."
-    scene warehouse_inside with open_eyes
+    scene warehouse_inside_rift with open_eyes
     show natsuki c215122 at foc(p21)
     show markov u11643s at std(p22)
     "Natsuki... shot Adam..."
@@ -884,7 +884,6 @@ label chapter26_2:
     show natsuki c224224
     "I see the 'oh crap' look on everyone else's face."
     "I run toward the exit."
-    scene warehouse_inside with wipeleft
     m "Someone carry Adam!"
     m "He has to come with us!"
     "Renier and Albert together carry the mortally wounded Adam back to our vehicle."

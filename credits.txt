@@ -22,6 +22,7 @@ Koya-Sato			- night filter used on the driving image
 Jan Hehr			- Music: Yuri and Natsuki's date tracks, Yuri's festival poem (the Third Eye theme), and the epic Our Reality from Monika Before Story
 Dimas#4872			- Horror/glitch ambient 'yesnt.wav' (I had to transcode it to Vorbis to get it to work on Windows)
 OliverCNorton#4433		- yawa.ogg (in the folder of DeadAirspace#4433, not sure if these are the same person), and editing casual MC sprites
+Kevin MacLeod			- lament music (Past Sadness)
 LeoDeCraprio#4239		- calm music main_street_stroll.ogg
 (unknown)			- spoopy_song_1.wav
 u/yagamirai10			- Edits to several backgrounds: MC's living room, the school courtyard, street1.png

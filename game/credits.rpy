@@ -69,8 +69,11 @@ Glitch theme 'yesnt'
 OliverCNorton#4433
 Calm music 'yawa'
 
+Kevin MacLeod
+Lament music 'Past Sadness'
+
 LeoDeCraprio#4239
-Calm music 'main_street_stroll'
+Calm music 'Main Street Stroll'
 
 Meddy-sin
 (Amy sprites) used as Yuri's mom
