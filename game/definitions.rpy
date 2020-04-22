@@ -336,6 +336,7 @@ image hospital_hall2 = "mod_assets/bg/hospital_hall2.png"
 image hospital_room = "mod_assets/bg/hospital_room_day.png"
 image hospital_room_dawn = "mod_assets/bg/hospital_room_dawn.png"
 image hospital_room_night = "mod_assets/bg/hospital_room_night.png"
+image roof = "mod_assets/bg/hospital_roof.png"
 image facility_hall = "mod_assets/bg/cult_hallway_darker.webp"
 image facility_hall_r = im.Flip("mod_assets/bg/cult_hallway_darker.webp", horizontal = True)
 image vr_room = "mod_assets/bg/hospital_room2.png"

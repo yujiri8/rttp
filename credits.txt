@@ -55,6 +55,7 @@ Uncle Mugen (https://lemmasoft.renai.us/forums/viewtopic.php?t=17302) - backgrou
 
 Kimagure After - backgrounds:
 	* the school courtyard edited by u/yagamirai10 (https://k-after.at.webry.info/upload/detail/012/472/52/N000/000/003/149173004142898733179_BG540a_800.jpg.html)
+	* school_roof.png
 	* street1.png, street2.jpg (https://k-after.at.webry.info/201009/article_1.html)
 	* the hospital room, day, dawn and night (https://k-after.at.webry.info/201012/article_2.html)
 	* Natsuki's house (https://k-after.at.webry.info/200812/article_2.html)
