@@ -589,8 +589,9 @@ label after_libitina_wakeup:
     m "Let's see it."
     call showpoem(poem_ursula, music=None)
     m "..."
+    m "I guess Adam named the Third Eye after this poem."
     show libitina at foc
-    b "Adam obsessed over these words."
+    b "He obsessed over these words."
     b "He wanted to think they meant something, that they had to contain the keys to Ursula's escape."
     b "But I don't think they did."
     b "I don't think Ursula knew anything about the Third Eye or admin powers before that day."
