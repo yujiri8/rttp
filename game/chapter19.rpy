@@ -183,7 +183,7 @@ label romance:
     mc "Perfect timing..."
     mc "We get to watch the sunset."
     play music romance
-    call expression 'romance_'+peristent.mc_favorite.lower()
+    call expression 'romance_'+persistent.mc_favorite.lower()
     scene black with dissolve_scene
 
 label romance_sayori:
@@ -252,9 +252,94 @@ label romance_sayori:
     return
 
 label romance_natsuki:
-    "TODO"
+    show natsuki u111143 at std(p11)
+    "..."
+    mc "Man."
+    mc "Sure is nice to have a rest."
+    mc "I could laugh now, just about how crazy it is that we all made it out of that alive."
+    show natsuki at foc
+    n u124113 "So..."
+    n u224113 "We're literally heroes now."
+    n "We stopped that crazy cult facility."
+    show natsuki at std
+    mc "Ehehe... yeah."
+    mc "Even though... we didn't exactly save all the prisoners..."
+    show natsuki at foc
+    n u124111 "Well yeah, but we must've still done them a favor."
+    n "I mean..."
+    n u124114 "Being a prisoner there was {i}way{/i} worse than dying."
+    show natsuki at std
+    mc "Oh yeah, I agree..."
+    "I shiver just giving it a moment's thought."
+    show natsuki at foc
+    n u114114 "Sorry..."
+    show natsuki at std
+    "Natsuki had it way better than me."
+    "She was only there for a few days before she was killed."
+    "So that's probably why it doesn't bother her like it does me."
+    mc "Like I said before though..."
+    mc "Being lucky enough to meet you made it all worth it."
+    show natsuki at foc
+    n u124111 "Are you sure about that? Cause that's kind of insane."
+    n "The Literature Club horror fest was worth it, but the cult shit, no way."
+    show natsuki at std
+    mc "Well, on second thought, you're right."
+    mc "But it makes it a lot better."
+    mc "Y'know, it's too bad we'll probably never get to continue Parfait Girls."
+    mc "Or Odyssey of the Elements."
+    show natsuki at foc
+    n "Yeah..."
+    n u124113 "I remember some of the series I was into way back when."
+    n "I hope I get a chance to introduce you to them later."
+    show natsuki at std
+    mc "You were into manga before DDLC?"
+    show natsuki at foc
+    n u222111 "Well of course!"
+    n "It's literature, you know."
+    show natsuki at std
+    mc "Hahahaha..."
+    mc "I'd totally forgotten about that argument."
+    mc "Looking back on it, I wish I'd stuck up for you then."
+    mc "Monika was actually being kinda mean."
+    show natsuki at foc
+    n u124111 "Well, I was being pretty mean to you."
+    show natsuki at std
+    mc "Eh?"
+    "I guess she was, come to think of it."
+    mc "True..."
+    show natsuki at foc
+    n "I wonder what'll ."
+    show natsuki at std
+    #TODO
+    show natsuki at foc
+    n "My only gripe right now is being in my school uniform."
+    mc "You prefer your cute outfit?"
+    show natsuki at foc
+    n "Oh, you prick..."
+    show natsuki at std
+    "Wait..."
+    "I {i}didn't{/i} get a tsundere reaction?!?"
+    mc "Natsuki..."
+    show natsuki at foc
+    n "What, you wanted me to yell at you?!?"
+    n "Look, I get it!"
+    n "I'm cute!"
+    n "Get over it!"
+    show natsuki at std
+    mc ""
     return
 
 label romance_yuri:
+
+    mc "Yuri, now that we know what Portrait of Markov was..."
+    mc "I feel like it's insane that you liked that book, even when you didn't know it was about us."
+    "Uh... I hope that doesn't sound offensive."
+    show yuri at foc
+    y "I feel that way too."
+    y ""
+    show yuri at std
     "TODO"
+
+    y "I'm eager to meet Libitina..."
+    y "... outside of that horrid place."
     return
