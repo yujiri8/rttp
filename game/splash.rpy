@@ -203,11 +203,6 @@ label splashscreen:
     # Special things for the mod, since it deals with the game being turned off.
     python:
         persistent.awaiting_shutdown = False
-        # ch1
-        if persistent.mc_awakened and persistent.monika_request_shutdown:
-            # I'd like to handle the impatient player case, but I don't have infinite time, yo.
-            if persistent.mc_request_shutdown:
-                persistent.mc_survive_shutdown = True
         # ch29
         if persistent.libitina_revealed_plan:
             "Libitina's plan"

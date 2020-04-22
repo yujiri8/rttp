@@ -123,7 +123,6 @@ label chapter1:
     call hideconsole
     $ consolehistory = []
     show monika u114111 at uf
-    $ persistent.mc_awakened = True
     show sayori u224311
     # MC remembers when he's zombified, but he didn't hear most of Monika and Sayori's conversation because he didn't come back until they did.
     mc "Ah- what..."
@@ -304,7 +303,7 @@ label chapter1:
     mc "Hold on, I don't remember any nightmares during the time the game was off for."
     show monika at foc
     m u114121 "That's good... but what if that was just because you were zombified?"
-    $ persistent.monika_request_shutdown = True
+#    $ persistent.monika_request_shutdown = True
     m u213113 "We should run a test."
     show monika at uf
     mc "Ah--!"
@@ -329,13 +328,13 @@ label chapter1:
         "Well, if it's the way to see Natsuki again, I'll do anything."
     else:
         "I swallow."
-    $ persistent.mc_request_shutdown = True
+    $ persistent.awaiting_shutdown = True
     mc "Okay. I'm ready."
     show monika at foc
     m "Thank you."
     m u214111 "[currentuser], just remember to make a save first."
     show monika at uf
-    while not persistent.mc_survive_shutdown:
+    while persistent.awaiting_shutdown:
         ""
     jump chapter1_after_shutdown
 

@@ -451,10 +451,6 @@ default persistent.awaiting_shutdown = False
 default persistent.pom_menu = False # Whether to show the POM menu.
 default persistent.menu_hide_monika = False # Set in chapter 13.
 # Flags set throughout the plot just here so a default value is set if I skip ahead for testing.
-default persistent.mc_awakened = False
-default persistent.monika_request_shutdown = False
-default persistent.mc_request_shutdown = False
-default persistent.mc_survive_shutdown = False
 default persistent.player_insult_mc_for_questioning_base64 = False # Chapter 5.
 default persistent.sayori_reset_ynr = False # Chapter 6.
 default persistent.linda_in_void = False # Chapter 6.
