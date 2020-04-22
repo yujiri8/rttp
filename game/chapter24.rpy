@@ -43,7 +43,7 @@ label chapter24:
     call hideconsole
     $ consolehistory = []
     show renier at std(p31)
-    show libitina at std(p32)
+    show libitina at std(p11)
     show mc c126311 at foc(p33)
     mc "Okay, this is probably a stupid idea..."
     mc "... but what about using a car to get closer?"
@@ -102,7 +102,7 @@ label chapter24:
     show natsuki at std
     "This is where I'd normally expect Sayori to jump in and try to cool things down..."
     show renier at std(p52)
-    show libitina at std(p53)
+    show libitina at std(p11)
     show natsuki at std(p54)
     show mc at std(p55)
     show sayori c115332 at std(p51)
@@ -305,7 +305,7 @@ label assault_facility:
     "I thought I was giving us a chance again!"
     show sayori at std(p51)
     show renier at std(p52)
-    show monika c114211 at std(p53)
+    show monika c114211 at std(p11)
     show mc at std(p54)
     show albert 21111 at foc(p55)
     al "Hold on!"

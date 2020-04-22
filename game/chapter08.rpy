@@ -165,14 +165,14 @@ label chapter8:
     scene bg bedroom with wipeleft_scene
     if persistent.mc_least_favorite == 'Sayori':
         mc "Monika? Someone?"
-        show monika c124112 at foc(p32)
+        show monika c124112 at foc(p11)
         show sayori c114112 at std(p31)
         show linda 116111 at std(p33)
         m "[mc_name]? What is it?"
         show monika at uf
     else:
         mc "Sayori? Someone?"
-        show sayori c113112 at foc(p32)
+        show sayori c113112 at foc(p11)
         show monika c124112 at std(p31)
         show linda 116111 at std(p33)
         s "[mc_name]? What is it?"
@@ -444,14 +444,14 @@ label return_to_living_room:
         y "We were already going to start trying each other's forms of literature in Act 4, and manga is better for this situation."
         y "Maybe we can all-{nw}"
         show yuri at uf
-    show natsuki c114112 at std(p32)
+    show natsuki c114112 at std(p11)
     show renier u1223 at foc(p31)
     show yuri c113118 at std(p33)
     r "Wait, Natsuki is still into manga?"
     r "Are you serious?"
     r u2223 "Is that why she was doing so bad in school? Because she was spending time with you instead reading childish -"
     show renier at uf
-    show natsuki at xif(p32)
+    show natsuki at xif(p11)
     n c115112 "Shut up, Renier!"
     n "You don't have any power over me anymore!"
     show natsuki at uf
@@ -556,7 +556,7 @@ label return_to_living_room:
     hide natsuki
     hide yuri
     show monika c121111 at std(p31)
-    show sayori c22x141 at foc(p32)
+    show sayori c22x141 at foc(p11)
     show linda 331111 at std(p33)
     s "Hi everyone~!"
     s "I'm hungry~"
@@ -688,11 +688,11 @@ label refuse_speculate:
     m c124111 "You're probably right."
     show monika at uf
     show renier at x(p31)
-    show monika at x(p32)
+    show monika at x(p11)
     show linda 334111 at foc(p33)
     l "It sounds to me as if the game projected fake memories for all of you to explain how you got to where you were at the start of the game."
     l "Flimsy backstories, but enough to stop you from questioning it."
-    show monika at xis(p32)
+    show monika at xis(p11)
     show linda at uf
     jump speculate_projected_memories
 
@@ -703,7 +703,7 @@ label speculate_projected_memories:
     mc "So does that mean we didn't even exist before this?"
     mc "Cause that's kind of depressing..."
     show renier at x(p31)
-    show monika at x(p32)
+    show monika at x(p11)
     show linda 334111 at foc(p33)
     l "Well, it's probable that we existed before, and we just had our memories replaced with the projected ones."
     l "Which I don't have any of, by the way."
@@ -810,7 +810,7 @@ label speculate_projected_memories:
     show monika at uf
     mc "Okay..."
     show yuri at x(p33)
-    show linda at x(p32)
+    show linda at x(p11)
     show monika c114112 at x(p31)
     "We eat in silence for a moment, as our thoughts return to what started this."
     if persistent.mc_favorite == "Sayori":
@@ -1016,7 +1016,7 @@ label speculate_real_memories:
     m c124111 "I do have one oddly clear memory from before."
     m "The time Yuri tried to share wine at the club."
     show renier at x(p31)
-    show monika at std(p32)
+    show monika at std(p11)
     show yuri sc4222 at std(p33)
     "Yuri blushes at the mention."
     "I remember hearing about this in the space classroom."
@@ -1303,7 +1303,7 @@ label sayori_warp_mc_away:
     $ persistent.sayori_warped_mc_away = True
 label mc_leave_sayori:
     show renier uf111 at std(p31)
-    show monika c114112 at std(p32)
+    show monika c114112 at std(p11)
     if persistent.sayori_warped_mc_away:
         if persistent.mc_favorite == "Yuri" or persistent.mc_least_favorite == "Natsuki":
             show yuri c125118 at foc(p33)
@@ -1401,7 +1401,7 @@ label mc_leave_sayori:
     show renier at x(p51)
     show monika at x(p52)
     show linda at x(p54)
-    show yuri c124112 at foc(p53)
+    show yuri c124112 at foc(p11)
     y "Yes..."
     y "We're fine now."
     show yuri at uf

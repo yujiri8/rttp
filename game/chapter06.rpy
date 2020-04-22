@@ -249,12 +249,12 @@ label linda_meeting_void:
     "Linda collapses."
     "She seems to be unconscious."
     if persistent.sayori_reset_ynr:
-        show renier u22332b at leftin(p32)
+        show renier u22332b at leftin(p11)
         r "Linda!"
         r "It's her!"
         "I didn't notice Renier waking up."
         "He bends down to check on Linda, and then turns to Monika."
-        show renier at xif(p32)
+        show renier at xif(p11)
         r ru21332b "What's wrong with her?"
         show renier at uf
         show monika at xif(p31)

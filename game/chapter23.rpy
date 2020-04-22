@@ -839,7 +839,7 @@ label albert_natsuki_pickup_monika_and_libitina:
     m "Nice to see you two~"
     if ch22_libitina_has_gun():
         show albert at std(p33)
-        show natsuki at std(p32)
+        show natsuki at std(p11)
         show libitina 2161114 at foc(p31)
         b "Um... Natsuki...?"
         show libitina at std

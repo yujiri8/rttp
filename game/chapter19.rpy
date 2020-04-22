@@ -55,7 +55,7 @@ label chapter19:
     "To my surprise, Linda doesn't hold the beans."
     "She tells Albert that Libitina was tortured at a secret cult facility, and activated supernatural powers and saved us all."
     show linda at std
-    show albert 11111 at foc(p32)
+    show albert 11111 at foc(p11)
     al "..."
     al "I find this believable."
     show albert at std
@@ -100,7 +100,7 @@ label chapter19:
     l "I guess she came out in the spot you and Daniel and her were ambushed in."
     show linda at std(p31)
     show sayori at std(p33)
-    show yuri u125111 at foc(p32)
+    show yuri u125111 at foc(p11)
     y "Wait a minute..."
     y "If she {i}could{/i} delete and restore herself..."
     y u126131 "That means she kept her admin powers!"
@@ -162,7 +162,7 @@ label chapter19:
     show linda at foc
     l 114111b "..."
     show albert at std(p33)
-    show linda at std(p32)
+    show linda at std(p11)
     show sayori u222141 at hopfoc(p31)
     s "Yes!"
     s u21x111 "Thank you so much!"

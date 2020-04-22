@@ -23,7 +23,7 @@ label chapter11:
     show yuri u223125 at std(p22)
     call updateconsole("warp('natsuki', 'residential_day')")
     show sayori at x(p31)
-    show yuri u223125 at std(p32)
+    show yuri u223125 at std(p11)
     show natsuki u114121 at std(p33)
     call hideconsole
     $ consolehistory = []

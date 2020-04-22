@@ -19,13 +19,13 @@ label chapter26:
     n "We're basically walking into a situation where we're likely to be shot at any second?"
     n "Honestly, it feels bleaker going into this than it did being on the clock and not having a lead."
     n "With no restore_character..."
-    show natsuki at std(p32)
+    show natsuki at std(p11)
     show linda at std(p33)
     show libitina 1261111 at foc(p31)
     b "Worst case scenario, I'll open my Third Eye and ruin them all."
     b "Some of us might die, but we almost can't lose."
     show libitina at std
-    show natsuki at xif(p32)
+    show natsuki at xif(p11)
     n c223111 "Maybe, but still, dying is hardly an attractive thought!"
     n c224111 "Also, no you won't if you're the first one to get shot."
     show natsuki at std(p43)
@@ -51,7 +51,7 @@ label chapter26:
     y "Shouldn't we break Character.reset before we go into danger?"
     y "If our ability to win in case of an ambush depends on using our Third Eyes, we need to make sure he can't counter it."
     show yuri at std(p52)
-    show libitina at std(p53)
+    show libitina at std(p11)
     show natsuki at std(p54)
     show linda at std(p55)
     show monika c114111 at foc(p51)
@@ -163,7 +163,7 @@ label chapter26:
     show libitina 2271441 at foc(p21)
     "Libitina gasps as she walks in."
     b "This place...!"
-    show libitina at std(p32)
+    show libitina at std(p11)
     show albert at std(p33)
     show yuri c125117 at foc(p31)
     y "I vividly remember being cornered here that night."
@@ -208,7 +208,7 @@ label chapter26:
     if vpchar == mc_name:
         show renier at std(p51)
         show yuri at std(p52)
-        show libitina at std(p53)
+        show libitina at std(p11)
         show albert at std(p54)
         show monika c114114 at foc(p55)
     else:
@@ -263,7 +263,7 @@ label chapter26:
     else:
         show monika at std(p55)
         show albert at std(p54)
-        show libitina at std(p53)
+        show libitina at std(p11)
         show yuri at std(p52)
         show linda 334443 at foc(p51) zorder 2
     l "Have we been tricked?"
@@ -379,7 +379,7 @@ label chapter26:
     r "So what the fuck happened!?!"
     if vpchar == mc_name:
         show renier at std(p31)
-        show albert at std(p32)
+        show albert at std(p11)
         show linda 119442 at foc(p33)
     else:
         show albert at std(p21)
@@ -392,7 +392,7 @@ label chapter26:
         show albert at std(p42)
         show yuri c124128 at foc(p44)
     else:
-        show linda at std(p32)
+        show linda at std(p11)
         show albert at std(p31)
         show yuri c124128 at foc(p33)
     y "No..."
@@ -445,7 +445,7 @@ label chapter26:
     else:
         show mc at std(p51)
     show albert at std(p52)
-    show linda at std(p53)
+    show linda at std(p11)
     show yuri at std(p54)
     show natsuki c117224 at foc(p55)
     n "There just has to be some way to bring Monika back!"
@@ -634,7 +634,7 @@ label chapter26:
     "..."
     if vpchar == mc_name:
         show renier at std(p31)
-        show linda at std(p32)
+        show linda at std(p11)
         show yuri c128135 at foc(p33)
     else:
         show linda at std(p21)
@@ -673,7 +673,7 @@ label chapter26:
         show sayori c127132 at foc(p44)
     else:
         show linda at std(p31)
-        show yuri at std(p32)
+        show yuri at std(p11)
         show sayori c127132 at foc(p33)
     s "We need to get out of here!"
     show sayori at std
@@ -860,12 +860,12 @@ label chapter26_2:
     show natsuki at std
     "He starts to scream."
     "The others come in."
-    show natsuki at std(p32)
+    show natsuki at std(p11)
     show mc c118131 at foc(p31)
     mc "You got him?!?"
     mc c123331 "We win!!"
     show mc at std
-    show natsuki at xif(p32)
+    show natsuki at xif(p11)
     n c222113 "You did it, [persistent.playername]!"
     n "You slowed him down enough for us to get back just in time!"
     show natsuki at std
@@ -877,7 +877,7 @@ label chapter26_2:
     m "What did I {i}miss{/i} after Libitina killed me?"
     "The others fill me in."
     m "So we're still in the danger zone?"
-    show mc at std(p32)
+    show mc at std(p11)
     show natsuki at std(p33)
     show linda 124111b at foc(p31)
     l "Uh... yeah..."

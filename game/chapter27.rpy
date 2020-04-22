@@ -118,7 +118,7 @@ label chapter27:
     # Maybe Natsuki should ask Yuri whether the sickness is more painful than being stabbed.
     scene road1_night with wipeleft
     "A minute later, Monika and Adam reappear."
-    show monika c214112 at foc(p32)
+    show monika c214112 at foc(p11)
     show markov u22643 at std(p33)
     m "We're back...!"
     m "We left before she knocked herself out finishing him off, so she'd follow us with her Eye still open."
@@ -193,7 +193,7 @@ label chapter27:
     k "It's admin.inflict_epiphany, and I told her voluntarily {i}after{/i} I knew what she would do with it!"
     k "I helped you even when I knew I'd be stabbed!"
     show markov at std
-    show monika c124211 at foc(p32)
+    show monika c124211 at foc(p11)
     m "That's actually true..."
     show monika at std
     show mc c118113 at foc(p31)
@@ -249,7 +249,7 @@ label chapter27:
     n "You're welcome."
     show markov at std(p55)
     show monika at std(p54)
-    show mc at std(p53)
+    show mc at std(p11)
     show libitina at std(p52)
     show yuri c125111 at foc(p51)
     y "So what's it like to be have gained admin status?"

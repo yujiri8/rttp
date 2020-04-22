@@ -14,7 +14,7 @@ label chapter28:
     show monika at thide
     hide monika
     show mc at std(p54)
-    show libitina at std(p53)
+    show libitina at std(p11)
     show yuri at std(p52)
     show albert 11111 at foc(p51)
     al "How are we possibly going to stop her?"
@@ -408,7 +408,7 @@ label do_the_final_plan:
     show linda at foc
     l "Don't make us shoot you!"
     show linda at std(p33)
-    show natsuki at std(p32)
+    show natsuki at std(p11)
     show sayori c2151d6 at foc(p31)
     s "..."
     show sayori at std
@@ -444,7 +444,7 @@ label do_the_final_plan:
     n "The portal's hanging open and we saved them..."
     n c114123 "Great job, Sayori... and all of you."
     show natsuki at std(p31)
-    show linda at std(p32)
+    show linda at std(p11)
     show markov u11111 at foc(p33)
     k "I'm back..."
     show markov at std

@@ -473,7 +473,7 @@ label chapter16_2:
     mc "What the hell..."
     show sayori u224112 at x(p51)
     show natsuki at x(p52)
-    show yuri u114118 at x(p53)
+    show yuri u114118 at x(p11)
     show renier u22a3 at x(p54)
     show linda 115333 at std(p55)
     l "Ow..."

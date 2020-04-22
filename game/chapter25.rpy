@@ -42,7 +42,7 @@ label chapter25:
     l "Okay, that's really concerning."
     l "I don't know of anything we can do though."
     show mc at std(p31)
-    show albert at std(p32)
+    show albert at std(p11)
     show yuri c125111 at foc(p33)
     y "What if we switch the viewport destination back?"
     y "Could [persistent.playername] help her?"
@@ -68,7 +68,7 @@ label chapter25:
     show sayori at std(p54)
     show mc at std(p51)
     show albert at std(p52)
-    show yuri at std(p53)
+    show yuri at std(p11)
     show natsuki c124111 at foc(p55)
     n "That makes two of us."
     n "I'm really looking forward to those cupcakes I promised..."
@@ -79,7 +79,7 @@ label chapter25:
     "..."
     s c113111 "How long was he expecting his troops to stand here?"
     s "They must've been hungry too."
-    show yuri at xif(p53)
+    show yuri at xif(p11)
     y c114111 "He would've left them standing guard until nightfall."
     y "He viewed their suffering as a positive good."
     y "He recognized them as evil for following his orders, even though he didn't see himself as evil for giving them."
@@ -298,7 +298,7 @@ label chapter25:
     "..."
     show sayori at std(p51)
     show monika at std(p52)
-    show libitina at std(p53)
+    show libitina at std(p11)
     show natsuki at std(p55)
     show mc c114235 at foc(p54)
     mc "So, if everything seemed to go as planned... what took so long?"
@@ -312,7 +312,7 @@ label chapter25:
     m "DDLC has a priority system where when a new game starts, the character with the highest 'President Priority' is made President of the Literature Club."
     m "The game recognized me, so of course if I started a new game with me alive, it just made me President."
     show monika at std
-    show libitina at xif(p53)
+    show libitina at xif(p11)
     b "And then things were all weird and I thought I remembered starting the Literature Club..."
     b 2261111 "Wait... that reminds me..."
     b "What was that API I noticed while I was active...?"

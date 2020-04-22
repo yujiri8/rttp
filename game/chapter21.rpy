@@ -126,7 +126,7 @@ label chapter21:
     show yuri u125111 at foc(p51)
     y "He may just be using it metaphorically..."
     show yuri at std
-    show natsuki u223111 at foc(p53)
+    show natsuki u223111 at foc(p11)
     n "Okay, now I really want to know what the bittersweet aftertaste of the past is!"
     show natsuki at std
     show monika at foc
@@ -357,7 +357,7 @@ label libitina_wakes_up:
     show natsuki u111111 at std(p51)
     show renier ru1112 at std(p54)
     show sayori u111111 at std(p55)
-    show libitina 2261111 at std(p53) zorder 10
+    show libitina 2261111 at std(p11) zorder 10
     with open_eyes
     "We recount the rest of our story."
     "The mood improves as we discuss our recent triumph."

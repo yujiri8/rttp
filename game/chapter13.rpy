@@ -65,7 +65,7 @@ label chapter13:
     $ restore_character('yuri')
     call updateconsole("restore_character('yuri')", "Yuri restored successfully")
     show sayori at x(p31)
-    show natsuki at std(p32)
+    show natsuki at std(p11)
     show yuri u228128 at std(p33)
     y "Eh-!!"
     show yuri u227138 at foc

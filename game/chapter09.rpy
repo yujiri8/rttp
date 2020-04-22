@@ -6,7 +6,7 @@ label chapter9:
     r "I feel so useless."
     show renier uf11 at uf
     mc "Now you know how I felt staring at Yuri's corpse for three days."
-    show natsuki xc4131 at foc(p32)
+    show natsuki xc4131 at foc(p11)
     n "And how I felt trying to stop her from dying in the first place..."
     show natsuki at uf
     "The four of us sit in silence for a moment."
@@ -34,7 +34,7 @@ label chapter9:
     y c225114 "It's ironic, but..."
     y c225111 "Monika's actions are the only reason any of us have any hope."
     show yuri at uf
-    show natsuki xc6131 at std(p32)
+    show natsuki xc6131 at std(p11)
     show renier uf111
     "..."
     mc "Wow. Hadn't thought of it that way."
@@ -108,7 +108,7 @@ label school_warp:
     n "Well, we kept our notebooks and pencils."
     show natsuki at uf
     "Natsuki sits down and continues writing."
-    show yuri sc1121 at foc(p32)
+    show yuri sc1121 at foc(p11)
     y "It feels out of place being at school out of uniform..."
     show yuri at uf
     show natsuki c222111 at foc
@@ -141,7 +141,7 @@ label return_from_walk:
     mc "Monika and everyone!"
     mc "We need to talk to [persistent.playername]!"
     show monika c114112 at foc(p31)
-    show sayori c114112 at std(p32)
+    show sayori c114112 at std(p11)
     show linda 116111 at std(p33)
     m "What's up?"
     show monika at std(p41)
@@ -390,7 +390,7 @@ label return_from_walk:
     mc "Not re-{nw}"
     show renier at x(p51)
     show linda at x(p52)
-    show monika at x(p53)
+    show monika at x(p11)
     show sayori at std(p54)
     show natsuki c222111 at rightin(p55) zorder 3
     n "Yeah, he did!"
@@ -427,7 +427,7 @@ label return_from_walk:
     l "The mistakes one is cute..."
     show renier at x(p51)
     show linda at std(p52)
-    show monika at x(p53)
+    show monika at x(p11)
     show sayori at std(p54)
     show natsuki xc3111 at rightin(p55) zorder 3
     n "You {i}can't{/i} be serious."
@@ -449,7 +449,7 @@ label return_from_walk:
     n c113112 "My problem is that every time I write about something serious people just tell me it's cute!"
     show natsuki c115112 at uf
     "Her sudden spike in volume surprises even me."
-    show monika at xif(p53)
+    show monika at xif(p11)
     m c117112 "Everyone, cool it!"
     m c114112 "No one meant any insult."
     m c214112 "Natsuki is just used to being dismissed for being cute."
@@ -1263,7 +1263,7 @@ label mc_cut:
     "I feel so suddenly powerless."
     "Like there's this dark psychic force in me now that I'm at the mercy of."
     scene bg club_day
-    show natsuki c113114 at foc(p32)
+    show natsuki c113114 at foc(p11)
     with open_eyes
     n "Calm down, [mc_name]!"
     n "I'm not gonna let you go off the deep end!"

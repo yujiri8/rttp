@@ -32,7 +32,7 @@ label chapter29:
     show linda at std
     show sayori c227232 at foc(p21)
     s "Oh crap!"
-    show sayori at std(p32)
+    show sayori at std(p11)
     python:
         with open(basedir+'/WTF.txt', 'w') as f:
             f.write(persistent.playername + " what the fuck is this static" + glitchtext(40) +
@@ -50,7 +50,7 @@ label chapter29:
             write_error_file()
     r "Fuck, why did no one put a bullet in her?!?"
     show renier at std(p52)
-    show monika at std(p53)
+    show monika at std(p11)
     show sayori at std(p54)
     show linda at std(p55)
     show yuri c228125 at foc(p51)

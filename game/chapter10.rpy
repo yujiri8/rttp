@@ -4,7 +4,7 @@ label chapter10:
     # Restore poses
     show renier u1111 at std(p51)
     show linda 334111 at std(p52)
-    show monika c114221 at std(p53)
+    show monika c114221 at std(p11)
     show sayori c117131 at std(p54)
     show yuri c225114 at std(p55)
     "..."
@@ -28,7 +28,7 @@ label chapter10:
         mc "I kind of don't want to remember that..."
         show monika at thide
         hide monika
-        show natsuki at foc(p53) zorder 3
+        show natsuki at foc(p11) zorder 3
         n c214114 "[mc_name], you're gonna be fine."
         n "We loaded the save, remember?"
         n "So it's like it never happened."
@@ -203,10 +203,10 @@ label chapter10_mc_cut:
 
 label chapter10_request_explore:
     if persistent.player_support_renier_experiment:
-        show renier ru2113 at std(p32)
+        show renier ru2113 at std(p11)
         show natsuki at std(p33)
     else:
-        show renier ru1111 at std(p32)
+        show renier ru1111 at std(p11)
         show yuri at std(p33)
     show linda 333111 at leftin(p31)
     l "Everyone?"
@@ -215,7 +215,7 @@ label chapter10_request_explore:
         show natsuki c113113
     else:
         show yuri c113111
-    show renier at xif(p32)
+    show renier at xif(p11)
     r ru1115 "A... test?"
     show renier at std
     show linda at xif(p31)
@@ -313,7 +313,7 @@ label chapter10_request_explore:
     "Yuri leaves with the book."
     show sayori c114111 at std(p51)
     show monika c124111 at std(p52)
-    show linda 334111 at std(p53)
+    show linda 334111 at std(p11)
     show renier ru1113 at std(p54)
     show natsuki c114111 at std(p55)
     mc "Alright, let's brace ourselves..."

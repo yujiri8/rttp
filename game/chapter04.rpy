@@ -149,10 +149,10 @@ label chapter4:
     r "You fuck with my daughter like that, you're gonna -"
     show renier at uf
     show monika u114313 at x(p33)
-    show natsuki at foc(p32) zorder 1
+    show natsuki at foc(p11) zorder 1
     n u115112 "Papa you're a hypocrite!"
     n "It was still you that did those things!"
-    show natsuki at std(p32)
+    show natsuki at std(p11)
     show renier at foc
     r u1296 "Yeah, and is that how you judge your friend Yuri?"
     r u2293 "If she's not responsible, then neither am I!"

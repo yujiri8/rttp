@@ -7,7 +7,7 @@ label chapter18:
     scene vr_room
     show sayori u115132 at std(p51)
     show natsuki u114124 at std(p52)
-    show yuri u224125 at std(p53)
+    show yuri u224125 at std(p11)
     show linda 334443 at std(p54)
     show renier u2283 at std(p55)
     with Dissolve(5.0)
@@ -262,7 +262,7 @@ label first_break:
         "..."
     show linda 339443 at std(p55)
     show renier u2283 at std(p54)
-    show yuri u228325 at std(p53)
+    show yuri u228325 at std(p11)
     show natsuki u117224 at std(p52)
     show sayori u227232 at std(p51)
     "I see everyone else come back into being."
@@ -290,7 +290,7 @@ label first_break:
     y "Tell me I can help!"
     show linda 334443
     "Libitina screams more."
-    show yuri u228338 at foc(p53) zorder 2
+    show yuri u228338 at foc(p11) zorder 2
     y "We have to help her!"
     show yuri at std
     show linda at foc
