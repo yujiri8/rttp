@@ -176,13 +176,14 @@ label chapter19:
     "We really owe this guy."
 label romance:
     scene black with dissolve_scene
+    stop music fadeout 3.0
     "We have a lot of downtime that evening."
     "I get [persistent.mc_favorite] to come up to the roof with me."
     scene roof with dissolve_scene
+    play music romance
     "..."
     mc "Perfect timing..."
     mc "We get to watch the sunset."
-    play music romance
     call expression 'romance_'+persistent.mc_favorite.lower()
     scene black with dissolve_scene
     return
@@ -365,11 +366,10 @@ label romance_yuri:
     show yuri u111161 at std(p11)
     "..."
     show yuri at foc
-    y "Coming up here was a wonderful idea."
-    y "The sunset is sublime."
+    y u112111 "Indeed... coming up here was a wonderful idea."
+    y "And if there was ever a day that deserved to end watching the sunset together..."
     show yuri at std
-    mc ""
-
+    mc "Definitely."
     "There's something I need to talk to her about."
     mc "Yuri, now that we know what Portrait of Markov was..."
     mc "I feel like it's insane that you liked that book, even when you didn't know it was about us."
@@ -385,7 +385,7 @@ label romance_yuri:
     mc "Huh."
     show yuri at foc
     y u121211 "I wonder if I could write a poem about that insight."
-    y "In some sense, sadism is a major element of recreation."
+    y "In some sense, sadism is a core element of one of our main forms of recreation."
     show yuri at std
     mc "Uh..."
     mc "Yikes..."
@@ -394,18 +394,44 @@ label romance_yuri:
     y u125131 "{i}The same knife cuts both flesh and vegetables.{/i}"
     y "{i}A singular tool of war and peace.{/i}"
     show yuri at std
-    mc ""
+    mc "Mm..."
     show yuri at foc
-    y "Also..."
-    y "I haven't really felt tempted to cut myself since the Literature Club."
-    y ""
+    y u125111 "Also..."
+    y u126111 "Before you ask..."
+    y u125111 "I haven't cut myself since the Literature Club."
     show yuri at std
-    
-    "TODO"
-
+    mc "Ahaha... can you blame me for being a little paranoid at first?"
+    show yuri at foc
+    y "I suppose not."
+    y "But I haven't really felt tempted."
+    y "Every time since then I've been stressed out, I was with all of you..."
+    show yuri at std
+    mc "Sorry."
+    mc "Has the lack of solitude been upsetting?"
+    show yuri at foc
+    y "Not really."
+    y "I feel like our bonds have gotten so much stronger that it feels completely different from how it used to."
+    y "Knowing Natsuki is my sister and all..."
+    show yuri at std
+    mc "Yeah..."
+    mc "... and all the trouble we got up to with me and Sayori and Monika trying to find you before Markov did..."
+    show yuri at foc
+    y u125111 "[mc_name], have you imgined what might come next?"
+    show yuri at std
+    mc "Come next?"
+    mc "I prefer not to stress over the future after everything we went through today."
+    show yuri at foc
+    y "It isn't like the prospects of the future are all stressful ones."
     y "I'm eager to meet Libitina..."
     y "... outside of that horrid place."
-
+    show yuri at std
+    mc "I guess that'll be interesting..."
+    mc "Assuming she doesn't open her Third Eye again and do any more distortion."
     show yuri at foc
-    
+    y u125213 "[mc_name]... do you want to kiss now?"
+    y "S-since we got interrupted last time..."
+    show yuri at std
+    mc "Yeah."
+    mc "It's kind of good we got interrupted - now our first kiss can be under the sunset."
+    show yuri u121211
     return
