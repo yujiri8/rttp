@@ -172,7 +172,89 @@ label chapter19:
     y "That's very generous of you, Albert."
     y "Thank you."
     show yuri at std
-    "We end up spending the night at Albert's hospital."
+    "We end up spending the night at Albert's hospital." # does this imply a day passes and it's next evening?
     "We really owe this guy."
+label romance:
     scene black with dissolve_scene
+    "We have a lot of downtime that evening."
+    "I get [persistent.mc_favorite] to come up to the roof with me."
+    scene roof with dissolve_scene
+    "..."
+    mc "Perfect timing..."
+    mc "We get to watch the sunset."
+    play music romance
+    call expression 'romance_'+peristent.mc_favorite.lower()
+    scene black with dissolve_scene
+
+label romance_sayori:
+    show sayori u111141 at std(p11)
+    "..."
+    "I feel happier than I have in a long time."
+    "It's the first time since before all this Portrait of Markov stuff that I've felt like I don't have any burdens."
+    show sayori u111111
+    mc "Sayori, are you as happy as I am right now?"
+    mc "Maybe this is a dumb question but..."
+    mc "... how's your depression?"
+    show sayori at foc
+    s u123111 "[mc_name]..."
+    s u121111 "You can stop worrying about that now."
+    s u121112 "Things really have changed. A lot."
+    show sayori at std
+    "That's good to hear."
+    "I was expecting her to say something about how worrying about her makes it worse, or how I should never have worried in the first place."
+    show sayori at foc
+    s u123111 "We've been through so much since then."
+    s "Before the Club and all..."
+    s "I used to not see any value in myself."
+    s u123113 "My depression was probably a result of how the experiments ruined us."
+    s "Made us slaves to our Third Eyes."
+    s "And even when I didn't remember that, it still affected how I felt."
+    s u123111 "But this quest has shown me what my life is worth."
+    s "How much there is to do with it."
+    show sayori at std
+    mc "I guess it would be hard to feel worthless when you helped take down that horrific cult facility."
+    show sayori at foc
+    s u123113 "It's not like we saved everyone there."
+    s "We don't even know what happened to the other side."
+    s "For all we know, maybe we killed all the other test subjects."
+    show sayori at std
+    mc "Oh..."
+    mc "Yeah... you're right."
+    mc "It wasn't a pure an outcome as we could've hoped for."
+    mc "But at least we stopped him from doing anything more."
+    mc "And I mean, at worst, it would be a mercy kill."
+    show sayori at foc
+    s u115111 "Yeah..."
+    s "It helps a lot to know we did that."
+    s u123111 "[mc_name], what do you think's going to happen?"
+    show sayori at std
+    mc "Well, we'll see when Monika and Libitina wake up."
+    mc "They'll know what we need to do next, if anything."
+    mc "But don't stress over the future."
+    mc "We've earned this rest..."
+    mc "... like, a hundred times over."
+    show sayori at foc
+    s "I'm not stressing."
+    s "I really can't wait to see what comes next."
+    s "It's scary..."
+    s "... but it'll be exciting!"
+    s u12x141 "And just like blowing up that horrible place, we'll look back on it and laugh!"
+    show sayori at std
+    mc "I hope so..."
+    show sayori at foc
+    s u125311 "Hey [mc_name]..."
+    s "Maybe this is a dumb question but..."
+    s "Do you want to kiss now?"
+    show sayori at std
+    "I forgot!"
+    "It's been so long since I first wanted to."
+    mc "Yeah..."
+    return
+
+label romance_natsuki:
+    "TODO"
+    return
+
+label romance_yuri:
+    "TODO"
     return

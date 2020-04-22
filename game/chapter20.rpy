@@ -1,6 +1,6 @@
 label chapter20:
     stop music fadeout 4.0
-    pause 4.0
+    pause 8.0
     "I'm woken by sounds of crying."
     "I lay still for a minute."
     "I feel like it's the middle of the night..."
