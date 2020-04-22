@@ -1,4 +1,5 @@
 label sayori_and_mc:
+    stop music fadeout 2.0
     scene city with dissolve_scene_full
     play music t2
     "I bike into the city at last."

@@ -1,5 +1,7 @@
 label contact_sayori:
     scene road2 with dissolve_scene_full
+    if not persistent.contacted:
+        play music stroll fadein 2.0
     "I hope I don't end up regretting this decision..."
     "Maybe I should've stayed put and waited for Monika to come."
     "She restored my memories, so she must've got un-stuck."

@@ -1,5 +1,7 @@
 label contact_yuri:
     scene forest with dissolve_scene_full
+    if not persistent.contacted:
+        play music stroll fadein 2.0
     "I finish a fifth chapter."
     "I really should go home now."
     "I must've been out here for at least an hour."
@@ -516,6 +518,7 @@ label contact_yuri:
         "[temp]. Until then, just stay around here. - Monika":
             pass
     y "Understood."
+    play music stroll fadein 2.0 # return to the normal music for this phase
     return
 
 define console_protect_yuri = "get_nearby_characters(yuri)[0].reset()", "0"

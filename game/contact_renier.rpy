@@ -1,5 +1,7 @@
 label contact_renier:
     scene city3 with dissolve_scene_full
+    if not persistent.contacted:
+        play music stroll fadein 2.0
     "I stand outside for a few seconds before going back in."
     "Going back to work after lunch has got to be worse than coming here in the morning, cause half the day is gone and I'm still at it."
     "Then suddenly, I start to have visions about all kinds of horrible stuff, and I feel like--"

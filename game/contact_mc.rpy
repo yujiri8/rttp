@@ -1,5 +1,7 @@
 label contact_mc:
     scene road1 with dissolve_scene_full
+    if not persistent.contacted:
+        play music stroll fadein 2.0
     "Darn..."
     "Maybe I should've stayed put."
     "Will I even get there before sundown?"

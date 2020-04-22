@@ -63,17 +63,20 @@ Jan Hehr
 Yuri and Natsuki's date tracks, the Third Eye theme, and Our Reality
 (originally for Monika Before Story OST)
 
+Dimas#4872
+Glitch theme 'yesnt'
+
+OliverCNorton#4433
+Calm music 'yawa'
+
+LeoDeCraprio#4239
+Calm music 'main_street_stroll'
+
 Meddy-sin
 (Amy sprites) used as Yuri's mom
 
 Cyrke#8043, u/Cylent-Nite
 Eric (Michael's brother) sprites
-
-OliverCNorton#4433
-Calm music 'yawa'
-
-Dimas#4872
-Glitch theme 'yesnt'
 
 Speißer#7316
 The portal

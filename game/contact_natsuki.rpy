@@ -1,5 +1,7 @@
 label contact_natsuki:
     scene bg kitchen with dissolve_scene_full
+    if not persistent.contacted:
+        play music stroll fadein 2.0
     "I pour the carrrots into the soup."
     "At least this will be really good."
     "I'm due for it after how today and the last few days have been."

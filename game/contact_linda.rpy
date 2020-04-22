@@ -1,5 +1,7 @@
 label contact_linda:
     scene office with dissolve_scene_full
+    if not persistent.contacted:
+        play music stroll fadein 2.0
     "I read over the patient notes one last time before saving them."
     "Looks correct..."
     "Suddenly, my memories flood back."

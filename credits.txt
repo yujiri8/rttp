@@ -20,20 +20,21 @@ u/AgentGold			- Dynamic Pose Tool
 	u/TheRadioactive4	- Monika crying open eyes
 Koya-Sato			- night filter used on the driving image
 Jan Hehr			- Music: Yuri and Natsuki's date tracks, Yuri's festival poem (the Third Eye theme), and the epic Our Reality from Monika Before Story
+Dimas#4872			- Horror/glitch ambient 'yesnt.wav' (I had to transcode it to Vorbis to get it to work on Windows)
 OliverCNorton#4433		- yawa.ogg (in the folder of DeadAirspace#4433, not sure if these are the same person), and editing casual MC sprites
+LeoDeCraprio#4239		- calm music main_street_stroll.ogg
+(unknown)			- spoopy_song_1.wav
 u/yagamirai10			- Edits to several backgrounds: MC's living room, the school courtyard, street1.png
 Nuxill#7870			- Original MC's living room (edited by u/yagamirai10)
 Obsoletovsky (DDNP)		- Backgrounds: hospital hallway, hospital lobby, french_city.png
 Speißer#7316			- The portal image
 u/wingedterra147		- Testing, reporting issues, and providing writing feedback for part 1
-Dimas#4872			- Horror/glitch ambient 'yesnt.wav' (I had to transcode it to Vorbis to get it to work on Windows)
 ari1192				- The cult facility hallway (https://blog.goo.ne.jp/ari1192jp_001/e/300120919a4c90232577f5777173262f)
 u/GanstaKingofSA		- editing causal MC outfit (Discord: GanstaKingofSA#0235)
 Childish-N			- original work on MC sprites, both MC and Michael (https://childish-n.deviantart.com/art/DDLC-Protagonist-Sprite-715239172)
 Akame#8940			- Room with computer
 u/SamCapener			- Comissioning the forest image for The Good Ending and letting me use it for free :)
 u/chronoshag			- Comissioning the original Dadsuki sprites from SovietSpartan and making them free :)
-(unknown)			- spoopy_song_1.wav
 Cyrke#8043, u/Cylent-Nite	- "Eric" (Michael's bro) sprite
 Meddy-sin			- Yuri's mom (Amy) sprites
 SpringingTraps#5243		- stab wound edited onto Adam
