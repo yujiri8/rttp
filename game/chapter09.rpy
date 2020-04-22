@@ -819,8 +819,8 @@ label walk_mc_natsuki:
     "It's time."
     "I'm going to formally tell her I love her."
     "I'm just deciding between 'I love you' and 'I love you too'."
-    "What she just said was pretty close to saying it."
-    "But it wasn't really, so I'm worried that it's presumptuous if I say the latter."
+    "What she just said was pretty close to saying it..."
+    "But it wasn't quite, so I'm worried that it's presumptuous if I say the latter."
     show natsuki at foc
     n c124111 "Are you just gonna stand there with that dumb look on your face?"
     show natsuki at uf
@@ -877,9 +877,9 @@ label walk_mc_yuri:
     mc "What do you mean?"
     show yuri at foc
     y "We think ourselves people, but we exist inside of a piece of software."
-    y "What are we then, ontologically?"
+    y "What are we then, metaphysically?"
     y c125132 "Monika said we aren't just code, but how can we be anything else?"
-    y "What can we be such that our actions and experience are confined to a program, if we are not simply pieces of the code?"
+    y "What can we be such that our actions and experiences are confined to a program, if we're not just pieces of the code?"
     show yuri at uf
     mc "I..."
     mc "I don't know."

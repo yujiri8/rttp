@@ -8,10 +8,6 @@ Also, obviously, the license only applies to stuff I made. Other people's assets
 
 The file 'SCRAPS' contains a couple of less important thoughts (that I don't need input on) and bunch of disorganized scraps of dialog that might end up being used.
 
-# Big things that still need doing
-
-* The kiss may be a solvable problem now. I contrived Renier's arrival to stop this in part 1 because I couldn't write it even if I wanted to, but now that MC isn't always POV, it's possible he and his favorite girl could do it at some point in part 3 where it could be offscreen or something. I would love to not do it at all, but with them having wanted to since DDLC, it's entirely implausible that they never get around to it after all this.
-
 # Other, smaller things
 
 * Should I edit chapter22 so Adam actually tries to wipe Natsuki's memories at the rift, but it doesn't work? I feel it's a bit iffy that he just offhandly reveals that memory wipe doesn't work on prepared characters without the player seeing it fail.

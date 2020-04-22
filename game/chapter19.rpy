@@ -185,6 +185,7 @@ label romance:
     play music romance
     call expression 'romance_'+persistent.mc_favorite.lower()
     scene black with dissolve_scene
+    return
 
 label romance_sayori:
     show sayori u111141 at std(p11)
@@ -290,7 +291,7 @@ label romance_natsuki:
     show natsuki at foc
     n "Yeah..."
     n u124113 "I remember some of the series I was into way back when."
-    n "I hope I get a chance to introduce you to them later."
+    n u121113 "I hope I get a chance to introduce you to them later."
     show natsuki at std
     mc "You were into manga before DDLC?"
     show natsuki at foc
@@ -307,39 +308,104 @@ label romance_natsuki:
     mc "Eh?"
     "I guess she was, come to think of it."
     mc "True..."
+    "Natsuki's attitude toward me has changed so much."
+    "She really is a nice person."
+    "We watch the sunset in silence for a moment."
     show natsuki at foc
-    n "I wonder what'll ."
+    n u124111 "My only gripe right now is being in my school uniform."
     show natsuki at std
-    #TODO
+    mc "You'd rather be in your cute outfit?"
     show natsuki at foc
-    n "My only gripe right now is being in my school uniform."
-    mc "You prefer your cute outfit?"
-    show natsuki at foc
-    n "Oh, you prick..."
+    n xu4111 "Oh, you dumb oaf..."
     show natsuki at std
-    "Wait..."
-    "I {i}didn't{/i} get a tsundere reaction?!?"
-    mc "Natsuki..."
+    "A much milder response than I anticipated."
+    "Maybe getting mad at me got old?"
+    "Actually... now that I think about what I just said..."
+    "I said it {i}because{/i} I thought it'd make her mad."
+    mc "I'm sorry, Natsuki."
+    mc "I shouldn't push your buttons like that."
     show natsuki at foc
-    n "What, you wanted me to yell at you?!?"
-    n "Look, I get it!"
-    n "I'm cute!"
-    n "Get over it!"
+    n u114213 "..."
+    n "... Yeah... it was kinda mean, now that you mention it."
+    n "I appreciate that."
+    n u114111 "Actually, wait a minute..."
+    n u113111 "... didn't you just imply that I'm {i}not{/i} cute in my school uniform?"
     show natsuki at std
-    mc ""
+    mc "What?!?"
+    mc "Natsuki... you never would've said that just a week ago."
+    mc "Did things change a lot?"
+    show natsuki at foc
+    n xu4111 "What a stupid question."
+    n "I should make a meme of you:"
+    n "Finds out the world is a video game, sees everyone die and come back to life a dozen times each, remembers past life, blows up evil cult facility..."
+    n "... asks 'Did things change a lot'."
+    show natsuki at std
+    mc "Ahaha..."
+    show natsuki at foc
+    n u114113 "But really..."
+    n "Most of the reason I didn't like being seen as cute before was because it always felt dismissive."
+    n "Like being cute meant I couldn't be taken seriously, or write about serious things, or whatnot."
+    n "But that's all changed."
+    n "I don't feel like anyone treats me that way anymore."
+    n "And even if they did, I wouldn't be so vulnerable to it anymore."
+    show natsuki at std
+    mc "Huh..."
+    mc "So you're okay with it now?"
+    show natsuki at foc
+    n "Yeah."
+    n "And [mc_name]..."
+    n "Want to kiss now?"
+    n "Since that big prick Renier stopped us last time."
+    show natsuki at std
+    mc "Yeah..."
+    mc "It's been put off for long enough now."
     return
 
 label romance_yuri:
+    show yuri u111161 at std(p11)
+    "..."
+    show yuri at foc
+    y "Coming up here was a wonderful idea."
+    y "The sunset is sublime."
+    show yuri at std
+    mc ""
 
+    "There's something I need to talk to her about."
     mc "Yuri, now that we know what Portrait of Markov was..."
     mc "I feel like it's insane that you liked that book, even when you didn't know it was about us."
     "Uh... I hope that doesn't sound offensive."
     show yuri at foc
-    y "I feel that way too."
+    y u125111 "I feel that way too."
+    y "But it's not insane."
+    y "People read books about horrible things happening to people all the time, and in fact..."
+    y "... all stories involve it, to some degree."
+    y "One could say imaginging the suffering of others is the cornerstone of all stories."
+    y "It only starts to seem insane once you know it's real."
+    show yuri at std
+    mc "Huh."
+    show yuri at foc
+    y u121211 "I wonder if I could write a poem about that insight."
+    y "In some sense, sadism is a major element of recreation."
+    show yuri at std
+    mc "Uh..."
+    mc "Yikes..."
+    "Yuri giggles."
+    show yuri at foc
+    y u125131 "{i}The same knife cuts both flesh and vegetables.{/i}"
+    y "{i}A singular tool of war and peace.{/i}"
+    show yuri at std
+    mc ""
+    show yuri at foc
+    y "Also..."
+    y "I haven't really felt tempted to cut myself since the Literature Club."
     y ""
     show yuri at std
+    
     "TODO"
 
     y "I'm eager to meet Libitina..."
     y "... outside of that horrid place."
+
+    show yuri at foc
+    
     return
