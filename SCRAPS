@@ -9,16 +9,6 @@
 
 // Maybe Lib caused the 13 year gap. 13 years passed outside but not in?
 
-# Adam talks about code
-k "Whenever you use the Python wrappers, the interpreter enters the block of instructions for the function, and then tries to evaluate its arguments."
-k "When it evaluates Ursula's Character object and finds that it's invalid..."
-k "... the game marks the whole region it was in as off-limits, and deletes any references to it."
-
-k "But checking the number of arguments happens before that - which is why this can't be used to break functions that don't take any arguments."
-
-k "We know from experience that the Third Eye interacts with nearby admins."
-k "For example, I'm sure [persistent.playername] saw how being caught in Libitina's distortion during your great escape affected my console, causing everything I typed to come out as glitch text."
-
 # Linda explains Character.reset / restore_character work
 l "Internally, restore_character uses Character.reset."
 l "restore_character is essentially a wrapper that resets a character and marks them as alive."
@@ -52,10 +42,8 @@ l "And restores their file, of course."
     show renier at std
 
 # Possible plothole with the escape
-    "Adam must've not been there."
     "Wait a minute..."
-    "warp was broken, but there were other ways ."
-    "According to the book she compiled, Linda read his memories a long time after that point."
+    "warp was broken, but there were other ways he could've recaptured you, like memory reading."
     "Is it really possible he didn't know about memory reading?"
 
 # I kinda want this in, but idk if it can.
@@ -81,18 +69,3 @@ l "And restores their file, of course."
     m c121111 "In the end though, it was the reason we caught Adam."
     m "We might not've had any other way to lure him to the warehouse."
     show monika at std
-
-# end, before I realized Libitina can't do this while she's glitched
-python:
-        with open(basedir + '/WTF.txt', 'w') as f;
-            f.write("""
-            What the fuck is this static?!?!?!?
-
-            """+persistent.playername+""", what the fuck???
-
-            It hurts like hell!
-            """)
-    call screen dialog("[persistent.playername], what the fuck is this static?!? - Libitina", ok_action=Return())
-    $ temp = glitchtext(200)
-    call screen dialog("[temp]!! - Libitina", ok_action=Return())
-    call screen dialog("Help me! - Libitina", ok_action=Return())

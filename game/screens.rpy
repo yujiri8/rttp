@@ -380,7 +380,7 @@ init -501 screen navigation():
                 elif persistent.newgame == 'deny':
                     textbutton _("New Game") action [
                         Show(screen="dialog", message="Permission denied.", ok_action=Hide("dialog")),
-                        SetVariable('persistent.tried_reset_pom', True),
+                        SetVariable('persistent.tried_newgame', True),
                     ]
                 else:
                     textbutton _("New Game") action Start()

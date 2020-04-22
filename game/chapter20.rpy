@@ -182,11 +182,11 @@ label chapter20:
     m u114212 "[persistent.playername]..."
     m "We have to try this."
     m "I'm really scared to find out..."
-    $ persistent.shutdown_in_pom = False
+    $ persistent.awaiting_shutdown = True
     m u113213 "But I'll have to eventually."
     m "Just make a save first."
     show monika at std
-    while not persistent.shutdown_in_pom:
+    while persistent.awaiting_shutdown:
         ""
 label found_out_pom_dependent:
     scene hospital_room_night

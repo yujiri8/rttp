@@ -197,21 +197,20 @@ image tos = Fixed(
 
 label splashscreen:
 
-    # A script that converts saves from part 1 to be part 2-compatible.
-    call update_to_part2
+    # A script that converts saves from part 1 or part 2 to be part 3-compatible.
+    call update_to_part3
 
     # Special things for the mod, since it deals with the game being turned off.
     python:
+        persistent.awaiting_shutdown = False
         # ch1
         if persistent.mc_awakened and persistent.monika_request_shutdown:
             # I'd like to handle the impatient player case, but I don't have infinite time, yo.
             if persistent.mc_request_shutdown:
                 persistent.mc_survive_shutdown = True
-        # ch20
-        persistent.shutdown_in_pom = True
-        # ch22
-        if persistent.ch22_monika_request_shutdown:
-            renpy.jump('ch22_shutdown')
+        # ch29
+        if persistent.libitina_revealed_plan:
+            "Libitina's plan"
 
     python:
         process_list = []

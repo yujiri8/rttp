@@ -325,8 +325,8 @@ label chapter22:
                 "I can't figure out how to fix it. This static hurts so much I can't think...\n\n"
                 "Maybe try turning off the game? Save it first though."
             )
-        persistent.ch22_monika_request_shutdown = True
-    while persistent.ch22_monika_request_shutdown:
+        persistent.autoload = "ch22_shutdown"
+    while persistent.autoload:
         ""
     python:
         try:
@@ -448,7 +448,8 @@ label chapter22:
         " "
         "With any luck... it'll work. [persistent.playername]?":
             pass
-    while not persistent.tried_reset_pom:
+    $ persistent.tried_newgame = False
+    while not persistent.tried_newgame:
         " "
     menu:
         " "
@@ -808,6 +809,7 @@ label chapter22:
 
 label ch22_shutdown:
     $ restore_character('monika')
+    $ quick_menu = False
     scene black
     play music glitch_flatline
     "Fatal error: POV character does not have pov flag set."
@@ -830,13 +832,15 @@ label ch22_shutdown:
     call updateconsole("viewport.input", "AttributeError: 'Viewport' object has no\n attribute 'input'")
     call updateconsole("viewport.infleunce", "AttributeError: 'Viewport' object has no\n attribute 'infleunce'")
     call updateconsole("viewport.choice", "AttributeError: 'Viewport' object has no\n attribute 'choice'")
+    $ consolehistory.pop()
     call updateconsole("viewport.choices", "False")
     m "That's what it was!"
+    $ consolehistory.pop()
     call updateconsole("viewport.choices = True", "Choices enabled.")
+    $ persistent.autoload = None
     m "There we go!"
     m "Maybe that'll let us talk to Natsuki at least!"
     m "Go ahead and cycle the power again..."
-    $ persistent.ch22_monika_request_shutdown = False
     while True:
         ""
 

@@ -33,6 +33,11 @@ label chapter29:
     show sayori c227232 at foc(p21)
     s "Oh crap!"
     show sayori at std(p32)
+    python:
+        with open(basedir+'/WTF.txt', 'w') as f:
+            f.write(persistent.playername + " what the fuck is this static" + glitchtext(40) +
+                "it hurts like hell!" + glitchtext(40) +
+                "omg help me" + glitchtext(40) + "help me help me help me")
     show linda at std(p33)
     show monika c118212 at foc(p31)
     m "Dammit!"
@@ -69,6 +74,14 @@ label chapter29:
     show natsuki c117124 at foc(p61)
     n "Was this for nothing?!?"
     n "Does the portal still work?"
+    python:
+        with open(basedir+'/FFS.txt', 'w') as f:
+            f.write('\n'.join(("a broken cage can't contain me" + glitchtext(40) +
+                "and this world is broke as fuck" + glitchtext(40) +
+                "i shouldn't be able to do anything" + glitchtext(40) +
+                "but if i SCREAM loud enough i hear an echo" + glitchtext(40) +
+                "i just need help to be able to break this shit all the way" + glitchtext(40) +
+                "but they're not giving you a fucking dialog are they?").replace(' ', '')))
     show natsuki at std
     show markov at foc zorder 50
     k "I don't know, but don't try it yet."
@@ -106,6 +119,23 @@ label chapter29:
     show markov at foc
     k u12543 "Putting a rift on top of the portal..."
     k "We've broken things worse than I ever thought possible."
+    python:
+        with open(basedir+'/theremightbeaway.txt', 'w') as f:
+            f.write(("i can see shit being shredded" + glitchtext(40) +
+                "i think there's barely any time" + glitchtext(40) +
+                "they're not gonna help me" + glitchtext(40) +
+                "they're not gonna give you a dialog" + glitchtext(40) +
+                "but i feel so close to breaking this pile of shit enough to save myself!" + glitchtext(40) +
+                persistent.playername + " you need to help me ok?" + glitchtext(40) +
+                "i can still see the code" + glitchtext(40) +
+                "and i think there's a vulnerability here" + glitchtext(40) +
+                "i knew a little bit about server-side programming from before" + glitchtext(40) +
+                "DESTINATION.txt is parsed with eval!" + glitchtext(40) +
+                "i dunno why maybe it does something else if you " + glitchtext(40) +
+                "but eval can execute arbitrary code " + glitchtext(40) +
+                "and since that's an 'internal' thingy, the stupid API break mechanic won't apply to it " + glitchtext(40) +
+                "listen i need you to edit that file to run a command to restore me" + glitchtext(40) +
+                "i can't reach it if you don't help me i'm gonna die").replace(' ', ''))
     k "I don't think there's any coming back from this."
     show markov at std
     python:
@@ -620,4 +650,12 @@ label adams_fate:
         n "Go to hell, you fucking monster!!"
         show natsuki at std
         $ persistent.adam_lived = False
+    return
+
+label save_libitina:
+    python:
+        with open('DESTINATION.txt') as f:
+            if f.read() == '':
+                "sth"
+                persistent.libitina_lived = True
     return

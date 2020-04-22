@@ -446,6 +446,8 @@ dont forget everything i taut yoooooooooo"""
 
 # Story persistent vars
 default persistent.newgame = 0 # The game number the player will start next, or 'glitch' or 'deny' if they can't.
+default persistent.tried_newgame = False # Whether the player tried to click it yet, if it's not allowed.
+default persistent.awaiting_shutdown = False
 default persistent.pom_menu = False # Whether to show the POM menu.
 default persistent.menu_hide_monika = False # Set in chapter 13.
 # Flags set throughout the plot just here so a default value is set if I skip ahead for testing.
@@ -466,10 +468,9 @@ default persistent.player_support_escape_plan = 0 # Chapter 12. 0 means the play
 default persistent.suggest_set_name = False # Chapter 13.
 default persistent.player_early_theorize_elyssa_is_yuri = False # Chapter 14.
 default persistent.player_reject_sayori_sacrifice = False # Chapter 14.
-default persistent.player_guilt_trip_sayori = 0 # Chapter 14.
-default persistent.player_pacifist = 0 # First in Chapter 15.
+default persistent.player_pacifist = 0 # Chapter 15.
+default persistent.player_guilt_trip_sayori = 0 # Chapter 16.
 default persistent.player_advocate_mercy = [0, 0] # First in ch15, second in ch23.
-default persistent.shutdown_in_pom = False # Chapter 20.
 # chapter 8 questions
 default persistent.asked_monika_about_player_choices = False
 default persistent.asked_monika_about_time = False
@@ -484,8 +485,6 @@ default persistent.asked_natsuki_forgive_renier = False
 default persistent.asked_yuri_about_cutting = False
 default persistent.asked_about_mc_poems = False
 # Part 3
-default persistent.ch22_monika_request_shutdown = False
-default persistent.ch22_shutdown = False
 default persistent.tried_reset_pom = False
 default persistent.threaten_libitina_to_save_natsuki_albert = False
 default persistent.threaten_libitina_to_come = False

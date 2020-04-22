@@ -736,7 +736,8 @@ label chapter26:
     mc "I bet he was right near the warehouse waiting for this!"
     mc "We can't get back in time!"
     s "[persistent.playername], you have to switch back to DDLC!"
-    s "Change DESTINATION.txt to say /jails/doki_doki_literature_club again!"
+    s "Change DESTINATION.txt to say '/jails/doki_doki_literature_club' again!"
+    s "And remember the quotes!"
     mc "Won't that just let him make himself POV and do the hack from DDLC?"
     s "Turn the game off as soon as you get there and leave it off for a few minutes!"
     s "If we understand anything, time won't pass in there if you connect the viewport and then turn it off!"
@@ -752,7 +753,7 @@ label return_to_ddlc:
         correct = False
         try:
             with open(config.basedir + '/DESTINATION.txt') as f:
-                correct = f.read().strip() == '/jails/doki_doki_literature_club'
+                correct = eval(f.read()) == '/jails/doki_doki_literature_club'
         except: pass
     if correct:
         jump returned_to_ddlc

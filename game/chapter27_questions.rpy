@@ -96,3 +96,11 @@ label adam_discuss_char_files:
     k "The viewport needs data in the files, so when it first needs to create one, it sets the character's file data to something menaingful for them."
     k "As you know, the data in the girls' files when you played DDLC wasn't the generated data, it was what Linda inserted."
     return
+
+label adam_discuss_api_breakage:
+    k "Whenever you use the Python wrappers, the interpreter enters the block of instructions for the function, and then tries to evaluate its arguments."
+    k "When it evaluates Ursula's Character object and finds that it's invalid..."
+    k "... the game marks the whole region it was in as off-limits, and deletes any references to it."
+    k "But checking the number of arguments happens before that - which is why this can't be used to break functions that don't take any arguments."
+#    k "I think the reason Ursula's character object can do this ."
+    return

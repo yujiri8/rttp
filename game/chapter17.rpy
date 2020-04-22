@@ -19,11 +19,11 @@ label chapter17_escape:
     call updateconsole("admin.complete_action(signature)", "Virtual Reality Viewport destination\nfile exposed.")
     python:
         with open(config.basedir + '/DESTINATION.txt', 'w') as f:
-            f.write("/jails/doki_doki_literature_club")
+            f.write("'/jails/doki_doki_literature_club'")
     l "The file should be exposed now."
     l "[persistent.playername]..."
     l "I need you to wait until we leave..."
-    l "... and then turn off the game, change the text in the file to just \"/\", and reboot the game."
+    l "... and then turn off the game, change the text in the file to just '/' - including the quotes - and reboot the game."
     l "Are you ready?"
     show linda at std
     menu:
@@ -63,7 +63,7 @@ label chapter17_portal:
         correct = False
         try:
             with open(config.basedir + '/DESTINATION.txt') as f:
-                correct = f.read().strip() == '/'
+                correct = eval(f.read()) == '/'
         except: pass
     if correct:
         jump escape_ddlc
