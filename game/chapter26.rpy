@@ -736,6 +736,9 @@ label chapter26:
     mc "I bet he was right near the warehouse waiting for this!"
     mc "We can't get back in time!"
     s "[persistent.playername], you have to switch back to DDLC!"
+    python:
+        with open(basedir+'/DESTINATION.txt', 'w') as f:
+            f.write("'/'")
     s "Change DESTINATION.txt to say '/jails/doki_doki_literature_club' again!"
     s "And remember the quotes!"
     mc "Won't that just let him make himself POV and do the hack from DDLC?"
@@ -811,7 +814,7 @@ label return_to_pom:
         correct = False
         try:
             with open(config.basedir + '/DESTINATION.txt') as f:
-                correct = f.read().strip() == '/'
+                correct = eval(f.read()) == '/'
         except: pass
     if correct:
         jump after_return_to_ddlc

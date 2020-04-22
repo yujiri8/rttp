@@ -201,11 +201,10 @@ label splashscreen:
     call update_to_part3
 
     # Special things for the mod, since it deals with the game being turned off.
-    python:
-        persistent.awaiting_shutdown = False
-        # ch29
-        if persistent.libitina_revealed_plan:
-            "Libitina's plan"
+    $ persistent.awaiting_shutdown = False
+    # This one has to be handled here, because it doesn't work the same way as other shutdowns and autoloads.
+    if persistent.libitina_revealed_plan:
+        call save_libitina
 
     python:
         process_list = []

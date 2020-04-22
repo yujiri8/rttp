@@ -136,6 +136,10 @@ label chapter29:
                 "and since that's an 'internal' thingy, the stupid API break mechanic won't apply to it " + glitchtext(40) +
                 "listen i need you to edit that file to run a command to restore me" + glitchtext(40) +
                 "i can't reach it if you don't help me i'm gonna die").replace(' ', ''))
+        persistent.libitina_revealed_plan = True
+        persistent.save_libitina = False
+        with open(basedir+'/DESTINATION.txt', 'w') as f:
+            f.write("'/'")
     k "I don't think there's any coming back from this."
     show markov at std
     python:
@@ -654,8 +658,18 @@ label adams_fate:
 
 label save_libitina:
     python:
-        with open('DESTINATION.txt') as f:
-            if f.read() == '':
-                "sth"
-                persistent.libitina_lived = True
+        import re
+        try:
+            with open(basedir+'/DESTINATION.txt') as f:
+                text = f.read()
+                correct = eval(text) == '/'
+        except:
+            correct = False
+            text = ''
+    if not correct:
+        if re.match(r"restore_character\( *('libitina'|\"libitina\") *\)", text.strip()):
+            $ persistent.libitina_lived = True
+            $ persistent.libitina_revealed_plan = False
+        "Invalid destination."
+        $ renpy.quit()
     return
