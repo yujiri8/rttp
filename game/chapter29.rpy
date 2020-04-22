@@ -119,6 +119,14 @@ label chapter29:
     show markov at foc
     k u12543 "Putting a rift on top of the portal..."
     k "We've broken things worse than I ever thought possible."
+    k "I don't think there's any coming back from this."
+    show markov at std
+    python:
+        for i in range(10):
+            write_error_file()
+    show monika at foc
+    m "This can't be for real!"
+    m c117112 "Not only we're stuck in the portal room, but DDLC is gone?"
     python:
         with open(basedir+'/theremightbeaway.txt', 'w') as f:
             f.write(("i can see shit being shredded" + glitchtext(40) +
@@ -137,17 +145,9 @@ label chapter29:
                 "listen i need you to edit that file to run a command to restore me" + glitchtext(40) +
                 "i can't reach it if you don't help me i'm gonna die").replace(' ', ''))
         persistent.libitina_revealed_plan = True
-        persistent.save_libitina = False
+        persistent.libitina_lived = False
         with open(basedir+'/DESTINATION.txt', 'w') as f:
             f.write("'/'")
-    k "I don't think there's any coming back from this."
-    show markov at std
-    python:
-        for i in range(10):
-            write_error_file()
-    show monika at foc
-    m "This can't be for real!"
-    m c117112 "Not only we're stuck in the portal room, but DDLC is gone?"
     m "How are we ever going to resurrect Libitina?"
     m c114212 "Or..."
     python:
@@ -601,16 +601,20 @@ label adams_fate:
             "TODO"
         $ persistent.adam_lived = True
     else:
-        # TODO maybe another version if the others were told to have mercy and Monika wasn't. Linda could do the shooting.
-        mc "I think it's time we get rid of Adam."
-        mc "We don't need him anymore."
+        if persistent.player_advocate_mercy[0] == 1:
+            m "Well..."
+            m "I think it's time we get rid of Adam."
+            m "We don't nee him anymore."
+        else:
+            mc "I think it's time we get rid of Adam."
+            mc "We don't need him anymore."
         show markov at foc
         k "Don't do this..."
         k "Don't give my story a sad ending."
         show markov at std
         if persistent.player_advocate_mercy[0] == 1:
             show sayori at foc
-            s "What about all the poeple {i}you{/i} gave sad endings to?"
+            s c228214 "What about all the poeple {i}you{/i} gave sad endings to?"
             s "People that didn't even do anything wrong!"
             s "And you think you deserve a happy ending?"
             show sayori at std
@@ -639,19 +643,30 @@ label adams_fate:
             s "But..."
             s "... you might be right."
             show sayori at std
-
-        
-        mc "We've all had enough of you!"
-        mc "Natsuki! Send him to hell!"
+        else:
+            r "I wish we could give you a sadder ending."
+            r "Someone without a Third Eye... put an end to his wretched existence."
+            show natsuki at foc
+            n "I'll do it."
+            show natsuki at std
+            show markov at foc
+            k "You don't have to do this!"
+            k "Think of the future!"
+            k "If I come with you "
+            show markov at std
+            ""
         show natsuki at foc
+        n "Go to hell, you fucking monster!"
         play sound gunshot1
-        show markov
+        show markov u22643s
         "..."
         play sound gunshot1
         $ delete_character('adam')
         show markov at thide
         hide markov
-        n "Go to hell, you fucking monster!!"
+        n "..."
+        "Her second shot landed in his head."
+        n "It's done."
         show natsuki at std
         $ persistent.adam_lived = False
     return
