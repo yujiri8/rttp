@@ -840,21 +840,21 @@ label monika_not_save_adam:
         jump sayori_not_save_adam
 
 label sayori_try_save_adam:
-    show sayori at foc
-    s c228214 "What about all the poeple {i}you{/i} gave sad endings to?"
+    show sayori c228314 at foc(p33)
+    s "What about all the poeple {i}you{/i} gave sad endings to?"
     s "People that didn't even do anything wrong!"
     s "And you think you deserve a happy ending?"
     show sayori at std
     show markov at foc
-    k "There's only a difference of degree between Monika and me."
+    k u12513t "There's only a difference of degree between Monika and me."
     k "You forgave her, and then Renier."
     k "Why not give me a chance to redeem myself?"
     k "If I'm allowed to come with you..."
-    k "... I will owe the rest of my life ."
-    k "It may not be enough to make up for what I did, but you should let me do what I can..."
+    k "... I will owe the rest of my life in reparation."
+    k "It may not be enough to make up for what I did, but you should let me do what I can to atone..."
     show markov at std
     show sayori at foc
-    s "I once said that no one deserves a sad ending..."
+    s c128314 "I once said that no one deserves a sad ending..."
     s "... but... I wasn't thinking about you when I said that."
     show sayori at std
     show markov at foc
@@ -865,10 +865,10 @@ label sayori_try_save_adam:
     k "That's not the ending you want, is it?"
     show markov at std
     show sayori at foc
-    s "It is."
+    s c128354 "It is."
     s "I'd hate to have to forgive you someday."
     s "But..."
-    s "... you might be right."
+    s c125353 "... you might be right."
     show sayori at std
     if persistent.libitina_lived:
         jump libitina_kill_adam_against_sayori
@@ -877,19 +877,22 @@ label sayori_try_save_adam:
 
 label libitina_kill_adam_against_sayori:
     show libitina at foc
+    b 3372113 "Like hell he might!"
     b "Someone without a Third Eye, end him!"
     b "I'll hear no more of him!"
     show libitina at std
-    if persistent.player_advocate_mercy[0] < 1:
-        show natsuki at foc
-        n "Gladly."
-        show natsuki at std
-        play sound gunshot1
-        show markov u22643s
-        pause 0.5
-        play sound gunshot1
-        pause 1.5
-
+    show sayori at std(p54)
+    show natsuki c114214 at std(p55)
+    "To my surprise, Natsuki is hesitating."
+    show natsuki at foc
+    n "Sayori..."
+    n "Do you really think I shouldn't kill him?!?"
+    show natsuki at std
+    "Libitina starts trying to wrestle Linda's gun."
+    show natsuki at foc
+    n c117224 "Oh my God!"
+    n "No!"
+    show sayori c227253
     play sound gunshot1
     show markov u22643s
     pause 0.5
@@ -898,17 +901,42 @@ label libitina_kill_adam_against_sayori:
     show markov at thide
     hide markov
     play sound fall
-    "Natsuki punches Libitina in the face to get her off her."
-    n "You crazy bitch!"
-    n "I was gonna shoot him!"
-    n "That's the last time you attack me like that!"
-    n "Got it?"
-    #TODO
-    show monika at std
-    "Libitina's response is instant."
+    show natsuki at std
+    show libitina 3362113 at std(p52)
+    show linda 334114b at std(p51)
+    "Natsuki had to make the shots to stop Libitina from being the one to do it."
+    show natsuki c113111
+    show sayori at foc zorder 1
+    s c223153 "Libitina, why?"
+    s c225153 "You..."
+    s "I..."
+    s "I was..."
+    s c1153k3 "Guh..."
+    s c213353 "I was on the fence of forgiving him...!"
+    show sayori at std
     show libitina at foc
-    b "I'm selfish."
+    b 3262113 "I couldn't care less about your opinion, Sayori."
+    b "I needed to kill him."
+    b "I wouldn't have spared him for a million dollars."
     show libitina at std
+    show sayori c115193 at foc
+    s "That..."
+#    s "I feel like I've just been jerked around for no reason."
+    s c213113 "You just made this ending even sadder..."
+    show sayori at std
+    show libitina at foc
+    b 3271113 "I'm sorry that it hurts your feelings to lose the creature who imprisoned and tortured us for years!"
+    b 2261113 "For the Third Eye's sake, Sayori."
+    b "Not every ending is happy."
+    b "Not every life makes it happer if you save it."
+    show libitina at std
+    "I'm glad to see the bastard go, but at the same time..."
+    "Did he have a point?"
+    "Were Sayori's feelings right?"
+    "[persistent.playername] once said there was no such thing as an unforgivable sin, although I didn't believe [persistent.player_obj_pronoun] at the time."
+    "And Libitina was suck a jerk to her."
+    "Well..."
+    "I guess that's how this ends."
     $ persistent.adam_lived = False
     return
 
