@@ -246,7 +246,6 @@ label ch13_player_suggest:
     scene black with dissolve_scene_full
     return
 
-
 label suggest_set_name:
     menu:
         " "

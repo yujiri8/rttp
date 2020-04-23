@@ -281,9 +281,7 @@ label splashscreen:
             "Have you seen them?"
             "Yes.":
                 pass
-        call setup
-        $ persistent.first_run = True
-        jump start
+        jump setup
 
     $ basedir = config.basedir.replace('\\', '/')
 

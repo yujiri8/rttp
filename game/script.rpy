@@ -46,6 +46,7 @@ label start:
     label after_delete_script:
         $ mc_name = persistent.mc_name
         call chapter13
+    label part2_skip_point:
         call chapter14
         call chapter15
         call chapter16
@@ -61,6 +62,7 @@ label start:
         call chapter20
         call chapter21
 
+    # this is also the part 3 skip point
     label after_markov_returns:
         $ mc_name = persistent.mc_name
         call chapter22

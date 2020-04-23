@@ -2,12 +2,8 @@ label chapter1:
     $ s_name = glitchtext(6)
     $ m_name = glitchtext(6)
     $ ms_name = m_name + " & " + s_name
-
     $ delete_all_characters()
-    scene black with dissolve_scene
     play music m1
-    $ quick_menu = True
-
     ms "Aaaaah!"
     s "Oh god, oh god, it hurt so much..."
     s "I thought {i}being deleted{/i} was torture!"

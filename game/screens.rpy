@@ -6,9 +6,6 @@ init -1 style default:
     line_overlap_split 1
     line_spacing 1
 
-init -1 style default_monika is normal:
-    slow_cps 30
-
 init -1 style edited is default:
     font "gui/font/VerilySerifMono.otf"
     kerning 8
@@ -99,15 +96,12 @@ init -1 style scrollbar:
     unscrollable "hide"
     bar_invert True
 
-
 init -1 style vscrollbar:
     xsize 18
     base_bar Frame("gui/scrollbar/vertical_poem_bar.png", tile=False)
     thumb Frame("gui/scrollbar/vertical_poem_thumb.png", left=6, top=6, tile=True)
     unscrollable "hide"
     bar_invert True
-
-
 
 init -1 style slider:
     ysize 18
@@ -119,11 +113,9 @@ init -1 style vslider:
     base_bar Frame("gui/slider/vertical_[prefix_]bar.png", gui.vslider_borders, tile=gui.slider_tile)
     thumb "gui/slider/vertical_[prefix_]thumb.png"
 
-
 init -1 style frame:
     padding gui.frame_borders.padding
     background Frame("gui/frame.png", gui.frame_borders, tile=gui.frame_tile)
-
 
 
 init -501 screen say(who, what):
@@ -131,16 +123,12 @@ init -501 screen say(who, what):
 
     window:
         id "window"
-
         text what id "what"
 
         if who is not None:
-
             window:
                 style "namebox"
                 text who id "who"
-
-
 
     if not renpy.variant("small"):
         add SideImage() xalign 0.0 yalign 1.0
@@ -155,7 +143,6 @@ init -1 style say_thought is say_dialogue
 
 init -1 style namebox is default
 init -1 style namebox_label is say_label
-
 
 init -1 style window:
     xalign 0.5
@@ -275,25 +262,6 @@ init -1 style choice_button is default:
 init -1 style choice_button_text is default:
     properties gui.button_text_properties("choice_button")
     outlines []
-
-
-init -1 python:
-    def RigMouse():
-        currentpos = renpy.get_mouse_pos()
-        targetpos = [640, 345]
-        if currentpos[1] < targetpos[1]:
-            renpy.display.draw.set_mouse_pos((currentpos[0] * 9 + targetpos[0]) / 10.0, (currentpos[1] * 9 + targetpos[1]) / 10.0)
-
-init -501 screen rigged_choice(items):
-    style_prefix "choice"
-
-    vbox:
-        for i in items:
-            textbutton i.caption action i.action
-
-    timer 1.0/30.0 repeat True action Function(RigMouse)
-
-
 
 define -1 config.narrator_menu = True
 

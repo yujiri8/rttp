@@ -49,10 +49,10 @@ label chapter21:
     show monika at std
     menu:
         " "
-        "Try character.reset().":
+        "Try Character.reset().":
             pass
     show monika at foc
-    m u114111 "character.reset...?"
+    m u114111 "Character.reset...?"
     show monika at std
     menu:
         " "

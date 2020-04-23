@@ -210,7 +210,7 @@ label do_the_final_plan:
     call screen dialog("I undid what Monika did to the choice system a long time ago, so your choices speak to " + mc_name + "'s mind again! - Adam", ok_action=Return())
     call screen dialog("This way you stand a chance to influence him without him resisting. - Adam", ok_action=Return())
     call hideconsole
-    $ cosolehistory = []
+    $ consolehistory = []
     menu:
         " "
         "Stop her.":

@@ -1054,7 +1054,7 @@ label chapter15:
     l "All I can figure out how to do it besides see things is talk to you in a dream."
     "Renier does a lot more sabotage with Linda as his supernatural eyes."
     # I think I'm not handling this well. I want to explain their sabotage, and make it interesting.
-    "Linda finds out about character.reset, a method Markov uses on Libitina in dire situations to prevent her from dying."
+    "Linda finds out about Character.reset, a method Markov uses on Libitina in dire situations to prevent her from dying."
     "One night, in Renier's dream, Linda reveals she's learned Markov's next big move from spying on him."
     "He plans to restore the character files of Clare, Abbey, Elyssa, Maria, and Daniel inside one of his virtual worlds, and ship it to the outside world under the guise of a dating sim."
     show mask_2

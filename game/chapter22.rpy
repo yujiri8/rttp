@@ -10,9 +10,6 @@ label chapter22:
     $ autosave()
     $ persistent.autoload = None
     $ n_name = "Maria"
-    # Set these two again for those playing with a part 2 save.
-    $ persistent.pom_menu = True
-    $ persistent.newgame = 'deny'
     "..."
     "... What...?"
     "What happened...?"
@@ -444,11 +441,11 @@ label chapter22:
         " "
         "I think our only out is the new game button.":
             pass
+    $ persistent.tried_newgame = False
     menu:
         " "
         "With any luck... it'll work. [persistent.playername]?":
             pass
-    $ persistent.tried_newgame = False
     while not persistent.tried_newgame:
         " "
     menu:

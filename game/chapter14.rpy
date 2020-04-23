@@ -1,4 +1,12 @@
 label chapter14:
+    # for skipping in
+    if not renpy.music.get_playing():
+        play music m1
+    # set the right chr files incase of skip
+    python:
+        delete_all_characters()
+        for char in 'sayori', 'natsuki', 'yuri', 'renier':
+            restore_character(char)
     "Portrait of Markov starts off like the novel I remember Yuri describing in Act 1."
     "The main character is called Elyssa."
     "Chapter one introduces her as being the way I remember her: second-guessing herself a lot, similar to Yuri."
