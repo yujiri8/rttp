@@ -404,8 +404,9 @@ default mom_name = "Elyssa's Mom"
 default currentuser = "Player"
 default persistent.playername = "Player"
 default persistent.mc_name = "MC"
-# This is honestly just a shortcut. Not sure if worth.
+# Shortcut. Not sure if worth.
 default mc_name = "MC"
+default persistent.mc_favorite = 'Sayori'
 default name_entry = "" # Garbage variable for the name input screen; should never be referenced
 default persistent.player_subj_pronoun = "he"
 default persistent.player_obj_pronoun = "him"

@@ -21,18 +21,18 @@ label credits:
     pause 10
 label eternal_poem:
     call showpoem(poem = poem_monika_end, music = False)
-    call showpoem(poem = poem_sayori_end, music = False)
+    call showpoem(poem = poem_sayori_end(), music = False)
     if persistent.libitina_lived:
         call showpoem(poem = poem_yuri_libitina_end, music = False)
     else:
-        call showpoem(poem = poem_yuri_libitina_end, music = False)
-    call showpoem(poem = poem_natsuki_end, music = False)
+        call showpoem(poem = poem_yuri_end, music = False)
+    call showpoem(poem = poem_natsuki_end(), music = False)
     if mc_dislike_player() < 2:
-        call showpoem(poem = poem_mc_end, music = False)
+        call showpoem(poem = poem_mc_end(), music = False)
     else:
-        call showpoem(poem = poem_mc_grumpy_end, music = False)
+        call showpoem(poem = poem_mc_grumpy_end(), music = False)
     if persistent.libitina_lived:
-        call showpoem(poem = poem_libitina_end, music = False)
+        call showpoem(poem = poem_libitina_end(), music = False)
     if persistent.adam_lived:
         call showpoem(poem = poem_adam, music = False)
     $ renpy.quit()

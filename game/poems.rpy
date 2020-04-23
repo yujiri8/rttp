@@ -206,7 +206,7 @@ May I get another one.
 - Adam Markov
 """)
 
-    poem_libitina_end = Poem(
+    poem_libitina_end = lambda: Poem(
     author = "yuri",
     title = "Thank You",
     text = """\
@@ -261,7 +261,7 @@ I still can't thank you enough for giving me a future. All of us. We really esca
 - Monika
 """)
 
-    poem_sayori_end = Poem(
+    poem_sayori_end = lambda: Poem(
     author = "sayori",
     title = "",
     text = """\
@@ -328,7 +328,7 @@ But I think she will in time. I can't wait to see the first time she smiles for 
 - Yuri
 """)
 
-    poem_natsuki_end = Poem(
+    poem_natsuki_end = lambda: Poem(
     author = "natsuki",
     title = "",
     text = """\
@@ -351,7 +351,7 @@ I can already hear """ + (persistent.mc_name if persistent.mc_favorite == 'Natsu
 - Natsuki
 """)
 
-    poem_mc_end = Poem(
+    poem_mc_end = lambda: Poem(
     author = "mc",
     title = "",
     text = """\
@@ -365,7 +365,7 @@ Oh, and thanks for causing me to grow close to """+persistent.mc_favorite+""".
 
 - """+persistent.mc_name)
 
-    poem_mc_grumpy_end = Poem(
+    poem_mc_grumpy_end = lambda: Poem(
     author = "mc",
     title = "",
     text = """\
