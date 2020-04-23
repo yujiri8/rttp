@@ -111,7 +111,8 @@ label chapter25:
     "Sayori and [mc_name]'s expressions darken."
     show yuri c114118
     show natsuki c114114
-    show renier ru1133
+    if persistent.player_support_experiment:
+        show renier ru1133
     show albert at foc
     al 21112 "If... you don't mind..."
     show albert at std
@@ -477,8 +478,8 @@ label chapter25:
     show libitina at std(p64)
     show mc at std(p65)
     show natsuki at std(p66)
-    show yuri at leftinfoc(p61) zorder 4
-    y c126116 "Your actions speak louder than your words!"
+    show yuri c126116 at foc(p61) zorder 4
+    y "Your actions speak louder than your words!"
     y c12b116 "You claim to be sorry, but you continue to thwart us and force us to do things like Monika just had to do!"
     show yuri at std
     menu:
@@ -497,22 +498,36 @@ label chapter25:
     show natsuki c124111
     "..."
     if persistent.player_advocate_mercy[1]:
-        show natsuki at foc
-        n "Did you actually fool him?"
-        n "Does he really think we plan to forgive him?"
-        show natsuki at std
-        show monika at foc
-        m c114222 "..."
-        show monika at std
-        l "Not if he checks the history and sees that you said that."
-        show natsuki at foc
-        n c124231 "Uu..."
-        n "Well..."
-        n c124211 "He can read your thoughts anyway..."
-        show natsuki at std
-        l "Yeah..."
-        l "Oh well."
-        l "Maybe if we talk about something else to flush the history and take our minds off it?"
+        if persistent.player_advocate_mercy[0]:
+            show libitina at foc zorder 4
+            b "Did you actually fool him?"
+            b "Does he really think we plan to forgive him?"
+            show libitina at std zorder 3
+            show monika at foc
+            m c114222 "..."
+            show monika at std
+            l "Not if he checks the history and sees that you said that."
+            show libitina at foc zorder 4
+            b 2262111 "Oops..."
+            show libitina at std
+            l "Maybe we should talk about something else to flush the history and take our minds off it?"
+        else:
+            show natsuki at foc
+            n "Did you actually fool him?"
+            n "Does he really think we plan to forgive him?"
+            show natsuki at std
+            show monika at foc
+            m c114222 "..."
+            show monika at std
+            l "Not if he checks the history and sees that you said that."
+            show natsuki at foc
+            n c124231 "Uu..."
+            n "Well..."
+            n c124211 "He can read your thoughts anyway..."
+            show natsuki at std
+            l "Yeah..."
+            l "Oh well."
+            l "Maybe if we talk about something else to flush the history and take our minds off it?"
     else:
         show mc at foc zorder 3
         mc "So I guess he thinks we think he thinks he's tricking us?"
