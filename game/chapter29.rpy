@@ -450,6 +450,12 @@ label finale_lament:
     al "We should've been more careful before we toyed with forces that we'd seen destroy worlds."
     al "How irresponsible this was..."
     show albert at std
+    # a lazy excuse for me to reset the screen, so I don't have to deal with
+    # all the shitty permutations of positions and zorders
+    "I close my eyes."
+    scene black with dissolve_scene
+    "..."
+    "..."
     $ monika_sad_about_sending = False
     call adams_fate
     scene black
@@ -521,6 +527,11 @@ label save_libitina:
     return
 
 label adams_fate:
+    show mask_1
+    show mask_2
+    show portal_half
+    show markov u11433 at std(p11)
+    with dissolve_scene
     if persistent.player_advocate_mercy[1]:
         jump monika_try_save_adam
     else:
