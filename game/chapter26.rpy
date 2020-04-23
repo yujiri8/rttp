@@ -687,7 +687,11 @@ label chapter26:
     scene warehouse_outside_night with wipeleft
     "We head back to the warehouse."
     "I hear a scream as we approach it."
-    scene warehouse_inside_rift with wipeleft
+    scene black
+    show mask_2
+    show mask_3
+    show warehouse_inside_rift
+    with wipeleft
     "The room inside is pretty much intact except for the rift."
     "Libitina's on the floor vomiting blood again, like she did after killing Adam."
     show yuri c1281y8 at foc(p21)
@@ -832,7 +836,11 @@ label chapter26_2:
     "{cps=200}Fatal error: player character missing.{/cps}"
     "{cps=200}Fatal error: player character missing.{/cps}"
     $ restore_character('monika')
-    scene warehouse_inside_rift with dissolve_scene
+    scene black
+    show mask_2
+    show mask_3
+    show warehouse_inside_rift
+    with wipeleft_scene
     "Here we are."
     "After you disconnected the viewport, I restored myself and then Adam just wanted to extract again."
     "I have no idea what his plan is, but I'm back in Portrait of Markov n--"
@@ -850,9 +858,13 @@ label chapter26_2:
     "But I don't feel anything."
     n "{cps=40}GOT YOU!!{/cps}"
     "I reopen my eyes."
-    scene warehouse_inside_rift with open_eyes
+    scene black
+    show mask_2
+    show mask_3
+    show warehouse_inside_rift
     show natsuki c215122 at foc(p21)
     show markov u11643s at std(p22)
+    with wipeleft_scene
     "Natsuki... shot Adam..."
     show markov at thide
     hide markov
