@@ -360,25 +360,35 @@ label chapter29_2:
     show linda zorder 25
     show markov at foc
     k "I think so."
-    k "Everyone who never had a character file."
+    k "All of them."
     show markov at std
-    if persistent.libitina_lived:
-        "That's..."
-        mc "Come again?"
-        show markov at foc
-        k "The rest of the world's population has been irrecoverably deleted."
-        show markov at std
-        "But..."
-        "..."
-        "{i}And that's because of what we did?!?{/i}"
-        show albert at foc
-        al "You're telling me..."
-        al "... our actions just now killed all those people?"
-        show albert at std
-        show markov at foc
-        k "Yes."
-        show markov at std
-    else:
+    "That's..."
+    mc "Come again?"
+    show markov at foc
+    k u21543 "The entire population of the Portrait of Markov, besides us, has been irrecoverably deleted."
+    show markov at std
+    "But..."
+    "..."
+    "{i}And that's because of what we did?!?{/i}"
+    show natsuki at std(p62)
+    show yuri at std(p63)
+    show renier at std(p64)
+    show monika at std(p65)
+    show linda at thide
+    hide linda
+    show albert 21142 at leftinfoc(p61)
+    al "You're telling me..."
+    al "... our actions just now killed all those people?"
+    show albert at xis(p61)
+    show markov at foc
+    k "Yes."
+    show markov at std
+    "What..."
+    "This wasn't my fault."
+    "It wasn't. My fault."
+    "I didn't know this would happen."
+    "I'm not the one who should've known."
+    if not persistent.libitina_lived:
         show yuri at foc zorder 1
         y "What about Libitina?!?"
         show yuri at std
@@ -405,43 +415,34 @@ label chapter29_2:
         k u11613t "I swear to God, I tried!"
         show markov at std
 label finale_lament:
-    "So the world is really gone?"
-    "We killed everyone?"
-    "The whole... world?"
-    "{i}Everyone{/i} in the Portrait?"
-    "I..."
-    "..."
-    "What..."
-    "This wasn't my fault."
-    "It wasn't. My fault."
-    "I didn't know this would happen."
-    "I'm not the one who should've known."
-    show yuri at foc
+    show yuri at foc zorder 1
     y "What about Mom and Dad?"
     y "Will we never see them again?"
     y "We never told them anything."
     y "To think we missed that chance and now they're dead without any knowledge of what happened, any last words..."
     y "Mom's last moment was possessed by her Third Eye, trying to kill me..."
     show yuri at std
-    show natsuki at foc
-    n c11s313 "I left Dad a note because I thought he'd try to stop me..."
+    show natsuki at foc zorder 2
+    n c11s313 "I left Dad a note because I thought he'd try to stop me from leaving..."
     n "... but what a horrible replacement for a conversation."
     show natsuki at std
     show monika at foc
     m c1181i4 "I never even talked to my parents!"
     m "I wanted to when the game reset, but I thought I didn't have time..."
     show monika at std
-    show sayori at foc
-    s c217153 "I'm so glad we did that step...!"
+    show markov at thide
+    hide markov
+    show sayori c217153 at rightinfoc(p66) zorder 1
+    s "I'm so glad we did that step...!"
     show sayori at std
-    show albert at foc
+    show albert at foc zorder 3
     al "Our escape plan killed more people than Adam ever did."
     al "I can't believe..."
     al "We're the worst malefactors of humanity this world ever knew."
     al "All of us."
     show albert at std
-    show renier at foc
-    r "Stop! It wasn't our fault!"
+    show renier at foc zorder 2
+    r ru2287 "Stop! It wasn't our fault!"
     r "It wasn't any of our faults!"
     r "We didn't see this coming!"
     show renier at std
