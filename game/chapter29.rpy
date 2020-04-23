@@ -951,7 +951,7 @@ label sayori_not_save_adam:
         b "Someone without a Third Eye... put an end to his horror show of a life!"
         show libitina at std
     else:
-        show renier at foc
+        show renier u2226 at foc(p31)
         r "I wish we could give you a sadder ending."
         r "Someone without a Third Eye... put an end to his wretched existence."
         show renier at std
@@ -976,15 +976,22 @@ label sayori_not_save_adam:
     hide markov
     n "..."
     "Her second shot landed in his head."
+    if not persistent.libitina_lived:
+        show renier uf11
     n c114112 "It's done."
     n "Over."
     n "Finished."
     n c114111 "We'll never have to see him again."
     show natsuki at std
-    show libitina at foc
-    b 2361111 "Thank you Natsuki."
-    b "I would've liked to torture him more..."
-    b "But I guess this was the best we could get."
-    show libitina at std
+    if persistent.libitina_lived:
+        show libitina at foc
+        b 2361111 "Thank you Natsuki."
+        b "I would've liked to torture him more..."
+        b "But I guess this was the best we could get."
+        show libitina at std
+    else:
+        show renier at foc
+        r uf13 "Good job."
+        show renier at std
     $ persistent.adam_lived = False
     return
