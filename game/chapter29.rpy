@@ -822,15 +822,15 @@ label monika_not_save_adam:
         b "We don't need you anymore."
         show libitina at std
     elif persistent.player_advocate_mercy[0] == 1:
-        show monika at foc
+        show monika c124113 at foc(p31)
         m "Well..."
-        m "I think it's time we get rid of Adam."
-        m "We don't nee him anymore."
+        m c123113 "I think it's time we get rid of Adam."
+        m "We don't need him anymore."
         show monika at std
     else:
         mc "I think it's time we get rid of Adam."
         mc "We don't need him anymore."
-    show markov at foc
+    show markov at foc zorder 1
     k u11513t "Don't do this..."
     k "Don't give my story a sad ending."
     show markov at std
@@ -941,7 +941,102 @@ label libitina_kill_adam_against_sayori:
     return
 
 label sayori_save_adam:
-    "TODO"
+    show monika at foc
+    m c127113 "What?!?"
+    m c227113 "Sayori, for real?"
+    m "After literal years of tortureat his hands?!?"
+    show monika at std
+    show sayori at foc
+    s "..."
+    show sayori at std
+    show markov at foc
+    k u12533t "Please, all I ask is a chance to atone..."
+    show markov at std
+    show sayori at foc
+    s c123113 "Monika..."
+    s "What he said was right."
+    s "There's not really a whole world of difference between him and you."
+    show sayori at std
+    show monika at foc
+    m c127213 "...!"
+    m c228213 "How could you say that?!?"
+    m "What's gotten into your head, Sayori?!?"
+    show monika at std
+    show sayori at foc
+    s c223114 "Monika, stop!"
+    s "You're wrong!"
+    s "You tortured and murdered us and I didn't even let Natsuki punch you when you came back!"
+    s "And now you want me to kill him when he's just asking for a chance to make up for it?"
+    s "You of all people have no right to say this!"
+    s "You're being a hypocrite!"
+    show sayori at std
+    show markov u12513t
+    show monika at foc
+    m c1273i2 "I..."
+    m c1143g2 "..."
+    m "Sayori..."
+    m c1142i2 "I'm sorry... I shouldn't have lashed out at you."
+    m "But how can you really mean this?"
+    show monika at std
+    show sayori at foc
+    s c213111 "I just felt pretty much the same way about it as I did when I forgave you."
+    s "It just didn't seem right to kill him."
+    s "He really does plan to do penance."
+    s "He showed that when he passed the opportunity to escape through the portal right after he came back."
+    show sayori at std
+    "Come to think of it..."
+    "He really did have an opportunity after he restored himself, didn't he?"
+    "We didn't even notice he was back until he announced it."
+    "There's no selfish reason he wouldn't have gone for it."
+    show monika at foc
+    m "Well..."
+    m "You all really think it would be hypocritical for me to want to kill him?"
+    show monika at std(p62)
+    show renier u2113 at foc(p61)
+    r "Yes."
+    show renier at std
+    show sayori at std(p54)
+    show natsuki c224111 at foc(p55)
+    n "Honestly, kinda."
+    show natsuki at std(p65)
+    show sayori at std(p64)
+    show markov at std(p63)
+    show yuri c125111 at foc(p66)
+    y "Hypocritical to want, no."
+    y "Hypocritical to give into that desire, perhaps."
+    show yuri at std
+    mc "I'm gonna have to say yes as well."
+    show monika at foc(p62) zorder 1
+    m c114212 "Then..."
+    m "I can't do it."
+    m "But... why?"
+    m "Why did all of you decide this?"
+    show monika at std
+    mc "Well..."
+    mc "When we were reading Portrait of Markov, we had a talk..."
+    mc "... kind of about this..."
+    mc "... and [persistent.playername] told us wise words: \"there's no such thing as an unforgivable sin\"."
+    mc "I think I believe it now."
+    show monika at foc
+    m "So it came from [persistent.playername]..."
+    m "[persistent.playername]... you were right."
+    show monika at std
+    show renier at thide
+    hide renier
+    show albert 12111 at foc(p61)
+    al "So we're letting him live?"
+    al "Incredible."
+    show albert at std
+    show markov at foc zorder 2
+    k u12533t "Thank you..."
+    k "Thank you all..."
+    k "I promise I'll make good on this..."
+    k u12513t "Thank you."
+    show markov at std
+    show sayori at foc(p64) zorder 3
+    s c21x311 "What can I say..."
+    s c21x341 "I'm a sucker for golden endings!"
+    show sayori at std
     return
 
 label sayori_not_save_adam:
