@@ -134,7 +134,7 @@ label chapter29:
                 "i think there's barely any time" + glitchtext(40) +
                 "they're not gonna help me" + glitchtext(40) +
                 "they're not gonna give you a dialog" + glitchtext(40) +
-                "but i feel so close to breaking this pile of shit enough to save myself!" + glitchtext(40) +
+                "but i feel so close to breaking this hellhole enough to save myself!" + glitchtext(40) +
                 persistent.playername + " you need to help me ok?" + glitchtext(40) +
                 "i can still see the code" + glitchtext(40) +
                 "and i think there's a vulnerability here" + glitchtext(40) +
@@ -168,33 +168,39 @@ label chapter29:
     $ consolehistory = []
     "..."
     $ persistent.can_save_libitina = False
-    #TODO pose
     if persistent.libitina_lived:
-        show libitina at std(p11)
+        show renier at thide
+        hide renier
+        show libitina 2261334 at std(p63) zorder 3
         b "Haah..."
         show libitina at std
-        show yuri at foc
-        y "She's back!!"
+        show natsuki c112113
+        show monika c112111
+        show linda 113111
+        show markov u11213
+        show yuri at foc zorder 4
+        y c222131 "She's back!!"
         y "Thank goodness..."
         show yuri at std
         "Libitina seems pretty shaken up."
-        show libitina at foc
+        show libitina at foc zorder 5
         b "Thank you so much [persistent.playername]..."
         b "It feels so good to not be deleted."
-        b "You idiots need to give [persistent.player_obj_pronoun] dialogs more often."
+        b "You admin idiots need to give [persistent.player_obj_pronoun] dialogs more often."
         b "It woulda made that easier."
         show libitina at std
-        show linda at foc
-        l 334111 "How did you...?"
+        show linda at foc zorder 51
+        l 334111 "So how did you...?"
         show linda at std
         show libitina at foc
         b "I screamed loud enough."
         b "I think I made the game dump my screams to a file, even though I was glitched."
         b "And [persistent.playername] used DESTINATION.txt to execute a privileged command to save me."
         show libitina at std
+        show linda zorder 25
         show markov at foc
-        k "Can we use the same thing to--"
-        show markov at std
+        k u12511 "Can we use the same thing to--"
+        show markov u12543 at std
     else:
         # Delete Libitina's files, to reduce the chance of player noticing them after this and being confused why
         # saving her didn't work. It's mostly for practical reasons. Canon-wise, best I can do is that she was the
@@ -208,10 +214,13 @@ label chapter29:
     python:
         for i in range(10):
             write_error_file()
+    show monika c118212
+    show linda 119443
     "MAXIMUM NUMBER OF ERROR FILES REACHED."
     "INITIATING FINAL PURGE."
     $ style.say_dialogue = style.normal
-    show monika c118212
+    show yuri c225325
+    show natsuki c114114
     show markov at foc
     k u22643 "What the hell?!?"
     show markov at std
@@ -223,6 +232,7 @@ label chapter29:
     k "No no no!"
     k "'Shredding'..."
     show yuri c228325
+    show natsuki c117124
     k "It's going to make them irrecoverable."
     k "Everyone."
     k "We have to stop it!"
@@ -434,7 +444,7 @@ label finale_lament:
     hide markov
     show sayori c217153 at rightinfoc(p66) zorder 1
     s "I'm so glad we did that step...!"
-    show sayori at std
+    show sayori at xis(p66)
     show albert at foc zorder 3
     al "Our escape plan killed more people than Adam ever did."
     al "I can't believe..."
