@@ -4,7 +4,7 @@ label adam_questions:
     k "Do you have any questions?"
     k "Anything you want me to explain?"
     $ qtext = "Now's a good time."
-    $ persistent.adam_questions = {'experiments':False, 'ursula_awakening':False, 'power_relationship':False, 'ursula_poem':False, 'char_files':False}
+    $ persistent.adam_questions = {'experiments':False, 'ursula_awakening':False, 'power_relationship':False, 'ursula_poem':False, 'char_files':False, 'api_breakage':False, 'dead_states':False}
     $ page = 1
 label adam_questions_menu:
     menu:
@@ -24,10 +24,19 @@ label adam_questions_menu:
         "How do character files work?" if not persistent.adam_questions["char_files"] and page == 2:
             call adam_discuss_char_files
             $ persistent.adam_questions['char_files'] = True
+        "How does breaking APIs work?" if not persistent.adam_questions['api_breakage'] and page == 3:
+            call adam_discuss_api_breakage
+            $ persistent.adam_questions['api_breakage'] = True
+        "I'm confused about all the different 'dead states' characters can be in." if not persistent.adam_questions['dead_states'] and page == 3:
+            call adam_discuss_dead_states
+            $ persistent.adam_questions['api_breakage'] = True
         "(-> page 2)" if not all(persistent.adam_questions.values()) and page == 1:
             $ page = 2
             jump adam_questions_menu
-        "(-> page 1)" if not all(persistent.adam_questions.values()) and page == 2:
+        "(-> page 3)" if not all(persistent.adam_questions.values()) and page == 2:
+            $ page = 3
+            jump adam_questions_menu
+        "(-> page 1)" if not all(persistent.adam_questions.values()) and page == 3:
             $ page = 1
             jump adam_questions_menu
         "Done.":
@@ -103,4 +112,17 @@ label adam_discuss_api_breakage:
     k "... the game marks the whole region it was in as off-limits, and deletes any references to it."
     k "But checking the number of arguments happens before that - which is why this can't be used to break functions that don't take any arguments."
 #    k "I think the reason Ursula's character object can do this ."
+    return
+
+label adam_discuss_dead_states:
+    k "Well..."
+    k "So first of all, there's deletion."
+    k "Deleted characters are unconscious if they're not admins, or experience intense pain if they are."
+    k "When a character dies in-universe, they're deleted."
+    k "When they're deleted directly, they not only die in-universe, but their body is removed from the world."
+    k "Then there are invalid states."
+    k "restore_character doesn't work on characters in invalid state, but Character.reset does."
+    k "Chracter.reset is a general-purpose thing..."
+    k "... it undoes almost any kind of negative state, including physically healing the character."
+    k "But it's not always perfect at fixing various invalid states, since there can be any number of them."
     return
