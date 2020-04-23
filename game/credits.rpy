@@ -32,7 +32,7 @@ define credits = """Return To The Portrait
 By Yujiri (yujiri.xyz)
 
 
-Core Contributors:
+Contributors:
 
 
 u/main_gi / main_gi#2358
