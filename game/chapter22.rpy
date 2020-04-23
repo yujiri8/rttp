@@ -441,7 +441,6 @@ label chapter22:
         " "
         "I think our only out is the new game button.":
             pass
-    $ persistent.tried_newgame = False
     menu:
         " "
         "With any luck... it'll work. [persistent.playername]?":
@@ -718,10 +717,8 @@ label chapter22:
             "The experiments he was probably doing on innocent people are way more disturbing that."
             "I'm glad I don't remember my own time there much."
     "..."
-    if persistent.ch22_kill_guard:
-        "My ears stop hurting so much after a few minutes."
     "Albert drives us into the camp."
-    $ temp = ' again' if persistent.kill_guard == 'natsuki' else ''
+    $ temp = ' again' if persistent.ch22_kill_guard == 'natsuki' else ''
     "My heart starts beating really fast[temp]."
     "This has gotta be stupidly dangerous."
     "Just think of the reason I'm here..."
@@ -735,10 +732,12 @@ label chapter22:
     "... the world just stops in the middle of the place, and there's space beyond it."
     "The hell am I looking at?"
     n "This is the weirdest thing I've ever seen..."
+    show albert 11211 at std(p22)
     al "I'd say it's the coolest thing I've ever seen."
     al "The space isn't acting like space."
     al "It seems to be only for show."
     al "I wish there was time to study this phenomenon."
+    show albert at std
     n "I guess you could say that too..."
     menu:
         " "
@@ -753,12 +752,26 @@ label chapter22:
     n "Alright..."
     "There don't seem to be any cultists in the intact part of the place."
     "I'm still really scared, though."
-    b "[persistent.playername], do you want all of us to go?"
+    if persistent.threaten_libitina_to_come:
+        show libitina 2461111 at foc(p21)
+        b "[persistent.playername], do you want all of us to go?"
+        show libitina at std
+    else:
+        show albert at foc
+        al "[persistent.playername], do you want both of us to go?"
+        show albert at std
     menu:
         " "
         "Might as well.":
             pass
-    b "Okay."
+    if persistent.threaten_libitina_to_come:
+        show libitina at foc
+        b "Okay."
+        show libitina at std
+    else:
+        show albert at foc
+        al "Okay..."
+        show albert at std
     #al "I, for one, want to see what it's like!"
     #al "This danger wouldn't be worth it if I didn't get to experience it myself." # if these lines are said, Albert should walk first.
     #n "I wonder where Markov is."
@@ -766,7 +779,7 @@ label chapter22:
     show mask_2
     show mask_3
     with dissolve_scene
-    "When we get out, I run toward the border of space."
+    "I run toward the border of space."
     "I stop before the edge."
     "I can't shake the feeling that I'm gonna fall to my death, no matter how much you tell me this isn't what it looks like."
     "I'm getting that feeling of needles in my feet."

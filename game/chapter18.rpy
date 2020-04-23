@@ -2,6 +2,7 @@ label chapter18:
     $ delete_all_saves()
     $ autosave()
     $ persistent.autoload = None
+    $ persistent.tried_newgame = False
     $ persistent.newgame = 'deny'
     $ restore_character('monika')
     scene vr_room

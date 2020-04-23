@@ -1,7 +1,7 @@
 transform credits_scroll:
     xcenter 0.5
     yoffset 740
-    linear 70 yoffset -4500
+    linear 75 yoffset -5000
 
 style credits_text:
     font "gui/font/Halogen.ttf"
@@ -16,9 +16,11 @@ label credits:
     scene black with dissolve_scene
     show credits_text credits at credits_scroll
     $ persistent.autoload = 'eternal_poem'
-    pause 60
+    $ _dismiss_pause = False
+    pause 65
     stop music fadeout 10
     pause 10
+    $ _dismiss_pause = True
 label eternal_poem:
     call showpoem(poem = poem_monika_end, music = False)
     call showpoem(poem = poem_sayori_end(), music = False)

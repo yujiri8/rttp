@@ -20,12 +20,12 @@ label chapter8:
     "The day's just been bombshell after bombshell."
     show natsuki c223111 at foc(p11, a=1.0)
     n "No cutting yourself!"
-    show natsuki at uf
+    show natsuki at std
     "Natsuki calls out just before Yuri leaves."
     show yuri c227235 at hopfoc(p33)
     y "Ah--!"
     y c226235 "I wasn't going to!"
-    show yuri at uf
+    show yuri at std
     show natsuki at foc
     n c214111 "Just reminding you..."
     show natsuki at thide
@@ -54,7 +54,7 @@ label chapter8:
     n "There's so much to think about..."
     n xc4111 "I'm still kind of worried about both Yuri and Sayori."
     n "Knowing what they were going through while I didn't have a clue..."
-    show natsuki at uf
+    show natsuki at std
     mc "I definitely share that feeling."
     mc "Even you, I had no clue what you were going through."
     show natsuki at foc
@@ -63,7 +63,7 @@ label chapter8:
     play music t9 fadeout 3.0
     n c114114 "[mc_name]..."
     n "Do you remember the message I tried to send you in Act 2?"
-    show natsuki at uf
+    show natsuki at std
     mc "Yeah..."
     mc "I'm sorry I couldn't act on it."
     show natsuki at foc
@@ -72,7 +72,7 @@ label chapter8:
     n "... about anything..."
     n c11s214 "With anyone else before I died."
     if persistent.mc_favorite == "Natsuki":
-        show natsuki at uf
+        show natsuki at std
         mc "Natsuki, none of that was your fault!"
         mc "You did everything you could."
         show natsuki at foc
@@ -81,19 +81,19 @@ label chapter8:
         n "But I still just wish I could've."
     n c114114 "You remember my first poem?"
     n "'People can try, and that's about it'..."
-    show natsuki at uf
+    show natsuki at std
     mc "Yeah..."
     mc "I was thinking about that while I watched Yuri's... Yuri's corpse..."
     show natsuki at foc
     n "I still feel terrible about that too."
     n "It's a wonder you're not like, horribly traumatized."
-    show natsuki at uf
+    show natsuki at std
     mc "Well, my mind was wiped between then and when we all got brought back."
     mc "I think if I was coming straight from it I would've been."
     mc "But I'm fine now."
     show natsuki at foc
     n c114113 "Wanna go back inside?"
-    show natsuki at uf
+    show natsuki at std
     mc "Yeah."
     play music yawa fadeout 4.0
     scene living_room with wipeleft
@@ -102,13 +102,13 @@ label chapter8:
     mc "Hi, Yuri."
     show yuri at foc
     y c114111 "Hello..."
-    show yuri at uf
+    show yuri at std
     mc "You doing okay?"
     show yuri at foc
     y c123111 "Yes..."
     y c124111 "I've just been thinking about what it means for us..."
     y "That our world is a game."
-    show yuri at uf
+    show yuri at std
     mc "Yeah... I haven't had time to reflect on that yet."
     mc "How meaningless everything in this world is now."
     mc "School is meaningless."
@@ -122,14 +122,14 @@ label chapter8:
     y "Each other."
     y "In the Literature Club, we met the only other real people in our universe."
     y "That's a blessing we mustn't overlook."
-    show yuri at uf
+    show yuri at std
     mc "True..."
     mc "But on the other hand, if I hadn't joined the Literature Club, all this crap wouldn't have happened to me."
     "I chuckle slightly."
     show yuri at foc
     y "I don't think you had a choice."
     y "The script would have made you."
-    show yuri at uf
+    show yuri at std
     mc "Yeah..."
     mc "Did I really have a choice in anything I did?"
     $ temp = persistent.mc_favorite
@@ -142,14 +142,14 @@ label chapter8:
         show yuri at foc
         y c126114 "It was!"
         y "Don't say such things!"
-        show yuri at uf
+        show yuri at std
         mc "But it was [persistent.playername]'s choice, right?"
     elif persistent.mc_favorite == "Natsuki":
         show yuri at x(p22)
         show natsuki c223112 at foc(p21)
         n "Of course it was!"
         n "Don't overthink things and get these wacky ideas in your head!"
-        show natsuki at uf
+        show natsuki at std
         mc "But it was [persistent.playername]'s choice, right?"
         show natsuki c124114
     else:
@@ -169,14 +169,14 @@ label chapter8:
         show sayori c114112 at std(p31)
         show linda 116111 at std(p33)
         m "[mc_name]? What is it?"
-        show monika at uf
+        show monika at std
     else:
         mc "Sayori? Someone?"
         show sayori c113112 at foc(p11)
         show monika c124112 at std(p31)
         show linda 116111 at std(p33)
         s "[mc_name]? What is it?"
-        show sayori at uf
+        show sayori at std
     mc "I need to ask [persistent.playername] a question!"
     mc "[persistent.playername]!"
     mc "Did you make me choose [persistent.mc_favorite]?"
@@ -194,13 +194,13 @@ label chapter8:
             m c214114 "No, [mc_name], [persistent.playername] lied."
             $ temp = persistent.player_subj_pronoun.title()
             m "[temp] wrote your poems and by doing that chose who the script would push you toward."
-            show monika c114114 at uf
+            show monika c114114 at std
             mc "..."
             mc "[persistent.playername]? Did you lie to me?"
             show sayori at foc
             s c125113 "[mc_name]... I'm sorry, but Monika is telling the truth."
             s "[persistent.playername] lied."
-            show sayori at uf
+            show sayori at std
             mc "No..."
     "I look down."
     mc "... Then who am I?"
@@ -217,7 +217,7 @@ label chapter8:
     m c114112 "You're a real person, [mc_name], and you have free will."
     #m "A fake person wouldn't be able to think about this and decide he didn't have free will."
     m "It's definitely not in the script for you to think about this."
-    show monika at uf
+    show monika at std
     "I look up at her."
     show sayori c116112 at foc
     if persistent.mc_least_favorite != 'Sayori':
@@ -226,7 +226,7 @@ label chapter8:
     s "The choices you've made are still yours."
     s "And they were good choices."
     s "And I love you for them."
-    show sayori at uf
+    show sayori at std
     if persistent.mc_favorite == "Sayori":
         mc "Thanks..."
     else:
@@ -244,7 +244,7 @@ label chapter8:
     m "No matter how you look at it, the player only made a couple of choices for you. Outside of those few things everything you did and said has been you."
     m "And you can resist [persistent.player_pos_pronoun] control."
     m "You just never tried before because the script was designed to only give [persistent.player_obj_pronoun] a choice when you were on the fence."
-    show monika at uf
+    show monika at std
     #mc "Um... Thank you, Monika."
     #mc "..."
     #mc "Hey, um..."
@@ -256,7 +256,7 @@ label chapter8:
     show monika at foc
     m c122131 "Ahaha~"
     m c122111 "Alright. [persistent.playername], you ready?"
-    show monika at uf
+    show monika at std
     menu:
         " "
         "Sure.":
@@ -269,7 +269,7 @@ label chapter8:
             l "I don't mean to be rude, but..."
             l "[mc_name], you should leave us to our work."
             l "We have a lot to do."
-            show linda at uf
+            show linda at std
             mc "Right."
             mc "Thanks, all of you."
         "No. [mc_name] should stop being selfish and disturbing your work.":
@@ -286,7 +286,7 @@ label chapter8:
             s c123114 "[mc_name] isn't being selfish!"
             s "This is an important turning point for him!"
             s c223114 "And we're not exactly short on time!"
-            show sayori at uf
+            show sayori at std
             menu:
                 " "
                 "No. You're all on time borrowed from me, so I'm the one who makes that decision.":
@@ -294,13 +294,13 @@ label chapter8:
                     show sayori c115113 at foc
                     s "Ah-..."
                     s c215112 "But [persistent.playername]...!"
-                    show sayori at uf
+                    show sayori at std
                     show monika at foc
                     m c114144 "No, Sayori."
                     m c114114 "[persistent.playername] is right."
                     m c214114 "The only reason we're not both still suffering in the void is because of [persistent.player_obj_pronoun]."
                     m c114114 "It's [persistent.player_pos_pronoun] right to be selfish just this once."
-                    show monika at uf
+                    show monika at std
                     show sayori c115123
                     "Sayori looks down."
                     mc "Okay. I'm going."
@@ -317,7 +317,7 @@ label chapter8:
 
 label free_will_test:
     m c222111 "So [mc_name], I'm going to give [persistent.playername] an option to try to make you sit down."
-    show monika at uf
+    show monika at std
     mc "Alright. I'm ready."
     menu:
         " "
@@ -336,11 +336,11 @@ label free_will_test:
         alpha 0.6
         linear 0.25 alpha 0.0
     "Sayori gives me a high five."
-    show sayori at uf
+    show sayori at std
     show monika at foc
     m "Ahaha."
     m "[mc_name], you're breathing hard~"
-    show monika at uf
+    show monika at std
     "I blush."
     mc "Well, it was kind of a big moment for me."
     return
@@ -356,11 +356,11 @@ label return_to_living_room:
     if persistent.mc_favorite == "Yuri" or persistent.mc_least_favorite == "Natsuki":
         show yuri c224118 at foc
         y "How did it go?"
-        show yuri at uf
+        show yuri at std
     else:
         show natsuki c214114 at foc
         n "How'd it go?"
-        show natsuki at uf
+        show natsuki at std
     if persistent.player_allow_free_will_test:
         mc "Good."
         mc "I've seen that I can resist [persistent.playername]'s control."
@@ -370,18 +370,18 @@ label return_to_living_room:
             show yuri at foc
             y c221111 "That's wonderful."
             y c222111 "I'm glad you feel independent now."
-            show yuri at uf
+            show yuri at std
             mc "Yeah..."
             mc "Me too."
         elif persistent.mc_favorite == "Natsuki":
             show natsuki at foc
             n c212113 "Nice!"
-            show natsuki at uf
+            show natsuki at std
         else:
             show yuri at foc
             y c121111 "I'm glad..."
             y c122111 "You deserve to feel independent."
-            show yuri at uf
+            show yuri at std
             mc "Ahaha... you don't have to praise me like that, you know."
     else:
         mc "Good..."
@@ -391,13 +391,13 @@ label return_to_living_room:
             show natsuki at foc
             n c114111 "Jeez, what a prick."
             n "But don't let [persistent.player_obj_pronoun] get to you. You're your own person."
-            show natsuki at uf
+            show natsuki at std
             mc "I know... but thanks."
         else:
             show yuri at foc
             y "Oh... I'm sorry about that."
             y c124118 "Still, I'm glad you got the answer you needed."
-            show yuri at uf
+            show yuri at std
             mc "Yeah..."
             mc "Me too."
     if persistent.mc_favorite == "Natsuki" or persistent.mc_least_favorite == "Yuri":
@@ -412,7 +412,7 @@ label return_to_living_room:
         else:
             y c121111 "Um..."
         y "Would you like to continue our reading, [mc_name]?"
-        show yuri at uf
+        show yuri at std
         mc "We can't read Portrait of Markov..."
         show yuri at foc
         y c124111 "Ah... of course..."
@@ -420,14 +420,14 @@ label return_to_living_room:
         y "Even if we won't have time to finish it..."
         y "It would be more fun than sitting around doing nothing."
         y "Don't you agree?"
-        show yuri at uf
+        show yuri at std
         mc "Yeah, I g-"
         show natsuki at foc
         n c223111 "Hold on!"
         n "I have a solution to the problem of novels being too long!"
         n "[mc_name] should try reading manga with me."
         n "We'll be able to finish a volume in a reasonable time frame."
-        show natsuki at uf
+        show natsuki at std
         mc "Are we really having this argument again?"
         show natsuki c115211
         show yuri c227333
@@ -436,25 +436,25 @@ label return_to_living_room:
         n c113211 "No, we're not!"
         n xc4211 "You just misunderstood me..."
         n xc4231 "I don't have a problem with you reading with Yuri."
-        show natsuki at uf
+        show natsuki at std
         show yuri at foc
         y sc1111 "Well, actually..."
         y c124113 "I don't want Natsuki to feel left out."
         y "She's right."
         y "We were already going to start trying each other's forms of literature in Act 4, and manga is better for this situation."
         y "Maybe we can all-{nw}"
-        show yuri at uf
+        show yuri at std
     show natsuki c114112 at std(p11)
     show renier u1223 at foc(p31)
     show yuri c113118 at std(p33)
     r "Wait, Natsuki is still into manga?"
     r "Are you serious?"
     r u2223 "Is that why she was doing so bad in school? Because she was spending time with you instead reading childish -"
-    show renier at uf
+    show renier at std
     show natsuki at xif(p11)
     n c115112 "Shut up, Renier!"
     n "You don't have any power over me anymore!"
-    show natsuki at uf
+    show natsuki at std
     "I raise my eyebrows."
     if persistent.mc_favorite == "Natsuki":
         "Instinctively, I step near Natsuki, to symbolically take her side in whatever drama is about to happen."
@@ -483,11 +483,11 @@ label return_to_living_room:
         show natsuki c214111
         "Natsuki looks at Yuri."
         n "Actually, weren't we going to diversify?"
-        show natsuki at uf
+        show natsuki at std
         show yuri at foc
         y c225113 "Ah... yes, we were."
         y c225111 "Shall we switch?"
-        show yuri at uf
+        show yuri at std
         show natsuki at foc
         n c222111 "You got it!"
         scene black with dissolve_scene
@@ -498,7 +498,7 @@ label return_to_living_room:
         scene living_room with dissolve_scene
         show natsuki c121111 at foc(p11)
         n "I'm hungry."
-        show natsuki at uf
+        show natsuki at std
         mc "Me too."
         mc "Let's go get something."
         "But before we even get up, two plates land on the table, each containing a sandwich."
@@ -518,16 +518,16 @@ label return_to_living_room:
         show yuri at foc
         y c224111 "Alright then..."
         y c124111 "Natsuki, do you have a manga you recommend I start with?"
-        show yuri at uf
+        show yuri at std
         show natsuki at foc
         n c214114 "Um..."
         n c214114 "I'll pick one out for you, but if you're keeping your end of that deal, I should keep mine too."
         n c214111 "I'll read one of your novels while you read my manga."
-        show natsuki at uf
+        show natsuki at std
         show yuri at foc
         y sc1111 "Ah..."
         y sc3111 "Thank you, Natsuki."
-        show yuri at uf
+        show yuri at std
         scene black with dissolve_scene
         play music t6 fadeout 2.0
         "Yuri and I read the first volume of a manga called {i}Detective Emiko{/i}."
@@ -539,7 +539,7 @@ label return_to_living_room:
         show yuri c112111 at foc(p11)
         y "I suppose I am too..."
         y "Shall we get something?"
-        show yuri at uf
+        show yuri at std
         "But before we even get up, two plates land on the table, each containing a sandwich."
         show yuri c223113 at x(p22)
         show renier u1113 at foc(p21)
@@ -560,14 +560,14 @@ label return_to_living_room:
     show linda 331111 at std(p33)
     s "Hi everyone~!"
     s "I'm hungry~"
-    show sayori at uf
+    show sayori at std
     mc "How's the hacking going?"
     show monika at foc
     m c113114 "Not well..."
     m c114114 "The game's code is a mess."
     m "There are probably hundreds of thousands of lines to look through, and no comments."
     m c121114 "But I'm sure we'll find it eventually."
-    show monika at uf
+    show monika at std
     show linda at foc
     l 334111 "One thing we've found out is that there are apparently two 'levels' to the script..."
     l "The script Monika already learned to edit is separate from the script that stops us from reading Portrait of Markov."
@@ -610,7 +610,7 @@ label return_to_living_room:
     show renier uf13 at foc(p21)
     r "Does it matter?"
     r "Neither the animals nor the environment mean anything in this world."
-    show renier at uf
+    show renier at std
     m "I guess that's true."
     m "It's sort of a thing I started before I had my epiphany."
     m "And just never thought about it again after."
@@ -623,7 +623,7 @@ label return_to_living_room:
     show renier at foc
     r "Speaking of that..."
     r "Do you think the past that you remember really happened?"
-    show renier at uf
+    show renier at std
     show monika c114111 at foc(p22)
     m "Probably not, no."
     m "But I still remember it."
@@ -634,7 +634,7 @@ label return_to_living_room:
     m c214111 "How I could never remember the details of a conversation with my teachers or whatever."
     m "And then it clicked when I saw how everything revolved around [mc_name]..."
     m c124111 "[persistent.playername], you don't happen to have any ideas about this, do you?"
-    show monika at uf
+    show monika at std
     $ page = 1
 label choose_speculation:
     menu:
@@ -663,7 +663,7 @@ label choose_speculation:
     show monika c124111 at foc(p11)
     m "Well, we should get back to work."
     m c222111 "Thanks for the sandwiches!"
-    show monika at uf
+    show monika at std
     show renier uf11 at std(p31)
     r "You're welcome."
     show renier at thide
@@ -673,7 +673,7 @@ label choose_speculation:
     s "We'll see you again soon, everyone~"
     s c215111 "And..."
     s c211312 "Thanks for the talk, [mc_name] and [persistent.playername]."
-    show sayori at uf
+    show sayori at std
     if persistent.mc_least_favorite != "Sayori":
         mc "Anytime, Sayori."
     else:
@@ -686,20 +686,20 @@ label refuse_speculate:
     show monika at foc
     m c124121 "Hm..."
     m c124111 "You're probably right."
-    show monika at uf
+    show monika at std
     show renier at x(p31)
     show monika at x(p11)
     show linda 334111 at foc(p33)
     l "It sounds to me as if the game projected fake memories for all of you to explain how you got to where you were at the start of the game."
     l "Flimsy backstories, but enough to stop you from questioning it."
     show monika at xis(p11)
-    show linda at uf
+    show linda at std
     jump speculate_projected_memories
 
 label speculate_projected_memories:
     show monika at foc
     m c124121 "That would make sense..."
-    show monika at uf
+    show monika at std
     mc "So does that mean we didn't even exist before this?"
     mc "Cause that's kind of depressing..."
     show renier at x(p31)
@@ -715,7 +715,7 @@ label speculate_projected_memories:
     show yuri at foc
     y c225213 "What's it like not remembering anything?"
     y "Do you feel like you lack a sense of identity?"
-    show yuri at uf
+    show yuri at std
     show linda at foc
     l 334111 "Well, not really."
     l "I know I had a past."
@@ -737,7 +737,7 @@ label speculate_projected_memories:
     s c213111 "If the past we remember is all a fake..."
     s c213112 "Does that mean..."
     s c115113 "I didn't really grow up with [mc_name]?"
-    show sayori at uf
+    show sayori at std
     mc "Ah-..."
     if persistent.mc_favorite == "Sayori":
         show sayori c114112
@@ -751,7 +751,7 @@ label speculate_projected_memories:
         s c113113 "But that's not true, is it?"
         s "In the beginning of the game, you thought of me as 'an annoying girl'..."
         s c115113 "... and told [persistent.playername] that you'd never have made friends with me if it hadn't been that way from the start."
-        show sayori at uf
+        show sayori at std
         mc "I..."
         "I had forgotten about back then."
         "I regret those thoughts so deeply now."
@@ -796,18 +796,18 @@ label speculate_projected_memories:
     show monika c214112 at foc
     m "[mc_name], wait!"
     m "You should probably give her a minute."
-    show monika at uf
+    show monika at std
     mc "Like hell I'm gonna do that!"
     mc "I remember what happened the last time I left her alone!"
     show monika at foc
     m "Think about this, [mc_name]!"
     m "If you go out after her you're showing her that it {i}is{/i} just out of pity."
     m "Trying to comfort her right now will just make her feel worse."
-    show monika at uf
+    show monika at std
     "I give an uncomfortable sigh."
     show monika at foc
     m "If you're worried about her killing herself again, she can't, because I can just restore her file."
-    show monika at uf
+    show monika at std
     mc "Okay..."
     show yuri at x(p33)
     show linda at x(p11)
@@ -820,7 +820,7 @@ label speculate_projected_memories:
     y "I think that, personally..."
     y "I wouldn't mind finding out that our entire lives have been a fabrication."
     y c221243 "The thought of finding out my real history is very exciting."
-    show yuri at uf
+    show yuri at std
     mc "I wouldn't mind either."
     mc "My life according to this game has been pretty much the definition of uninteresting."
     if persistent.mc_favorite == "Sayori":
@@ -850,7 +850,7 @@ label speculate_projected_memories:
         y "Um, [mc_name]..."
         y c125111 "I think you should go talk to Sayori now."
         y "It's been a minute, and I'm worried about her."
-        show yuri at uf
+        show yuri at std
         mc "Right. I kinda forgot."
     else:
         show yuri at rhide
@@ -858,7 +858,7 @@ label speculate_projected_memories:
         show natsuki c124114 at foc(p44)
         n "[mc_name], you should go talk to Sayori now."
         n "She must be really upset..."
-        show natsuki at uf
+        show natsuki at std
         mc "Right. I kinda forgot."
     "I pick up her sandwich to bring it to her."
 label comfort_sayori_past:
@@ -868,13 +868,13 @@ label comfort_sayori_past:
     "I find her wiping tears from her eyes."
     show sayori at foc
     s c111353 "The universe sent you to torture me some more, I see..."
-    show sayori at uf
+    show sayori at std
     mc "Sayori... I'm really worried about you."
     show sayori at foc
     s "Yep..."
     s c223353 "How many times do I have to tell you, [mc_name]?"
     s c227353 "You worrying about me is the most painful thing!"
-    show sayori at uf
+    show sayori at std
     mc "I... I mean..."
     mc "I know that, but..."
     mc "I can't!"
@@ -888,7 +888,7 @@ label comfort_sayori_past:
     s "It's like I said before."
     s "Every path leads to nothing but hurt."
     s c211153 "And it's all my own fault too~"
-    show sayori at uf
+    show sayori at std
     mc "Sayori..."
     "I trail off."
     "I don't know what to say to help her."
@@ -909,13 +909,13 @@ label comfort_sayori_past:
                             show sayori at foc
                             s c115112 "..."
                             s c215112 "But you think I shouldn't have kept it a secret."
-                            show sayori at uf
+                            show sayori at std
                             menu:
                                 " "
                                 "Actually, no, I think you were right to keep it a secret.":
                                     show sayori at foc
                                     s c225112 "Eh...?"
-                                    show sayori at uf
+                                    show sayori at std
                                     mc "[persistent.playername], no!"
                                     mc "That was definitely not right!"
                                     mc "Don't listen to [persistent.player_obj_pronoun], Sayori!"
@@ -926,7 +926,7 @@ label comfort_sayori_past:
                                     show sayori at foc
                                     s c215112 "Well..."
                                     s c115112 "I don't know..."
-                                    show sayori at uf
+                                    show sayori at std
                                     mc "Sayori, [persistent.playername] is right."
                                     mc "Anyone else would have asked for help in your situation."
                                     mc "Anyone else would have dumped their sorrows on their friends."
@@ -936,7 +936,7 @@ label comfort_sayori_past:
                                     s "Well..."
                                     s "I guess that helps..."
                                     s c211112 "Thanks."
-                                    show sayori at uf
+                                    show sayori at std
                 "I would've made friends with you of my own accord.":
                     show sayori at foc
                     s c224112 "Eh...?"
@@ -944,7 +944,7 @@ label comfort_sayori_past:
                     s c113113 "[persistent.playername], you're not a neutral judge..."
                     s c123112 "I was a character in the dating game you were playing."
                     s c113113 "Everything about the game was probably designed to make you like me."
-                    show sayori at uf
+                    show sayori at std
                     jump comfort_sayori_past_second_choice
                 "Sun and rain aren't natural friends, but they're both good.":
                     label comfort_sayori_sun_rain:
@@ -954,12 +954,12 @@ label comfort_sayori_past:
                     s "[persistent.playername]... that's really poetic."
                     s c111112 "And... thanks."
                     s "That helps."
-                    show sayori at uf
+                    show sayori at std
                 "You don't need external validation to be a good person.":
                     show sayori at foc
                     s c115113 "..."
                     s c113113 "But you're trying to make me feel like a good person by giving me external validation."
-                    show sayori at uf
+                    show sayori at std
                     "Damn."
                     jump comfort_sayori_past_second_choice
             jump projected_memories_sayori_comforted
@@ -990,10 +990,10 @@ label projected_memories_sayori_comforted:
     show sayori c111111 at std(p44)
     m "Hi you two!"
     m "Glad to have you back~"
-    show monika at uf
+    show monika at std
     show sayori at foc
     s c21x111 "What did I miss?"
-    show sayori at uf
+    show sayori at std
     #show yuri at foc
     #y "We were just talking about how it might be kind of exciting to find out what our real past is."
     show monika at foc
@@ -1024,10 +1024,10 @@ label speculate_real_memories:
     show renier at xif(p31)
     r u1293 "Wait, what?"
     r u2293 "{i}You tried to share wine at the club?{/i}"
-    show renier at uf
+    show renier at std
     show yuri sc4300 at foc
     y "I-I-I-I..."
-    show yuri at uf
+    show yuri at std
     if persistent.mc_favorite == "Yuri":
         "I step next to Yuri as a way of symbolically taking her side."
         mc "You're in no position to judge, Renier!"
@@ -1036,17 +1036,17 @@ label speculate_real_memories:
         r "You think that's what this is about?"
         r "This is about her doing something that could have gotten all of you suspended or worse!"
         r "That's the height of irresponsible!"
-        show renier at uf
+        show renier at std
         mc "And it's not irresponsible to drink so much that you can't feed your own daughter?"
     else:
         show monika at foc
         m c224112 "Hold on, Yuri didn't mean to do anything bad..."
         m "She was just trying to be nice instead of being so reclusive all the time."
-        show monika at uf
+        show monika at std
         show renier at foc zorder 1
         r "Risking getting everyone suspended or worse is some goddamn way to do that!"
         r "That's the height of irresponsible!"
-        show renier at uf
+        show renier at std
         mc "Wait a minute!"
         mc "You're one to talk about responsibility."
         mc "You got so addicted to drinking you couldn't even feed your own daughter!"
@@ -1057,16 +1057,16 @@ label speculate_real_memories:
     show yuri at x(p44)
     show sayori c227212 at foc(p43)
     s "I don't like fighting, guys!"
-    show sayori at uf
+    show sayori at std
     show renier at foc zorder 1
     r u1223 "Oh, I get it!"
     stop music fadeout 1.0
     r u2293 "That's why you just effectively deleted all your friends when you became President!"
     r u2296 "Because you don't like fighting, so you didn't give them one!"
-    show renier at uf
+    show renier at std
     show sayori c227253 at foc
     s "Ah-...!"
-    show sayori at uf
+    show sayori at std
     s "..."
     show sayori at rhide
     hide sayori
@@ -1085,7 +1085,7 @@ label comfort_sayori:
     s "..."
     show sayori at foc
     s "Renier is right."
-    show sayori at uf
+    show sayori at std
     mc "No, he isn't!"
     if persistent.mc_least_favorite == "Sayori":
         mc "Don't listen to him!"
@@ -1095,7 +1095,7 @@ label comfort_sayori:
     s "[mc_name], I basically murdered Yuri and Natsuki."
     s c113153 "And what I did to you would probably have been even worse if Monika hadn't deleted me again."
     s c117153 "That doesn't magically become okay just because I stepped into Monika's shoes!"
-    show sayori at uf
+    show sayori at std
     mc "[persistent.playername], help here?"
     $ good_person = asymmetry = False
 label comfort_sayori_choices:
@@ -1114,19 +1114,19 @@ label comfort_sayori_choices:
             s c115113 "But that doesn't mean I think what she did was okay."
             s c213113 "I have to forgive her, because I'm the same."
             s c215113 "But I don't fault anyone who doesn't forgive either of us."
-            show sayori at uf
+            show sayori at std
             mc "But you've helped all of us forgive her."
             mc "Why do you take it so hard when just one of us doesn't forgive you, and it's the only one of us who didn't know you?"
             show sayori at foc
             s c227113 "That's exactly why!"
             s c223113 "Renier is the only one who isn't biased in my favor."
-            show sayori at uf
+            show sayori at std
             "Oh..."
             "I hadn't thought of it that way."
             show sayori at foc
             s c123112 "I stick up for Monika because I'm one of her victims, so I have the right to forgive her."
             s c113113 "But I can't absolve myself."
-            show sayori at uf
+            show sayori at std
             menu:
                 " "
                 "Renier is biased against you.":
@@ -1159,7 +1159,7 @@ label comfort_sayori_choices:
                     s c113113 "In fact, you're biased in my favor too..."
                     s c123112 "I was a character in the dating game you were playing."
                     s c113113 "Everything about the game was probably designed to make you like me."
-                    show sayori at uf
+                    show sayori at std
                 "Renier's opinion doesn't matter.":
                     menu:
                         " "
@@ -1171,7 +1171,7 @@ label comfort_sayori_choices:
                             s c123112 "But I think everyone else is being too unforgiving."
                             s c113112 "He didn't even kill anyone."
                             s c223114 "And when you tell me everyone who doesn't forgive me is an asshole, it's not very convincing!"
-                            show sayori at uf
+                            show sayori at std
             jump comfort_sayori_choices
         "Sayori, you're not selfish." if not good_person:
             $ good_person = True
@@ -1192,7 +1192,7 @@ label comfort_sayori_choices:
             s "Well..."
             s "It's not like keeping it a secret was some heroic thing I did."
             s "I did it because it was easier for me that way."
-            show sayori at uf
+            show sayori at std
             menu:
                 " "
                 "But only because you're a good person.":
@@ -1205,7 +1205,7 @@ label comfort_sayori_choices:
             s c115113 "... But..."
             s c227113 "That doesn't make up for being a {i}murderer{/i}!"
             s c117153 "Nothing I do can make up for that."
-            show sayori at uf
+            show sayori at std
             menu:
                 " "
                 "But you didn't even really kill them.":
@@ -1228,7 +1228,7 @@ label comfort_sayori_choices:
                         s c115113 "No..."
                         s "I didn't know this would happen."
                         s c213113 "For all I knew at the time, I was killing them forever, even if it wasn't a painful death."
-                        show sayori at uf
+                        show sayori at std
                         menu:
                             " "
                             "(continue)":
@@ -1238,7 +1238,7 @@ label comfort_sayori_choices:
                                 s c227113 "I had no reason to think that!"
                                 s "I just fooled myself to excuse my selfish behavior!"
                                 s "There's no excuse!"
-                                show sayori at uf
+                                show sayori at std
                 "You don't think spending the entire time since Monika destroyed everything in the screaming void is enough punishment?":
                     menu:
                         " "
@@ -1258,13 +1258,13 @@ label sayori_comforted:
     s c115113 "Please... just go back in."
     s "I'll be in in a minute."
     s "I'm fine, I promise."
-    show sayori at uf
+    show sayori at std
     mc "The last time you told me you were fine, {w=0.25}{nw}"
     show sayori at foc
     s c227213 "[mc_name] please!"
     s "Don't mention that!"
     s c125113 "[persistent.playername]... tell him he should go."
-    show sayori at uf
+    show sayori at std
     menu:
         " "
         "[mc_name], you should leave her alone.":
@@ -1308,27 +1308,27 @@ label mc_leave_sayori:
         if persistent.mc_favorite == "Yuri" or persistent.mc_least_favorite == "Natsuki":
             show yuri c125118 at foc(p33)
             y "[mc_name]? Did Sayori warp you away?"
-            show yuri at uf
+            show yuri at std
         else:
             show natsuki c124114 at foc(p33)
             n "[mc_name]? Did Sayori warp you away?"
-            show natsuki at uf
+            show natsuki at std
         mc "Yeah..."
         mc "I thought it was going well, but then she told me I should go and she'd be in soon, and I didn't want to leave her sad, so she made me."
         show monika at foc
         m "Well, best leave it then."
         m "Forcing your presence on her isn't going to make anything better."
-        show monika at uf
+        show monika at std
         mc "..."
     else:
         if persistent.mc_favorite == "Yuri" or persistent.mc_least_favorite == "Natsuki":
             show yuri c125118 at foc(p33)
             y "How did it go?"
-            show yuri at uf
+            show yuri at std
         else:
             show natsuki c124114 at foc(p33)
             n "How'd it go?"
-            show natsuki at uf
+            show natsuki at std
         mc "I think it went okay..."
         mc "She seemed to feel better but then she told me to go and said she'd be in soon."
         mc "I'm a little worried leaving her alone like that."
@@ -1336,24 +1336,24 @@ label mc_leave_sayori:
             show yuri c125112 at foc
             y "I wouldn't worry."
             y "If she says she'll be in soon, we should trust her."
-            show yuri at uf
+            show yuri at std
         else:
             show natsuki at foc
             n "Well..."
             n "If she says she'll be in soon, we should trust her."
-            show natsuki at uf
+            show natsuki at std
         mc "I hope so..."
     mc "Renier, you're an asshole and you'd better apologize to her when she comes back!"
     show renier at foc
     r u1213 "Apologize for pointing out the truth?"
-    show renier at uf
+    show renier at std
     m c227113 "Renier, she has serious depression!"
     m c214112 "You have to be a little more considerate with someone like that."
     show renier at foc zorder 1
     r u2123 "Remind me how {i}you{/i} learned, Monika?"
     r "Was it by [persistent.playername] telling you everything you did was okay?"
     r u1223 "Or was it by being deleted?"
-    show renier at uf
+    show renier at std
     show monika at foc
     m c118211 "...!!"
     m c228113 "Hold on now!"
@@ -1369,7 +1369,7 @@ label mc_leave_sayori:
     l 114111 "They've both been through horrible trauma already."
     l "I think I know what it's like for them when the game is off..."
     l 115113 "And it was hell."
-    show linda at uf
+    show linda at std
     show renier at foc
     r u1133 "I'm sorry."
     show monika c114111
@@ -1380,7 +1380,7 @@ label mc_leave_sayori:
     "I'm shocked."
     r "You're right. I'm judging unfairly."
     show linda 112113
-    show renier at uf
+    show renier at std
     "Does Linda just have this effect on Renier?"
     "..."
     "We continue eating, and before long Sayori does come back."
@@ -1404,7 +1404,7 @@ label mc_leave_sayori:
     show yuri c124112 at foc(p11)
     y "Yes..."
     y "We're fine now."
-    show yuri at uf
+    show yuri at std
     show sayori at foc
     s c22x111 "Great!"
     show monika c111111
@@ -1431,7 +1431,7 @@ label mc_leave_sayori:
     s "Hm..."
     s c115123 "If our memories really are fake..."
     s c215112 "Does that mean I didn't grow up with [mc_name]?"
-    show sayori at uf
+    show sayori at std
     mc "Ah-"
     if persistent.mc_favorite == "Sayori":
         mc "Sayori, that doesn't matter!"
@@ -1450,7 +1450,7 @@ label mc_leave_sayori:
     #show sayori at foc
     #s "I just..."
     #s "In the beginning of the game, you thought of me as 'an annoying girl'..."
-    #show sayori at uf
+    #show sayori at std
     #mc "I didn't mean that!"
     #mc "I was just... friends annoy each other sometimes."
     #s "You're right..."
@@ -1461,32 +1461,32 @@ label mc_leave_sayori:
 # responsible for that.
 label linda_ask_renier_job:
     l "Do you know what your job is?"
-    show linda at uf
+    show linda at std
     show renier u11121 at foc
     "Renier looks at the air for a few seconds, then just shrugs."
     r u2113 "Nothing but nondescript memories of being tired and frustrated all the time."
-    show renier u1112 at uf
+    show renier u1112 at std
     show linda at foc
     l "I guess your memories are definitely faked then."
-    show linda at uf
+    show linda at std
     show renier at foc
     r u1113 "You worked for an accounting firm, right?"
     r u1112 "In the story in Yuri's file."
-    show renier at uf
+    show renier at std
     show linda at foc
     l "So it seems..."
     l "Though I don't remember anything about my job."
     l "Not even a shimmer of it, strangely."
-    show linda at uf
+    show linda at std
     show renier at foc
     r u1113 "Do you think that was before or after we met?"
-    show renier at uf
+    show renier at std
     show linda at foc
     l "I can't know."
     l "Although, it was implied in the story that I'd had boyfriends before."
     l 331111b "I wonder if that was you..."
-    show linda at uf
+    show linda at std
     show renier u1112b at foc
     r "..."
-    show renier u1112 at uf
+    show renier u1112 at std
     return

@@ -95,14 +95,14 @@ label chapter11:
     m u124111 "But how do we actually change it?"
     show monika at uf
     show linda at foc
-    call updateconsole("os.system(\"sed -i '.bkup' '24964s/True/False/' main.c\")", "Operation not permitted")
+    call updateconsole("os.system(\"sed -i '.bkup'\"\n \" '24964s/True/False/' main.c\")", "Operation not permitted")
     if persistent.monika_questions['linda_powers']:
         l 125111 "Mm..."
         show linda at uf
         show monika at foc
         m "Well, you did say your powers seemed to be weaker than ours."
         show monika u214111
-        call updateconsole("os.system(\"sed -i '.bkup' '24964s/True/False/' main.c\")", "Operation not permitted")
+        call updateconsole("os.system(\"sed -i '.bkup'\"\n \" '24964s/True/False/' main.c\")", "Operation not permitted")
         show sayori u11a123
         m u113114 "Mm..."
         show monika at uf

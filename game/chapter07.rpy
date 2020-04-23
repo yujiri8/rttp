@@ -9,7 +9,7 @@ label chapter7:
     "It's lonely."
     show sayori u125112 at foc(p11)
     s "[mc_name], is your stomachache gone now?"
-    show sayori at uf
+    show sayori at std
     mc "Yikes, Sayori!"
     mc "Where did you come from?"
     mc "I didn't even hear you running after me."
@@ -19,13 +19,13 @@ label chapter7:
     call updateconsole(mc_name.lower() + ".old_memories.unlock()", mc_name + "'s memories unlocked")
     call hideconsole
     $ consolehistory = []
-    show sayori at uf
+    show sayori at std
     mc "Ah, right."
     mc "I remember."
     show sayori at hopfoc
     s u222141 "Yay~!"
     s u22x111 "I fixed your memories all on my own!"
-    show sayori at uf
+    show sayori at std
     mc "Ahaha..."
     if persistent.sayori_reset_ynr:
         show sayori u111111 at std(p55)

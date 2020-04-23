@@ -743,7 +743,7 @@ label assault_facility:
         "Wait, you broke admin.unjail too? - Adam":
             pass
     l "Well did you think we were stupid?"
-    l "We weren't just gonna let you break admin.jail!"
+    l "We weren't just gonna let you foil our plan!"
     l "Now the only hope to save her is our plan."
     menu:
         " "

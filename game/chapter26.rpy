@@ -840,7 +840,7 @@ label chapter26_2:
     show mask_2
     show mask_3
     show warehouse_inside_rift
-    with wipeleft_scene
+    with open_eyes
     "Here we are."
     "After you disconnected the viewport, I restored myself and then Adam just wanted to extract again."
     "I have no idea what his plan is, but I'm back in Portrait of Markov n--"
@@ -864,7 +864,7 @@ label chapter26_2:
     show warehouse_inside_rift
     show natsuki c215122 at foc(p21)
     show markov u11643s at std(p22)
-    with wipeleft_scene
+    with open_eyes
     "Natsuki... shot Adam..."
     show markov at thide
     hide markov

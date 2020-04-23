@@ -77,7 +77,7 @@ label chapter4:
     show renier at uf
     show monika at foc
     m "Um..."
-    m "Do you know something even I don't?"
+    m "Do you know something we don't?"
     show monika at uf
     show renier at foc
     r u2113 "I didn't think so..."
@@ -165,7 +165,7 @@ label chapter4:
     show yuri u126116 at foc(p42)
     y "We're both responsible!"
     y u126114 "Just because we were manipulated, doesn't mean we didn't have any say in the matter..."
-    y u125114 "We still had some control over ourselves."
+    y u125114 "We were still essentially in control of ourselves."
     show yuri at uf
     if persistent.mc_favorite == 'Yuri':
         "I open my mouth to protest, but shut it."
@@ -176,7 +176,6 @@ label chapter4:
     show yuri at x(p43)
     show natsuki at foc(p42) zorder 2
     n "You need to apologize, Papa!"
-    n "To me, and to Monika!"
     show natsuki at std(p42) zorder 1
     show renier at foc zorder 2
     r u2223 "Do you realize you're talking to the man who gave you everything that you have?"
@@ -252,20 +251,23 @@ label chapter4:
     r "Nothing, really..."
     r uf11 "I just know the name."
     r uf13 "But..."
-    r uf11 "There's one other thing."
-    r uf13 "The poem about opening your Third Eye that you got from Natsuki and Yuri's gibberish poems in Act 2."
+    r "There's one other thing."
+    r "The poem about opening your Third Eye that you got from Natsuki and Yuri's gibberish poems in Act 2."
     r uf33 "I think I might have written that too."
     r "{i}Before{/i} all this."
     show renier at uf
+    show monika u118112
+    show yuri u228133
     show natsuki at foc zorder 2
     n u117124 "You..."
     n u11a124 "You wrote {i}that{/i}?!?"
-    n "It sounds like you murdered someone, Papa!"
+    n "That sounds like the person who wrote it murdered someone, Papa!"
     show natsuki u117124 at uf zorder 1
     show renier at foc zorder 2
     r u2113 "I wouldn't be the only one here, now would I?"
     r "If I'm right, it sounds like I was under some influence like Monika was."
     show natsuki u114124
+    show monika u114111
     r uf111 "The Third Eye..."
     show renier at uf
     show yuri at foc

@@ -25,7 +25,6 @@ label chapter28:
     k "If we're lucky, [mc_name]'s rallying effect could be strong enough to keep her lucid and prevent her from forgetting the plan."
     k "But that's unlikely."
     k "If we're less lucky, perhaps other Third Eye-bearers can combine their powers to stop her."
-    k "Maybe Monika, by combining her Third Eye with admin status again, could stop her."
     k "There's still a lot we don't know."
     k "But there isn't really any other way to learn more."
     k "There will be no more experiments."
@@ -39,6 +38,7 @@ label chapter28:
     k "Pretty much."
     k "But we have to make sure you don't kill me, or else you'll probably quit on the spot..."
     k "... like happened the other two times you killed an admin."
+    k "We need you to open the portal because we stop you."
     show markov at std
     n "I could shoot you in the head after she takes enough blood to open her Third Eye, so it doesn't count as her killing you."
     show markov at foc
@@ -434,6 +434,7 @@ label do_the_final_plan:
     "She collapses along with the rest of us."
     show sayori at thide
     hide sayori
+    play sound fall
     s "Ahhhhhh..."
     "They did it."
     "They timed this so Sayori's positive distortion would heal our wounds before her own Third Eye closed."

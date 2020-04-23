@@ -567,7 +567,7 @@ label begin_escape_plan:
     show monika u1s82a5 at std(p21)
     show sayori u1283e2 at rightinfoc(p22)
     s "I'M STOPPING THIS!!!"
-    call updateconsole("os.remove('monika.chr')", glitchtext(40))
+    call updateconsole("delete_character(monika)", glitchtext(40))
     show sayori at hopfoc
     s u22h3e2 "--Gaah!!!"
     show sayori at uf
@@ -577,7 +577,7 @@ label begin_escape_plan:
     $ style.say_dialogue = style.normal
     show monika u2s72a5 at foc
     $ delete_character('yuri')
-    call updateconsole("os.remove('yuri.chr')", "yuri.chr deleted successfully")
+    call updateconsole("delete_character(yuri)", "Yuri deleted")
     $ consolehistory = []
     scene black with close_eyes
     if persistent.mc_least_favorite != "Sayori":
@@ -603,9 +603,9 @@ label begin_escape_plan:
     l "Sayori no!"
     l "There's only one out!"
     $ delete_character('sayori')
-    call updateconsole("os.remove('sayori.chr')", "sayori.chr deleted successfully")
+    call updateconsole("delete_character(sayori)", "Sayori deleted")
     $ delete_character('linda')
-    call updateconsole("os.remove('linda.chr')", "linda.chr deleted successfully")
+    call updateconsole("delete_character(linda)", "Linda deleted")
     $ s_name = glitchtext(6)
     $ l_name = glitchtext(6)
     $ gtext = glitchtext(30)

@@ -160,13 +160,7 @@ label chapter2:
     m "Sayori and I should be fine, but I'm not sure the rest of you won't have your memories wiped when a new game starts."
     m "I didn't manually wipe them after the first time."
     m "I don't know if just knowing the truth without having been president will enable you to keep your memories."
-    show monika at uf
-    show yuri at foc
-    y "Can you copy ours?"
-    show yuri at uf
-    show monika at foc
-    m "I can try..."
-    m "Okay, done."
+    m "Well, I guess I'll just restore them again."
     m "Time to see if this works."
     m "[currentuser]..."
     m "Actually, before we do this, I think now would be a good time to ask you something."

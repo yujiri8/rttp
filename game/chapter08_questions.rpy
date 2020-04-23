@@ -3,7 +3,7 @@ label questions(showing_chars):
     m c121111 "So [persistent.playername], I've been meaning to give you a chance to ask some questions."
     $ qtext = "Is there anything you'd like to ask?"
     $ persistent.monika_questions = {
-        'player_choices': False,
+        'choices': False,
         'time': False,
         'mc_time': False,
         'dreams': False,
@@ -39,7 +39,7 @@ label questions_menu:
             m "The game binds a display on your computer to [mc_name]'s experience."
             m "But sometimes, when the script calls for it, some time is skipped."
             m c221111 "We still experience it, but you don't."
-            #show monika at uf
+            #show monika at std
             #mc "Huh..."
             #mc "I wonder if I can control that somehow?"
             #mc "Maybe it just happens when there's nothing during it that I felt was very important?"
@@ -49,7 +49,7 @@ label questions_menu:
             m c222111 "I think it was after day 1 I had the dream I described in the special poem about falling asleep at a friend's house."
             m c214111 "It is an obvious allegory for what that day was like for me."
             m c121111 "Other than that, and not counting the nightmares from the game being off, I don't remember any dreams."
-            show monika at uf
+            show monika at std
             menu:
                 " "
                 "What about you, Sayori?":
@@ -64,7 +64,7 @@ label questions_menu:
             s "Um..."
             s c213111 "I don't think I can remember any."
             s "I never had a night as President."
-            show sayori at uf
+            show sayori at std
             menu:
                 " "
                 "Neither of you remember any dreams from before day 1 of the acts where you were President?":
@@ -76,10 +76,10 @@ label questions_menu:
             show monika at foc
             show sayori at foc
             ms "Nope."
-            show sayori at uf
+            show sayori at std
             $ persistent.monika_questions['dreams'] = True
         "Linda, how do you have code powers?" if page == 1 and not persistent.monika_questions['linda_powers']:
-            show monika at uf
+            show monika at std
             if 'l' not in showing_chars:
                 show natsuki at thide
                 hide natsuki
@@ -105,7 +105,7 @@ label questions_menu:
                     l "I don't know..."
                     l "I mean, as far as I remember, I wasn't physically in the world or part of the game until you gave me a character file."
                     l "So I don't see how I could have ever been Vice President of the club."
-            show linda at uf
+            show linda at std
             $ persistent.monika_questions['linda_powers'] = True
         "I want to know more about Linda and Renier's relationship." if page == 1 and not persistent.monika_questions['linda_renier_relationship']:
             if 'l' in showing_chars:
@@ -128,10 +128,10 @@ label questions_menu:
                     show renier u1112b at std(p42)
                     $ showing_chars[1] = 'r'
             l 334111b "Ah..."
-            show linda at uf
+            show linda at std
             show renier at foc
             r u1113 "[persistent.playername], we've told you, we don't remember anything."
-            show renier at uf
+            show renier at std
             menu:
                 " "
                 "You seem to have some inklings.":
@@ -146,11 +146,11 @@ label questions_menu:
                     pass
             show linda at foc
             l 334111 "No, I really don't."
-            show linda at uf
+            show linda at std
             show renier at foc
             r "Me neither..."
             r "I just know it meant something."
-            show renier u1111 at uf
+            show renier u1111 at std
             menu:
                 " "
                 "(continue)":
@@ -168,12 +168,12 @@ label questions_menu:
                     n "For Christ's sake [persistent.playername], weren't you listening?"
                     n "Renier probably isn't even my real dad!"
                     n "So there's no logic there!"
-                    show natsuki at uf
+                    show natsuki at std
                     show renier u1112
                     $ persistent.player_suggested_linda_natsuki_mom = True
             $ persistent.monika_questions['linda_renier_relationship'] = True
         "Linda, the story about you mentioned porn websites. Do you really do that?" if page == 1 and not persistent.monika_questions['linda_porn']:
-            show monika at uf
+            show monika at std
             if 'l' not in showing_chars:
                 show natsuki at thide
                 hide natsuki
@@ -183,7 +183,7 @@ label questions_menu:
                 show linda at foc
             l 114113b "Ah--"
             l 119113b "I don't remember the details of that story, but I swear I'm not a pervert!"
-            show linda at uf
+            show linda at std
             if 'r' in showing_chars:
                 show renier u2226 at foc zorder 2
             else:
@@ -197,7 +197,7 @@ label questions_menu:
                     show renier u2226 at foc(p42) zorder 2
                     $ showing_chars[1] = 'r'
             r "[persistent.playername], how can you judge Linda for that while you forgive Monika and Sayori for murdering us all?"
-            show renier at uf
+            show renier at std
             menu:
                 " "
                 "I wasn't trying to cast shame. I was just asking.":
@@ -215,11 +215,11 @@ label questions_menu:
                                     l "I kn- I-I'm not addicted to porn! I swear!"
                                     l "I don't know what that file was talking about!"
                                     l 119223b "If I was, that was a long time ago... or something."
-                                    show linda at uf
+                                    show linda at std
                                     show renier at foc
                                     r u2113 "Let's talk about something else."
                                     r u1112 "This is obviously making Linda uncomfortable."
-                                    show renier at uf
+                                    show renier at std
                     show linda 334221b
                 "That comparison is totally inaccurate. Besides the excuses Monika and Sayori have, they've both already been more than punished.":
                     show linda 11a113b
@@ -227,7 +227,7 @@ label questions_menu:
                     r u2293 "But so has she!"
                     r u1293 "Are you deaf, [persistent.playername]?"
                     r u2293 "She was in hell too the entire time!"
-                    show renier at uf
+                    show renier at std
                     if 's' not in showing_chars:
                         if showing_chars[3] == 'n':
                             show natsuki at thide
@@ -245,12 +245,12 @@ label questions_menu:
                         s "Can we not fight this time?"
                     else:
                         s "Can we not fight?"
-                    show sayori at uf
+                    show sayori at std
                     show linda at foc
                     show renier u1111
                     l 334112b "Yes, let's please talk about something else."
                     l "I'm not going to go browsing porn or anything."
-                    show linda 334222b at uf
+                    show linda 334222b at std
             show renier zorder 0
             $ persistent.monika_questions['linda_porn'] = True
         "Do Presidents see the world as 3-dimensional, or like I do?" if page == 2 and not persistent.monika_questions['perception']:
@@ -264,7 +264,7 @@ label questions_menu:
             m c122111 "That position just feels really natural to me."
             $ persistent.monika_questions['perception'] = True
         "Natsuki, do you forgive Renier yet?" if page == 2 and not persistent.monika_questions['natsuki_forgive_renier']:
-            show monika at uf
+            show monika at std
             if 'n' in showing_chars:
                 show natsuki xc5112 at foc
             else:
@@ -285,7 +285,7 @@ label questions_menu:
             if 'l' in showing_chars:
                 show linda 114111
             n "We are {i}not{/i} having this conversation."
-            show natsuki at uf
+            show natsuki at std
             menu:
                 " "
                 "(continue)":
@@ -295,16 +295,16 @@ label questions_menu:
                     n xc3112 "Monika had a way bigger excuse, and already spent the whole time in the void."
                     n "And like I said before, Yuri was only bad after she got tampered with."
                     n "Renier was just a prick all along."
-                    show natsuki at uf
+                    show natsuki at std
                     show renier u1223 at foc zorder 2
                     r "I've had it with your ingratitude, Natsuki!"
                     r u2223 "I provided for you! Everything!"
                     r u1293 "And you repay me by comparing me to the girl who murdered you?"
-                    show renier at uf
+                    show renier at std
                     show natsuki at foc
                     n c113112 "You only did that because you were responsible for me!"
                     n "Or thought you were!"
-                    show natsuki at uf
+                    show natsuki at std
                     if 'l' in showing_chars:
                         show linda at foc
                     else:
@@ -316,17 +316,17 @@ label questions_menu:
                     l "Renier had things just as bad as you!"
                     l "He was in poverty too, only he was working for it!"
                     l "Just because he was responsible for you doesn't mean you can count only the bad things about him!"
-                    show linda at uf
+                    show linda at std
                     show renier uf21
                     show natsuki at foc
                     n "He hasn't even apologized!"
-                    show natsuki at uf
+                    show natsuki at std
                     show renier u1223 at foc
                     r "Because you haven't shown any gratitude."
-                    show renier uf21 at uf
+                    show renier uf21 at std
                     show natsuki xc5112 at foc
                     n "And I'm not going to."
-                    show natsuki at uf
+                    show natsuki at std
                     show renier zorder 0
                     show monika at foc
                     m c114112 "Well, I don't think that went very well..."
@@ -361,7 +361,7 @@ label questions_menu:
                 y "Maybe it was a distraction of some sort."
                 y "But it seemed to have a more profound effect than that could explain."
                 y c225247 "I did it again when you left the room..."
-                show yuri at uf
+                show yuri at std
                 mc "Oh no..."
                 mc "I'm so sorry, Yuri."
                 show yuri at foc
@@ -382,7 +382,7 @@ label questions_menu:
             y "It still hurt..."
             y "But, at the same time, it felt good."
             y "It wasn't that it wasn't painful, but it was outweighed by the pleasure."
-            show yuri at uf
+            show yuri at std
             if 'l' in showing_chars:
                 show linda at foc
             else:
@@ -392,17 +392,17 @@ label questions_menu:
                 $ showing_chars[2] = 'l'
             l 334111 "Seems unmistakably the influence of the Third Eye."
             l 334221 "Now I {i}really{/i} want to get that book open."
-            show linda at uf
+            show linda at std
             $ persistent.monika_questions['yuri_cutting'] = True
         "What about [mc_name]'s poems?" if page == 2 and not persistent.monika_questions['mc_poems']:
-            show monika at uf
+            show monika at std
             mc "What about them?"
             show monika at foc
             m c122211 "Ahaha..."
             m c122212 "I forgot..."
             m c114112 "[mc_name], I hate to tell you this but your poems were a game mechanic."
             m "They were just twenty words [persistent.playername] picked off a list."
-            show monika at uf
+            show monika at std
             mc "But..."
             mc "But...."
             "I realize I don't remember any of them."
@@ -422,7 +422,7 @@ label questions_menu:
                 y "Um..."
                 y c125112 "I'm sorry to say, but I don't remember your poems either."
                 y "I think the game merely gave us nondescript memories, like it did with Portrait of Markov."
-                show yuri at uf
+                show yuri at std
             else:
                 if 'n' in showing_chars:
                     show natsuki c114114 at foc
@@ -434,7 +434,7 @@ label questions_menu:
                 n "Um..."
                 n "I'm sorry to say this, but I don't remember your poems either."
                 n c114111 "The game probably just gave us nondescript memories, like it did you and Yuri with Portrait of Markov."
-                show natsuki at uf
+                show natsuki at std
             mc "So it was all a lie."
             mc "I thought I was getting better at poetry..."
             if persistent.mc_favorite == "Sayori":
@@ -454,7 +454,7 @@ label questions_menu:
                 s "Maybe writing just isn't your thing."
                 s "And that's fine."
                 s tc1211 "I mean, I remember it wasn't my thing either until I randomly decided it would be fun to help start a club..."
-                show sayori at uf
+                show sayori at std
                 mc "Ahaha."
                 mc "Well, thanks."
                 mc "I appreciate that."
@@ -465,7 +465,7 @@ label questions_menu:
                 y c125112 "That's okay."
                 y "You don't have to be a great poet."
                 y c125213 "You're a good enough friend without that."
-                show yuri at uf
+                show yuri at std
                 mc "Ah..."
                 mc "Thanks..."
             else:
@@ -473,7 +473,7 @@ label questions_menu:
                 n c114114 "Well..."
                 n "You don't have to be a writer, you know."
                 n c222156 "I mean, I wouldn't mind having that advantage over you for the rest of our lives."
-                show natsuki at uf
+                show natsuki at std
                 mc "But you already have the advantage of being an impeccable baker..."
                 show monika c122131 at foc
                 m "Ahaha~"

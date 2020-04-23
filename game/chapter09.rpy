@@ -1,5 +1,5 @@
 label chapter9:
-    scene bg living_room with wipeleft_scene
+    scene living_room with wipeleft_scene
     play music yawa fadeout 3.0
     "..."
     show renier uf43 at foc(p31)

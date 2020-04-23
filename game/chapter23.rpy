@@ -650,7 +650,7 @@ label after_libitina_wakeup:
     m "I didn't think of that."
     m "They're probably heading there, then."
     m "No trouble though. We can get in touch with them all now."
-    $ persistent.contacted = [] # reset so we can go through this multiple times for debugging
+    $ persistent.contacted = set() # reset so we can go through this multiple times for debugging
     $ text = 'Alright, who do you wanna switch to first?'
 label chapter23_switch:
     menu:

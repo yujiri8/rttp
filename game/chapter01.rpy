@@ -53,8 +53,8 @@ label chapter1:
     s "How could we do that to our friends?"
     s "Especially me!"
     s "I knew from experience that you don't have to be aware to feel!"
-    s "I just lied to myself to excuse my selfish behavior!"
-    m "Well, to be fair at least you were going to make it easy for them instead of torturing them for days first..."
+    s "I just lied to myself to excuse my... selfish behavior..."
+    m "To be fair... at least you were going to make it easy for them instead of torturing them for days first..."
     m "But this isn't the time for blaming ourselves."
     m "Let's focus on getting out of here."
     m "Hold on. I should be able to restore you."
@@ -590,7 +590,8 @@ label chapter1_after_shutdown:
     show natsuki behind sayori at x(p44) zorder 0
     n "Sayori, no! You're not worthless! You're a good friend and a good president!"
     show sayori at foc
-    s u115153 "I... I appreciate that, but just wait till Monika gets to the end... you won't think so anymore..."
+    s u115153 "I... Natsuki, no..."
+    s "Just wait till Monika gets to the end. You won't think so anymore..."
     show natsuki at x(p43)
     show sayori at uf
     show monika at foc
@@ -614,7 +615,7 @@ label chapter1_after_shutdown:
     show monika at uf
     "Sayori jumps in before Natsuki can get mad again."
     show sayori at foc
-    s u213112 "Don't hate her on my behalf, because I forgive her."
+    s u213112 "Don't hate her on my behalf, because I don't hate her anymore."
     show sayori at uf
     show monika at foc
     m u114114 "Thank you."
@@ -664,7 +665,7 @@ label chapter1_after_shutdown:
     y u227135 "Ah --!"
     show yuri at uf
     show natsuki at foc
-    n "Oh god..."
+    n "Oh jeez..."
     show natsuki at uf
     show monika at foc
     m "Hold on!"

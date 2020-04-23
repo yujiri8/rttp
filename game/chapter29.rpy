@@ -325,14 +325,14 @@ label chapter29_2:
     k "... I think it's all we can do."
     k "We don't have long left."
     if persistent.libitina_lived:
-        call updateconsole("for c in monika, sayori, yuri, natsuki,\n "+mc_name.lower()+", renier, linda, albert, adam,\n libitina:\n  c.set_file_data(b''.join(bytes(\n   (random.randint(0, 255),)) \\\n    for i in range(65536))")
+        call updateconsole("for c in monika, sayori, yuri, natsuki,\n "+mc_name.lower()+", renier, linda, albert, adam,\n libitina:\n  c.set_file_data(b''.join(chr(\\\n   random.randint(0, 255))\\\n   for i in range(65536)))")
         python:
             for char in 'monika', 'sayori', 'yuri', 'natsuki', 'linda', 'renier', 'albert', 'adam', 'libitina':
                 with open(basedir+'/characters/'+char+'.chr', 'wb') as f:
                     f.write(b''.join(bytes((random.randint(0, 255),)) for i in range(65536)))
     else:
         call updateconsole("import random")
-        call updateconsole("for c in monika, sayori, yuri, natsuki,\n "+mc_name.lower()+", renier, linda, albert,\n graveyard.get_character('libitina'):\n  c.set_file_data(b''.join(bytes(\n   (random.randint(0, 255),)) \\\n   for i in range(65536))", "No such character")
+        call updateconsole("for c in monika, sayori, yuri, natsuki,\n "+mc_name.lower()+", renier, linda, albert,\n graveyard.get_character('libitina'):\n  c.set_file_data(b''.join(chr(\\\n   random.randint(0, 255))\\\n   for i in range(65536)))", "No such character")
         show markov at std
         show linda at foc zorder 51
         l 119443 "Idiot, set your variables first so you don't have to retype it!"
@@ -347,7 +347,7 @@ label chapter29_2:
         show markov at foc
         $ consolehistory = []
         call hideconsole
-        call updateconsole("for c in monika, sayori, yuri, natsuki,\n "+mc_name.lower()+", renier, linda, albert, adam:\n  c.set_file_data(b''.join(bytes(\n   (random.randint(0, 255),)) \\\n    for i in range(65536))")
+        call updateconsole("for c in monika, sayori, yuri, natsuki,\n "+mc_name.lower()+", renier, linda, albert, adam:\n  c.set_file_data(b''.join(chr(\\\n   random.randint(0, 255))\\\n   for i in range(65536)))")
         python:
             for char in 'monika', 'sayori', 'yuri', 'natsuki', 'linda', 'renier', 'albert', 'adam':
                 with open(basedir+'/characters/'+char+'.chr', 'wb') as f:
