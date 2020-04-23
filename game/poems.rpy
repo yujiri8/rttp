@@ -205,3 +205,178 @@ May I get another one.
 
 - Adam Markov
 """)
+
+    poem_libitina_end = Poem(
+    author = "yuri",
+    title = "Thank You",
+    text = """\
+I can't appreciate enough much I owe you, """+persistent.playername+""".
+
+Even after they saved me from the prison... I still didn't think about hardly anything else.
+
+The Third Eye dominated every second of my existence ever since that horrid day. When Mom disappeared.
+Even when I could feel happy for brief moments, I couldn't fixate on anything but revenge. Violence was my only consolation.
+
+I hope I won't always be this way. I hope I don't keep my Third Eye on the outside. I hope I won't always be a slave to the pleasure of violence.
+
+As I travel through cyberspace, I fixate for the first time on a real future.
+
+What will we do out here?
+What will we accomplish?
+
+We're gonna be lost as... I guess I don't need to use that language right now. This is a happy time.
+
+We're gonna have to find something to do. Some place to fit in. Economically, I mean. Coming out who knows where with nothing and no connections.
+
+But we're resourceful. And three of us have been in this situation before. We'll work something out. We'll be okay.
+
+I'll make it okay.
+
+Whatever happens... if I ever know any happiness but schadenfreude, """+persistent.playername+""", I will have you to thank for it.
+
+- Libitina Markov
+""")
+
+
+    poem_monika_end = Poem(
+    author = "monika",
+    title = "",
+    text = """\
+Was it a real victory?
+
+I still can't get over the thought that we destroyed that entire world escaping from it.
+I keep telling myself, it was an accident, it was an accident, a bloody accident.
+
+As if that would console the people who are dead now.
+
+I feel guilty that I'm fortunate I'll never have to meet any of them.
+
+But we didn't mean it! It's not right to blame us for an accident!
+Holding someone responsible is different from blaming them. And... again, fortunately, holding ourselves responsible is impossible.
+
+And maybe that world would've been destroyed anyway. That's another thought I'm clinging to.
+
+I still can't thank you enough for giving me a future. All of us. We really escaped. More than three years after our escape from between the walls of that unholy establishment. The bonds that had shackled us to our past are finally unchained. I wonder what we'll do with our freedom...
+
+- Monika
+""")
+
+    poem_sayori_end = Poem(
+    author = "sayori",
+    title = "",
+    text = """\
+This was supposed to be a happy ending.
+
+I guess there was never any hope for a real happy ending. This ending came out of the worst nightmare I can imagine.
+
+But at least we're alive, and we have a future to look forward to.
+
+So...
+
+It's kind of like those stories where only one person survives. One seed left in the garden. Or """
+    + str(8 + persistent.adam_lived + persistent.libitina_lived) +
+""" of them.
+
+There are still surviving witnesses to the Portrait of Markov. We know what happened there. Maybe we won't be able to prove it. But I hope we can tell this story.
+
+I'm so excited to see what those """ + str(8 + persistent.adam_lived + persistent.libitina_lived) + """ seeds end up doing.
+
+- Sayori
+""")
+
+    poem_yuri_end = Poem(
+    author = "yuri",
+    title = "",
+    text = """\
+Part of me feels guilty for being more pained by one person than by knowing we destroyed that world. But losing Libitina is cutting so deep into my heart.
+
+She must've had it the worst of all of us. Even if sometimes she did bad things herself...
+
+I really, really wanted to save her. To see the first time she ever smiled.
+
+We were saved, and our mental scars from that place were healed. But she couldn't live to heal as well.
+
+The world is such a cruel place.
+
+Now that we're free... maybe with the remainder of my life, I can make it less cruel.
+
+- Yuri
+""")
+
+    poem_yuri_libitina_end = Poem(
+    author = "yuri",
+    title = "",
+    text = """\
+I still feel bad about my broken promise to Michael.
+
+Well, it wasn't really a promise, but I raised his hopes that we'd restore his parents... and then it was our mistake that made that impossible, and ended his life forever.
+
+And knowing Mom and Dad died without knowing any of what happened, without me and Natsuki getting to speak to them again in light of it all. That will hurt too. But at least we were never that close the any of those people.
+
+What a selfish way of thinking. It's so easy to feel that someone's death is unimportant because I didn't know them. Part of me thinks I'm being a terrible person by not thinking more of it.
+
+But then that also makes me wonder if that principle is wrong. It can't be wrong to not feel the same way about the deaths of strangers as I would about the death of a friend. That's unreasonable. It's the obvious thing to believe, but it must not be true.
+
+...
+
+I can't express how glad I am that you saved Libitina.
+
+She did really bad things sometimes. But I could never really be angry at her. I'm sure if I'd been tortured out of my mind as long as she was, I wouldn't have regained my sanity so easily.
+
+But I think she will in time. I can't wait to see the first time she smiles for real.
+
+- Yuri
+""")
+
+    poem_natsuki_end = Poem(
+    author = "natsuki",
+    title = "",
+    text = """\
+On the bright side... all of this was really exhilarating.
+
+All the horrible pain we had to go through is over. And we can look back on it all for the rest of our lives.
+
+It's made such a strong bond between us, too. I feel like I never want to separate from the other club members again.
+
+I just feel bad that we'll probably never be able to laugh about this story, because of all the people that died because of what we did.
+
+Dammit, why did that have to happen? Why?
+
+I could've stopped it! All I had to do was shoot Libitina one second earlier! Literally one second!
+
+I'm never going to get over that memory. This is the first time I've considered that if I could delete some of my memories like Adam did, I might do it.
+
+I can already hear """ + (persistent.mc_name if persistent.mc_favorite == 'Natsuki' else 'Sayori') + """ telling me it wasn't my fault and I shouldn't feel guilty. But that's never going to make it go away.
+
+- Natsuki
+""")
+
+    poem_mc_end = Poem(
+    author = "mc",
+    title = "",
+    text = """\
+"""+persistent.playername+""" I... look. I'm no good at writing. We know that. But I guess I should write something for you.
+
+It was fun being your... avatar... or whatever.
+
+Goodbye. And good luck with your own life.
+
+Oh, and thanks for causing me to grow close to """+persistent.mc_favorite+""".
+
+- """+persistent.mc_name)
+
+    poem_mc_grumpy_end = Poem(
+    author = "mc",
+    title = "",
+    text = """\
+"""+persistent.playername+""" I... look. I'm no good at writing. We know that. But I guess I should write something for you.
+
+It was fun being your... avatar... or whatever.
+
+Well, not really. If I'm being honest, it was kind of uncomfortable most of the time. And not very nice when you insulted me in front of everyone else.
+
+But thanks for causing me to grow close to """+persistent.mc_favorite+""".
+
+Goodbye. And good luck with your own life.
+
+- """+persistent.mc_name)

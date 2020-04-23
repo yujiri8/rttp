@@ -460,6 +460,6 @@ default persistent.suggest_albert_stay = False # chapter 22
 default persistent.ch22_kill_guard = None # holds the name of the character if someone did
 default persistent.contacted = set() # chapter 23
 # ending
-default persistent.adam_lived = None
+default persistent.adam_lived = False
 default persistent.can_save_libitina = False
-default persistent.libitina_lived = None
+default persistent.libitina_lived = False
