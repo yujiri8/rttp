@@ -601,6 +601,7 @@ label libitina_kill_adam_against_monika:
     "Libitina is standing next to Natsuki."
     "She grabs Natsuki and tries to wrestle the gun from her."
     "Seeing the alternative, Linda shoots him dead."
+    show monika c117212
     play sound gunshot1
     show markov u22643s
     pause 0.5
@@ -609,26 +610,45 @@ label libitina_kill_adam_against_monika:
     show markov at thide
     hide markov
     play sound fall
+    "..."
+    play sound punch
+    show monika c114144
+    show libitina 3372113 at std(p54)
+    show natsuki c115212 at foc(p55)
     "Natsuki punches Libitina in the face to get her off her."
-    n "You crazy bitch!"
+    n c113212 "You crazy bitch!"
     n "I was gonna shoot him!"
     n "That's the last time you attack me like that!"
     n "Got it?"
-    #TODO
+    show natsuki at std
+    show libitina 1262113
+    "Libitina doesn't seem to mind being punched in the face too much if it means she got what she wanted."
+    "Maybe she understands how Natsuki feels about being grabbed like that a second time."
     show monika at foc
     m c114144 "(I was ready to forgive him...)"
     m c114114 "Libitina..."
     m "We should've given him a chance to work toward redemption."
     m "Like we did me and Renier."
-    m "He was obviously penitent."
-    m "His survival mean a lifetime of good deeds."
+    m c117114 "I hated him as much as you did, but he was obviously penitent."
+    m "His survival could've meant a lifetime of good deeds..."
     m "Think of all the people of [persistent.playername]'s world he could've gone on to help if you'd let him come with us."
-    m c117114 "What kind of person would take that away from them just to satisfy themself?"
+    m "What kind of person would take that away from them just to satisfy themself?"
     show monika at std
     "Libitina's response is instant."
-    show libitina at foc
+    show libitina at foc zorder 1
     b "I'm selfish."
+    b "Trying to make me feel bad about killing him because he might've helped others..."
+    b "You're talking to a brick wall."
     show libitina at std
+    show monika at foc
+    m c114114 "I..."
+    m c114144 "Okay."
+    m "So that's how it ends."
+    m c114114 "Feels like being emotionally jerked around for no reason..."
+    m "[persistent.playername] got me ready to forgive him and then..."
+    m c113114 "Okay."
+    m "I guess we're done here."
+    show monika at std
     $ persistent.adam_lived = False
     $ persistent.monika_sad_about_ending = True
     return
