@@ -447,8 +447,18 @@ label finale_lament:
     al "We should've been more careful before we toyed with forces that we'd seen destroy worlds."
     al "How irresponsible this was..."
     show albert at std
+    $ monika_sad_about_sending = False
     call adams_fate
-    show monika at foc
+    scene black
+    show mask_2
+    show mask_3
+    show portal_half
+    with dissolve_scene
+    "..."
+    if monika_sad_about_ending:
+        show monika c113111 at foc(p11)
+    else:
+        show monika c113111 at foc(p11)
     m "Well..."
     m "Our portal's open."
     m "The portal we worked so hard for."
@@ -470,7 +480,9 @@ label finale_lament:
                 m "Of course..."
             else:
                 m c114311 "Ah..."
-                m "You're right."
+                m "Indeed."
+                m "I will never forget what you've done for me."
+                m "And I'll do anything I can to repay you if I ever meet you."
             m "And [pesistent.playername]..."
             m "I still love you."
             m "I always will."
@@ -485,262 +497,6 @@ label finale_lament:
     "We're ready."
     "One by one, we step through the portal."
     "It stays open for each of us." # It only closes when an active Eye goes through it.
-    return
-
-label adams_fate:
-    if persistent.player_advocate_mercy[1]:
-        show monika at foc
-        m "Adam..."
-        show monika at std
-        show markov at foc
-        k "Yes, it's time for your decision."
-        k "What are you going to do with me?"
-        k "Do I die?"
-        show markov at std
-        show monika at foc
-        m c113113 "No."
-        show monika at std
-        if persistent.player_advocate_mercy[0] == -1:
-            show renier at foc
-            r u2293 "Wait, are you fucking serious?!?"
-            show renier at std
-            show natsuki at foc
-            n c117222 "What's gotten into you?!?"
-            n "I'm killing him!"
-            "Natsuki points her gun at Adam."
-            show natsuki at std
-            "Monika actually gets in the way."
-            show monika at foc
-            m c118312 "Waiit!!"
-            m "We can talk about this!"
-            show monika at std
-            "Natsuki points her gun down."
-            show natsuki at foc
-            n "Monika, what the hell are you doing?!?"
-            n "Why do you want this human scum to live?"
-            show natsuki at std
-            show monika at foc
-            m c118313 "Think about this!"
-            m "Killing him won't help anyone..."
-            m "But if we take him with us..."
-            m "... he can spend the rest of his life making up for it."
-            show monika at std
-            mc "Death is letting him off easy!"
-            mc "I wish we'd punished him before everything was broken so we could kill him a hundred times!"
-            show natsuki at foc
-            n "Have you forgotten all the shit he did?!?"
-            show natsuki at std
-            show sayori at foc
-            s c128314 "He tortured children!"
-            show sayori at std
-            show monika at foc
-            m "I know!"
-            show monika at std
-            show renier at foc
-            r u2296b "You're crazy if you expect us to let him off the hook after all this!"
-            show renier at std
-            show yuri at foc
-            y "No punishment we could inflict on him could ever match his sins!"
-            show yuri at std
-            show monika at foc
-            m c118113 "If your punishment needlessly denies someone the chance to reform..."
-            m "... then something's wrong with your idea of justice!"
-            show monika at std
-            "..."
-            show linda at foc
-            l "But just why should we think he has any intention to reform?"
-            l "Why should we trust anything from the mouth of such an abomination?"
-            show linda at std
-            show monika at foc
-            m c217113 "Guys, if he really weren't sorry, he would've run through the portal while he could instead of sticking around trying to save the world just now."
-            m "He probably could've while we were distracted."
-            show monika at std
-            "That's right..."
-            "I bet he really did have an opportunity after he restored himself."
-            "We didn't even notice he was back until he announced it."
-            "There's no selfish reason he wouldn't have gone for it."
-            show sayori at foc
-            s "I think I could forgive him if I was his only victim."
-            s "But what about all the other people he tortured?"
-            show sayori at std
-            show monika at foc
-            m "Sayori..."
-            m "You protected me, way back when, when Natsuki wanted to pummel me."
-            m "Remember?"
-            show monika at std
-            show sayori at foc
-            s "I did..."
-            s "I guess this isn't all that different."
-            show sayori at std
-            show yuri at foc
-            y "This is wrong!"
-            y "It's plenty different!"
-            y "Put aside the number of victims!"
-            y "Monika was essentially tortured into doing what she did, and he wasn't!"
-            y "There's no comparing those circimstances!"
-            show yuri at std
-            show markov at foc
-            k "Separated from a loved one, alone with medium awareness in a virtual world?"
-            k "I know, I won't pretend I was tortured in the same way Monika was."
-            k "But Yuri, you've never experienced medium-awareness."
-            k "You don't know how it felt to be the only person in that state of existence for years."
-            show markov at std
-            show sayori at foc
-            s "I do."
-            s "And Yuri, to be honest..."
-            s "... I'm sure having to exit like that for a long time would've made me kill myself."
-            show sayori at std
-#            k "And Monika did all that for someone she'd never even met!"
-            "..."
-            k "I don't deserve to live."
-            k "But I deserve to be allowed to make up for his sins."
-            k "As many of them as I can before I die."
-            show markov at std
-            #
-            "What he's saying makes sense, but I don't care!"
-            "I want to see his blood."
-            "Even if I can't personally be the one to spill it."
-            "I'm {i}not{/i} letting him get what he wanted after all this."
-            mc "I don't give a damn!"
-            mc "You can't just kidnap and torture us and then expect anything from us!"
-            show monika at foc
-            m "[mc_name]..."
-            m "His survival can mean a lifetime of good deeds."
-            m "Think of all the people of [persistent.playername]'s world he could go on to help if he came with us."
-            m "What kind of person would take that away from them just to satisfy themself?"
-            show monika at std
-            "How dare she-"
-            "-- insult me like that!"
-            "But --!"
-            "She makes sense!"
-            "It's not just about us."
-            show markov at foc
-            k "{i}To see the future is to be wise.{/i}"
-            show markov at std
-            "..."
-            show renier at foc
-            r "Damn it... I can't object, can I?"
-            show renier at std
-            show monika at foc
-            m "No."
-            m "And neither can I."
-            show monika at std
-            #
-            #k "And... if it makes you feel any better..."
-            #k "Remember that I {i}did{/i} already get shot and bled to death by you and stabbed twice by Libitina."
-            #k "And spent hours in the glitched state after she killed me in the facility."
-            #
-            show natsuki at foc
-            n c11s312 "This feels like shit...!"
-            n "To come all this way..."
-            n "... to go through everything we did, and literally destroy the whole world..."
-            n "... and not even take revenge?"
-            show natsuki at std
-            show monika at foc
-            m c114112 "I'm sorry."
-            m "I didn't want to spare him at first, either."
-            m "I know it's unsatisfying."
-            m "I was pissed when [persistent.playername] first warned me that I might have to show him the same mercy you all showed me."
-            m "And to be honest... I owe you an apology for not discussing it with you all before now."
-            m "I was worried about how angry you'd be if I told you I was thinking about sparing him."
-            m "I'm sorry for that."
-            m "But it's the better thing to do."
-            m "Better for people besides us."
-            show monika at std
-            show natsuki at foc
-            n "..."
-            n c11s215 "I understand."
-            show natsuki at std
-            #
-            "I shake my head, giving in."
-            "I'm not going to kill him."
-            "Monika's right."
-            "Here we go again."
-            "Another murderer on board."
-            "Well... the last two didn't turn out to be mistakes."
-            show markov at foc
-            k "Thank you..."
-            k "I'll make this worth it."
-            k "And I'll help you get the supplies to make those cupcakes you never got."
-            show markov at std
-            show natsuki at foc
-            n "Damn right you will."
-            n "If there's one thing that could make this ending a little happier..."
-            show natsuki at std
-        elif persistent.player_advocate_mercy[0] == 0:
-            "TODO"
-        else:
-            "TODO"
-        $ persistent.adam_lived = True
-    else:
-        if persistent.player_advocate_mercy[0] == 1:
-            m "Well..."
-            m "I think it's time we get rid of Adam."
-            m "We don't nee him anymore."
-        else:
-            mc "I think it's time we get rid of Adam."
-            mc "We don't need him anymore."
-        show markov at foc
-        k "Don't do this..."
-        k "Don't give my story a sad ending."
-        show markov at std
-        if persistent.player_advocate_mercy[0] == 1:
-            show sayori at foc
-            s c228214 "What about all the poeple {i}you{/i} gave sad endings to?"
-            s "People that didn't even do anything wrong!"
-            s "And you think you deserve a happy ending?"
-            show sayori at std
-            show markov at foc
-            k "There's only a difference of degree between Monika and me."
-            k "You forgave her, and then Renier."
-            k "Why not give me a chance to redeem myself?"
-            k "If I'm allowed to come with you..."
-            k "... I will owe the rest of my life ."
-            k "It may not be enough to make up for what I did, but you should let me do what I can..."
-            show markov at std
-            show sayori at foc
-            s "I once said that no one deserves a sad ending..."
-            s "... but... I wasn't thinking about you when I said that."
-            show sayori at std
-            show markov at foc
-            k "You were right."
-            k "You know I mean no further harm."
-            k "I need redemption."
-            k "Don't force me to die evil."
-            k "That's not the ending you want, is it?"
-            show markov at std
-            show sayori at foc
-            s "It is."
-            s "I'd hate to have to forgive you someday."
-            s "But..."
-            s "... you might be right."
-            show sayori at std
-        else:
-            r "I wish we could give you a sadder ending."
-            r "Someone without a Third Eye... put an end to his wretched existence."
-            show natsuki at foc
-            n "I'll do it."
-            show natsuki at std
-            show markov at foc
-            k "You don't have to do this!"
-            k "Think of the future!"
-            k "If I come with you "
-            show markov at std
-            ""
-        show natsuki at foc
-        n "Go to hell, you fucking monster!"
-        play sound gunshot1
-        show markov u22643s
-        "..."
-        play sound gunshot1
-        $ delete_character('adam')
-        show markov at thide
-        hide markov
-        n "..."
-        "Her second shot landed in his head."
-        n "It's done."
-        show natsuki at std
-        $ persistent.adam_lived = False
     return
 
 label save_libitina:
@@ -759,4 +515,399 @@ label save_libitina:
             $ persistent.can_save_libitina = False
         "Invalid destination."
         $ renpy.quit()
+    return
+
+label adams_fate:
+    if persistent.player_advocate_mercy[1]:
+        jump monika_try_save_adam
+    else:
+        jump monika_not_save_adam
+
+label monika_try_save_adam:
+    show monika at foc
+    m "Adam..."
+    show monika at std
+    show markov at foc
+    k u11513 "Yes, it's time for your decision."
+    k "What are you going to do with me?"
+    k "Do I die?"
+    show markov at std
+    show monika at foc
+    m c113113 "No."
+    show monika at std
+    if persistent.libitina_saved:
+        jump libitina_kill_adam_against_monika
+    jump monika_save_adam
+
+label libitina_kill_adam_against_monika:
+    show libitina at foc
+    b "What the actual fuck are you kidding?!?"
+    b "Of course he does!"
+    show libitina at std
+    show monika at foc
+    m "Libitina, please consider this..."
+    m "Him dying won't help you."
+    m "It won't bring anyone back, and it won't heal the scars he inflic-"
+    show monika at std
+    show libitina at foc
+    b "I don't care!"
+    b "I'm not letting him leave this place alive!"
+    show libitina at std
+    show markov at foc
+    k "If I come with you, I will spend the rest of my life in atonement!"
+    k "You know I will...!"
+    k "Give me a chance to atone for my sins!"
+    show markov at std
+    show libitina at foc
+    b "If no one else will shoot him, I will!"
+    b "And you all know how that will end!"
+    b "I don't care about the consequences! He dies!"
+    show libitina at std
+    show markov at foc
+    k "Is that what Ursula would want...?"
+    show markov at std
+    "..."
+    show libitina at foc
+    b "{i}I'd rather hurt people I love than let you find happiness after what you did to me.{/i}"
+    show libitina at std
+    "Libitina is standing next to Natsuki."
+    "She grabs Natsuki and tries to wrestle the gun from her."
+    "Seeing the alternative, Linda shoots him dead."
+    play sound gunshot1
+    show markov u22643s
+    pause 0.5
+    play sound gunshot1
+    pause 1.5
+    show markov at thide
+    hide markov
+    play sound fall
+    "Natsuki punches Libitina in the face to get her off her."
+    n "You crazy bitch!"
+    n "I was gonna shoot him!"
+    n "That's the last time you attack me like that!"
+    n "Got it?"
+    #TODO
+    show monika at foc
+    m "Libitina..."
+    m "We should've given him a chance to work toward redemption."
+    m "Like we did me and Renier."
+    m "He was obviously penitent."
+    m "His survival mean a lifetime of good deeds."
+    m "Think of all the people of [persistent.playername]'s world he could've gone on to help if you'd let him come with us."
+    m "What kind of person would take that away from them just to satisfy themself?"
+    show monika at std
+    "Libitina's response is instant."
+    show libitina at foc
+    b "I'm selfish."
+    show libitina at std
+    $ persistent.adam_lived = False
+    $ persistent.monika_sad_about_ending = True
+    return
+
+label monika_save_adam:
+    # TODO make this branch a lot
+    show renier at foc
+    r u2293 "Wait, are you fucking serious?!?"
+    show renier at std
+    show natsuki at foc
+    n c117222 "What's gotten into you?!?"
+    n "I'm killing him!"
+    "Natsuki points her gun at Adam."
+    show natsuki at std
+    "Monika actually gets in the way."
+    show monika at foc
+    m c118312 "Waiit!!"
+    m "We can talk about this!"
+    show monika at std
+    "Natsuki points her gun down."
+    show natsuki at foc
+    n "Monika, what the hell are you doing?!?"
+    n "Why do you want this human scum to live?"
+    show natsuki at std
+    show monika at foc
+    m c118313 "Think about this!"
+    m "Killing him won't help anyone..."
+    m "But if we take him with us..."
+    m "... he can spend the rest of his life making up for it."
+    show monika at std
+    mc "Death is letting him off easy!"
+    mc "I wish we'd punished him before everything was broken so we could kill him a hundred times!"
+    show natsuki at foc
+    n "Have you forgotten all the shit he did?!?"
+    show natsuki at std
+    show sayori at foc
+    s c128314 "He tortured children!"
+    show sayori at std
+    show monika at foc
+    m "I know!"
+    show monika at std
+    show renier at foc
+    r u2296b "You're crazy if you expect us to let him off the hook after all this!"
+    show renier at std
+    show yuri at foc
+    y "No punishment we could inflict on him could ever match his sins!"
+    show yuri at std
+    show monika at foc
+    m c118113 "If your punishment needlessly denies someone the chance to reform..."
+    m "... then something's wrong with your idea of justice!"
+    show monika at std
+    "..."
+    show linda at foc
+    l "But just why should we think he has any intention to reform?"
+    l "Why should we trust anything from the mouth of such an abomination?"
+    show linda at std
+    show monika at foc
+    m c217113 "Guys, if he really weren't sorry, he would've run through the portal while he could instead of sticking around trying to save the world just now."
+    m "He probably could've while we were distracted."
+    show monika at std
+    "That's right..."
+    "I bet he really did have an opportunity after he restored himself."
+    "We didn't even notice he was back until he announced it."
+    "There's no selfish reason he wouldn't have gone for it."
+    show sayori at foc
+    s "I think I could forgive him if I was his only victim."
+    s "But what about all the other people he tortured?"
+    show sayori at std
+    show monika at foc
+    m "Sayori..."
+    m "You protected me, way back when, when Natsuki wanted to pummel me."
+    m "Remember?"
+    show monika at std
+    show sayori at foc
+    s "I did..."
+    s "I guess this isn't all that different."
+    show sayori at std
+    show yuri at foc
+    y "This is wrong!"
+    y "It's plenty different!"
+    y "Put aside the number of victims!"
+    y "Monika was essentially tortured into doing what she did, and he wasn't!"
+    y "There's no comparing those circimstances!"
+    show yuri at std
+    show markov at foc
+    k "Separated from a loved one, alone with medium awareness in a virtual world?"
+    k "I know, I won't pretend I was tortured in the same way Monika was."
+    k "But Yuri, you've never experienced medium-awareness."
+    k "You don't know how it felt to be the only person in that state of existence for years."
+    show markov at std
+    show sayori at foc
+    s "I do."
+    s "And Yuri, to be honest..."
+    s "... I'm sure having to exit like that for a long time would've made me kill myself."
+    show sayori at std
+    #k "And Monika did all that for someone she'd never even met!"
+    "..."
+    k "I don't deserve to live."
+    k "But I deserve to be allowed to make up for his sins."
+    k "As many of them as I can before I die."
+    show markov at std
+    "What he's saying makes sense, but I don't care!"
+    "I want to see his blood."
+    "Even if I can't personally be the one to spill it."
+    "I'm {i}not{/i} letting him get what he wanted after all this."
+    mc "I don't give a damn!"
+    mc "You can't just kidnap and torture us and then expect anything from us!"
+    show monika at foc
+    m "[mc_name]..."
+    m "His survival can mean a lifetime of good deeds."
+    m "Think of all the people of [persistent.playername]'s world he could go on to help if he came with us."
+    m "What kind of person would take that away from them just to satisfy themself?"
+    show monika at std
+    "How dare she-"
+    "-- insult me like that!"
+    "But --!"
+    "She makes sense!"
+    "It's not just about us."
+    show markov at foc
+    k "{i}To see the future is to be wise.{/i}"
+    show markov at std
+    "..."
+    show renier at foc
+    r "Damn it... I can't object, can I?"
+    show renier at std
+    show monika at foc
+    m "No."
+    m "And neither can I."
+    show monika at std
+    #
+    #k "And... if it makes you feel any better..."
+    #k "Remember that I {i}did{/i} already get shot and bled to death by you and stabbed twice by Libitina."
+    #k "And spent hours in the glitched state after she killed me in the facility."
+    #
+    show natsuki at foc
+    n c11s312 "This feels like shit...!"
+    n "To come all this way..."
+    n "... to go through everything we did, and literally destroy the whole world..."
+    n "... and not even take revenge?"
+    show natsuki at std
+    show monika at foc
+    m c114112 "I'm sorry."
+    m "I didn't want to spare him at first, either."
+    m "I know it's unsatisfying."
+    m "I was pissed when [persistent.playername] first warned me that I might have to show him the same mercy you all showed me."
+    m "And to be honest... I owe you an apology for not discussing it with you all before now."
+    m "I was worried about how angry you'd be if I told you I was thinking about sparing him."
+    m "I'm sorry for that."
+    m "But it's the better thing to do."
+    m "Better for people besides us."
+    show monika at std
+    show natsuki at foc
+    n "..."
+    n c11s215 "I understand."
+    show natsuki at std
+    #
+    "I shake my head, giving in."
+    "I'm not going to kill him."
+    "Monika's right."
+    "Here we go again."
+    "Another murderer on board."
+    "Well... the last two didn't turn out to be mistakes."
+    show markov at foc
+    k "Thank you..."
+    k "I'll make this worth it."
+    k "And I'll help you get the supplies to make those cupcakes you never got."
+    show markov at std
+    show natsuki at foc
+    n "Damn right you will."
+    n "If there's one thing that could make this ending a little happier..."
+    show natsuki at std
+    $ persistent.adam_lived = True
+    return
+
+label monika_not_save_adam:
+    if persistent.libitina_lived:
+        show libitina at foc
+        b "Time for you to die, Adam."
+        b "We don't need you anymore."
+        show libitina at std
+    elif persistent.player_advocate_mercy[0] == 1:
+        show monika at foc
+        m "Well..."
+        m "I think it's time we get rid of Adam."
+        m "We don't nee him anymore."
+        show monika at std
+    else:
+        mc "I think it's time we get rid of Adam."
+        mc "We don't need him anymore."
+    show markov at foc
+    k "Don't do this..."
+    k "Don't give my story a sad ending."
+    show markov at std
+    if persistent.player_advocate_mercy[0] == 1:
+        jump sayori_try_save_adam
+    else:
+        jump sayori_not_save_adam
+
+label sayori_try_save_adam:
+    show sayori at foc
+    s c228214 "What about all the poeple {i}you{/i} gave sad endings to?"
+    s "People that didn't even do anything wrong!"
+    s "And you think you deserve a happy ending?"
+    show sayori at std
+    show markov at foc
+    k "There's only a difference of degree between Monika and me."
+    k "You forgave her, and then Renier."
+    k "Why not give me a chance to redeem myself?"
+    k "If I'm allowed to come with you..."
+    k "... I will owe the rest of my life ."
+    k "It may not be enough to make up for what I did, but you should let me do what I can..."
+    show markov at std
+    show sayori at foc
+    s "I once said that no one deserves a sad ending..."
+    s "... but... I wasn't thinking about you when I said that."
+    show sayori at std
+    show markov at foc
+    k "You were right."
+    k "You know I mean no further harm."
+    k "I need redemption."
+    k "Don't force me to die evil."
+    k "That's not the ending you want, is it?"
+    show markov at std
+    show sayori at foc
+    s "It is."
+    s "I'd hate to have to forgive you someday."
+    s "But..."
+    s "... you might be right."
+    show sayori at std
+    if persistent.libitina_lived:
+        jump libitina_kill_adam_against_sayori
+    else:
+        jump sayori_save_adam
+
+label libitina_kill_adam_against_sayori:
+    show libitina at foc
+    b "Someone without a Third Eye, end him!"
+    b "I'll hear no more of him!"
+    show libitina at std
+    if persistent.player_advocate_mercy[0] < 1:
+        show natsuki at foc
+        n "Gladly."
+        show natsuki at std
+        play sound gunshot1
+        show markov u22643s
+        pause 0.5
+        play sound gunshot1
+        pause 1.5
+
+    play sound gunshot1
+    show markov u22643s
+    pause 0.5
+    play sound gunshot1
+    pause 1.5
+    show markov at thide
+    hide markov
+    play sound fall
+    "Natsuki punches Libitina in the face to get her off her."
+    n "You crazy bitch!"
+    n "I was gonna shoot him!"
+    n "That's the last time you attack me like that!"
+    n "Got it?"
+    #TODO
+    show monika at std
+    "Libitina's response is instant."
+    show libitina at foc
+    b "I'm selfish."
+    show libitina at std
+    $ persistent.adam_lived = False
+    return
+
+label sayori_save_adam:
+    "TODO"
+    return
+
+label sayori_not_save_adam:
+    if persistent.libitina_lived:
+        show libitina at foc
+        b "I only wish I could give you a more painful death!"
+        b "Someone without a Third Eye... put an end to his horror show of a life!"
+        show libitina at std
+    else:
+        show renier at foc
+        r "I wish we could give you a sadder ending."
+        r "Someone without a Third Eye... put an end to his wretched existence."
+        show renier at std
+    show natsuki at foc
+    n "I'll do it."
+    show natsuki at std
+    show markov at foc
+    k "You don't have to do this!"
+    k "I know I deserve to die, but don't prevent me from seeking atonement!"
+    k "Think of the future!"
+    k "I could !"
+    k "Think of all the--"
+    show markov at std
+    show natsuki at foc
+    n "Go to hell, you fucking monster!"
+    play sound gunshot1
+    show markov u22643s
+    "..."
+    play sound gunshot1
+    $ delete_character('adam')
+    show markov at thide
+    hide markov
+    n "..."
+    "Her second shot landed in his head."
+    n "It's done."
+    show natsuki at std
+    $ persistent.adam_lived = False
     return
