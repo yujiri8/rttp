@@ -69,3 +69,35 @@ l "And restores their file, of course."
     m c121111 "In the end though, it was the reason we caught Adam."
     m "We might not've had any other way to lure him to the warehouse."
     show monika at std
+
+
+# TODO cut?
+    menu:
+        " "
+        "Adam, what API is it using to kill them if delete_character is broken?":
+            pass
+    menu:
+        " "
+        "We have to break it.":
+            pass
+    show markov at foc
+    k "That's not how it works..."
+    k "It doesn't use the Python APIs."
+    k "To these internal processes, nothing is broken."
+    # The viewport uses the Python APIs because he wrote it on top of Python. He basically made it its own admin. Prob add a question about that.
+    show markov at std
+    menu:
+        " "
+        "If internal stuff can use the broken APIs, then there might still be a way to restore the people!":
+            pass
+    show markov at foc
+    k "Not if they're shredded..."
+    k "That would delete all trace of their data."
+    k "Even restoring from a backup wouldn't reconnect their minds after a destruction like that."
+    show markov at std
+
+
+    menu:
+        " "
+        "Corrupt its memory.":
+            pass

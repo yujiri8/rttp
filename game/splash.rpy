@@ -203,7 +203,7 @@ label splashscreen:
     # Special things for the mod, since it deals with the game being turned off.
     $ persistent.awaiting_shutdown = False
     # This one has to be handled here, because it doesn't work the same way as other shutdowns and autoloads.
-    if persistent.libitina_revealed_plan:
+    if persistent.can_save_libitina:
         call save_libitina
 
     python:

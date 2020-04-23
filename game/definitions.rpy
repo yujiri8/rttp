@@ -490,5 +490,5 @@ default persistent.ch22_kill_guard = None # holds the name of the character if s
 default persistent.contacted = set()
 # ending
 default persistent.adam_lived = None
-default persistent.libitina_revealed_plan = False
+default persistent.can_save_libitina = False
 default persistent.libitina_lived = None

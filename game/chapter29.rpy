@@ -128,8 +128,9 @@ label chapter29:
     m "This can't be for real!"
     m c117112 "Not only we're stuck in the portal room, but DDLC is gone?"
     python:
-        with open(basedir+'/theremightbeaway.txt', 'w') as f:
+        with open(basedir+'/helpmehelpmehelpme.txt', 'w') as f:
             f.write(("i can see shit being shredded" + glitchtext(40) +
+                "people left and right destroyed permanently" + glitchtext(40) +
                 "i think there's barely any time" + glitchtext(40) +
                 "they're not gonna help me" + glitchtext(40) +
                 "they're not gonna give you a dialog" + glitchtext(40) +
@@ -137,14 +138,13 @@ label chapter29:
                 persistent.playername + " you need to help me ok?" + glitchtext(40) +
                 "i can still see the code" + glitchtext(40) +
                 "and i think there's a vulnerability here" + glitchtext(40) +
-                "i knew a little bit about server-side programming from before" + glitchtext(40) +
                 "DESTINATION.txt is parsed with eval!" + glitchtext(40) +
-                "i dunno why maybe it does something else if you " + glitchtext(40) +
-                "but eval can execute arbitrary code " + glitchtext(40) +
-                "and since that's an 'internal' thingy, the stupid API break mechanic won't apply to it " + glitchtext(40) +
+                "i dunno why maybe it does something else if you put a different type in it" + glitchtext(40) +
+                "but eval can execute arbitrary code" + glitchtext(40) +
+                "and since that's an 'internal' thingy, the stupid API break mechanic won't apply to it" + glitchtext(40) +
                 "listen i need you to edit that file to run a command to restore me" + glitchtext(40) +
                 "i can't reach it if you don't help me i'm gonna die").replace(' ', ''))
-        persistent.libitina_revealed_plan = True
+        persistent.can_save_libitina = True
         persistent.libitina_lived = False
         with open(basedir+'/DESTINATION.txt', 'w') as f:
             f.write("'/'")
@@ -158,19 +158,56 @@ label chapter29:
     show markov at foc
     k "I don't know."
     k "I don't know if we can."
-    python:
-        for i in range(10):
-            write_error_file()
-    k "Let me go ahead and make it so [persistent.playername]'s choices speak to everyone again..."
-    call updateconsole("vp.choices_target = Voice(\n anchor = " + mc_name.lower() + ")")
-    call hideconsole
-    $ consolehistory = []
     show markov at std
     python:
         for i in range(10):
             write_error_file()
+    k "Just as an aside, let me go ahead and make it so [persistent.playername]'s choices speak to us all again..."
+    call updateconsole("vp.choices_target = Voice(\n anchor = " + mc_name.lower() + ")")
+    call hideconsole
+    $ consolehistory = []
     "..."
+    $ persistent.can_save_libitina = False
+    #TODO pose
+    if persistent.libitina_lived:
+        show libitina at std(p11)
+        b "Haah..."
+        show libitina at std
+        show yuri at foc
+        y "She's back!!"
+        y "Thank goodness..."
+        show yuri at std
+        "Libitina seems pretty shaken up."
+        show libitina at foc
+        b "Thank you so much [persistent.playername]..."
+        b "It feels so good to not be deleted."
+        b "You idiots need to give [persistent.player_obj_pronoun] dialogs more often."
+        b "It woulda made that easier."
+        show libitina at std
+        show linda at foc
+        l 334111 "How did you...?"
+        show linda at std
+        show libitina at foc
+        b "I screamed loud enough."
+        b "I think I made the game dump my screams to a file, even though I was glitched."
+        b "And [persistent.playername] used DESTINATION.txt to execute a privileged command to save me."
+        show libitina at std
+        show markov at foc
+        k "Can we use the same thing to--"
+        show markov at std
+    else:
+        # Delete Libitina's files, to reduce the chance of player noticing them after this and being confused why
+        # saving her didn't work. It's mostly for practical reasons. Canon-wise, best I can do is that she was the
+        # first character selected for shredding.
+        python:
+            for f in 'WTF.txt', 'FFS.txt', 'helpmehelpmehelpme.txt':
+                try:
+                    os.remove(basedir+'/'+f)
+                except: pass
     $ style.say_dialogue = style.edited
+    python:
+        for i in range(10):
+            write_error_file()
     "MAXIMUM NUMBER OF ERROR FILES REACHED."
     "INITIATING FINAL PURGE."
     $ style.say_dialogue = style.normal
@@ -179,6 +216,7 @@ label chapter29:
     k u22643 "What the hell?!?"
     show markov at std
     $ style.say_dialogue = style.edited
+    "MAX SECURITY LOCKDOWN ENABLED."
     "SHREDDING ALL CHARACTERS."
     $ style.say_dialogue = style.normal
     show markov at foc
@@ -187,7 +225,10 @@ label chapter29:
     k "It's going to make them irrecoverable."
     k "Everyone."
     k "We have to stop it!"
-    k "Try turning off the game!"
+    if persistent.libitina_lived:
+        k "Try using that "
+    else:
+        k "Try turning off the game!"
     show markov at std
     $ persistent.autoload = 'shutdown_to_save_pom'
     while True:
@@ -205,15 +246,23 @@ label chapter29_2:
     show renier u2287 at inst(p63)
     show yuri c225325 at inst(p62)
     show natsuki c117124 at inst(p61)
-    k "It didn't stop!"
+    if persistent.libitina_lived:
+        menu:
+            k "Did you do it?"
+            "The DESTINATION.txt trick doesn't seem to work anymore.":
+                pass
+        k "That 'max security lockdown' must've stopped it..."
+        k "This final purge system was designed intelligently, maybe to stop us from getting a large number of people out!"
+    else:
+        k "It didn't stop!"
     k "[persistent.playername], the people of this world are dying right now!"
     show markov at std
-    mc "What the hell?!?"
     mc "Is it gonna get us?!?"
     mc "Should we go through the portal?"
     show markov at foc
     k "No, we're not giving up!"
     show markov at std
+    # TODO cut?
     menu:
         " "
         "Adam, what API is it using to kill them if delete_character is broken?":
@@ -241,6 +290,7 @@ label chapter29_2:
         " "
         "Corrupt its memory.":
             pass
+    #
     show linda at foc zorder 51
     l "Remember what happened when I tried that!"
     l "It stopped me and almost killed us all!"
@@ -251,8 +301,7 @@ label chapter29_2:
     show markov at std
     show linda at foc zorder 51
     l "The character files!"
-    l "What if we shred them?"
-#    l "Adam, reauthorize the viewport's access {i}now{/i}!"
+    l "What if we shred them ourselves?"
     show linda at std zorder 25
     show markov at foc
     k "That will only save us! We need to save everyone else in this world!"
@@ -263,27 +312,34 @@ label chapter29_2:
     show markov at foc
     k "... I think it's all we can do."
     k "We don't have long left."
-    call updateconsole("import random")
-    call updateconsole("for c in monika, sayori, yuri, natsuki,\n "+mc_name.lower()+", renier, linda, albert,\n graveyard.get_character('libitina'):\n  c.set_file_data(b''.join(bytes(\n   (random.randint(0, 255),)) \\\n   for i in range(65536))", "No such character")
-    show markov at std
-    show linda at foc zorder 51
-    l "Idiot, set your variables first so you don't have to retype it!"
-    show linda at std zorder 25
-    show markov at foc
-    call updateconsole("libitina=graveyard.get_character('libitina')", 'No such character')
-    k "I can't get Libitina's data from the graveyard!"
-    show markov at std
-    show linda at foc zorder 51
-    l "Do it for the rest of us at least!"
-    show linda at std zorder 25
-    show markov at foc
-    $ consolehistory = []
-    call hideconsole
-    call updateconsole("for c in monika, sayori, yuri, natsuki,\n "+mc_name.lower()+", renier, linda, albert, adam:\n  c.set_file_data(b''.join(bytes(\n   (random.randint(0, 255),)) \\\n    for i in range(65536))")
-    python:
-        for char in 'monika', 'sayori', 'yuri', 'natsuki', 'linda', 'renier', 'albert', 'adam':
-            with open(basedir+'/characters/'+char+'.chr', 'wb') as f:
-                f.write(b''.join(bytes((random.randint(0, 255),)) for i in range(65536)))
+    if persistent.libitina_lived:
+        call updateconsole("for c in monika, sayori, yuri, natsuki,\n "+mc_name.lower()+", renier, linda, albert, adam,\n libitina:\n  c.set_file_data(b''.join(bytes(\n   (random.randint(0, 255),)) \\\n    for i in range(65536))")
+        python:
+            for char in 'monika', 'sayori', 'yuri', 'natsuki', 'linda', 'renier', 'albert', 'adam', 'libitina':
+                with open(basedir+'/characters/'+char+'.chr', 'wb') as f:
+                    f.write(b''.join(bytes((random.randint(0, 255),)) for i in range(65536)))
+    else:
+        call updateconsole("import random")
+        call updateconsole("for c in monika, sayori, yuri, natsuki,\n "+mc_name.lower()+", renier, linda, albert,\n graveyard.get_character('libitina'):\n  c.set_file_data(b''.join(bytes(\n   (random.randint(0, 255),)) \\\n   for i in range(65536))", "No such character")
+        show markov at std
+        show linda at foc zorder 51
+        l "Idiot, set your variables first so you don't have to retype it!"
+        show linda at std zorder 25
+        show markov at foc
+        call updateconsole("libitina=graveyard.get_character('libitina')", 'No such character')
+        k "I can't get Libitina's data from the graveyard!"
+        show markov at std
+        show linda at foc zorder 51
+        l "Do it for the rest of us at least!"
+        show linda at std zorder 25
+        show markov at foc
+        $ consolehistory = []
+        call hideconsole
+        call updateconsole("for c in monika, sayori, yuri, natsuki,\n "+mc_name.lower()+", renier, linda, albert, adam:\n  c.set_file_data(b''.join(bytes(\n   (random.randint(0, 255),)) \\\n    for i in range(65536))")
+        python:
+            for char in 'monika', 'sayori', 'yuri', 'natsuki', 'linda', 'renier', 'albert', 'adam':
+                with open(basedir+'/characters/'+char+'.chr', 'wb') as f:
+                    f.write(b''.join(bytes((random.randint(0, 255),)) for i in range(65536)))
     k "Did... that work?"
     show markov at std
     call hideconsole
@@ -303,32 +359,49 @@ label chapter29_2:
     k "I think so."
     k "Everyone who never had a character file."
     show markov at std
-    show yuri at foc zorder 1
-    y "What about Libitina?!?"
-    show yuri at std
-    show markov at foc
-    k u11413 "..."
-    "Adam's expression is clear."
-    show markov at std
-    show yuri at foc
-    y "There must be a way!!"
-    show yuri at std
-    show markov at foc
-    k "Her data was shredded..."
-    k "There's no trace of her."
-    k "And even if there was, there would be no way to restore her."
-    show markov at std
-    show yuri at foc
-    y c2283y7 "No! No!"
-    y "That can't be true!"
-    show yuri at std
-    show markov at foc
-    k u11513t "After all this..."
-    k "It's my fault..."
-    k "I..."
-    k "I couldn't save my daughter..."
-    k u11613t "I swear to God, I tried!"
-    show markov at std
+    if persistent.libitina_lived:
+        "That's..."
+        mc "Come again?"
+        show markov at foc
+        k "The rest of the world's population has been irrecoverably deleted."
+        show markov at std
+        "But..."
+        "..."
+        "{i}And that's because of what we did?!?{/i}"
+        show albert at foc
+        al "You're telling me..."
+        al "... our actions just now killed all those people?"
+        show albert at std
+        show markov at foc
+        k "Yes."
+        show markov at std
+    else:
+        show yuri at foc zorder 1
+        y "What about Libitina?!?"
+        show yuri at std
+        show markov at foc
+        k u11413 "..."
+        "Adam's expression is clear."
+        show markov at std
+        show yuri at foc
+        y "There must be a way!!"
+        show yuri at std
+        show markov at foc
+        k "Her data was shredded..."
+        k "There's no trace of her."
+        k "And even if there was, there would be no way to restore her."
+        show markov at std
+        show yuri at foc
+        y c2283y7 "No! No!"
+        y "That can't be true!"
+        show yuri at std
+        show markov at foc
+        k u11513t "After all this..."
+        k "It's my fault..."
+        k "I..."
+        k "I couldn't save my daughter..."
+        k u11613t "I swear to God, I tried!"
+        show markov at std
 label finale_lament:
     "So the world is really gone?"
     "We killed everyone?"
@@ -356,7 +429,6 @@ label finale_lament:
     m c1181i4 "I never even talked to my parents!"
     m "I wanted to when the game reset, but I thought I didn't have time..."
     show monika at std
-    #TODO pose
     show sayori at foc
     s c217153 "I'm so glad we did that step...!"
     show sayori at std
@@ -684,7 +756,7 @@ label save_libitina:
     if not correct:
         if re.match(r"restore_character\( *('libitina'|\"libitina\") *\)", text.strip()):
             $ persistent.libitina_lived = True
-            $ persistent.libitina_revealed_plan = False
+            $ persistent.can_save_libitina = False
         "Invalid destination."
         $ renpy.quit()
     return
