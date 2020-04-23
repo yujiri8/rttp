@@ -84,7 +84,7 @@ label chapter29:
                 "but they're not giving you a fucking dialog are they?").replace(' ', '')))
     show natsuki at std
     show markov at foc zorder 50
-    k "I don't know, but don't try it yet."
+    k "Probably, but don't try it yet."
     k "It won't fix the world, but I should still be able to restore Libitina..."
     show markov at std
     python:
@@ -222,20 +222,22 @@ label chapter29:
     show markov at foc
     k "No no no!"
     k "'Shredding'..."
+    show yuri c228325
     k "It's going to make them irrecoverable."
     k "Everyone."
     k "We have to stop it!"
+    $ persistent.autoload = 'shutdown_to_save_pom'
     if persistent.libitina_lived:
-        k "Try using that "
+        k "Try using that DESTINATION.txt hack again!"
     else:
         k "Try turning off the game!"
     show markov at std
-    $ persistent.autoload = 'shutdown_to_save_pom'
     while True:
         " "
 label chapter29_2:
     $ persistent.autoload = None
     $ autosave()
+    play music yesnt
     scene black
     show mask_2
     show mask_3
@@ -244,7 +246,7 @@ label chapter29_2:
     show linda 119443 at inst(p65) zorder 25
     show monika c118212 at inst(p64)
     show renier u2287 at inst(p63)
-    show yuri c225325 at inst(p62)
+    show yuri c228325 at inst(p62)
     show natsuki c117124 at inst(p61)
     if persistent.libitina_lived:
         menu:
@@ -307,7 +309,7 @@ label chapter29_2:
     k "That will only save us! We need to save everyone else in this world!"
     show markov at std
     show linda at foc zorder 51
-    l "And since they were never onscreen, they don't have files..."
+    l 114443 "And since they were never onscreen, they don't have files..."
     show linda at std zorder 25
     show markov at foc
     k "... I think it's all we can do."
@@ -323,7 +325,7 @@ label chapter29_2:
         call updateconsole("for c in monika, sayori, yuri, natsuki,\n "+mc_name.lower()+", renier, linda, albert,\n graveyard.get_character('libitina'):\n  c.set_file_data(b''.join(bytes(\n   (random.randint(0, 255),)) \\\n   for i in range(65536))", "No such character")
         show markov at std
         show linda at foc zorder 51
-        l "Idiot, set your variables first so you don't have to retype it!"
+        l 119443 "Idiot, set your variables first so you don't have to retype it!"
         show linda at std zorder 25
         show markov at foc
         call updateconsole("libitina=graveyard.get_character('libitina')", 'No such character')
@@ -344,9 +346,9 @@ label chapter29_2:
     show markov at std
     call hideconsole
     show linda at foc zorder 51
-    l "Only time will tell..."
+    l 114443 "Only time will tell..."
     l "There's got to be something else we can--"
-    show linda at std zorder 25
+    show linda 119443 at std
     $ style.say_dialogue = style.edited
     "ALL CHARACTERS SHREDDED."
     "PURGE COMPLETE."
@@ -355,6 +357,7 @@ label chapter29_2:
     show monika at foc zorder 1
     m "Does that mean everyone we didn't just save is dead...?"
     show monika at std
+    show linda zorder 25
     show markov at foc
     k "I think so."
     k "Everyone who never had a character file."
@@ -380,14 +383,13 @@ label chapter29_2:
         y "What about Libitina?!?"
         show yuri at std
         show markov at foc
-        k u11413 "..."
-        "Adam's expression is clear."
+        k u11413t "..."
         show markov at std
         show yuri at foc
         y "There must be a way!!"
         show yuri at std
         show markov at foc
-        k "Her data was shredded..."
+        k u11513t "Her data was shredded..."
         k "There's no trace of her."
         k "And even if there was, there would be no way to restore her."
         show markov at std
@@ -396,7 +398,7 @@ label chapter29_2:
         y "That can't be true!"
         show yuri at std
         show markov at foc
-        k u11513t "After all this..."
+        k u11533t "After all this..."
         k "It's my fault..."
         k "I..."
         k "I couldn't save my daughter..."
