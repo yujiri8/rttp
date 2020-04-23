@@ -2,37 +2,39 @@ label questions(showing_chars):
     show monika at foc
     m c121111 "So [persistent.playername], I've been meaning to give you a chance to ask some questions."
     $ qtext = "Is there anything you'd like to ask?"
-    $ persistent.asked_monika_about_player_choices = False
-    $ persistent.asked_monika_about_time = False
-    $ persistent.asked_monika_about_mc_time = False
-    $ persistent.asked_monika_about_dreams = False
-    $ persistent.asked_linda_about_powers = False
-    $ persistent.asked_linda_renier_relationship = False
-    $ persistent.asked_linda_about_porn = False
-    $ persistent.asked_about_perception = False
-    $ persistent.asked_natsuki_forgive_renier = False
-    $ persistent.asked_about_mc_poems = False
-    $ persistent.asked_yuri_about_cutting = False
+    $ persistent.monika_questions = {
+        'player_choices': False,
+        'time': False,
+        'mc_time': False,
+        'dreams': False,
+        'linda_powers': False,
+        'linda_renier_relationship': False,
+        'linda_porn': False,
+        'perception': False,
+        'natsuki_forgive_renier': False,
+        'mc_poems': False,
+        'yuri_cutting': False,
+    }
     $ page = 0
 label questions_menu:
     menu:
         m "[qtext]"
         "(done)":
             return
-        "How does this question thing work?" if page == 0 and not persistent.asked_monika_about_player_choices:
+        "How does this question thing work?" if page == 0 and not persistent.monika_questions['player_choices']:
             m c121111 "I suppose that's a good question..."
             m c222111 "So, normally the script only gives you a choice when it's one that's part of the intended game, like which girl to write for."
             m c214111 "Outside of that, I don't think you can get any choices unless I - or someone else with code powers - gives you one."
             m c221111 "But I've learned how to not restrict you to options I can think of."
             m "It's a bit of an iffy hack, but it works."
-            $ persistent.asked_monika_about_player_choices = True
-        "How do you experience time?" if page == 0 and not persistent.asked_monika_about_time:
+            $ persistent.monika_questions['player_choices'] = True
+        "How do you experience time?" if page == 0 and not persistent.monika_questions['time']:
             m c122111 "Ah. Well..."
             m c222111 "I experience in-game time, the same as the other characters do."
             m "I'm aware when there's a time gap in your interface, like when a day passes, but I still experience the entire evening and all."
             m "The only reason I can tell when you're skipping is because that information is stored in config.skipping."
-            $ persistent.asked_monika_about_time = True
-        "How do the 'time gaps in my interface' work?" if page == 0 and persistent.asked_monika_about_time and not persistent.asked_monika_about_mc_time:
+            $ persistent.monika_questions['time'] = True
+        "How do the 'time gaps in my interface' work?" if page == 0 and persistent.monika_questions['time'] and not persistent.monika_questions['mc_time']:
             m c222111 "Well, in game we all experience time as we would if our world was real."
             m "The game binds a display on your computer to [mc_name]'s experience."
             m "But sometimes, when the script calls for it, some time is skipped."
@@ -41,8 +43,8 @@ label questions_menu:
             #mc "Huh..."
             #mc "I wonder if I can control that somehow?"
             #mc "Maybe it just happens when there's nothing during it that I felt was very important?"
-            $ persistent.asked_monika_about_mc_time = True
-        "What kind of dreams did you have overnight?" if page == 0 and persistent.asked_monika_about_time and not persistent.asked_monika_about_dreams:
+            $ persistent.monika_questions['mc_time'] = True
+        "What kind of dreams did you have overnight?" if page == 0 and persistent.monika_questions['time'] and not persistent.monika_questions['dreams']:
             m c122111 "Ah... that's a good question."
             m c222111 "I think it was after day 1 I had the dream I described in the special poem about falling asleep at a friend's house."
             m c214111 "It is an obvious allegory for what that day was like for me."
@@ -75,8 +77,8 @@ label questions_menu:
             show sayori at foc
             ms "Nope."
             show sayori at uf
-            $ persistent.asked_monika_about_dreams = True
-        "Linda, how do you have code powers?" if page == 1 and not persistent.asked_linda_about_powers:
+            $ persistent.monika_questions['dreams'] = True
+        "Linda, how do you have code powers?" if page == 1 and not persistent.monika_questions['linda_powers']:
             show monika at uf
             if 'l' not in showing_chars:
                 show natsuki at thide
@@ -104,8 +106,8 @@ label questions_menu:
                     l "I mean, as far as I remember, I wasn't physically in the world or part of the game until you gave me a character file."
                     l "So I don't see how I could have ever been Vice President of the club."
             show linda at uf
-            $ persistent.asked_linda_about_powers = True
-        "I want to know more about Linda and Renier's relationship." if page == 1 and not persistent.asked_linda_renier_relationship:
+            $ persistent.monika_questions['linda_powers'] = True
+        "I want to know more about Linda and Renier's relationship." if page == 1 and not persistent.monika_questions['linda_renier_relationship']:
             if 'l' in showing_chars:
                 show linda at foc
             else:
@@ -169,8 +171,8 @@ label questions_menu:
                     show natsuki at uf
                     show renier u1112
                     $ persistent.player_suggested_linda_natsuki_mom = True
-            $ persistent.asked_linda_renier_relationship = True
-        "Linda, the story about you mentioned porn websites. Do you really do that?" if page == 1 and not persistent.asked_linda_about_porn:
+            $ persistent.monika_questions['linda_renier_relationship'] = True
+        "Linda, the story about you mentioned porn websites. Do you really do that?" if page == 1 and not persistent.monika_questions['linda_porn']:
             show monika at uf
             if 'l' not in showing_chars:
                 show natsuki at thide
@@ -250,8 +252,8 @@ label questions_menu:
                     l "I'm not going to go browsing porn or anything."
                     show linda 334222b at uf
             show renier zorder 0
-            $ persistent.asked_linda_about_porn = True
-        "Do Presidents see the world as 3-dimensional, or like I do?" if page == 2 and not persistent.asked_about_perception:
+            $ persistent.monika_questions['linda_porn'] = True
+        "Do Presidents see the world as 3-dimensional, or like I do?" if page == 2 and not persistent.monika_questions['perception']:
             m c221111 "We see it as if it's real to us, but we can also see your display."
             m c122111 "It's a bit weird to be able to see myself like this..."
             m c222111 "It's also kind of funny how the sprites work."
@@ -260,8 +262,8 @@ label questions_menu:
             m "Like how I always do this pointing thing."
             m "But surprisingly, it's mostly accurate."
             m c122111 "That position just feels really natural to me."
-            $ persistent.asked_about_perception = True
-        "Natsuki, do you forgive Renier yet?" if page == 2 and not persistent.asked_natsuki_forgive_renier:
+            $ persistent.monika_questions['perception'] = True
+        "Natsuki, do you forgive Renier yet?" if page == 2 and not persistent.monika_questions['natsuki_forgive_renier']:
             show monika at uf
             if 'n' in showing_chars:
                 show natsuki xc5112 at foc
@@ -332,8 +334,8 @@ label questions_menu:
                     show natsuki xc6111
             if 'l' in showing_chars:
                 show linda 114111
-            $ persistent.asked_natsuki_forgive_renier = True
-        "Yuri, what was it like to cut yourself?" if page == 2 and not persistent.asked_yuri_about_cutting:
+            $ persistent.monika_questions['natsuki_forgive_renier'] = True
+        "Yuri, what was it like to cut yourself?" if page == 2 and not persistent.monika_questions['yuri_cutting']:
             if 'y' in showing_chars:
                 show yuri sc4132 at foc
             else:
@@ -391,8 +393,8 @@ label questions_menu:
             l 334111 "Seems unmistakably the influence of the Third Eye."
             l 334221 "Now I {i}really{/i} want to get that book open."
             show linda at uf
-            $ persistent.asked_yuri_about_cutting = True
-        "What about [mc_name]'s poems?" if page == 2 and not persistent.asked_about_mc_poems:
+            $ persistent.monika_questions['yuri_cutting'] = True
+        "What about [mc_name]'s poems?" if page == 2 and not persistent.monika_questions['mc_poems']:
             show monika at uf
             mc "What about them?"
             show monika at foc
@@ -475,8 +477,8 @@ label questions_menu:
                 mc "But you already have the advantage of being an impeccable baker..."
                 show monika c122131 at foc
                 m "Ahaha~"
-            $ persistent.asked_about_mc_poems = True
-        "(more options)" if question_remains():
+            $ persistent.monika_questions['mc_poems'] = True
+        "(more options)" if not all(persistent.monika_questions.values()):
             $ page = {0:1,1:2,2:0}[page]
             jump questions_menu
     $ qtext = "Any other questions?"

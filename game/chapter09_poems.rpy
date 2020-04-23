@@ -110,7 +110,7 @@ label poem1_mc_yuri_shared:
     show yuri at foc
     y c124112 "No..."
     y c125112 "I just thought it would be fun to theorize."
-    if not persistent.asked_yuri_about_cutting:
+    if not persistent.monika_questions['yuri_cutting']:
         y "I am fairly sure it has something to do with my..."
         y c124142 "My cutting..."
     show yuri at uf

@@ -66,22 +66,6 @@ init python:
         renpy.take_screenshot()
         renpy.save("1-1", "autosave")
 
-    # Used in chapter 8.
-    def question_remains():
-        return any((
-            not persistent.asked_monika_about_player_choices,
-            not persistent.asked_monika_about_time,
-            not persistent.asked_monika_about_mc_time,
-            not persistent.asked_monika_about_dreams,
-            not persistent.asked_linda_about_powers,
-            not persistent.asked_linda_renier_relationship,
-            not persistent.asked_linda_about_porn,
-            not persistent.asked_about_perception,
-            not persistent.asked_natsuki_forgive_renier,
-            not persistent.asked_about_mc_poems,
-            not persistent.asked_yuri_about_cutting,
-        ))
-
     def mc_dislike_player():
         return persistent.player_insult_mc_for_questioning_base64 +\
             (2 - persistent.player_allow_free_will_test)
@@ -466,20 +450,8 @@ default persistent.player_early_theorize_elyssa_is_yuri = False # chapter 14
 default persistent.player_reject_sayori_sacrifice = False # chapter 14
 default persistent.player_pacifist = 0 # chapter 15
 default persistent.player_guilt_trip_sayori = 0 # chapter 16
-default persistent.player_advocate_mercy = [0, 0] # First in ch15, second in ch23.
-# chapter 8 questions
-default persistent.asked_monika_about_player_choices = False
-default persistent.asked_monika_about_time = False
-default persistent.asked_monika_about_mc_time = False
-default persistent.asked_monika_about_dreams = False
-default persistent.asked_about_perception = False
-default persistent.asked_linda_about_powers = False
-default persistent.asked_linda_about_porn = False
-default persistent.asked_linda_renier_relationship = False
-default persistent.player_suggest_linda_natsuki_mom = 0 # can raise to 2 in ch14, if it was set before.
-default persistent.asked_natsuki_forgive_renier = False
-default persistent.asked_yuri_about_cutting = False
-default persistent.asked_about_mc_poems = False
+default persistent.player_advocate_mercy = [0, 0] # First in chapter 15, second in chapter 23.
+default persistent.player_suggest_linda_natsuki_mom = 0 # chapter 8. Can raise to 2 in chapter 14, if it was set before.
 # Part 3
 default persistent.threaten_libitina_to_save_natsuki_albert = False # chapter 22
 default persistent.threaten_libitina_to_come = False # chapter 22

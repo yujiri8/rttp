@@ -44,10 +44,10 @@ label chapter9:
     show yuri at uf
     show natsuki xc1111
     mc "That sounds fun."
-    if persistent.asked_about_mc_poems:
+    if persistent.monika_questions['mc_poems']:
         mc "Maybe I can be a poet after all."
     "Yuri and Natsuki and I all get notebooks and pencils."
-    if not persistent.asked_about_mc_poems:
+    if not persistent.monika_questions['mc_poems']:
         call chapter9_realize_poems
     "We sit down to write."
     play music t4 fadeout 1.0
@@ -1005,7 +1005,7 @@ label walk_renier:
     r u1283 "[persistent.playername]! Add character files for them!"
     show renier at uf
     "..."
-    if persistent.asked_monika_about_questions:
+    if persistent.monika_questions['choices']:
         mc "[persistent.playername] can't speak to us without a hacker to give [persistent.player_obj_pronoun] a dialog choice."
     else:
         mc "I don't think [persistent.playername] can talk to us."

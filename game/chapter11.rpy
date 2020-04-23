@@ -96,7 +96,7 @@ label chapter11:
     show monika at uf
     show linda at foc
     call updateconsole("os.system(\"sed -i '.bkup' '24964s/True/False/' main.c\")", "Operation not permitted")
-    if persistent.asked_linda_about_powers:
+    if persistent.monika_questions['linda_powers']:
         l 125111 "Mm..."
         show linda at uf
         show monika at foc

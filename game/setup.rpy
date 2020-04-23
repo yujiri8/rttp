@@ -139,51 +139,51 @@ label get_part1_choices:
     menu:
         "Did you ask Monika about the nature of player dialog choices?"
         "Yes":
-            $ persistent.asked_monika_about_player_choices = True
+            $ persistent.monika_questions['player_choices'] = True
         "No":
-            $ persistent.asked_monika_about_player_choices = False
+            $ persistent.monika_questions['player_choices'] = False
     menu:
         "Did you ask Monika about how admins experience time?"
         "Yes":
-            $ persistent.asked_monika_about_time = True
+            $ persistent.monika_questions['time'] = True
             menu:
                 "As a follow-up, did you ask Monika about the 'time gaps in your interface' she metioned?"
                 "Yes":
-                    $ persistent.asked_monika_about_mc_time = True
+                    $ persistent.monika_questions['mc_time'] = True
                 "No":
-                    $ persistent.asked_monika_about_mc_time = False
+                    $ persistent.monika_questions['mc_time'] = False
             menu:
                 "As a follow-up, did you ask Monika and Sayori about dreams?"
                 "Yes":
-                    $ persistent.asked_monika_about_dreams = True
+                    $ persistent.monika_questions['dreams'] = True
                 "No":
-                    $ persistent.asked_monika_about_dreams = False
+                    $ persistent.monika_questions['dreams'] = False
         "No":
-            $ persistent.asked_monika_about_time = False
+            $ persistent.monika_questions['time'] = False
     menu:
         "Did you ask how admin characters see the game world?"
         "Yes":
-            $ persistent.asked_monika_about_perception = True
+            $ persistent.monika_questions['perception'] = True
         "No":
-            $ persistent.asked_monika_about_perception = False
+            $ persistent.monika_questions['perception'] = False
     menu:
         "Did you ask Linda about why she had admin powers?"
         "Yes":
-            $ persistent.asked_linda_about_powers = True
+            $ persistent.monika_questions['linda_powers'] = True
         "No":
-            $ persistent.asked_linda_about_powers = False
+            $ persistent.monika_questions['linda_powers'] = False
     menu:
         "Did you ask Linda about the mention of her visiting porn websites in the story in Yuri's file?"
         "Yes":
-            $ persistent.asked_linda_about_porn = True
+            $ persistent.monika_questions['linda_porn'] = True
         "No":
-            $ persistent.asked_linda_about_porn = False
+            $ persistent.monika_questions['linda_porn'] = False
     menu:
         "Did you ask Linda and Renier about their relationship?"
         "Yes":
-            $ persistent.asked_linda_renier_relationship = True
+            $ persistent.monika_questions['linda_renier_relationship'] = True
         "No":
-            $ persistent.asked_linda_renier_relationship = False
+            $ persistent.monika_questions['linda_renier_relationship'] = False
     menu:
         "Did you suggest, jokingly or not, that Linda might be Natsuki's mom?"
         "Yes":
@@ -193,21 +193,21 @@ label get_part1_choices:
     menu:
         "Did you ask Natsuki if she had forgiven Renier yet?"
         "Yes":
-            $ persistent.asked_natsuki_forgive_renier = True
+            $ persistent.monika_questions['natsuki_forgive_renier'] = True
         "No":
-            $ persistent.asked_natsuki_forgive_renier = False
+            $ persistent.monika_questions['natsuki_forgive_renier'] = False
     menu:
         "Did you ask Yuri about what it was like to cut herself?"
         "Yes":
-            $ persistent.asked_yuri_about_cutting = True
+            $ persistent.monika_questions['yuri_cutting'] = True
         "No":
-            $ persistent.asked_yuri_about_cutting = False
+            $ persistent.monika_questions['yuri_cutting'] = False
     menu:
         "Did you ask Monika about the nature of MC's poems?"
         "Yes":
-            $ persistent.asked_about_mc_poems = True
+            $ persistent.monika_questions['mc_poems'] = True
         "No":
-            $ persistent.asked_about_mc_poems = False
+            $ persistent.monika_questions['mc_poems'] = False
     "Alright, that's all for that conversation."
     # end ch8 questions
     menu:

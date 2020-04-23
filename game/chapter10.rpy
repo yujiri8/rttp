@@ -412,7 +412,7 @@ label dayend:
     s "What if we just let the script skip to tommorow?"
     m "That's not how it works!"
     m "It doesn't actually skip time for us."
-    if persistent.asked_monika_about_time:
+    if persistent.monika_questions['time']:
         s "Oh right..."
     m "And there's no telling what else it might adjust on realizing Linda and Renier are here!"
     l "Hold on, I think I've got this!"

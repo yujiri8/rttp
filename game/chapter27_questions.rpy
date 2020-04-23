@@ -4,7 +4,15 @@ label adam_questions:
     k "Do you have any questions?"
     k "Anything you want me to explain?"
     $ qtext = "Now's a good time."
-    $ persistent.adam_questions = {'experiments':False, 'ursula_awakening':False, 'power_relationship':False, 'ursula_poem':False, 'char_files':False, 'api_breakage':False, 'dead_states':False}
+    $ persistent.adam_questions = {
+        'experiments': False,
+        'ursula_awakening': False,
+        'power_relationship': False,
+        'ursula_poem': False,
+        'char_files': False,
+        'api_breakage': False,
+        'dead_states': False,
+    }
     $ page = 1
 label adam_questions_menu:
     menu:
