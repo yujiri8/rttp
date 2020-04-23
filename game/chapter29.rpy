@@ -466,7 +466,7 @@ label finale_lament:
     scene black with dissolve_scene
     "..."
     "..."
-    $ monika_sad_about_sending = False
+    $ monika_sad_about_ending = False
     call adams_fate
     scene black
     show mask_2
@@ -477,7 +477,7 @@ label finale_lament:
     if monika_sad_about_ending:
         show monika c113111 at foc(p11)
     else:
-        show monika c113111 at foc(p11)
+        show monika c114111 at foc(p11)
     m "Well..."
     m "Our portal's open."
     m "The portal we worked so hard for."
@@ -502,14 +502,16 @@ label finale_lament:
                 m "Indeed."
                 m "I will never forget what you've done for me."
                 m "And I'll do anything I can to repay you if I ever meet you."
-            m "And [pesistent.playername]..."
-            m "I still love you."
+            m "And [persistent.playername]..."
+            m c1113i1 "I still love you."
             m "I always will."
         "I enjoyed the journey more than you realize.":
             m "I'm glad."
             m "And [persistent.playername]..."
             m "I love you."
             m "I always will."
+    show monika at thide
+    hide monika
     mc "So..."
     mc "Are we going?"
     "Everyone nods."
@@ -537,8 +539,8 @@ label save_libitina:
     return
 
 label adams_fate:
-    show mask_1
     show mask_2
+    show mask_3
     show portal_half
     show markov u11433 at std(p11)
     with dissolve_scene
@@ -800,7 +802,7 @@ label monika_save_adam:
 
 label monika_not_save_adam:
     if persistent.libitina_lived:
-        show libitina at foc
+        show libitina 3361113 at foc(p31)
         b "Time for you to die, Adam."
         b "We don't need you anymore."
         show libitina at std
@@ -814,7 +816,7 @@ label monika_not_save_adam:
         mc "I think it's time we get rid of Adam."
         mc "We don't need him anymore."
     show markov at foc
-    k "Don't do this..."
+    k u11513t "Don't do this..."
     k "Don't give my story a sad ending."
     show markov at std
     if persistent.player_advocate_mercy[0] == 1:
@@ -902,7 +904,7 @@ label sayori_save_adam:
 label sayori_not_save_adam:
     if persistent.libitina_lived:
         show libitina at foc
-        b "I only wish I could give you a more painful death!"
+        b 3371113 "I only wish I could give you a more painful death!"
         b "Someone without a Third Eye... put an end to his horror show of a life!"
         show libitina at std
     else:
@@ -910,18 +912,18 @@ label sayori_not_save_adam:
         r "I wish we could give you a sadder ending."
         r "Someone without a Third Eye... put an end to his wretched existence."
         show renier at std
-    show natsuki at foc
+    show natsuki c115112 at foc(p33)
     n "I'll do it."
     show natsuki at std
     show markov at foc
-    k "You don't have to do this!"
+    k u12613t "You don't have to do this!"
     k "I know I deserve to die, but don't prevent me from seeking atonement!"
-    k "Think of the future!"
-    k "I could !"
+    k u22613t "Think of the future!"
+    k "My life is better spent in service to you and to humanity than wasted!"
     k "Think of all the--"
     show markov at std
     show natsuki at foc
-    n "Go to hell, you fucking monster!"
+    n c117122 "Go to hell, you fucking monster!"
     play sound gunshot1
     show markov u22643s
     "..."
@@ -931,7 +933,15 @@ label sayori_not_save_adam:
     hide markov
     n "..."
     "Her second shot landed in his head."
-    n "It's done."
+    n c114112 "It's done."
+    n "Over."
+    n "Finished."
+    n c114111 "We'll never have to see him again."
     show natsuki at std
+    show libitina at foc
+    b 2361111 "Thank you Natsuki."
+    b "I would've liked to torture him more..."
+    b "But I guess this was the best we could get."
+    show libitina at std
     $ persistent.adam_lived = False
     return
