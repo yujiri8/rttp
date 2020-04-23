@@ -566,21 +566,21 @@ label monika_try_save_adam:
     jump monika_save_adam
 
 label libitina_kill_adam_against_monika:
-    show libitina at foc
+    show libitina 3371113 at foc(p33)
     b "What the actual fuck are you kidding?!?"
     b "Of course he does!"
     show libitina at std
     show monika at foc
-    m "Libitina, please consider this..."
+    m c114112 "Libitina, please consider this..."
     m "Him dying won't help you."
     m "It won't bring anyone back, and it won't heal the scars he inflic-"
     show monika at std
     show libitina at foc
-    b "I don't care!"
+    b 3372113 "I don't care!"
     b "I'm not letting him leave this place alive!"
     show libitina at std
     show markov at foc
-    k "If I come with you, I will spend the rest of my life in atonement!"
+    k u12613t "If I come with you, I will spend the rest of my life in atonement!"
     k "You know I will...!"
     k "Give me a chance to atone for my sins!"
     show markov at std
@@ -590,7 +590,7 @@ label libitina_kill_adam_against_monika:
     b "I don't care about the consequences! He dies!"
     show libitina at std
     show markov at foc
-    k "Is that what Ursula would want...?"
+    k u22613t "Is that what Ursula would want...?"
     show markov at std
     "..."
     show libitina at foc
@@ -614,13 +614,14 @@ label libitina_kill_adam_against_monika:
     n "Got it?"
     #TODO
     show monika at foc
-    m "Libitina..."
+    m c114144 "(I was ready to forgive him...)"
+    m c114114 "Libitina..."
     m "We should've given him a chance to work toward redemption."
     m "Like we did me and Renier."
     m "He was obviously penitent."
     m "His survival mean a lifetime of good deeds."
     m "Think of all the people of [persistent.playername]'s world he could've gone on to help if you'd let him come with us."
-    m "What kind of person would take that away from them just to satisfy themself?"
+    m c117114 "What kind of person would take that away from them just to satisfy themself?"
     show monika at std
     "Libitina's response is instant."
     show libitina at foc
