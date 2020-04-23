@@ -29,7 +29,7 @@ label adam_questions_menu:
             $ persistent.adam_questions['api_breakage'] = True
         "I'm confused about all the different 'dead states' characters can be in." if not persistent.adam_questions['dead_states'] and page == 3:
             call adam_discuss_dead_states
-            $ persistent.adam_questions['api_breakage'] = True
+            $ persistent.adam_questions['dead_states'] = True
         "(-> page 2)" if not all(persistent.adam_questions.values()) and page == 1:
             $ page = 2
             jump adam_questions_menu
@@ -58,7 +58,6 @@ label adam_discuss_power_relationship:
     return
 
 label adam_discuss_ursula_poem:
-#    k "\"To see the future is to be wise.\""
     k "It really seems like it."
     k "I always thought the meaning of the first sentence related to her thoughts as she decided to leave."
     k "The rich aroma was the prospects of entering [persistent.playername]'s world, the bittersweet aftertaste was the people she would have to leave behind, and the hot, complex balance was the pain of the decision."
