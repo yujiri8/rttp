@@ -27,21 +27,26 @@ label setup:
         "Beginning":
             "Very well."
             $ persistent.first_run = True
-            scene black with dissolve_scene
-            $ quick_menu = True
+            call setup_common
             jump start
         "Skip to Part 2":
             $ persistent.first_run = True
             call skip_to_part2
-            scene black with dissolve_scene
-            $ quick_menu = True
+            call setup_common
             jump part2_skip_point
         "Skip to Part 3":
             $ persistent.first_run = True
             call skip_to_part3
-            scene black with dissolve_scene
-            $ quick_menu = True
+            call setup_common
             jump after_markov_returns
+    return
+
+label setup_common:
+    scene black with dissolve_scene
+    $ quick_menu = True
+    if "_old_history" in globals():
+        $ _history = _old_history
+        $ del _old_history
     return
 
 label skip_to_part2:

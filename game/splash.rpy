@@ -197,6 +197,8 @@ image tos = Fixed(
 
 label splashscreen:
 
+    $ basedir = config.basedir.replace('\\', '/')
+
     # A script that converts saves from part 1 or part 2 to be part 3-compatible.
     call update_to_part3
 
@@ -227,7 +229,6 @@ label splashscreen:
                 if user: currentuser = user
             except:
                 pass
-
 
     python:
         firstrun = ""
@@ -283,15 +284,10 @@ label splashscreen:
                 pass
         jump setup
 
-    $ basedir = config.basedir.replace('\\', '/')
-
-
-
     if persistent.autoload:
         jump autoload
 
     $ config.allow_skipping = False
-
     show white
     $ splash_message = splash_message_default
     $ config.main_menu_music = audio.t1
@@ -313,14 +309,10 @@ label splashscreen:
 label after_load:
     $ config.allow_skipping = allow_skipping
     $ _dismiss_pause = config.developer
-    $ style.say_dialogue = style.normal
     return
-
-
 
 label autoload:
     python:
-
         if "_old_game_menu_screen" in globals():
             _game_menu_screen = _old_game_menu_screen
             del _old_game_menu_screen
@@ -328,7 +320,6 @@ label autoload:
             _history = _old_history
             del _old_history
         renpy.block_rollback()
-
 
         renpy.context()._menu = False
         renpy.context()._main_menu = False
