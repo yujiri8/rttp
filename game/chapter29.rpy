@@ -563,7 +563,9 @@ label monika_try_save_adam:
     show monika at std
     if persistent.libitina_lived:
         jump libitina_kill_adam_against_monika
-    jump monika_save_adam
+    if persistent.player_advocate_mercy[0] == 1:
+        jump monika_save_adam_easy
+    jump monika_save_adam_hard
 
 label libitina_kill_adam_against_monika:
     show libitina 3371113 at foc(p33)
@@ -631,8 +633,161 @@ label libitina_kill_adam_against_monika:
     $ persistent.monika_sad_about_ending = True
     return
 
-label monika_save_adam:
-    # TODO make this branch a lot
+label monika_save_adam_easy:
+    show linda 12a114 at foc(p33)
+    l "Oh for God's sake Monika, are you serious?"
+    show linda at std(p54)
+    show renier ru2123 at foc(p55)
+    r "Honestly, I kind of saw this coming..."
+    r "It didn't seem like she was really insincere when she offered him redemption earlier."
+    show renier at std
+    show linda at xif(p54) zorder 1
+    l "That is ridiculous, Monika!"
+    l "He inflicted pain to which suicide was preferable on hundreds of people!"
+    l 129114b "And you were one of them!!"
+    l 12a114 "We're not going to let him off the hook."
+    show linda at std
+    show markov at foc zorder 2
+    k u12613t "If I come with you, I will spend the rest of my life in atonement!"
+    k "I can help!"
+    k "Give me a chance to atone for my sins!"
+    show markov at std
+    show monika at foc
+    m c214111 "Exactly."
+    m "Guys... I know we'd all like to see him suffer some more, but it would be perverse to take away his ability to atone as punishment."
+    show monika at std
+    show renier at foc zorder 2
+    r ru1226 "She's biased."
+    r "She needed undeserved forgiveness too."
+    r "And [persistent.playername]'s biased too, because [persistent.player_subj_pronoun] likes her."
+    show renier at std
+    show monika at foc
+    m c217113 "Hey!"
+    m "Look who's talking about which other members of our group needed forgiveness!"
+    m "Have you forgotten everything {i}you{/i} did, Renier?"
+    show monika at std
+    show renier at foc
+    r ru2233b "I..."
+    r ru2223b "But everything I did wrong was because of him!"
+    r "He brought me into his cult, manipulated me into--"
+    show renier at std
+    show monika at std(p52)
+    show natsuki c223112 at foc(p51)
+    n "What, 'just following orders' so you aren't responsible for any of it?"
+    n "We already went through this, Renier!"
+    n "We didn't forgive you because we somehow thought the shit you did wasn't that horrible."
+    n "We forgave you because you'd changed."
+    n c224112 "I'm not saying I don't plan to kill him, but you can't be making that argument."
+    show natsuki at std
+    show renier at foc
+    r ru2213 "Okay, you're right."
+    r "How about you shoot him then?"
+    show renier at std
+    show monika at foc zorder 2
+    m c227113 "No!"
+    m "He owes the rest of his life in atonement!"
+    m "You can't take that away!"
+    show monika at std
+    show linda at thide
+    hide linda
+    show renier at std(p54)
+    show yuri c12b114 at foc(p55) zorder 2
+    y "Monika has a good point."
+    y c125114 "I hate it, but atonement is a better fate than death."
+    y "He could go on to help us and others, to at least partly redeem himself."
+    y "And that would be better for everyone he helps than killing him here."
+    show yuri at std
+    show renier at foc zorder 3
+    r ru22332b "Damn it...!"
+    r "Why does it have to be this way?"
+    show renier at std
+    show natsuki at thide
+    hide natsuki
+    show albert 21543 at leftinfoc(p51) zorder 2
+    al "How can you do this?"
+    al 21143 "Your argument makes sense, but how can you ask us to let such a horrible person escape this world?"
+    al 21122 "Agh... it's just emotions telling me to kill him, isn't it?"
+    show albert at xis(p51)
+    show monika at foc zorder 3
+    m c124111 "Yeah."
+    m "I hate to admit it, but he isn't all that different from me."
+    m "Separated from a loved one, alone with medium awareness in a virtual world..."
+    m "It's not that different."
+    m "And he did already get shot by Natsuki and bled to unconsciousness, then stabbedas Third Eye fuel by Libitina twice."
+    show monika at std
+    show albert at thide
+    hide albert
+    show sayori c123354 at leftinfoc(p51) zorder 4
+    s "Monika, he tortured children...!"
+    s "That's way different..."
+    s "What he did is a thousand times worse than what you did!"
+    show sayori at std
+    show markov at foc zorder 4
+    #k "And Monika did all that for someone she'd never even met!"
+    k u11513t "You're right."
+    k "I don't deserve to live."
+    k "But I deserve to be allowed to atone for my sins."
+    k "As many of them as I can before I die."
+    show markov at std
+    show sayori at foc
+    s c1153k3 "I guess..."
+    s "He's right..."
+    show sayori c116113 at std
+    show renier at thide
+    hide renier
+    show yuri at std(p54)
+    show linda 114114b at foc(p55) zorder 2
+    l "But just why should we think he has any intention to reform?"
+    l "Why should we trust anything from the mouth of such an abomination?"
+    show linda at std
+    show markov at foc
+    k u21513t "If I wasn't really penitent, I would've run through the portal while I could instead of sticking around trying to save the world just now."
+    show markov at std
+    "That's right..."
+    "I bet he really did have an opportunity after he restored himself."
+    "We didn't even notice he was back until he announced it."
+    "There's no selfish reason he wouldn't have gone for it."
+    "..."
+    show linda 115332
+    "Linda sighs."
+    mc "You're really telling me we have to let him live...?"
+    show monika at foc zorder 4
+    m "Yes."
+    m "I know it's not what we want..."
+    m "But it's the better thing to do, and we all know it."
+    show monika at std
+    show markov at foc
+    k u11533t "Thank you..."
+    show markov at std
+    show linda at thide
+    hide linda
+    show natsuki c11s311 at foc(p55) zorder 2
+    n "I'm not gonna lie."
+    n "This feels like shit."
+    n "I'd be so happy to see you die, Adam."
+    n "But, I know what the right thing is."
+    show natsuki at std
+    show yuri at foc(p54) zorder 5
+    y c125116 "You have a long road of atonement ahead of you, Adam."
+    show yuri at std
+    show markov at foc zorder 6
+    k u11413t "I know."
+    show markov at std
+    show yuri at foc zorder 7
+    y "Your sins are two orders of magnitude worse than Monika's, at least."
+    y "You won't live to see the day I don't see you as worthless."
+    show yuri at std
+    show markov at foc zorder 8
+    k u11513t "I understand."
+    k "But at least I won't die evil."
+    k "Thank you."
+    show markov at std
+    "Well. Here we go again."
+    "Another murderer onboard."
+    "I guess the last two didn't turn out to be mistakes..."
+    return
+
+label monika_save_adam_hard:
     show renier ru2293 at foc(p33) zorder 1
     r "Wait, are you fucking serious?!?"
     show renier at std(p54)
@@ -653,7 +808,7 @@ label monika_save_adam:
     show natsuki at std
     show monika at foc
     m c118313 "Think about this!"
-    m "Killing him won't help anyone..."
+    m "Killing him won't bring anyone back, or heal the scars he inflicted on us..."
     m "But if we take him with us..."
     m "... he can spend the rest of his life making up for it."
     show monika at std
@@ -733,7 +888,7 @@ label monika_save_adam:
     show markov at foc zorder 5
     #k "And Monika did all that for someone she'd never even met!"
     k u11513t "I don't deserve to live."
-    k "But I deserve to be allowed to make up for his sins."
+    k "But I deserve to be allowed to alone for me sins."
     k "As many of them as I can before I die."
     show markov at std
     "What he's saying makes sense, but I don't care!"
