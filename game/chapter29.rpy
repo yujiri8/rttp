@@ -550,18 +550,18 @@ label adams_fate:
         jump monika_not_save_adam
 
 label monika_try_save_adam:
-    show monika at foc
+    show monika c124113 at foc(p31)
     m "Adam..."
     show monika at std
-    show markov at foc
+    show markov at foc zorder 1
     k u11513 "Yes, it's time for your decision."
     k "What are you going to do with me?"
     k "Do I die?"
-    show markov at std
+    show markov at std zorder 0
     show monika at foc
     m c113113 "No."
     show monika at std
-    if persistent.libitina_saved:
+    if persistent.libitina_lived:
         jump libitina_kill_adam_against_monika
     jump monika_save_adam
 
@@ -632,16 +632,16 @@ label libitina_kill_adam_against_monika:
 
 label monika_save_adam:
     # TODO make this branch a lot
-    show renier at foc
-    r u2293 "Wait, are you fucking serious?!?"
-    show renier at std
-    show natsuki at foc
+    show renier ru2293 at foc(p33) zorder 1
+    r "Wait, are you fucking serious?!?"
+    show renier at std(p54)
+    show natsuki c117222 at foc(p55) zorder 1
     n c117222 "What's gotten into you?!?"
     n "I'm killing him!"
     "Natsuki points her gun at Adam."
     show natsuki at std
     "Monika actually gets in the way."
-    show monika at foc
+    show monika at foc(p11) zorder 1
     m c118312 "Waiit!!"
     m "We can talk about this!"
     show monika at std
@@ -661,24 +661,28 @@ label monika_save_adam:
     show natsuki at foc
     n "Have you forgotten all the shit he did?!?"
     show natsuki at std
-    show sayori at foc
-    s c128314 "He tortured children!"
+    show sayori c128314 at foc(p51)
+    s "He tortured children!"
     show sayori at std
     show monika at foc
     m "I know!"
     show monika at std
-    show renier at foc
-    r u2296b "You're crazy if you expect us to let him off the hook after all this!"
+    show renier at foc zorder 2
+    r ru2296b "You're crazy if you expect us to let him off the hook after all this!"
     show renier at std
-    show yuri at foc
+    show sayori at std(p52)
+    show yuri c12b116 at foc(p51)
     y "No punishment we could inflict on him could ever match his sins!"
     show yuri at std
-    show monika at foc
-    m c118113 "If your punishment needlessly denies someone the chance to reform..."
+    show monika at foc zorder 3
+    m c218113 "If your punishment needlessly denies someone the chance to reform..."
     m "... then something's wrong with your idea of justice!"
     show monika at std
     "..."
-    show linda at foc
+    show natsuki at std(p54)
+    show renier at thide
+    hide renier
+    show linda 119114b at foc(p55) zorder 1
     l "But just why should we think he has any intention to reform?"
     l "Why should we trust anything from the mouth of such an abomination?"
     show linda at std
@@ -690,40 +694,44 @@ label monika_save_adam:
     "I bet he really did have an opportunity after he restored himself."
     "We didn't even notice he was back until he announced it."
     "There's no selfish reason he wouldn't have gone for it."
-    show sayori at foc
+    "..."
+    show sayori at foc zorder 3
+    s c215314 "I..."
     s "I think I could forgive him if I was his only victim."
-    s "But what about all the other people he tortured?"
-    show sayori at std
+    s c213314 "But what about all the other people he tortured?"
+    show sayori at std zorder 2
     show monika at foc
-    m "Sayori..."
+    m c114112 "Sayori..."
     m "You protected me, way back when, when Natsuki wanted to pummel me."
     m "Remember?"
     show monika at std
-    show sayori at foc
-    s "I did..."
+    show sayori at foc zorder 3
+    s c215324 "I did..."
     s "I guess this isn't all that different."
     show sayori at std
-    show yuri at foc
+    show yuri at foc zorder 4
     y "This is wrong!"
     y "It's plenty different!"
     y "Put aside the number of victims!"
     y "Monika was essentially tortured into doing what she did, and he wasn't!"
     y "There's no comparing those circimstances!"
     show yuri at std
-    show markov at foc
-    k "Separated from a loved one, alone with medium awareness in a virtual world?"
-    k "I know, I won't pretend I was tortured in the same way Monika was."
-    k "But Yuri, you've never experienced medium-awareness."
+    show markov at foc zorder 3
+    k u22613t "Separated from a loved one, alone with medium awareness in a virtual world?"
+    k u11533t "I know, I won't pretend I was tortured in the same way Monika was."
+    k u21513t "But Yuri, you've never experienced medium-awareness."
     k "You don't know how it felt to be the only person in that state of existence for years."
     show markov at std
-    show sayori at foc
+    show sayori at foc zorder 4
     s "I do."
-    s "And Yuri, to be honest..."
-    s "... I'm sure having to exit like that for a long time would've made me kill myself."
+    s c215313 "And Yuri, to be honest..."
+    s "... I'm sure having to exist like that for a long time would've made me kill myself."
     show sayori at std
-    #k "And Monika did all that for someone she'd never even met!"
+    show yuri c125216
     "..."
-    k "I don't deserve to live."
+    show markov at foc zorder 5
+    #k "And Monika did all that for someone she'd never even met!"
+    k u11513t "I don't deserve to live."
     k "But I deserve to be allowed to make up for his sins."
     k "As many of them as I can before I die."
     show markov at std
@@ -733,7 +741,10 @@ label monika_save_adam:
     "I'm {i}not{/i} letting him get what he wanted after all this."
     mc "I don't give a damn!"
     mc "You can't just kidnap and torture us and then expect anything from us!"
-    show monika at foc
+    show linda at rhide
+    hide linda
+    show natsuki at std(p55)
+    show monika at foc(p54) zorder 6
     m "[mc_name]..."
     m "His survival can mean a lifetime of good deeds."
     m "Think of all the people of [persistent.playername]'s world he could go on to help if he came with us."
@@ -744,57 +755,60 @@ label monika_save_adam:
     "But --!"
     "She makes sense!"
     "It's not just about us."
+    show monika zorder 1
     show markov at foc
     k "{i}To see the future is to be wise.{/i}"
     show markov at std
     "..."
-    show renier at foc
-    r "Damn it... I can't object, can I?"
+    show sayori at thide
+    hide sayori
+    show yuri at std(p52)
+    show renier u2123 at foc(p51)
+    r "Goddammit... I can't object, can I?"
     show renier at std
-    show monika at foc
-    m "No."
+    show monika at foc zorder 6
+    m c114113 "No."
     m "And neither can I."
     show monika at std
-    #
-    #k "And... if it makes you feel any better..."
-    #k "Remember that I {i}did{/i} already get shot and bled to death by you and stabbed twice by Libitina."
-    #k "And spent hours in the glitched state after she killed me in the facility."
-    #
-    show natsuki at foc
+    show natsuki at foc zorder 7
     n c11s312 "This feels like shit...!"
     n "To come all this way..."
     n "... to go through everything we did, and literally destroy the whole world..."
     n "... and not even take revenge?"
     show natsuki at std
-    show monika at foc
-    m c114112 "I'm sorry."
+    show markov at foc
+    k u11513 "If... it makes you feel any better..."
+    k "Remember that I {i}did{/i} already get shot and bled to death by you and stabbed as Third Eye fuel twice by Libitina."
+    k "And spent hours in the glitched state after she killed me in the facility."
+    show markov at std
+    show monika at foc zorder 8
+    m c114112 "I'm sorry, everyone."
     m "I didn't want to spare him at first, either."
     m "I know it's unsatisfying."
     m "I was pissed when [persistent.playername] first warned me that I might have to show him the same mercy you all showed me."
-    m "And to be honest... I owe you an apology for not discussing it with you all before now."
+    m "And to be honest... I owe you all an apology for not discussing it with you all before now."
     m "I was worried about how angry you'd be if I told you I was thinking about sparing him."
     m "I'm sorry for that."
     m "But it's the better thing to do."
     m "Better for people besides us."
     show monika at std
-    show natsuki at foc
+    show natsuki at foc zorder 9
     n "..."
     n c11s215 "I understand."
     show natsuki at std
-    #
     "I shake my head, giving in."
     "I'm not going to kill him."
     "Monika's right."
     "Here we go again."
     "Another murderer on board."
     "Well... the last two didn't turn out to be mistakes."
-    show markov at foc
-    k "Thank you..."
+    show markov at foc zorder 9
+    k u11533t "Thank you..."
     k "I'll make this worth it."
     k "And I'll help you get the supplies to make those cupcakes you never got."
     show markov at std
     show natsuki at foc
-    n "Damn right you will."
+    n c113112 "Damn right you will."
     n "If there's one thing that could make this ending a little happier..."
     show natsuki at std
     $ persistent.adam_lived = True
