@@ -274,7 +274,6 @@ label chapter29_2:
     show markov at foc
     k "No, we're not giving up!"
     show markov at std
-    # TODO cut?
     menu:
         " "
         "Adam, what API is it using to kill them if delete_character is broken?":
@@ -285,9 +284,10 @@ label chapter29_2:
             pass
     show markov at foc
     k "That's not how it works..."
-    k "It doesn't use the Python APIs."
     k "To these internal processes, nothing is broken."
-    # The viewport uses the Python APIs because he wrote it on top of Python. He basically made it its own admin. Prob add a question about that.
+    k "They can use regions of memory marked not allowed to admins."
+    k "It isn't using Python APIs anyway."
+    k "The Python APIs are an abstraction layer."
     show markov at std
     menu:
         " "
@@ -302,7 +302,6 @@ label chapter29_2:
         " "
         "Corrupt its memory.":
             pass
-    #
     show linda at foc zorder 51
     l "Remember what happened when I tried that!"
     l "It stopped me and almost killed us all!"

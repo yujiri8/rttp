@@ -474,6 +474,7 @@ default persistent.adam_questions = {
         'char_files': False,
         'api_breakage': False,
         'dead_states': False,
+        'ship_ddlc': False,
     }
 # Part 3
 default persistent.threaten_libitina_to_save_natsuki_albert = False # chapter 22

@@ -177,7 +177,7 @@ label do_the_final_plan:
             "You remember how we proved that wasn't true!":
                 pass
     else:
-        # TODO is this necessarily true?
+        # I don't think this is necessarily true, but oh well.
         menu:
             " "
             "You know from experience that's not true! You defied me before!":
