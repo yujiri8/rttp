@@ -1,7 +1,5 @@
 // I was previously thinking you couldn't move a dead character's location, but maybe you can; Moni came out not because that was her last location, but because it was the one she remembered.
 
-// Maybe at the end of it all, it'll say emergency purge while it's killing everyone, since that phrase is familiar.
-
 .. it's an acceptable loss that how shocking it is to regain your memories is wildly inconsistent.
 
 // maybe Moni should break restore_area when she mentions wanting to make an invalid area.

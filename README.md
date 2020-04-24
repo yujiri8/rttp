@@ -1,22 +1,10 @@
-***This README contains spoilers. The main reason for uploading the repository right now is for better communication between me and my editors.***
+Description of the mod, download and installation instructions [here](https://yujiri.xyz/works/return_to_the_portrait/).
 
-Description of the mod and installation instructions [here](https://yujiri.xyz/works/return_to_the_portrait/).
-
-Also, obviously, the license only applies to stuff I made. Other people's assets may not be under the same terms (and original DDLC content is under [these terms](https://teamsalvato.com/ip-guidelines/)), but I've made sure I have permission to use them.
+Obviously, the license only applies to stuff I made. Other people's assets may not be under the same terms (and original DDLC content is under [these terms](https://teamsalvato.com/ip-guidelines/)), but I've made sure I have permission to use them.
 
 ---
 
-The file 'SCRAPS' contains a couple of less important thoughts (that I don't need input on) and bunch of disorganized scraps of dialog that might end up being used.
-
-# Other, smaller things
-
-* Should I edit chapter22 so Adam actually tries to wipe Natsuki's memories at the rift, but it doesn't work? I feel it's a bit iffy that he just offhandly reveals that memory wipe doesn't work on prepared characters without the player seeing it fail.
-
-# Images
-
-* Logo? I'm still using the DDMC logo. It would be great if I had a logo of the Portrait of Markov book with the eye symbol on it. Maybe I could draw it.
-
-Also, if you notice any assets I'm currently using that aren't in credits, let me know.
+The file `SCRAPS` contains a couple of thoughts and disorganized scraps of dialog that didn't make it in.
 
 # Accepted plotholes
 
