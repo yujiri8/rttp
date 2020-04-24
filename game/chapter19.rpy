@@ -208,7 +208,7 @@ label romance_sayori:
     s u123111 "We've been through so much since then."
     s "Before the Club and all..."
     s "I used to not see any value in myself."
-    s u123113 "My depression was probably a result of how the experiments ruined us."
+    s u123113 "My depression was probably a result of how the experiments scarred us."
     s "Made us slaves to our Third Eyes."
     s "And even when I didn't remember that, it still affected how I felt."
     s u123111 "But this quest has shown me what my life is worth."
@@ -222,7 +222,7 @@ label romance_sayori:
     show sayori at std
     mc "Oh..."
     mc "Yeah... you're right."
-    mc "It wasn't a pure an outcome as we could've hoped for."
+    mc "It wasn't as pure an outcome as we could've hoped for."
     mc "But at least we stopped him from doing anything more."
     mc "And I mean, at worst, it would be a mercy kill."
     show sayori at foc
