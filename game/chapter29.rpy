@@ -804,6 +804,7 @@ label monika_save_adam_easy:
     "Well. Here we go again."
     "Another murderer onboard."
     "I guess the last two didn't turn out to be mistakes..."
+    $ persistent.adam_lived = True
     return
 
 label monika_save_adam_hard:
@@ -1118,7 +1119,7 @@ label sayori_save_adam:
     show monika at foc
     m c127113 "What?!?"
     m c227113 "Sayori, for real?"
-    m "After literal years of tortureat his hands?!?"
+    m "After literal years of torture at his hands?!?"
     show monika at std
     show sayori at foc
     s "..."
@@ -1211,6 +1212,7 @@ label sayori_save_adam:
     s c21x311 "What can I say..."
     s c21x341 "I'm a sucker for golden endings!"
     show sayori at std
+    $ persistent.adam_lived = True
     return
 
 label sayori_not_save_adam:

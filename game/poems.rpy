@@ -242,8 +242,6 @@ Whatever happens... if I ever know any happiness but schadenfreude, """+persiste
     author = "monika",
     title = "",
     text = """\
-Was it a real victory?
-
 I still can't get over the thought that we destroyed that entire world escaping from it.
 I keep telling myself, it was an accident, it was an accident, a bloody accident.
 

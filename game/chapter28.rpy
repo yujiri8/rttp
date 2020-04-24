@@ -446,6 +446,7 @@ label do_the_final_plan:
     n c114123 "Great job, Sayori... and all of you."
     show natsuki at std(p31)
     show linda at std(p11)
+    $ restore_character('adam')
     show markov u11111 at foc(p33)
     k "I'm back..."
     show markov at std

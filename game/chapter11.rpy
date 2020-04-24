@@ -14,7 +14,7 @@ label chapter11:
     show sayori u223162 at foc(p11)
     s "Wait up!"
     s u123112 "We need to make sure everyone's okay!"
-    show sayori at uf
+    show sayori at std
     mc "Sayori, what are you talking about?"
     show sayori at foc
     s "Oh, just wait a minute [mc_name]."
@@ -29,19 +29,19 @@ label chapter11:
     $ consolehistory = []
     show sayori at xis(p31)
     s "Now for--{w=0.5}{nw}"
-    show sayori at x(p61)
-    show yuri at x(p62)
-    show natsuki at x(p63)
+    show sayori at std(p61)
+    show yuri at std(p62)
+    show natsuki at std(p63)
     show monika u117112 at foc(p64)
     show linda 336113 at std(p65) zorder 2
     show renier ru1183 at std(p66) zorder 2
     m "We're here."
     m u114122 "Looks like everyone's safe..."
-    show monika at uf
+    show monika at std
     mc "Okay, what the hell is going on?!?"
     show renier at foc
     r ru1293 "Who the hell are all of you?"
-    show renier at uf
+    show renier at std
     show monika at foc
     m u117111 "Okay, okay!"
     m u114111 "Memory restoring time."
@@ -59,21 +59,21 @@ label chapter11:
     $ consolehistory = []
     m u114111 "There."
     m "Everyone good?"
-    show monika at uf
+    show monika at std
     "We all nod."
     show natsuki at foc zorder 1
     n xu4111 "So what happened?"
     n "I'm totally out of the loop."
-    show natsuki at uf zorder 0
+    show natsuki at std zorder 0
     show monika at foc zorder 1
     m u114221 "I think we all are..."
-    show monika at uf
+    show monika at std
     show linda at foc zorder 3
     l 334111 "I think I can explain."
     l "So when the script tried to end the day on us after we dismissed the club meeting..."
     l "Monika and Sayori and I tried to fight it, but it didn't end well. The game crashed."
     l "From the looks of things, [persistent.playername] had to start a new game - I don't see any saves except one right near the new game point."
-    show linda at uf
+    show linda at std
     mc "But everything's fine now?"
     show linda at foc
     l "Well, we started a new game."
@@ -81,7 +81,7 @@ label chapter11:
     l "Monika, Sayori, I think we're close."
     l "I felt something I hadn't noticed before during that crash."
     l "I have something I want to try."
-    show linda at uf
+    show linda at std
     mc "Oh great..."
     show linda at foc
     l 123111 "No, this is good news!"
@@ -90,27 +90,27 @@ label chapter11:
     show monika u114111 at foc
     show sayori u114111 at foc zorder 1
     "Monika and Sayori focus closely on the code, which from their body language I would think is written in the air behind me."
-    show sayori at uf
-    show linda at uf
+    show sayori at std
+    show linda at std
     m u124111 "But how do we actually change it?"
-    show monika at uf
+    show monika at std
     show linda at foc
     call updateconsole("os.system(\"sed -i '.bkup'\"\n \" '24964s/True/False/' main.c\")", "Operation not permitted")
     if persistent.monika_questions['linda_powers']:
         l 125111 "Mm..."
-        show linda at uf
+        show linda at std
         show monika at foc
         m "Well, you did say your powers seemed to be weaker than ours."
         show monika u214111
         call updateconsole("os.system(\"sed -i '.bkup'\"\n \" '24964s/True/False/' main.c\")", "Operation not permitted")
         show sayori u11a123
         m u113114 "Mm..."
-        show monika at uf
+        show monika at std
     else:
         show sayori u11a123
         show monika u113114
         l 125111 "Mm..."
-        show linda at uf
+        show linda at std
     menu:
         " "
         "Hold on, what's this main.c? Is that file on my computer somewhere? Because if it is I could probably help.":
@@ -119,7 +119,7 @@ label chapter11:
     l 124111 "I don't think so."
     l "I think the game's code is stored internally somehow."
     l "I don't really understand it, but I don't think it's on your computer."
-    show linda at uf
+    show linda at std
     menu:
         " "
         "How is that even possible? Code running on a system it isn't stored on?":
@@ -127,7 +127,7 @@ label chapter11:
     show linda at foc
     "Linda shrugs."
     l "It's like the code only exists when the game is running..."
-    show linda at uf
+    show linda at std
     menu:
         " "
         "If you can't change the critical function, can you solve it by changing something elsewhere in the stack?":
@@ -141,7 +141,7 @@ label chapter11:
     l "What we were doing before wasn't that..."
     l "It was just running commands that change what the script is supposed to be, or that change the current world state."
     l "Not modifying how the script itself works."
-    show linda at uf
+    show linda at std
     show renier ru11111
     show yuri u123142
     show natsuki xu6131
@@ -151,7 +151,7 @@ label chapter11:
     show monika at foc
     m u117113 "Well we're not giving up!"
     m "There {i}is{/i} a way."
-    show monika at uf
+    show monika at std
     show linda at foc
     l "Yes, I'm sure there is..."
     menu:
@@ -162,7 +162,7 @@ label chapter11:
             call suggest_admin
     l "Maybe there's a way to corrupt the game's memory to get it to execute arbitrary code."
     l "Hm..."
-    show linda at uf
+    show linda at std
     l "Maybe this..."
     call updateconsole('memcpy(ns, np, npsize + 1);', glitchtext(20))
     $ style.say_dialogue = style.edited
@@ -200,26 +200,26 @@ label purge:
     l 114443b "... Shit..."
     show renier u2283 at foc(p21)
     r "Linda!"
-    show renier at uf
+    show renier at std
     show linda at foc
     l 114333 "Oh thank god, at least you're here..."
     l 114112 "I think I did something I really shouldn't have done..."
-    show linda at uf
+    show linda at std
     mc "Where are [persistent.mc_favorite] and the others?"
     show linda at foc
     l "Their files are gone..."
     l "And it must be something worse, because Monika and Sayori aren't restoring themselves."
-    show linda at uf
+    show linda at std
     mc "Can't you restore them?!?"
     show linda at foc
     call updateconsole("restore_character('monika')", "No such character")
     show linda 119443b at foc
     l "!!"
-    show linda at uf
+    show linda at std
     mc "What?!?"
     show linda at foc
     l 114443b "It says 'no such character'..."
-    show linda at uf
+    show linda at std
     mc "Oh my god!"
     mc "[persistent.playername], you try putting their files back!"
     call hideconsole
@@ -234,18 +234,18 @@ label purge:
     show linda at foc
     l 119443b "Ah--!"
     l "It just deleted them again!"
-    show linda at uf
+    show linda at std
     show renier at foc
     r u2183 "But that's how we got you in, wasn't it?"
     r "When the game didn't recognize you... we just had to restore your file and then it worked..."
-    show renier at uf
+    show renier at std
     show linda at foc
     l 114443b "Oh no, what if they're really gone?"
     l "The script saw what I was doing..."
     l "That last glitched message..."
     l "I think it said 'emergency purge'."
     l "What if it killed them for real?"
-    show linda at uf
+    show linda at std
     "I get a terrible pit in my stomach."
     "{i}[persistent.mc_favorite]{/i}..."
     mc "God, no, Linda you can't be saying that!"
@@ -257,13 +257,13 @@ label purge:
     "God no..."
     show renier at foc
     r u2113 "Wait, let's ask [persistent.playername]."
-    show renier at uf
+    show renier at std
     show linda at foc
     l 114221 "Oh, I forgot..."
     l "I have to give [persistent.player_obj_pronoun] a menu."
     l 114113 "[persistent.playername]..."
     l 11b333 "Please {i}please{/i} tell us you know what to do."
-    show linda at uf
+    show linda at std
     menu:
         l "Please {i}please{/i} tell us you know what to do."
         "I have no idea. I don't know how this game works.":
@@ -272,7 +272,7 @@ label purge:
             show linda at foc
             l 114111 "Probably the purge just missed me and Renier because we're not supposed to be here in the first place."
             l "And [mc_name] doesn't have a file to delete..."
-            show linda at uf
+            show linda at std
             menu:
                 " "
                 "Well... I'm out of ideas.":
@@ -285,10 +285,10 @@ label purge:
     l 114333bt "No..."
     l "No..."
     l 11b333bt "Tell me I didn't do this..."
-    show linda at uf
+    show linda at std
     show renier at foc
     r u21a3 "I still never apologized to Natsuki..."
-    show renier at uf
+    show renier at std
     mc "Hold on!"
     mc "Linda, you have to do something!"
     "I'm screaming at her."
@@ -309,7 +309,7 @@ label purge:
     l 114111 "That's a promising sign..."
     l "[persistent.playername], try putting her back now."
     l 334113 "(And let's all cross our fingers...)"
-    show linda at uf
+    show linda at std
     while not check_character('monika'):
         ""
     show linda 114331 at std(p33)
@@ -327,7 +327,7 @@ label purge:
         mc "We don't want to put them through that."
         show linda at foc
         l "What do you mean?"
-        show linda at uf
+        show linda at std
         mc "When the game crashed after we put you in the first time, Yuri and Natsuki and Renier didn't appear at first, so Sayori tried to reset them."
         mc "It worked, but they all came back unconscious or hurt in whatever way they had been before."
         show linda at foc
@@ -351,7 +351,7 @@ label purge:
         while not check_character(persistent.mc_favorite.lower()):
             show linda at foc
             l "[persistent.playername], we just need her file now."
-        show linda at uf
+        show linda at std
         if persistent.mc_favorite == "Sayori":
             show sayori u116193 at std(p11)
             mc "Sayori!"
@@ -378,15 +378,15 @@ label purge:
         l 334111 "Probably..."
         l "I don't see anything unusual about their data as compared to before."
         l "They might just be hurt from the script trying to 'purge' them."
-        show linda at uf
+        show linda at std
         show renier at foc
         r u2113 "It sounds like everyone's going to come back this way."
         r "We should probably try to start a new game, right?"
-        show renier at uf
+        show renier at std
         show linda at foc
         l "You're right."
         $ persistent.newgame = 4
         l "[persistent.playername], whenever you're ready."
-        show linda at uf
+        show linda at std
         while True:
             ""

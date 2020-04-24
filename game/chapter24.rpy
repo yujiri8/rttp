@@ -606,7 +606,8 @@ label assault_facility:
     call screen dialog("Monika, did you break the memory-wiping API?", ok_action=Return())
     show monika at foc
     m c117113 "You bet I did!"
-    m c127115 "What, you wanted to mind-wipe us?"#TODO this needs updating
+    m c127115 "What, you wanted to mind-wipe us?"
+    m "And also forgot that doesn't work on alert characters?"
     show monika at std
     l "Huh?"
     call screen dialog("You cruel bastard.", ok_action=Return())

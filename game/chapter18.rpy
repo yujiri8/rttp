@@ -379,7 +379,11 @@ label first_break:
     r "I guess it's time for us to go."
     show renier u1111 at std
     "Renier picks up Libitina, Natsuki picks up the guard's gun, and we head out the door at the back end of the hallway."
-    scene black with Dissolve(0.5)
+    scene black
+    show mask_2
+    show mask_3
+    show facility_rift
+    with wipeleft_scene
     "Natsuki was right."
     "The part of the camp that didn't get turned into space is almost none..."
     "... but by some miracle, the garage is on the remaining sliver, halfway on the border."
