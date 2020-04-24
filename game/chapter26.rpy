@@ -466,7 +466,7 @@ label chapter26:
     s "The only way to save Monika is to put her in DDLC where restore_character isn't broken..."
     s "... but the only person in the world who can do that now is Adam!"
     show sayori at std
-    show natsuki at foc
+    show natsuki at xif(p65)
     n "There {i}has{/i} to be something we can do!"
     show natsuki at std
     "We can't be beaten..."
