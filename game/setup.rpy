@@ -139,9 +139,9 @@ label get_part1_choices:
     menu:
         "Did you ask Monika about the nature of player dialog choices?"
         "Yes":
-            $ persistent.monika_questions['player_choices'] = True
+            $ persistent.monika_questions['choices'] = True
         "No":
-            $ persistent.monika_questions['player_choices'] = False
+            $ persistent.monika_questions['choices'] = False
     menu:
         "Did you ask Monika about how admins experience time?"
         "Yes":

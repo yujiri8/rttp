@@ -21,13 +21,13 @@ label questions_menu:
         m "[qtext]"
         "(done)":
             return
-        "How does this question thing work?" if page == 0 and not persistent.monika_questions['player_choices']:
+        "How does this question thing work?" if page == 0 and not persistent.monika_questions['choices']:
             m c121111 "I suppose that's a good question..."
             m c222111 "So, normally the script only gives you a choice when it's one that's part of the intended game, like which girl to write for."
             m c214111 "Outside of that, I don't think you can get any choices unless I - or someone else with code powers - gives you one."
             m c221111 "But I've learned how to not restrict you to options I can think of."
             m "It's a bit of an iffy hack, but it works."
-            $ persistent.monika_questions['player_choices'] = True
+            $ persistent.monika_questions['choices'] = True
         "How do you experience time?" if page == 0 and not persistent.monika_questions['time']:
             m c122111 "Ah. Well..."
             m c222111 "I experience in-game time, the same as the other characters do."

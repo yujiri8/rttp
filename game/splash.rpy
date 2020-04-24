@@ -194,13 +194,9 @@ image tos = Fixed(
     "menu_art_m_ghost",
 )
 
-
 label splashscreen:
 
     $ basedir = config.basedir.replace('\\', '/')
-
-    # A script that converts saves from part 1 or part 2 to be part 3-compatible.
-    call update_to_part3
 
     # Special things for the mod, since it deals with the game being turned off.
     $ persistent.awaiting_shutdown = False

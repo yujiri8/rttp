@@ -453,6 +453,28 @@ default persistent.player_pacifist = 0 # chapter 15
 default persistent.player_guilt_trip_sayori = 0 # chapter 16
 default persistent.player_advocate_mercy = [0, 0] # First in chapter 15, second in chapter 23.
 default persistent.player_suggest_linda_natsuki_mom = 0 # chapter 8. Can raise to 2 in chapter 14, if it was set before.
+default persistent.monika_questions = {
+        'choices': False,
+        'time': False,
+        'mc_time': False,
+        'dreams': False,
+        'linda_powers': False,
+        'linda_renier_relationship': False,
+        'linda_porn': False,
+        'perception': False,
+        'natsuki_forgive_renier': False,
+        'mc_poems': False,
+        'yuri_cutting': False,
+    }
+default persistent.adam_questions = {
+        'experiments': False,
+        'ursula_awakening': False,
+        'power_relationship': False,
+        'ursula_poem': False,
+        'char_files': False,
+        'api_breakage': False,
+        'dead_states': False,
+    }
 # Part 3
 default persistent.threaten_libitina_to_save_natsuki_albert = False # chapter 22
 default persistent.threaten_libitina_to_come = False # chapter 22

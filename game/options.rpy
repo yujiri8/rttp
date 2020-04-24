@@ -184,11 +184,15 @@ init python:
 
     ## Classify files as None to exclude them from the built distributions.
 
-    build.classify('**~', None)
-    build.classify('**.bak', None)
-    build.classify('**/.**', None)
-    build.classify('**/#**', None)
-    build.classify('**/thumbs.db', None)
+    build.classify('**/SCRAPS', None)
+    build.classify('**/README.md', None)
+    build.classify('**/LICENSE', None)
+    build.classify('**/*.rpa', None)
+    build.classify('**/*.rpyc', None)
+    build.classify('**/DESTINATION.txt', None)
+    build.classify('**/ERROR.txt', None)
+    build.classify('**/pose_*', None)
+    build.classify('**/purge_log.txt', None)
 
     ## To archive files, classify them as 'archive'.
 
