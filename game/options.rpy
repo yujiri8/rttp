@@ -184,22 +184,24 @@ init python:
 
     ## Classify files as None to exclude them from the built distributions.
 
-    # repo stuff
+    # repo and meta stuff
+    build.classify('**/.*', None)
     build.classify('**/*.rpa', None)
     build.classify('**/*.rpyc', None)
     build.classify('**/README.md', None)
     build.classify('**/LICENSE', None)
     build.classify('**/SCRAPS', None)
+    build.classify('**/firstrun', None)
     # plot stuff
-    build.classify('**/renier_decrypt.txt', None)
-    build.classify('**/renier_decrypted.txt', None)
-    build.classify('**/ERROR.txt', None)
-    build.classify('**/pose_*', None)
-    build.classify('**/purge_log.txt', None)
-    build.classify('**/DESTINATION.txt', None)
-    build.classify('**/WTF.txt', None)
-    build.classify('**/FFS.txt', None)
-    build.classify('**/helpmehelpmehelpme.txt', None)
+    build.classify('/renier_decrypt.txt', None)
+    build.classify('/renier_decrypted.txt', None)
+    build.classify('/ERROR.txt', None)
+    build.classify('/pose_*', None)
+    build.classify('/purge_log.txt', None)
+    build.classify('/DESTINATION.txt', None)
+    build.classify('/WTF.txt', None)
+    build.classify('/FFS.txt', None)
+    build.classify('/helpmehelpmehelpme.txt', None)
     # Renpy
     build.classify('**/traceback.txt', None)
     build.classify('**/log.txt', None)
