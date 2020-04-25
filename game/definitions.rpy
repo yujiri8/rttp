@@ -1,4 +1,4 @@
-define config.developer = True
+define config.developer = False
 define _dismiss_pause = config.developer
 define config.mouse = None
 default allow_skipping = True
