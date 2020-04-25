@@ -4,7 +4,7 @@ Obviously, the license only applies to stuff I made. Other people's assets may n
 
 ---
 
-The file `SCRAPS` contains a couple of thoughts and disorganized scraps of dialog that didn't make it in.
+The file `SCRAPS` contains a couple of thoughts and scraps of dialog that didn't make it in.
 
 # Accepted plotholes
 
