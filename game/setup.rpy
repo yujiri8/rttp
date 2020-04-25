@@ -233,7 +233,7 @@ label get_part1_choices:
 label get_part2_choices:
     # This skips some consequence-less ones, but oh well.
     menu:
-        "What was your stance on the morality of torturing horrible violent criminals for scientific research?"
+        "What was your stance on the morality of torturing murderers for scientific research?"
         "Voiced no disapproval of the thought.":
             $ persistent.player_pacifist = 0
         "Initially said \"It's not remotely acceptable to torture a defenseless prisoner\", but was later convinced that it could be acceptable.":

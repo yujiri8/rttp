@@ -775,6 +775,7 @@ label returned_to_ddlc:
     $ k_name = 'Adam'
     $ persistent.autoload = 'returned_to_ddlc'
     $ quick_menu = False
+    play music m1
     # The player could delete him, but that wouldn't really matter since it doesn't stop him from running commands.
     "{cps=200}Fatal error: player character missing.{/cps}"
     k "What?!?"

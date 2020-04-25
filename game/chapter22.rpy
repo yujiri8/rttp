@@ -1030,7 +1030,7 @@ label let_libitina_keep_gun:
             b "I'm sorry again, but I really believe I acted out of rational fear..."
             b "I'd have understood if you did the same to me."
             show libitina at std
-            n "This is bullshit!"
+            n "Bullshit!"
             n "Fine, you win, all-powerful [persistent.playername]."
     return
 

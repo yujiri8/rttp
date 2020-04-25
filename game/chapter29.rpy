@@ -820,7 +820,7 @@ label monika_save_adam_hard:
     show monika at foc(p11) zorder 1
     m c118312 "Waiit!!"
     m "We can talk about this!"
-    show monika at std
+    show monika at xis(p11)
     "Natsuki points her gun down."
     show natsuki at foc
     n "Monika, what the hell are you doing?!?"

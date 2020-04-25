@@ -843,7 +843,7 @@ label albert_natsuki_pickup_monika_and_libitina:
         show libitina 2161114 at foc(p31)
         b "Um... Natsuki...?"
         show libitina at std
-        show natsuki at foc
+        show natsuki at xif(p11)
         n c124111 "Yeah, you know what?"
         n "I get it."
         n xc4111 "I'd shoot you too if I had to to stop Adam from beating us."

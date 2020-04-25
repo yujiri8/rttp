@@ -231,7 +231,7 @@ label chapter25:
     s c22x151 "You did it, Monika!"
     "Sayori runs over to comfort the traumatized Monika."
     s "We we getting so worried about you!"
-    show sayori at std
+    show sayori at xis(p31)
     show libitina at foc
     b 2262114 "Um..."
     b "I don't understand."
