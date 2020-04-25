@@ -6,9 +6,19 @@ Obviously, the license only applies to stuff I made. Other people's assets may n
 
 The file `SCRAPS` contains a couple of thoughts and scraps of dialog that didn't make it in.
 
+# Assets 4 u!
+
+Most of the art I comissioned is Creative Commons Attribution, which means you can also use it in your own DDLC mods! Just credit me for shellin' it out for 'em and the artist I shelled out to:
+
+* Linda, Libitina, Albert, and Adam's sprites are by [Plural Roses](https://reddit.com/u/15LarueA) (PluralRoses#0136). Also the warehouse interior water pit room (not the room at the back with the machinery). For the characters, I also edited them somewhat. They're divided into components so they can be easily used with [AgentGold](https://reddit.com/u/AgentGold)'s Dynamic Pose Tool. .
+
+* Cult facility and warehouse exterior backgrounds are by [TomTC](https://deviantart.com/tomtc). These ones also have the non-derivative term, so derivatives aren't allowed.
+
+(I paid $791 for these. You lucky freeloader.)
+
 # Accepted plotholes
 
-I've given up on solving these.
+I've given up on solving these. (Obviously, heavy spoilers here.)
 
 * Adam says he didn't want to make Libitina admin way back when, but given he obviously knew about both memory wiping and API breaking, why didn't he wipe her memories, break memory restoring, and then give her the power and she wouldn't know what he'd done to her? I'm pretty much resigned to leaving this as a plothole, but I'd very much appreciate any workable solution.
 
