@@ -732,7 +732,7 @@ label monika_save_adam_easy:
     m "I hate to admit it, but he isn't all that different from me."
     m "Separated from a loved one, alone with medium awareness in a virtual world..."
     m "It's not that different."
-    m "And he did already get shot by Natsuki and bled to unconsciousness, then stabbedas Third Eye fuel by Libitina twice."
+    m "And he did already get shot by Natsuki and bled to unconsciousness, then stabbed as Third Eye fuel by Libitina twice."
     show monika at std
     show albert at thide
     hide albert

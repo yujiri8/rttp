@@ -38,7 +38,7 @@ label chapter28:
     k "Pretty much."
     k "But we have to make sure you don't kill me, or else you'll probably quit on the spot..."
     k "... like happened the other two times you killed an admin."
-    k "We need you to open the portal because we stop you."
+    k "We need you to open the portal before we stop you."
     show markov at std
     n "I could shoot you in the head after she takes enough blood to open her Third Eye, so it doesn't count as her killing you."
     show markov at foc

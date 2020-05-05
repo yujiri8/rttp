@@ -34,7 +34,7 @@ label sayori_and_mc:
             pass
     menu:
         " "
-        "And apparently it counted as needing sprites for [mc_name] before even though they were never shown? - Adam":
+        "And apparently it counted as needing sprites for [mc_name] before even though they were never shown? - Monika":
             pass
     s "Weird..."
     s "So are we going into the spooky house of evil?"

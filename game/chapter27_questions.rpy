@@ -28,7 +28,7 @@ label adam_questions_menu:
             call adam_discuss_power_relationship
             $ persistent.adam_questions['power_relationship'] = True
         "Do you still think Ursula's poem means anything?" if not persistent.adam_questions["ursula_poem"] and page == 2:
-            call adam_discuss_power_relationship
+            call adam_discuss_ursula_poem
             $ persistent.adam_questions['ursula_poem'] = True
         "How do character files work?" if not persistent.adam_questions["char_files"] and page == 2:
             call adam_discuss_char_files
