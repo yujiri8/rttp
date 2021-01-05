@@ -24,7 +24,7 @@ label chapter2:
     mc "Like the \"special\" poems throughout \"Act 2\" and our character files."
     show monika at foc
     m u214111 "Oh, hold on..."
-    m "The player's dialog choices only speak to MC."
+    m "The player's dialog choices only speak to [mc_name]."
     m "I'll make it so they speak to all of us."
     call updateconsole("import viewport")
     call updateconsole("vp = viewport.get_viewport()")
