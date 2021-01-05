@@ -173,19 +173,33 @@ label chapter2:
             $ persistent.playername = _return
         "No":
             $ persistent.playername = currentuser
-    m "Also, I've been assuming you were male... am I wrong?"
+    m "Also, I've been assuming you were a guy... am I wrong?"
     menu:
         " "
-        "Yes, I'm female":
+        "Yes, I'm a gal":
             $ persistent.player_subj_pronoun = "she"
             $ persistent.player_obj_pronoun = "her"
             $ persistent.player_pos_pronoun = "her"
             $ persistent.player_copula_pos_pronoun = "hers"
-        "No, I'm male":
+        "No, I'm a guy":
             $ persistent.player_subj_pronoun = "he"
             $ persistent.player_obj_pronoun = "him"
             $ persistent.player_pos_pronoun = "his"
             $ persistent.player_copula_pos_pronoun = "his"
+        "Can I enter my own pronouns?":
+            m "Oh, of course!"
+            $ name_entry = ""
+            call screen name_input(message="Subject pronoun (alternative to he/she):")
+            $ persistent.player_subj_pronoun = _return
+            $ name_entry = ""
+            call screen name_input(message="Object pronoun (alternative to him/her):")
+            $ persistent.player_obj_pronoun = _return
+            $ name_entry = ""
+            call screen name_input(message="Possessive pronoun (alternative to his/her):")
+            $ persistent.player_pos_pronoun = _return
+            $ name_entry = ""
+            call screen name_input(message="Copula possessive pronoun (alternative to his/hers):")
+            $ persistent.player_copula_pos_pronoun = _return
     $ persistent.newgame = 1
     m "Alright [persistent.playername], we're waiting on you to start a new game."
     while True:
