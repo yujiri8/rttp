@@ -222,7 +222,7 @@ label chapter8:
     show sayori c116112 at foc
     if persistent.mc_least_favorite != 'Sayori':
         "Sayori hugs me."
-    s c123112 "[mc_name], don't ever start thnking that you don't own yourself."
+    s c123112 "[mc_name], don't ever start thinking that you don't own yourself."
     s "The choices you've made are still yours."
     s "And they were good choices."
     s "And I love you for them."

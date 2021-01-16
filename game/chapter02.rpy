@@ -195,10 +195,10 @@ label chapter2:
             call screen name_input(message="Object pronoun (alternative to him/her):")
             $ persistent.player_obj_pronoun = _return
             $ name_entry = ""
-            call screen name_input(message="Possessive pronoun (alternative to his/her):")
+            call screen name_input(message="Possessive adjective (alternative to his/her):")
             $ persistent.player_pos_pronoun = _return
             $ name_entry = ""
-            call screen name_input(message="Copula possessive pronoun (alternative to his/hers):")
+            call screen name_input(message="Possessive pronoun (alternative to his/hers):")
             $ persistent.player_copula_pos_pronoun = _return
     $ persistent.newgame = 1
     m "Alright [persistent.playername], we're waiting on you to start a new game."

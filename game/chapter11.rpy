@@ -192,6 +192,7 @@ label suggest_admin:
 
 label purge:
     $ persistent.autoload = None
+    $ mc_name = persistent.mc_name
     scene black
     play music yesnt
     show linda 119443b at std(p22)

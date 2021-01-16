@@ -81,7 +81,7 @@ label contact_linda:
     elif 'sayori' in persistent.contacted:
         $ text = "Sayori and probably " + mc_name + " are heading there on bikes, and"
     else:
-        $ text = "Sayori and [mc_name] are probably heading there, and they're probably not traveling by car, so"
+        $ text = "Sayori and " + mc_name + " are probably heading there, and they're probably not traveling by car, so"
     menu:
         " "
         "[text] they could use a ride next time they need to get somewhere.":

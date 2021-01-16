@@ -88,7 +88,7 @@ label get_part1_choices:
         "No, continue using my operating system account name.":
             $ persistent.playername = currentuser
     menu:
-        "Did you state that you were female?"
+        "Did you correct Monika about your gender?"
         "Yes, I'm female":
             $ persistent.player_subj_pronoun = "she"
             $ persistent.player_obj_pronoun = "her"
@@ -99,6 +99,19 @@ label get_part1_choices:
             $ persistent.player_obj_pronoun = "him"
             $ persistent.player_pos_pronoun = "his"
             $ persistent.player_copula_pos_pronoun = "his"
+        "Yes, I entered pronouns manually":
+            $ name_entry = ""
+            call screen name_input(message="Subject pronoun (alternative to he/she):")
+            $ persistent.player_subj_pronoun = _return
+            $ name_entry = ""
+            call screen name_input(message="Object pronoun (alternative to him/her):")
+            $ persistent.player_obj_pronoun = _return
+            $ name_entry = ""
+            call screen name_input(message="Possessive adjective (alternative to his/her):")
+            $ persistent.player_pos_pronoun = _return
+            $ name_entry = ""
+            call screen name_input(message="possessive pronoun (alternative to his/hers):")
+            $ persistent.player_copula_pos_pronoun = _return
     menu:
         "Did you insult MC for questioning your base64 decoding?"
         "Yes":
